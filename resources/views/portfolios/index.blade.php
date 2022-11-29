@@ -61,8 +61,15 @@
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item"
                                                 href="{{ route('portfolios.edit', ['portfolio' => $portfolio->id]) }}">Edit</a>
-
+                                                <form action="{{ route('portfolios.destroy', $portfolio->id) }}" method="Post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="dropdown-item">
+                                                        Delete
+                                                    </button>
+                                                </form>
                                         </div>
+                                        
                                     </div>
                                 </td>
                             </tr>

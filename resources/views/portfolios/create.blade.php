@@ -50,7 +50,7 @@
 
 
                         <div style="margin-left:450px; margin-top:50px;">
-                            <a href="{{ route('settings.index') }}" class="btn btn-light me-2" style="width:106px;">Back</a>
+                            <a href="{{ route('portfolios.index') }}" class="btn btn-light me-2" style="width:106px;">Back</a>
                             <button type="submit" class="btn btn-info" style="width: 106px">
                                 <span class="indicator-label">Create</span>
                             </button>
