@@ -253,9 +253,6 @@
                       <strong class="modal-custom-title">Skills:</strong>
                       <p>
                         <span class="badge badge-secondary">HTML5</span>
-                        <span class="badge badge-secondary">PHP</span>
-                        <span class="badge badge-secondary">CSS3</span>
-                        <span class="badge badge-secondary">JAVASCRIPT</span>
                     </div>
                   </div>
                 </div>
@@ -351,8 +348,10 @@
                           <span class="img-bottom"></span>
                         </div>
                         <div class="team-content">
-                          <h3>{{ $team->name }}</h3>
-                          <p>{{ $team->skills }}</p>
+                          <h3>{{ $team->id_name }}</h3>
+                          @foreach (explode(",", $team->skills) as $skill)
+                            <p class="badge badge-secondary" style="color:white;">{{ $skill }}</p>
+                          @endforeach
                           <div class="team-social">
                             <a class="fb" href="#"><i class="fa fa-facebook"></i></a>
                             <a class="twt" href="#"><i class="fa fa-twitter"></i></a>

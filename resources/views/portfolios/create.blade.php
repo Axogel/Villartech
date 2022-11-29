@@ -11,54 +11,48 @@
 
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="col mt-5" style="display:grid; padding-top:80px; width:80%; margin-left:125px;">
-                    {!! Form::open(['method' => 'POST', 'route' => ['teams.store'], 'files' => 'true']) !!}
+                    {!! Form::open(['method' => 'POST', 'route' => ['portfolios.store'], 'files' => 'true']) !!}
 
                     <div class="row mb-6">
 
-
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
-                            {!! Form::text('id_name', null, ['placeholder' => 'Ingrese nombre',
+                            {!! Form::text('name', null, ['placeholder' => 'Insert a name',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Url</label>
+                            {!! Form::text('url', null, ['placeholder' => 'Insert a url to the portfolio',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
 
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
-                            {!! Form::text('email', null, ['placeholder' => 'Email',
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
+                            {!! Form::text('description', null, ['placeholder' => 'Insert a description',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                        </div>
-
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
-                            {!! Form::text('skills', null, ['placeholder' => 'Skills',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                        </div>
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Active</label>
-                            <input type="hidden" name="status" value="0"/>
-                            <input type="checkbox" name="status" value="1" {{ old('status') ? 'checked' : '' }}/>
 
                         </div>
 
                         <br>
-                     
                         <br>
-
-                        <label style="padding-left:29px">Imagen: <span style="padding-left:82px">
-                             {!! Form::file('photo', null) !!}</span>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                        <label style="padding-left:29px">Image: <span style="padding-left:82px"
+                                onclick="document.getElementById('file')"> {!! Form::file('image', null) !!}</span>
                         </label>
 
 
                         <div style="margin-left:450px; margin-top:50px;">
-                            <a href="{{ route('teams.index') }}" class="btn btn-light me-2">Regresar</a>
-                            <button type="submit" class="btn btn-info">
-                                <span class="indicator-label">Actualizar</span>
+                            <a href="{{ route('settings.index') }}" class="btn btn-light me-2" style="width:106px;">Back</a>
+                            <button type="submit" class="btn btn-info" style="width: 106px">
+                                <span class="indicator-label">Create</span>
                             </button>
                         </div>
                         {!! Form::close() !!}

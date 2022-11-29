@@ -1,41 +1,57 @@
-@extends('layouts.app')
 
+@extends('layouts.app')
+<title>VillarTechnologies Portfolios</title>
 @section('content')
+
+
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <div class="container-fluid mt--7">
         <div class="row">
-            <d1iv class="col-xl-8 mb-5 mb-xl-0">
+            <div class="col-xl-8 mb-5 mb-xl-0">
 
             </div>
         </div>
 
     </div>
     <div class="row mt-5">
-        <div class="col-xl-8 mb-5 mb-xl-0" style="margin-left: 230px; margin-top:200px;">
-            <div class="table-responsive" style="margin-left:59px; width:117.5%;">
+        <div class="col-xl-8 mb-5 mb-xl-0" style="margin-left: 35px; margin-top:80px;">
+            <div class="table-responsive" style="width: 146%">
                 <table class="table align-items-center table-dark" id="example">
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">Name</th>
+                            <th scope="col">Url</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Image</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    @foreach ($flickers as $flicker)
+                    @foreach ($portfolios as $portfolio)
                         <tbody>
                             <tr>
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <div class="media-body">
-                                            <span class="mb-0 text-sm">{{ $flicker->name }}</span>
+                                            <span class="mb-0 text-sm">{{ $portfolio->name }}</span>
                                         </div>
                                     </div>
                                 </th>
                                 <td>
-                                    <img src="{{ asset('storage') . '/' . $flicker->image }}" alt=""
+                                    {{ $portfolio->url  }}
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $portfolio->description }}
+                                    </span>
+                                </td>
+                                <td>
+
+                                    <img src="{{ asset('storage') . '/' . $portfolio->image }}" alt=""
                                         style="width: 50px;height: 50px;">
 
                                 </td>
+
+
                                 <td class="text-right">
                                     <div class="dropdown">
                                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
@@ -43,46 +59,45 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <form action="{{ route('flickers.destroy',$flicker->id) }}" method="Post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="dropdown-item">Delete</button>
-                                                </form>
+                                            <a class="dropdown-item"
+                                                href="{{ route('portfolios.edit', ['portfolio' => $portfolio->id]) }}">Edit</a>
 
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-
-            </div>
+                            
             </td>
             </tr>
             </tbody>
             @endforeach
             </table>
-            <a href="{{ route('flickers.create') }}" class="btn btn-info"
-                style="margin-left: 480px; margin-top:5%;">Create Image</a>
-
+            
+            <a href="{{ route('portfolios.create') }}" class="btn btn-info"
+            style="margin-left: 500px; margin-top:5%;">Create Portfolio</a>
         </div>
-
+        
     </div>
     </div>
 
     </div>
-
+   
 
     </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     @include('layouts.footers.auth')
 @endsection

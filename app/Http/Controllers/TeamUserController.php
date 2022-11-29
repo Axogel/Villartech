@@ -40,7 +40,7 @@ class TeamUserController extends Controller
     public function store(Request $request)
     {
         $teamUser = new TeamUser;
-        $teamUser->name = $request->name;
+        $teamUser->name = $request->id_name;
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
         $teamUser->photo = $request->photo;
@@ -93,11 +93,11 @@ class TeamUserController extends Controller
     {
         $teamUser = TeamUser::find($id);
 
-        $teamUser->name = $request->name;
+        $teamUser->name = $request->id_name;
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
         $teamUser->skills = $request->skills;
-
+        $teamUser->status = $request->status ? 1 : 0;
         if ($request->photo) {
 
             if(File::exists(storage_path('app/public/'.$teamUser->photo)))
@@ -118,15 +118,15 @@ class TeamUserController extends Controller
      * @param  \App\Models\TeamUser  $teamUser
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TeamUser $teamUser)
+    public function destroy(TeamUser $teamUser, $id)
     {
-        if(File::exists(storage_path('app/public/'.$teamUser->photo))) {
-            unlink(storage_path('app/public/'.$teamUser->photo));
-
-        }
+       
 
 
-            $teamUser->delete();
-            return redirect()->route('teams.index');
-    }
+           
+        $teamUser = TeamUser::find($id);
+        $teamUser->delete();
+        return redirect()->route('teams.index');
 }
+    }
+

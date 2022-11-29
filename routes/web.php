@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\PortfolioTechnologiesController;
 use App\Http\Controllers\FlickerController;
 use App\Http\Controllers\TeamUserController;
+use App\Http\Controllers\PortfolioController;
 use App\Models;
 
 /*
@@ -55,10 +56,18 @@ Route::group(['middleware' => 'auth'], function () {
 	/* EMPLOOYES CRUD*/ 
 	Route::resource('teams', TeamUserController::class);
 
+	/* PORTFOLIOS CRUD*/ 
+	Route::resource('portfolios', PortfolioController::class);
+
+
 	Route::get('/dashboard', function () {
 		return view('welcome');
+
+
+
 	});
 	
+
 
 });
 

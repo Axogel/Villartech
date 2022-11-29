@@ -1,16 +1,13 @@
 <div class="rounded border p-10">
 
-    @if($default !== null)
     <div class="image-input image-input-outline" data-kt-image-input="true"
        style="background-image: url( '{{ asset('images/avatars/blank.png') }}' )">
  
-       <div class="image-input-wrapper w-125px h-125px" style="background-image: url('{{ asset($default) }}')"></div>
-    @else
+       <div class="image-input-wrapper w-125px h-125px"></div>
     <div class="image-input image-input-empty" data-kt-image-input="true"
        style="background-image: url( '{{ asset('images/avatars/blank.png') }}' )">
  
        <div class="image-input-wrapper w-125px h-125px"></div>
-    @endif
     
        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
           data-kt-image-input-action="change"
@@ -20,8 +17,8 @@
     
           <i class="bi bi-pencil-fill fs-7"></i>
     
-          <input type="file" name="{{ $name }}" accept=".png, .jpg, .jpeg" {{ $required ?? '' }}/>
-          <input type="hidden" name="{{ $name }}_remove" />
+          <input type="file" accept=".png, .jpg, .jpeg">
+          <input type="hidden">
     
        </label>
     

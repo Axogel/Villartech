@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 
 class Portfolio extends Model
 {
-	protected $table = 'portfolios';
-	protected $primaryKey = 'id';
+    use HasFactory;
+    protected $table = 'portfolios';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
-    protected $fillable = [
-		'name',
-		'description' ,
-		'image' ,
-		'url' ,
-		'client' 
-	];
+    protected $filliable = [
+        'name',
+        'description',
+        'image',
+        'url',
+        'client'
+    ];
 }

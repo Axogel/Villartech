@@ -53,7 +53,6 @@ class FrontController extends Controller
 
         $flicker = Flicker::select('id','name','image')
                     ->get();
-
         /*$i=0; 
          foreach ($portfolio as $portafolio) {
             $agregar2 = $this->multiexplode(array("[","]",",",'"'), $portafolio->image);
@@ -68,7 +67,6 @@ class FrontController extends Controller
           }*/
          //dd($portfolio);
 
-        
         return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker]);
     }
 

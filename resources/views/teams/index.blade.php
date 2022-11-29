@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
+<title>Villartechnologies Employees</title>
+
 @section('content')
-<div style="margin-left:1px;">
-    @include('layouts.headers.cards')
-</div>
+
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <div class="container-fluid mt--7">
         <div class="row">
@@ -14,12 +14,11 @@
 
     </div>
     <div class="row mt-5">
-        <div class="col-xl-8 mb-5 mb-xl-0" style="margin-left: 35px; margin-top:80px;">
+        <div class="col-xl-8 mb-5 mb-xl-0" style="margin-left: 25px; margin-top:80px;">
             <div class="table-responsive" style="width: 146%">
                 <table class="table align-items-center table-dark" id="example">
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Id_name</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Photo</th>
@@ -37,9 +36,7 @@
                                         </div>
                                     </div>
                                 </th>
-                                <td>
-                                    {{ $teamUser->name  }}
-                                </td>
+
                                 <td>
                                     <span class="badge badge-dot mr-4">
                                         {{ $teamUser->email }}
@@ -54,7 +51,7 @@
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamUser->skills  }}
+                                        {{ $teamUser->skills }}
                                     </span>
 
                                 </td>
@@ -70,26 +67,34 @@
                                             <a class="dropdown-item"
                                                 href="{{ route('teams.edit', ['team' => $teamUser->id]) }}">Edit</a>
 
+                                            <form action="{{ route('teams.destroy', $teamUser->id) }}" method="Post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="dropdown-item">
+                                                    Delete
+                                                </button>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            
-            </td>
-            </tr>
-            </tbody>
-            @endforeach
-            </table>
-            
-            <a href="{{ route('teams.create') }}" class="btn btn-info"
-            style="margin-left: 500px; margin-top:5%;">Create Employee</a>
+
+                            </td>
+                            </tr>
+                        </tbody>
+                    @endforeach
+                </table>
+
+                <a href="{{ route('teams.create') }}" class="btn btn-info" style="margin-left: 500px; margin-top:5%;">Create
+                    Employee</a>
+            </div>
+
         </div>
-        
-    </div>
     </div>
 
     </div>
-   
+
 
     </div>
 
@@ -98,6 +103,17 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
 
     @include('layouts.footers.auth')
 @endsection

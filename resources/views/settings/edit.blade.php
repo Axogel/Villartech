@@ -96,8 +96,7 @@
                 ]) !!}
 
             </div>
-            <div style="margin-left:450px; margin-top:50px;">
-                <a href="{{ route('settings.index') }}" class="btn btn-light me-2">Regresar</a>
+            <div style="margin-left:500px; margin-top:50px;">
                 <button type="submit" class="btn btn-info">
                     <span class="indicator-label">Actualizar</span>
                 </button>

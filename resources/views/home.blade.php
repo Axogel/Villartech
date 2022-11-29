@@ -1,6 +1,19 @@
+<title>VillarTechnologies Dashboard</title>
+
 @extends('layouts.app')
+@php
+use App\Models\AdminSetting;
+use App\Http\Controllers\AdminSettingController; 
+@endphp
+
 
 @section('content')
+
+@php
+    use App\Models\AdminSetting;
+    use App\Http\Controllers\AdminSettingController; 
+@endphp
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

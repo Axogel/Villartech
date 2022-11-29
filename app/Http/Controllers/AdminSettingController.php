@@ -80,7 +80,7 @@ class AdminSettingController extends Controller
             'address' => 'nullable'
         ]);
      
-        $setting = Setting::find($id);
+        $setting = AdminSetting::find($id);
         $setting->email = $request->email;
         $setting->phone = $request->phone;
         $setting->date = $request->date;
@@ -88,8 +88,7 @@ class AdminSettingController extends Controller
         $setting->instagram = $request->instagram;
         $setting->address = $request->address;
         $setting->save();
-        return redirect()->route('settings.index')
-        ->with('success','Setting has been update successfully.');
+        return redirect()->route('settings.edit',  $setting->id);
     }
 
     /**

@@ -5,7 +5,6 @@
 
 @section('content')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
-    @include('layouts.headers.cards')
     <div class="container-fluid mt--7">
 
         <div class="row">
@@ -29,8 +28,8 @@
                         <br>
                         <br>
                         
-                        <label style="padding-left:29px">Imagen: <span style="padding-left:82px"
-                                onclick="document.getElementById('file')"> {!! Form::file('image', null) !!}</span>
+                        <label style="padding-left:29px">Imagen: <span style="padding-left:82px" name="magen" id="imagen" class="hidden">
+                             {!! Form::file('image', null) !!}</span>
                         </label>
 
 
@@ -77,4 +76,17 @@
             $('#example').DataTable();
         });
     </script>
+
+    <script>
+        $(document).ready(function (e) {
+            $('#imagen').change(function(){
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                $('imagenSeleccionada').attr('src', e,target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            }):
+        });
+    </script>
+
 @stop
