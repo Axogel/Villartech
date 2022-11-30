@@ -17,6 +17,7 @@ class Portfolio extends Model
         'description',
         'image',
         'url',
-        'client'
+        'client',
+        'skills'
     ];
 }

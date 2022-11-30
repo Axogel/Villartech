@@ -39,31 +39,33 @@
 
                         </div>
 
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Active</label>
-                            <input type="hidden" name="status" value="0"/>
-                            <input type="checkbox" name="status" value="1" {{ old('status') ? 'checked' : '' }}/>
-
-                        </div>
+                        
+                       
 
                         <br>
                      
                         <br>
 
-                        <label style="padding-left:29px">Imagen: <span style="padding-left:82px">
-                             {!! Form::file('photo', null) !!}</span>
-                        </label>
+                        <br>
 
+                        <br> 
+                        <br> 
 
-                        <div style="margin-left:450px; margin-top:50px;">
-                            <a href="{{ route('teams.index') }}" class="btn btn-light me-2">Regresar</a>
-                            <button type="submit" class="btn btn-info">
-                                <span class="indicator-label">Actualizar</span>
-                            </button>
-                        </div>
-                        {!! Form::close() !!}
+                        <div>
+                            <label style="padding-left:30px;">Image:</label>
+                                <span class="form-control" style="margin-left:15px; width:360px;">  
+                                 {!! Form::file('photo', null) !!}
+                                </span>
+                            </div>
                     </div>
 
+                    <div style="margin-left:450px; margin-top:50px;" class="row mb-6">
+                        <a href="{{ route('teams.index') }}" class="btn btn-light me-2">Regresar</a>
+                        <button type="submit" class="btn btn-info" style="width:106px;">
+                            <span class="indicator-label">Crear</span>
+                        </button>
+                    </div>
+                    {!! Form::close() !!}
 
                 </div>
 

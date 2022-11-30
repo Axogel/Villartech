@@ -37,16 +37,26 @@
 
                         </div>
 
-                        <br>
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
+                            {!! Form::text('skills', null, ['placeholder' => 'Insert the skills',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
                         <br>
                         <br>
                         <br>
                         <br>
                         <br>
                         
-                        <label style="padding-left:29px">Image: <span style="padding-left:82px"
-                                onclick="document.getElementById('file')"> {!! Form::file('image', null) !!}</span>
-                        </label>
+                        
+                        <div>
+                            <label style="padding-left:30px;">Image:</label>
+                                <span class="form-control" style="margin-left:15px;  width:360px;">  
+                                 {!! Form::file('image', null) !!}
+                                </span>
+                            </div>
 
 
                         <div style="margin-left:450px; margin-top:50px;">

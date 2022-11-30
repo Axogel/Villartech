@@ -40,7 +40,7 @@ class FrontController extends Controller
     {
         $agregar = array();
 
-        $portfolio = Portfolio::select('id','name','image','url','description')
+        $portfolio = Portfolio::select('id','name','image','url','description', 'skills')
                      ->get();
         
         $team = TeamUser::select('id','id_name','name','email','photo','skills')->where('status',1)

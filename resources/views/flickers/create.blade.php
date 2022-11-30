@@ -26,11 +26,13 @@
                         <br>
                         <br>
                         <br>
-                        <br>
                         
-                        <label style="padding-left:29px">Imagen: <span style="padding-left:82px" name="magen" id="imagen" class="hidden">
-                             {!! Form::file('image', null) !!}</span>
-                        </label>
+                        <div>
+                            <label style="padding-left:30px;">Image:</label>
+                                <span class="form-control" style="margin-left:15px; width:360px;">  
+                                 {!! Form::file('image', null) !!}
+                                </span>
+                            </div>
 
 
                         <div style="margin-left:450px; margin-top:50px;">

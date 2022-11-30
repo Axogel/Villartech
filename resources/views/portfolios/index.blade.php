@@ -22,6 +22,8 @@
                             <th scope="col">Name</th>
                             <th scope="col">Url</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Skills</th>
+
                             <th scope="col">Image</th>
                             <th scope="col"></th>
                         </tr>
@@ -42,6 +44,12 @@
                                 <td>
                                     <span class="badge badge-dot mr-4">
                                         {{ $portfolio->description }}
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $portfolio->skills }}
                                     </span>
                                 </td>
                                 <td>

@@ -43,7 +43,7 @@ class PortfolioController extends Controller
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
-
+        $portfolio->skills = $request->skills;
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
@@ -64,7 +64,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //
+        return view('portfolios.show', compact('portfolio'));
     }
 
     /**
@@ -90,7 +90,7 @@ class PortfolioController extends Controller
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
-
+        $portfolio->skills = $request->skills;
         if ($request->image) {
 
             if(File::exists(storage_path('app/public/'.$portfolio->image)))

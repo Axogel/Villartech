@@ -11,7 +11,7 @@
 
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="col mt-5" style="display:grid; padding-top:80px; width:80%; margin-left:125px;">
-                    {!! Form::open(['method' => 'POST', 'route' => ['portfolios.store'], 'files' => 'true']) !!}
+                    {!! Form::open(['method' => 'PUT', 'route' => ['portfolios.update', ['portfolio' => $portfolio->id]], 'files' => 'true']) !!}
 
                     <div class="row mb-6">
 
@@ -37,16 +37,28 @@
 
                         </div>
 
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
+                            {!! Form::text('skills', old('skills', $portfolio->skills), ['placeholder' => 'Insert skills',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
                         <br>
                         <br>
                         <br>
                         <br>
                         <br>
-                        <br>
+
+                        <div>
+                        <label style="padding-left:30px;">Image:  <img src="{{ asset('storage') . '/' . $portfolio->image }}" alt=""
+                            style="width: 50px;height: 50px;" style="padding-left:60px;"></label>
+                            <span class="form-control" style="margin-left:15px; width:360px;">  
+                             {!! Form::file('image', null) !!}
+                            </span>
+                        </div>
+                       
                         
-                        <label style="padding-left:29px">Image: <span style="padding-left:82px"
-                                onclick="document.getElementById('file')"> {!! Form::file('image', null) !!}</span>
-                        </label>
 
 
                         <div style="margin-left:450px; margin-top:50px;">

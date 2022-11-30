@@ -45,7 +45,7 @@ class TeamUserController extends Controller
         $teamUser->email = $request->email;
         $teamUser->photo = $request->photo;
         $teamUser->skills = $request->skills;
-        $teamUser->status = $request->status;
+        $teamUser->status = 1;
 
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
@@ -97,7 +97,7 @@ class TeamUserController extends Controller
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
         $teamUser->skills = $request->skills;
-        $teamUser->status = $request->status ? 1 : 0;
+        $teamUser->status = 1;
         if ($request->photo) {
 
             if(File::exists(storage_path('app/public/'.$teamUser->photo)))

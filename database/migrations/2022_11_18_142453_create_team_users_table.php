@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('photo');
             $table->string('skills');
-            $table->integer('status');
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

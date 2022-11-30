@@ -21,28 +21,18 @@
         ]) !!}
 
       <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Id_name</label>
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 {!! Form::text('id_name', old('id_name', $teamUser->id_name), [
                     'required',
                     'id' => 'id_name',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Id_name',
+                    'placeholder' => 'Name',
                 ]) !!}
             </div>
         </div> 
  
-        <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('name', old('name', $teamUser->name), [
-                    'required',
-                    'id' => 'name',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'name',
-                ]) !!}
-            </div>
-        </div>
+       
  
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
@@ -58,9 +48,11 @@
  
         
         <div class="row mb-6">
-            <label >Imagen: <span
-                onclick="document.getElementById('file')"> {!! Form::file('photo', null) !!}</span>
-            </label>
+            <label style="margin-left:10px;">Image:</label>
+                <span class="form-control" style="margin-left:291px; width:300px;">  
+                 {!! Form::file('image', null) !!}
+                </span>
+                <img src="{{ asset('storage') . '/' . $teamUser->photo }}" alt=" "style="width: 50px;height: 50px; margin-left:40px;">
             </div>
 
 
@@ -79,14 +71,6 @@
 
 
         <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Status</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('status', old('status', $teamUser->status), [
-                    'required',
-                    'id' => 'status',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'status',
-                ]) !!}
 
             </div> 
             <div style="margin-left:450px; margin-top:50px;">

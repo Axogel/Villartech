@@ -252,7 +252,9 @@
                     <div class="modal-custom-skills">
                       <strong class="modal-custom-title">Skills:</strong>
                       <p>
-                        <span class="badge badge-secondary">HTML5</span>
+                        @foreach (explode(",", $portafolio->skills) as $portfolioskill)
+                        <span class="badge badge-secondary">{{ $portfolioskill }}</span>
+                        @endforeach
                     </div>
                   </div>
                 </div>
