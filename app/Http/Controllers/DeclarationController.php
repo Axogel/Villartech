@@ -14,7 +14,9 @@ class DeclarationController extends Controller
      */
     public function index()
     {
-        //
+        $declaration = Declaration::orderBy('id','desc')->paginate(10);
+        return view ('declarations.index', $declaration)->with('declarations', $declaration);
+       
     }
 
     /**
@@ -24,7 +26,7 @@ class DeclarationController extends Controller
      */
     public function create()
     {
-        //
+        return view ('declarations.create');
     }
 
     /**
@@ -35,7 +37,19 @@ class DeclarationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $declaration  = New Declaration;
+        $declaration->client = $request->client;
+        $declaration->testimony = $request ->testimony;
+
+        $request->validate([
+            'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
+         ]);
+
+         $url = $request->client_image->store('clients', 'public');
+         $declaration->client_image = $url ?? null;      
+         $declaration->save();
+         return redirect()->route('declarations.index');
+
     }
 
     /**
@@ -46,7 +60,7 @@ class DeclarationController extends Controller
      */
     public function show(Declaration $declaration)
     {
-        //
+        return view('declarations.show',compact('declaration'));
     }
 
     /**
@@ -57,7 +71,9 @@ class DeclarationController extends Controller
      */
     public function edit(Declaration $declaration)
     {
-        //
+        $declaration = Declaration::find($id);
+        // dd($teamUser);
+        return view('declarations.edit',compact('declaration'));
     }
 
     /**
@@ -69,7 +85,22 @@ class DeclarationController extends Controller
      */
     public function update(Request $request, Declaration $declaration)
     {
-        //
+        $declaration = Declaration::find($id);
+
+        $declaration->client = $request->client;
+        $declaration->testimony = $request->testimony;
+        if ($request->client_image) {
+
+            if(File::exists(storage_path('app/public/'.$declaration->client_image)))
+                unlink(storage_path('app/public/'.$declaration->client_image));
+
+            $url = $request->client_image->store('clients', 'public');
+            $declaration->client_image = $url ?? null;
+        }
+
+        $declaration->save();
+
+        return redirect()->route('declarations.index');
     }
 
     /**
@@ -80,6 +111,8 @@ class DeclarationController extends Controller
      */
     public function destroy(Declaration $declaration)
     {
-        //
+        $declaration = Declaration::find($id);
+        $declaration->delete();
+        return redirect()->route('declarations.index');
     }
 }

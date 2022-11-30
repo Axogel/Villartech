@@ -9,6 +9,7 @@ use App\Http\Controllers\PortfolioTechnologiesController;
 use App\Http\Controllers\FlickerController;
 use App\Http\Controllers\TeamUserController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\DeclarationController;
 use App\Models;
 
 /*
@@ -58,6 +59,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* PORTFOLIOS CRUD*/ 
 	Route::resource('portfolios', PortfolioController::class);
+
+		/* PORTFOLIOS CRUD*/ 
+		Route::resource('declarations', DeclarationController::class);
 
 
 	Route::get('/dashboard', function () {
