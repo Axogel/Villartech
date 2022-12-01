@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Declaration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class DeclarationController extends Controller
 {
@@ -71,8 +73,6 @@ class DeclarationController extends Controller
      */
     public function edit(Declaration $declaration)
     {
-        $declaration = Declaration::find($id);
-        // dd($teamUser);
         return view('declarations.edit',compact('declaration'));
     }
 
@@ -110,8 +110,11 @@ class DeclarationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Declaration $declaration)
-    {
-        $declaration = Declaration::find($id);
+    { 
+        if(File::exists(storage_path('app/public/'.$declaration->client_image))) {
+        unlink(storage_path('app/public/'.$declaration->client_image));
+
+    }
         $declaration->delete();
         return redirect()->route('declarations.index');
     }

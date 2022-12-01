@@ -7,6 +7,7 @@ use App\Models\Portfolio;
 use App\Models\TeamUser;
 use App\Models\AdminSetting;
 use App\Models\Flicker;
+use App\Models\Declaration;
 use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\FlickerController;
 class FrontController extends Controller
@@ -53,6 +54,9 @@ class FrontController extends Controller
 
         $flicker = Flicker::select('id','name','image')
                     ->get();
+
+        $declaration = Declaration::select('id', 'client', 'client_image', 'testimony')
+                    ->get();
         /*$i=0; 
          foreach ($portfolio as $portafolio) {
             $agregar2 = $this->multiexplode(array("[","]",",",'"'), $portafolio->image);
@@ -67,7 +71,7 @@ class FrontController extends Controller
           }*/
          //dd($portfolio);
 
-        return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker]);
+        return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration]);
     }
 
     public function portfolio_details($id)

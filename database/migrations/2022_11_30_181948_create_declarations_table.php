@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('declarations', function (Blueprint $table) {
             $table->id();
+            $table->string('client');
+            $table->string('client_image');
+            $table->string('testimony');
             $table->timestamps();
         });
     }

@@ -143,6 +143,12 @@ $setting = DB::select('select * from admin_settings');
                         {{ __('Settings') }}
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('declarations.index') }}" style="padding-left:60px;">
+                        {{ __('Declarations') }}
+                    </a>
+                </li>
         </div>
     </div>
 </nav>
