@@ -49,7 +49,7 @@
         
         <div class="row mb-6">
             <label style="margin-left:10px;">Client Image:</label>
-                <span class="form-control" style="margin-left:236+
+                <span class="form-control" style="margin-left:236
                 px; width:300px;">  
                  {!! Form::file('client_image', null) !!}
                 </span>
