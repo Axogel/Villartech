@@ -71,7 +71,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 	});
 	
+	Route::get('/testModal', function () {
+		return view('teams.modal-employees.show');
 
+
+
+	});
 
 });
 

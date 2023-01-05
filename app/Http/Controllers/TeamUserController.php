@@ -45,6 +45,9 @@ class TeamUserController extends Controller
         $teamUser->email = $request->email;
         $teamUser->photo = $request->photo;
         $teamUser->skills = $request->skills;
+        $teamUser->age = $request->age;
+        $teamUser->address = $request->address;
+        $teamUser->description = $request->description;
         $teamUser->status = 1;
 
         $request->validate([
@@ -97,6 +100,9 @@ class TeamUserController extends Controller
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
         $teamUser->skills = $request->skills;
+        $teamUser->age = $request->age;
+        $teamUser->address = $request->address;
+        $teamUser->description = $request->description;
         $teamUser->status = 1;
         if ($request->photo) {
 

@@ -72,6 +72,8 @@ class FrontController extends Controller
          //dd($portfolio);
 
         return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration]);
+        return view('modal-employees.show')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration]);
+
     }
 
     public function portfolio_details($id)

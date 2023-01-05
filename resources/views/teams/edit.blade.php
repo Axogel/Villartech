@@ -49,7 +49,7 @@
         
         <div class="row mb-6">
             <label style="margin-left:10px;">Image:</label>
-                <span class="form-control" style="margin-left:291px; width:300px;">  
+                <span class="form-control" style="margin-left:320px; width:300px;">  
                  {!! Form::file('image', null) !!}
                 </span>
                 <img src="{{ asset('storage') . '/' . $teamUser->photo }}" alt=" "style="width: 50px;height: 50px; margin-left:40px;">
@@ -69,6 +69,44 @@
             </div>
         </div> 
 
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Age</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('age', old('age', $teamUser->age), [
+                    'required',
+                    'id' => 'age',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Age',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Address</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('address', old('address', $teamUser->address), [
+                    'required',
+                    'id' => 'address',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Address',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('description', old('description', $teamUser->description), [
+                    'required',
+                    'id' => 'description',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'description',
+                ]) !!}
+            </div>
+        </div> 
 
         <div class="row mb-6">
 

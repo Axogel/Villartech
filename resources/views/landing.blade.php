@@ -268,7 +268,8 @@
               </div>
             </div>
           </div>
-            @endforeach   
+            @endforeach  
+            
           <!-- Isotope item end --> 
         </div><!-- Isotope content end -->
       </div><!-- Content row end -->
@@ -493,4 +494,5 @@
     </div><!--/ container end -->
   </section><!-- Newsletter end -->
     
+  @include('teams.modal-employees.show')
 @endsection

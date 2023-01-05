@@ -23,6 +23,10 @@
                             <th scope="col">Email</th>
                             <th scope="col">Photo</th>
                             <th scope="col">Skills</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Description</th>
+
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -56,6 +60,30 @@
 
                                 </td>
 
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->age }}
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->address }}
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->description }}
+                                    </span>
+
+                                </td>
 
                                 <td class="text-right">
                                     <div class="dropdown">

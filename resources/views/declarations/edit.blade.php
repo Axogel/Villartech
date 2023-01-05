@@ -49,7 +49,8 @@
         
         <div class="row mb-6">
             <label style="margin-left:10px;">Client Image:</label>
-                <span class="form-control" style="margin-left:236px; width:300px;">  
+                <span class="form-control" style="margin-left:236+
+                px; width:300px;">  
                  {!! Form::file('client_image', null) !!}
                 </span>
                 <img src="{{ asset('storage') . '/' . $declaration->client_image }}" alt=" "style="width: 50px;height: 50px; margin-left:40px;">
