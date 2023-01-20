@@ -19,51 +19,29 @@
                 <table class="table align-items-center table-dark" id="example">
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Photo</th>
-                            <th scope="col">Skills</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Age</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Date</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Country</th>
 
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    @foreach ($teamUsers as $teamUser)
+                    @foreach ($teamEducation as $teamSkill)
                         <tbody>
                             <tr>
-                                <th scope="row">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <span class="mb-0 text-sm">{{ $teamUser->id_name }}</span>
-                                        </div>
-                                    </div>
-                                </th>
+                                
 
                                 <td>
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamUser->email }}
+                                        {{ $teamSkill->title }}
                                     </span>
                                 </td>
-                                <td>
-
-                                    <img src="{{ asset('storage') . '/' . $teamUser->photo }}" alt=""
-                                        style="width: 50px;height: 50px;">
-
-                                </td>
+                               
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamUser->skills }}
-                                    </span>
-
-                                </td>
-
-                                <td>
-
-                                    <span class="badge badge-dot mr-4">
-                                        {{ $teamUser->age }}
+                                        {{ $teamSkill->date }}
                                     </span>
 
                                 </td>
@@ -72,7 +50,7 @@
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamUser->address }}
+                                        {{ $teamSkill->description }}
                                     </span>
 
                                 </td>
@@ -80,11 +58,12 @@
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamUser->description }}
+                                        {{ $teamSkill->country }}
                                     </span>
 
                                 </td>
 
+                              
                                 <td class="text-right">
                                     <div class="dropdown">
                                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
@@ -93,21 +72,16 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item"
-                                                href="{{ route('teams.edit', ['team' => $teamUser->id]) }}">Edit</a>
+                                                href="{{ route('teams-skills.edit', ['education' => $teamSkill->id]) }}">Edit</a>
 
-                                              
-                                            <form action="{{ route('teams.destroy', $teamUser->id) }}" method="Post">
+                                            <form action="{{ route('teams-skills.destroy', $teamSkill->id) }}" method="Post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item">
                                                     Delete
                                                 </button>
                                             </form>
-                                            <a class="dropdown-item" style="padding-top: 0px;"
-                                            href="{{ route('employee', ['team' => $teamUser->id]) }}">Education</a>
 
-                                            <a class="dropdown-item" style="padding-top: 15px;"
-                                            href="{{ route('employeeExperience', ['team' => $teamUser->id]) }}">Experience</a>
                                         </div>
                                     </div>
                                 </td>
@@ -119,8 +93,8 @@
                     @endforeach
                 </table>
 
-                <a href="{{ route('teams.create') }}" class="btn btn-info" style="margin-left: 500px; margin-top:5%;">Create
-                    Employee</a>
+                <a href="{{ route('teams-skills.create', ['team' => $teamUser->id]) }}" class="btn btn-info" style="margin-left: 500px; margin-top:5%;">Create
+                    a Education</a>
             </div>
 
         </div>

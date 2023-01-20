@@ -149,6 +149,7 @@ $setting = DB::select('select * from admin_settings');
                         {{ __('Declarations') }}
                     </a>
                 </li>
+
         </div>
     </div>
 </nav>

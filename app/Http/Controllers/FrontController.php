@@ -9,6 +9,8 @@ use App\Models\AdminSetting;
 use App\Models\Flicker;
 use App\Models\Declaration;
 use App\Http\Controllers\AdminSettingController;
+use App\Models\TeamEducation;
+
 use App\Http\Controllers\FlickerController;
 class FrontController extends Controller
 {
@@ -57,6 +59,12 @@ class FrontController extends Controller
 
         $declaration = Declaration::select('id', 'client', 'client_image', 'testimony')
                     ->get();
+
+
+
+        $teamEducation = TeamEducation::select('id', 'country','developer_id','date','description')
+                    ->get();
+
         /*$i=0; 
          foreach ($portfolio as $portafolio) {
             $agregar2 = $this->multiexplode(array("[","]",",",'"'), $portafolio->image);
@@ -71,8 +79,7 @@ class FrontController extends Controller
           }*/
          //dd($portfolio);
 
-        return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration]);
-        return view('modal-employees.show')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration]);
+        return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation]);
 
     }
 

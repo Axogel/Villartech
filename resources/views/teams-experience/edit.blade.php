@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'title' => 'Teams',
+    'title' => 'Teams Experiences',
 ])
 
 
@@ -15,93 +15,79 @@
     </div>
     <div class="row mt-5" style="display:grid; padding-top:80px; width:80%; margin-left:125px;">
         {!! Form::open([
-            'route' => ['teams.update', ['team' => $teamUser->id]],
+            'route' => ['teams-experience.update', ['id' => $teamExperience->id]],
             'method' => 'PUT',
             'files' => true,
         ]) !!}
-
-      <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('id_name', old('id_name', $teamUser->id_name), [
-                    'required',
-                    'id' => 'id_name',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Name',
-                ]) !!}
-            </div>
-        </div> 
  
+
+
        
  
         <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Company</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('email', old('email', $teamUser->email), [
+                {!! Form::text('company', old('company', $teamExperience->company), [
                     'required',
-                    'id' => 'email',
+                    'id' => 'company',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'email',
+                    'placeholder' => 'Company',
                 ]) !!}
             </div>
         </div>
  
         
-        <div class="row mb-6">
-            <label style="margin-left:10px;">Image:</label>
-                <span class="form-control" style="margin-left:320px; width:300px;">  
-                 {!! Form::file('image', null) !!}
-                </span>
-                <img src="{{ asset('storage') . '/' . $teamUser->photo }}" alt=" "style="width: 50px;height: 50px; margin-left:40px;">
-            </div>
+       
 
 
         
          <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('skills', old('skills', $teamUser->skills), [
+                {!! Form::text('category', old('category', $teamExperience->category), [
                     'required',
-                    'id' => 'skills',
+                    'id' => 'category',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'skills',
+                    'placeholder' => 'Category',
                 ]) !!}
             </div>
         </div> 
 
 
-        <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Age</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('age', old('age', $teamUser->age), [
-                    'required',
-                    'id' => 'age',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Age',
-                ]) !!}
-            </div>
-        </div> 
-
-
-        <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Address</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('address', old('address', $teamUser->address), [
-                    'required',
-                    'id' => 'address',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Address',
-                ]) !!}
-            </div>
-        </div> 
-
+       
 
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('description', old('description', $teamUser->description), [
+                {!! Form::text('description', old('description', $teamExperience->description), [
                     'required',
                     'id' => 'description',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'description',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('date', old('date', $teamExperience->date), [
+                    'required',
+                    'id' => 'date',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'date',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="invisible">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Developer_id</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('developer_id', old('developer_id', $teamExperience->developer_id), [
+                    'required',
+                    'id' => 'developer_id',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'description',
                 ]) !!}
@@ -117,8 +103,6 @@
                     <span class="indicator-label">Actualizar</span>
                 </button>
             </div>
-
-
             {!! Form::close() !!}
         </div>
 

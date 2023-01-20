@@ -54,8 +54,29 @@ Route::group(['middleware' => 'auth'], function () {
 	/*FLICKERS CRUD */
 	Route::resource('flickers', FlickerController::class);
 
-	/* EMPLOOYES CRUD*/ 
+	/* EMPLOYEES CRUD*/ 
 	Route::resource('teams', TeamUserController::class);
+
+	/* EMPLOYEES EDUCATION CRUD*/ 
+	Route::get('/getEmployee/{team}', 'App\Http\Controllers\TeamUserController@getEmployee')->name('employee');
+	Route::get('/createEmployeeEducation/{team}', 'App\Http\Controllers\TeamUserController@createEducation')->name('teams-skills.create');
+	Route::post('/storeEmployeeEducation/', 'App\Http\Controllers\TeamUserController@storeEducation')->name('teams-skills.store');
+	Route::get('/editEmployeeEducation/{education}/', 'App\Http\Controllers\TeamUserController@editEducation')->name('teams-skills.edit');
+	Route::put('/updateEmployeeEducation/{id}/', 'App\Http\Controllers\TeamUserController@updateEducation')->name('teams-skills.update');
+	Route::delete('/deleteEmployeeEducation/{education}/', 'App\Http\Controllers\TeamUserController@destroyEducation')->name('teams-skills.destroy');
+
+    /* EMPLOYEES EXPERIENCE CRUD */
+
+	Route::get('/getEmployeeExperience/{team}', 'App\Http\Controllers\TeamUserController@getEmployeeExperience')->name('employeeExperience');
+	Route::get('/createEmployeeExperience/{team}', 'App\Http\Controllers\TeamUserController@createExperience')->name('teams-experience.create');
+	Route::post('/storeEmployeeExperience/', 'App\Http\Controllers\TeamUserController@storeExperience')->name('teams-experience.store');
+	Route::get('/editEmployeeExperience/{experience}/', 'App\Http\Controllers\TeamUserController@editExperience')->name('teams-experience.edit');
+	Route::put('/updateEmployeeExperience/{id}/', 'App\Http\Controllers\TeamUserController@updateExperience')->name('teams-experience.update');
+	Route::delete('/deleteEmployeeExperience/{education}/', 'App\Http\Controllers\TeamUserController@destroyExperience')->name('teams-experience.destroy');
+
+
+
+
 
 	/* PORTFOLIOS CRUD*/ 
 	Route::resource('portfolios', PortfolioController::class);

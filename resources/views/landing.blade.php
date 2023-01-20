@@ -213,17 +213,17 @@
 
             <!--Isotope filter start -->
             <!--
-          <div class="row text-center">
-            <div class="isotope-nav" data-isotope-nav="isotope">
-              <ul>
-                <li><a href="#" class="active" data-filter="*">All</a></li>
+                      <div class="row text-center">
+                        <div class="isotope-nav" data-isotope-nav="isotope">
+                          <ul>
+                            <li><a href="#" class="active" data-filter="*">All</a></li>
 
-                <li><a href="#" data-filter=".web-design">Web Design</a></li>
-                
-              </ul>
-            </div>
-          </div>
-          -->
+                            <li><a href="#" data-filter=".web-design">Web Design</a></li>
+                            
+                          </ul>
+                        </div>
+                      </div>
+                      -->
             <!-- Isotope filter end -->
 
             <div class="row">
@@ -242,8 +242,8 @@
                                         $cad = str_replace('"', '', $cad);
                                     @endphp
                                     <!--
-                    <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                    -->
+                                <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                -->
                                     <img src="{{ asset('/storage/' . $cad) }}" alt="">
 
                                     <figcaption>
@@ -264,17 +264,18 @@
                                     <div class="modal-header">
                                         <h4 class="modal-title">{{ $portafolio->name }}</h4>
                                         <!--
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      -->
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  -->
                                     </div>
 
                                     <!-- Modal body -->
                                     <div class="modal-body modal-custom">
                                         <div class="modal-custom-body">
                                             <!--
-                        <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                        -->
-                                            <img style="width:100%;" src="{{ asset('/storage/' . $cad) }}" alt="">
+                                    <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                    -->
+                                            <img style="width:100%;" src="{{ asset('/storage/' . $cad) }}"
+                                                alt="">
                                         </div>
                                         <div class="modal-custom-content">
                                             <div class="modal-custom-description">
@@ -347,166 +348,239 @@
 
                 <div class="modal fade text-left" id="{{ $team->id }}" tabindex="-1" role="dialog"
                     aria-hidden="true">
-                    <div class="modal-dialog" role="document" style="width: 95%">
+                    <div class="modal-dialog" role="document" style="width: 95%;">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                <div style="background-color:#045A97; width:10%; height:100%; float: left;">
-                                    <div class="about">
-                                        <img src="{{ asset('assets') }}/img/user.png" alt=""
-                                            style="padding-left:50px; padding-top:25px;">
-                                        <p
-                                            style="font-size:15px; color:white; font-weight:bold; font-family:'Lato',Bold; padding-left:50px;">
-                                            ABOUT</p>
-                                        <hr style="color:white; width:105px;">
-                                    </div>
-
-                                    <div class="overview">
-                                        <img src="{{ asset('assets') }}/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48.png"
-                                            alt="" style="padding-left:61px; padding-top:25px;">
-                                        <p
-                                            style="font-size:15px; color:white;  font-family:'Lato',Bold; padding-left:35px;     padding-top: 5px;">
-                                            OVERVIEW</p>
-                                        <hr style="color:white; width:105px;">
-                                    </div>
-
-                                    <div class="experience">
-                                        <img src="{{ asset('assets') }}/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png"
-                                            alt="" style="padding-left:57px; padding-top:25px;">
-                                        <p
-                                            style="font-size:15px; color:white; font-weight:bold; font-family:'Lato',Bold; padding-left:33px;     padding-top: 5px;">
-                                            EXPERIENCE</p>
-                                        <hr style="color:white; width:105px;">
-                                    </div>
-
-                                    <div class="education">
-                                        <img src="{{ asset('assets') }}/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png"
-                                            alt="" style="padding-left:57px; padding-top:25px;">
-                                        <p
-                                            style="font-size:15px; color:white; font-weight:bold; font-family:'Lato',Bold; padding-left:33px;     padding-top: 5px;">
-                                            EDUCATION</p>
-                                        <hr style="color:white; width:105px;">
-                                    </div>
-
-                                    <div class="logo">
-                                        <img src="{{ asset('assets') }}/img/modal-teams/Grupo 5.png" alt=""
-                                            style="padding-left:33px; padding-top:101px;">
-                                    </div>
-                                </div>
-                                <div style="color:blue; padding-left:0.5%; float: left;">
-                                    <iframe width="550" height="400" src="https://www.youtube.com/embed/_BjL6W71mWY"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen></iframe>
-                                </div>
-                                <img src="{{ asset('assets') }}/img/modal-teams/user-1.png" alt=""
-                                    style="float: right; padding-top:12px;">
-
-                                <div class="detailed-info" style="padding-left:25%; padding-top:2%;">
-                                    <h1 style="color:#045A97; font-family: 'Lato', Bold; margin-left:34%;">About
-                                        <span style="color:#323232;">Me
-                                        </span>
-
-                                    </h1>
-                                    <hr style="color:#BFBFC1; width:64%;">
-
-                                    <p
-                                        style="font-family:'Lato',Light; font-size:20px; margin-left:34%; color:#323232; font-weight:lighter;">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor delectus commodi quae
-                                        magni molestias vel illum temporibus, asperiores laudantium rerum. Lorem ipsum,
-                                        dolor sit amet consectetur adipisicing elit. Cupiditate, temporibus!
-                                    </p>
-
+                            <div class="modal-body"
+                                style="font-family: 'Lato,Bold'; height:84vh;  overflow-y: auto; display:grid; grid-template-columns: 1fr 1fr">
+                                <div class="left-modal" style=" width:100%; height:120vh; position:static;">
                                     <div
-                                        style="background-color:#045A97; width:65%; height:20%; margin-left:34%; margin-top:38px;">
-                                        <img src="{{ asset('assets') }}/img/modal-teams/folder_shared_FILL1_wght400_GRAD0_opsz48.png"
-                                            alt="" style="padding-top:15px; padding-left:20px; float:left;">
+                                        style="background-color:#045A97; width:10%; height:87%; float: left; position: fixed;">
+                                        <div class="about">
+                                            <img src="{{ asset('assets') }}/img/user.png" alt=""
+                                                style="padding-left:50px; padding-top:25px;">
+                                            <p
+                                                style="font-size:15px; color:white; font-weight:bold; font-family:'Lato',Bold; padding-left:38px;">
+                                                OVERVIEW</p>
+                                            <hr style="color:white; width:105px;">
+                                        </div>
+
+                                       
+
+                                        <div class="experience">
+                                            <img src="{{ asset('assets') }}/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png"
+                                                alt="" style="padding-left:57px; padding-top:25px;">
+                                            <p
+                                                style="font-size:15px; color:white; font-weight:bold; font-family:'Lato',Bold; padding-left:33px;     padding-top: 5px;">
+                                                EXPERIENCE</p>
+                                            <hr style="color:white; width:105px;">
+                                        </div>
+
+                                        <div class="education">
+                                            <img src="{{ asset('assets') }}/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png"
+                                                alt="" style="padding-left:57px; padding-top:25px;">
+                                            <p
+                                                style="font-size:15px; color:white; font-weight:bold; font-family:'Lato',Bold; padding-left:33px;     padding-top: 5px;">
+                                                EDUCATION</p>
+                                            <hr style="color:rgb(255, 255, 255); width:105px;">
+                                        </div>
+
+                                        <div class="logo">
+                                            <img src="{{ asset('assets') }}/img/modal-teams/Grupo 5.png" alt=""
+                                                style="padding-left:33px; padding-top:255px;">
+                                        </div>
+                                    </div>
+                                    <div style="color:blue; padding-left:10.5%; float: left; position: fixed;">
+                                        <iframe width="600" height="450"
+                                            src="https://www.youtube.com/embed/_BjL6W71mWY" title="YouTube video player"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
+                                    </div>
+
+                                    <div class="basic-info"
+                                        style="width:32.9%; height:48%; margin-left:10.5%; line-height:10px; position: fixed; margin-top:28%;">
+
+
+                                        <p class="modal-custom-title"
+                                            style="font-family: 'Lato', Regular; font-weight:400; font-size:36px; padding-left:39%; margin-top:0%; color:black">
+                                            Jose Rojas</p>
+                                        <p
+                                            style="color:#045A97; font-family: 'Lato',Bold; padding-left:47%; padding-top:0%; font-weight:bold; font-size:20px;">
+                                            Full-Stack
+                                        </p>
+
+                                        <p style="font-family: 'Lato',Light; padding-left:44%; font-weight:lighter;">
+                                            Tachira, Venezuela
+                                        </p>
+
+                                        <p
+                                            style="font-family: 'Lato',Light; padding-left:49%; font-weight:lighter; font-size:18px; ">
+                                            Full Time
+                                        </p>
+
+                                        <hr style="margin-left: 10px; width:546px; color:black;">
+
                                         <div
-                                            style="padding-left:30px; padding-top:1px; color:#FFFFFF; font-family:'Lato', Light; font-size:16px; float: left;">
-                                            <p>Age</p>
-                                            <p>Residence</p>
-                                            <p>freelance</p>
-                                            <p>Address</p>
+                                            style="background-color:#045A97; width:40%; height:8%; border-radius:25px; margin-left:20px; float:left; margin-top:10px;">
+                                            <p
+                                                style="font-family:'Lato',Regular; color:white; padding-left:35px; padding-top:3px; font-size:16px;">
+                                                DOWNLOADER CV
+                                            </p>
+                                        </div>
+
+                                        <div
+                                            style="background-color:#045A97; width:36%; height:8%; border-radius:25px; margin-left:0px; float:right; margin-top:10px;">
+                                            <p
+                                                style="font-family:'Lato',Regular; color:white; padding-left:44px; padding-top:3px; font-size:16px;">
+                                                CONTACT ME
+                                            </p>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="right-modal" style=" width:100%; height:100vh;">
+                                    <img src="{{ asset('assets') }}/img/modal-teams/user-1.png" alt=""
+                                        style="float: right; padding-top:0px;">
+
+                                    <div class="detailed-info" style="padding-left:0%; padding-top:2%;">
+                                        <p
+                                            style="color:#045A97; font-family: 'Lato', Bold; margin-left:1%; font-size:37px; font-weight:bolder;">
+                                            Overview
+                                           
+
+                                        <p>
+                                            <hr style="color:#000000; width:100%;">
+
+                                        <p
+                                            style="font-family:'Lato',Light; font-size:20px; margin-left:0+%; color:#323232; font-weight:lighter;">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor delectus commodi
+                                            quae
+                                            magni molestias vel illum temporibus, asperiores laudantium rerum. Lorem ipsum,
+                                            dolor sit amet consectetur adipisicing elit. Cupiditate, temporibus!
+                                        </p>
+
+                                        <div
+                                            style="background-color:#045A97; height:198px; margin-left:0%; margin-top:40px;">
+                                            <img src="{{ asset('assets') }}/img/modal-teams/folder_shared_FILL1_wght400_GRAD0_opsz48.png"
+                                                alt="" style="padding-top:41px; padding-left:20px; float:left;">
+                                            <div
+                                                style="padding-left:30px; padding-top:45px; color:#FFFFFF; font-family:'Lato', Light; font-size:25px; float: left; font-weight:lighter;">
+                                                <p>Age</p>
+                                                <p>Residence</p>
+                                                <p>freelance</p>
+                                                <p>Address</p>
+
+                                            </div>
+
+                                            <div
+                                                style=" padding-left:360px; padding-top:45px; color:#FFFFFF; font-family:'Lato', Light; font-size:25px; font-weight:bold;">
+                                                <p>24</p>
+                                                <p>Venezuela</p>
+                                                <p>Available</p>
+                                                <p>Tachira, San Cristobal</p>
+
+
+                                            </div>
+
+
 
                                         </div>
 
                                         <div
-                                            style=" padding-left:360px; padding-top:1px; color:#FFFFFF; font-family:'Lato', Light; font-size:16px; font-weight:bold;">
-                                            <p>24</p>
-                                            <p>Venezuela</p>
-                                            <p>Available</p>
-                                            <p>Tachira, San Cristobal</p>
+                                            style="margin-top:-15px; font-size:20px; float:right; margin-right:41%; font-family:'Lato', Bold; width:58%;">
+                                            <p
+                                                style="color: #045A97; font-family:'Lato', Bold;  padding-top:25px; font-weight:bolder; font-size:40px;">
+                                                Skills</p>
+                                            <hr style="width: 170%;">
+                                            <p style="font-family:'Lato',Light; color:#323232; font-size:15px;">
+                                                2-5 Years
+                                            </p>
+
+
+                                            @foreach (explode(',', $team->skills) as $skill)
+                                                <p class="badge" style="color:white; width:20%; height:20px">
+                                                    {{ $skill }}</p>
+                                            @endforeach
 
 
                                         </div>
 
-                                        <div style="margin-top:-15px; font-size:20px; float:right; margin-right:41%; font-family:'Lato', Bold; width:58%;">
-                                          <h2 style="color: #045A97; font-family:'Lato', Bold;  padding-top:10px;">Skills</h2>
-                                          <hr>
-                                          <p style="font-family:'Lato',Light; color:#323232; font-size:15px;">
-                                              2-5 Years
-                                          </p>
-          
-                                          
-                                          @foreach (explode(",", $team->skills) as $skill)
-                                          <p class="badge badge-secondary" style="color:white; width:25%">{{ $skill }}</p>
-                                        @endforeach
-                                          
-          
-                                          </div>
-          
+                                        <div class="over" style="padding-top:25%;" id="overview">
+                                            <div style="margin-top:60px;">
+                                                <img src="{{ asset('assets') }}/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48@2x.png"
+                                                    alt="" style="float: right; padding-top:0px;">
+
+
+                                                <div class="overview" style="padding-left:0%; padding-top:2%;">
+                                                    <p
+                                                        style="color:#045A97; font-family: 'Lato', Bold; margin-left:1%; font-size:37px; font-weight:bolder;">
+                                                        Languages
+
+                                                    </p>
+                                                    <hr style="color:#000000; width:100%;">
+
+                                                </div>
+
+<br><br>
+
+                                                <div class="overview" style="padding-left:0%; padding-top:2%;">
+                                                    <p
+                                                        style="color:#045A97; font-family: 'Lato', Bold; margin-left:1%; font-size:37px; font-weight:bolder;">
+                                                        Coding
+
+                                                    </p>
+                                                    <hr style="color:#BFBFC1; width:100%;">
+                                                     <div class="coding-bar" style="display: inline-block;">
+                                                        <div class="circular-progress">
+                                                            <span class="progress-value" data-count="50">0%</span>
+                                                        </div>
+                                            
+                                                        <span class="text">HTML & CSS</span>
+                                                        
+
+                                                </div>
+                                                     </div>
+
+
+
+                                                <div class="overview" style="padding-left:0%; padding-top:2%;">
+                                                    <img src="{{ asset('assets') }}/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48@2x.png"
+                                                    alt="" style="float: right; padding-top:0px;">
+                                                    <p
+                                                        style="color:#045A97; font-family: 'Lato', Bold; margin-left:1%; font-size:37px; font-weight:bolder;">
+                                                        Experience
+
+                                                    </p>
+                                                   
+                                                    <hr style="color:#BFBFC1; width:100%;">
+
+                                                    <p style="color:#045A97; font-size:23px; font-family:'Lato',Bold; font-weight:700;">Full-Stack</p>
+
+                                                    <p style="color:#404346; font-size:20px; font-weight:lighter;">VillarTechnologies</p>
+
+                                                </div>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
                                     </div>
-
-
-
-
                                 </div>
 
 
-                                <div class="basic-info" style="width:33.9%; height:48%; margin-left:10.5%; line-height:10px;">
-
-
-                                    <h1
-                                        style="font-family: 'Lato', Regular; font-weight:400; font-size:32px; padding-left:28%; margin-top:5%;">
-                                        Jose Rojas
-                                    </h1>
-                                    <h4
-                                        style="color:#045A97; font-family: 'Lato',Bold; padding-left:33%; padding-top:-1%; font-weight:bold;">
-                                        Full-Stack
-                                    </h4>
-
-                                    <h5 style="font-family: 'Lato',Light; padding-left:30%; font-weight:lighter;">
-                                        Tachira, Venezuela
-                                    </h5>
-                                    <h2
-                                        style="font-family: 'Lato',Light; padding-left:34%; font-weight:lighter; font-size:18px;">
-                                        Full Time
-                                    </h2>
-                                    <hr style="margin-left: 10px; width:546px; color:black;">
-
-                                    <div
-                                        style="background-color:#045A97; width:40%; height:15%; border-radius:25px; margin-left:20px; float:left; margin-top:10px;">
-                                        <p
-                                            style="font-family:'Lato',Regular; color:white; padding-left:33px; padding-top:3px; font-size:16px;">
-                                            DOWNLOADER CV
-                                        </p>
-                                    </div>
-
-                                    <div
-                                        style="background-color:#045A97; width:36%; height:15%; border-radius:25px; margin-left:0px; float:right; margin-top:10px;">
-                                        <p
-                                            style="font-family:'Lato',Regular; color:white; padding-left:36px; padding-top:3px; font-size:16px;">
-                                            CONTACT ME
-                                        </p>
-                                    </div>
-
-
-
-                                </div>
                             </div>
                             <br>
                             <br>
@@ -738,5 +812,77 @@
         <!--/ container end -->
     </section><!-- Newsletter end -->
 
-    @include('teams.modal-employees.show')
+
+    <style>
+        .modal-dialog {
+            overflow-y: initial !important
+        }
+
+        .circular-progress{
+    position: relative;
+    height: 109px;
+    width: 109px;
+    border-radius: 50%;
+    background:#045A97;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #323232;
+    font-family: 'Lato', Bold;
+}
+.text{
+    font-size: 15px;
+    font-weight: 500;
+    color: #606060;
+    font-family: 'Lato', Bold;
+    padding-left: 10px;
+}
+
+
+   
+
+    </style>
+
+
+
+
+
+    <script>
+
+        
+        
+        let circularProgress = document.querySelector(".circular-progress"),
+    progressValue = document.querySelector(".progress-value");
+
+        let progressStartValue = 0,    
+            speed =  200;
+            
+        let fin = 90;
+
+
+        let progress = setInterval(() => {
+            progressStartValue++;
+
+            progressValue.textContent = `${progressStartValue}%`
+            circularProgress.style.background = `conic-gradient(#045A97 ${progressStartValue * 3.6}deg, #ededed 0deg)`
+
+            if(progressStartValue == fin){
+                clearInterval(progress);
+            }    
+        }, speed);
+    </script>
+
 @endsection
