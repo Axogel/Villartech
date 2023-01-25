@@ -1,219 +1,79 @@
-<div class="container py-5">
-    <div class="row">
-  
-      <!-- For demo purpose -->
-      
-      <!-- END -->
-  
-      <div class="col-xl-3 col-lg-6 mb-4">
-        <div class="bg-white rounded-lg p-5 shadow">
-          <h2 class="h6 font-weight-bold text-center mb-4">Overall progress</h2>
-  
-          <!-- Progress bar 1 -->
-          <div class="progress mx-auto" data-value='80'>
-            <span class="progress-left">
-                          <span class="progress-bar border-primary"></span>
-            </span>
-            <span class="progress-right">
-                          <span class="progress-bar border-primary"></span>
-            </span>
-            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-              <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal Employees</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <!-- MODAL SIDEBAR -->
+
+            <div class="col-lg-1" style="background-color:#045A97;">
+
+
+                <!--BUTTON ABOUT-->
+
+                <div class="about pt-3">
+                    <img src="{{ asset('assets/img/modal-teams/user.png') }}" class="mx-auto d-block">
+                    <p class="fs-6 text-center" style="font-family: 'Lato'; font-weight: 500; color:white;">
+                        ABOUT
+                    </p>
+                </div>
+                <hr style="height:3px;border:none;color:white;background-color:white; width:76px;" class="mx-auto d-block">
+
+
+                <div class="about pt-3">
+                    <img src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png') }}" class="mx-auto d-block">
+                    <p class="fs-6 text-center" style="font-family: 'Lato'; font-weight: 500; color:white;">
+                        EXPERIENCE
+                    </p>
+                </div>
+                <hr style="height:3px;border:none;color:white;background-color:white; width:76px;" class="mx-auto d-block">
+
+
+                <div class="about pt-3">
+                    <img src="{{ asset('assets/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png') }}" class="mx-auto d-block">
+                    <p class="fs-6 text-center" style="font-family: 'Lato'; font-weight: 500; color:white;">
+                        EDUCATION
+                    </p>
+                </div>
+                <hr style="height:3px;border:none;color:white;background-color:white; width:76px;" class="mx-auto d-block">
+
+
+
+                <div class="mx-auto d-block">
+                    <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}"
+                        alt="">
+                </div>
+
+
             </div>
-          </div>
-          <!-- END -->
-  
-          <!-- Demo info -->
-          
-          <!-- END -->
+
+
         </div>
-      </div>
-  
-      <div class="col-xl-3 col-lg-6 mb-4">
-        <div class="bg-white rounded-lg p-5 shadow">
-          <h2 class="h6 font-weight-bold text-center mb-4">Work hours</h2>
-  
-          <!-- Progress bar 2 -->
-          <div class="progress mx-auto" data-value='25'>
-            <span class="progress-left">
-                          <span class="progress-bar border-danger"></span>
-            </span>
-            <span class="progress-right">
-                          <span class="progress-bar border-danger"></span>
-            </span>
-            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-              <div class="h2 font-weight-bold">25<sup class="small">%</sup></div>
-            </div>
-          </div>
-          <!-- END -->
-  
-          <!-- Demo info-->
-          
-          <!-- END -->
-        </div>
-      </div>
-  
-      <div class="col-xl-3 col-lg-6 mb-4">
-        <div class="bg-white rounded-lg p-5 shadow">
-          <h2 class="h6 font-weight-bold text-center mb-4">Server time</h2>
-  
-          <!-- Progress bar 3 -->
-          <div class="progress mx-auto" data-value='76'>
-            <span class="progress-left">
-                          <span class="progress-bar border-success"></span>
-            </span>
-            <span class="progress-right">
-                          <span class="progress-bar border-success"></span>
-            </span>
-            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-              <div class="h2 font-weight-bold">76<sup class="small">%</sup></div>
-            </div>
-          </div>
-          <!-- END -->
-  
-          <!-- Demo info -->
-          
-          <!-- END -->
-        </div>
-      </div>
-  
-      <div class="col-xl-3 col-lg-6 mb-4">
-        <div class="bg-white rounded-lg p-5 shadow">
-          <h2 class="h6 font-weight-bold text-center mb-4">Total overdue</h2>
-  
-          <!-- Progress bar 4 -->
-          <div class="progress mx-auto" data-value='12'>
-            <span class="progress-left">
-                          <span class="progress-bar border-warning"></span>
-            </span>
-            <span class="progress-right">
-                          <span class="progress-bar border-warning"></span>
-            </span>
-            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-              <div class="h2 font-weight-bold">12<sup class="small">%</sup></div>
-            </div>
-          </div>
-          <!-- END -->
-  
-          <!-- Demo info -->
-          
-          <!-- END -->
-        </div>
-      </div>
+
     </div>
-  </div>
 
 
 
-<style>
-    /*
-*
-* ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*
-*/
-
-.progress {
-  width: 150px;
-  height: 150px;
-  background: none;
-  position: relative;
-}
-
-.progress::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 6px solid blue;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.progress>span {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-.progress .progress-left {
-  left: 0;
-}
-
-.progress .progress-bar {
-  width: 100%;
-  height: 100%;
-  background: none;
-  border-width: 6px;
-  border-style: solid;
-  position: absolute;
-  top: 0;
-}
-
-.progress .progress-left .progress-bar {
-  left: 100%;
-  border-top-right-radius: 80px;
-  border-bottom-right-radius: 80px;
-  border-left: 0;
-  -webkit-transform-origin: center left;
-  transform-origin: center left;
-}
-
-.progress .progress-right {
-  right: 0;
-}
-
-.progress .progress-right .progress-bar {
-  left: -100%;
-  border-top-left-radius: 80px;
-  border-bottom-left-radius: 80px;
-  border-right: 0;
-  -webkit-transform-origin: center right;
-  transform-origin: center right;
-}
-
-.progress .progress-value {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSE
-* ==========================================
-*
-*/
-
-body {
-  background: #ff7e5f;
-  background: -webkit-linear-gradient(to right, #ff7e5f, #feb47b);
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  min-height: 100vh;
-}
-
-.rounded-lg {
-  border-radius: 1rem;
-}
-
-.text-gray {
-  color: #aaa;
-}
-
-div.h4 {
-  line-height: 1rem;
-}
-</style>
 
 
+</body>
 
-<script
-src="https://code.jquery.com/jquery-3.6.3.slim.js"
-integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
-crossorigin="anonymous"></script>
+</html>

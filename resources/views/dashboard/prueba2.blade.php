@@ -77,35 +77,49 @@
   <div class="body-inner">
   <!-- Header start -->
   <header id="header" class="navbar-fixed-top header2" role="banner">
-    <div class="container">
-      <div class="row">
-        <!-- Logo start -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="navbar-brand">
-              <a href="/">
-                <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: 0px; position: fixed; padding-left: 25px;" alt="logo">
-              </a> 
-            </div>                   
-        </div><!--/ Logo end -->
-        <nav class="collapse navbar-collapse clearfix" role="navigation">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">HOME</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#testimonial">Testimonials</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+          <div class="navbar-brand">
+            <a href="/">
+              <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: 0px; position: fixed; padding-left: 25px;" alt="logo">
+            </a> 
+          </div>        
+
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:600px;">
+
+           
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">PORTFOLIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">SERVICES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">TESTIMONIALS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">CONTACT US</a>
+            </li>
           </ul>
-        </nav><!--/ Navigation end -->
-      </div><!--/ Row end -->
-    </div><!--/ Container end -->
+        </div>
+      </div>
+    </nav>
   </header><!--/ Header end -->
 
   <!-- Slider start -->
