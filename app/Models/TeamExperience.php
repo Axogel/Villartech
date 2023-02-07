@@ -11,14 +11,14 @@ class TeamExperience extends Model
 
 
     protected $table = 'team_experience';
-	protected $primaryKey = 'id';
+	protected $primaryKey = 'experience_id';
     public $timestamps = false;
 
     protected $fillable = [
 		'developer_id',
-		'company',
-		'description',
-		'category',
+		'experience_company',
+		'experience_description',
+		'experience_category',
 	];
 
 }

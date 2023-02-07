@@ -35,14 +35,14 @@
 
                                 <td>
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->category }}
+                                        {{ $teamSkill->experience_category }}
                                     </span>
                                 </td>
                                
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->date }}
+                                        {{ $teamSkill->experience_date }}
                                     </span>
 
                                 </td>
@@ -51,7 +51,7 @@
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->description }}
+                                        {{ $teamSkill->experience_description }}
                                     </span>
 
                                 </td>
@@ -59,7 +59,7 @@
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->company }}
+                                        {{ $teamSkill->experience_company }}
                                     </span>
 
                                 </td>
@@ -73,9 +73,9 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item"
-                                                href="{{ route('teams-experience.edit', ['experience' => $teamSkill->id]) }}">Edit</a>
+                                                href="{{ route('teams-experience.edit', ['experience' => $teamSkill->experience_id]) }}">Edit</a>
 
-                                            <form action="{{ route('teams-experience.destroy', $teamSkill->id) }}" method="Post">
+                                            <form action="{{ route('teams-experience.destroy', $teamSkill->experience_id) }}" method="Post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item">

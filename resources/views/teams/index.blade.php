@@ -26,8 +26,18 @@
                             <th scope="col">Address</th>
                             <th scope="col">Age</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Youtube Video</th>
+                            <th scope="col">CV LINK</th>
+                            <th scope="col">RESIDENCE</th>
+                            <th scope="col">FREELANCE</th>
+                            <th scope="col">CATEGORY</th>
+                            <th scope="col">WORK TIME</th>
+
+                            <th scope="col">OVERVIEW</th>
+
 
                             <th scope="col"></th>
+
                         </tr>
                     </thead>
                     @foreach ($teamUsers as $teamUser)
@@ -85,6 +95,65 @@
 
                                 </td>
 
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->team_presentation }}
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->cv_link }}
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->residence }}
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->freelance }}
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->team_category}}
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->work_time}}
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $teamUser->overview}}
+                                    </span>
+
+                                </td>
+
+
                                 <td class="text-right">
                                     <div class="dropdown">
                                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
@@ -108,6 +177,9 @@
 
                                             <a class="dropdown-item" style="padding-top: 15px;"
                                             href="{{ route('employeeExperience', ['team' => $teamUser->id]) }}">Experience</a>
+
+                                            <a class="dropdown-item" style="padding-top: 15px;"
+                                            href="{{ route('employeeSkill', ['team' => $teamUser->id]) }}">Skills</a>
                                         </div>
                                     </div>
                                 </td>

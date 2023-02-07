@@ -7,6 +7,8 @@ use App\Models\TeamExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use App\Models\TeamSkill;
+
 
 class TeamUserController extends Controller
 {
@@ -49,6 +51,14 @@ class TeamUserController extends Controller
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
+        $teamUser->team_presentation = $request->team_presentation;
+        $teamUser->cv_link = $request->cv_link;
+        $teamUser->residence = $request->residence;
+        $teamUser->freelance = $request->freelance;
+        $teamUser->team_category = $request->team_category;
+        $teamUser->work_time = $request->work_time;
+        $teamUser->overview = $request->overview;
+
         $teamUser->status = 1;
 
         $request->validate([
@@ -104,6 +114,14 @@ class TeamUserController extends Controller
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
+        $teamUser->team_presentation = $request->team_presentation;
+        $teamUser->cv_link = $request->cv_link;
+        $teamUser->residence = $request->residence;
+        $teamUser->freelance = $request->freelance;
+        $teamUser->team_category = $request->team_category;
+        $teamUser->work_time = $request->work_time;
+        $teamUser->overview = $request->overview;
+
         $teamUser->status = 1;
         if ($request->photo) {
 
@@ -139,8 +157,8 @@ class TeamUserController extends Controller
         public function getEmployee (TeamUser $teamUser, TeamEducation $teamEducation, $id) {
             $teamUser = TeamUser::find($id);
             
-            $teamEducation = TeamEducation::select('id', 'developer_id', 'title', 'country', 'description', 'date')
-            ->where('id', $id)
+            $teamEducation = TeamEducation::select('education_id', 'developer_id', 'education_title', 'education_country', 'education_description', 'education_date')
+            ->where('education_id', $id)
             ->get();
             
             $teamEducation = TeamEducation::orderBy('developer_id','desc')
@@ -163,8 +181,8 @@ class TeamUserController extends Controller
 
 
             $teamUser = TeamUser::find($id);
-            $teamEducation = TeamEducation::select('id', 'developer_id', 'title', 'country', 'description')
-            ->where('id', $id)
+            $teamEducation = TeamEducation::select('education_id', 'developer_id', 'education_title', 'education_country', 'education_description')
+            ->where('education_id', $id)
             ->get();
 
             return view('teams-skills.create',compact('teamUser'));
@@ -176,10 +194,10 @@ class TeamUserController extends Controller
 
             $teamEducation = New TeamEducation;
             $teamEducation->developer_id = $request->developer_id;
-            $teamEducation->title = $request->title;
-            $teamEducation->country = $request->country;
-            $teamEducation->date = $request->date;
-            $teamEducation->description = $request->description;
+            $teamEducation->education_title = $request->education_title;
+            $teamEducation->education_country = $request->education_country;
+            $teamEducation->education_date = $request->education_date;
+            $teamEducation->education_description = $request->education_description;
             $teamEducation->save();
 
             return redirect()->route('teams.index');
@@ -205,10 +223,10 @@ class TeamUserController extends Controller
             $teamEducation = TeamEducation::find($id);
 
             $teamEducation->developer_id = $request->developer_id;
-            $teamEducation->title = $request->title;
-            $teamEducation->country = $request->country;
-            $teamEducation->date = $request->date;
-            $teamEducation->description = $request->description;
+            $teamEducation->education_title = $request->education_title;
+            $teamEducation->education_country = $request->education_country;
+            $teamEducation->education_date = $request->education_date;
+            $teamEducation->education_description = $request->education_description;
            
             $teamEducation->save();
 
@@ -238,8 +256,8 @@ class TeamUserController extends Controller
 
                 $teamUser = TeamUser::find($id);
                 
-                $teamExperience = TeamExperience::select('id', 'developer_id', 'category', 'company', 'description', 'date')
-                ->where('id', $id)
+                $teamExperience = TeamExperience::select('experience_id', 'developer_id', 'experience_category', 'experience_company', 'experience_description', 'experience_date')
+                ->where('experience_id', $id)
                 ->get();
                 
                 $teamExperience = TeamExperience::orderBy('developer_id','desc')
@@ -256,8 +274,8 @@ class TeamUserController extends Controller
 
 
                 $teamUser = TeamUser::find($id);
-                $teamExperience = TeamExperience::select('id', 'category', 'company', 'description')
-                ->where('id', $id)
+                $teamExperience = TeamExperience::select('experience_id', 'experience_category', 'experience_company', 'experience_description')
+                ->where('experience_id', $id)
                 ->get();
     
                 return view('teams-experience.create',compact('teamUser'));
@@ -269,10 +287,10 @@ class TeamUserController extends Controller
                 
                 $teamExperience = New TeamExperience;
                 $teamExperience->developer_id = $request->developer_id;
-                $teamExperience->company = $request->company;
-                $teamExperience->description = $request->description;
-                $teamExperience->category = $request->category;
-                $teamExperience->date = $request->date;
+                $teamExperience->experience_company = $request->experience_company;
+                $teamExperience->experience_description = $request->experience_description;
+                $teamExperience->experience_category = $request->experience_category;
+                $teamExperience->experience_date = $request->experience_date;
 
 
                 $teamExperience->save();
@@ -300,10 +318,10 @@ class TeamUserController extends Controller
                 $teamExperience = TeamExperience::find($id);
     
                 $teamExperience->developer_id = $request->developer_id;
-                $teamExperience->company = $request->company;
-                $teamExperience->description = $request->description;
-                $teamExperience->category = $request->category;
-                $teamExperience->date = $request->date;
+                $teamExperience->experience_company = $request->experience_company;
+                $teamExperience->experience_description = $request->experience_description;
+                $teamExperience->experience_category = $request->experience_category;
+                $teamExperience->experience_date = $request->experience_date;
 
 
                 $teamExperience->save();
@@ -327,6 +345,99 @@ class TeamUserController extends Controller
     
     
                 }
+
+
+
+
+                public function getEmployeeSkills (TeamUser $teamUser, TeamSkill $teamSkill, $id) {
+
+                    $teamUser = TeamUser::find($id);
+                    
+                    $teamSkill = TeamSkill::select('skill_id', 'developer_id', 'skill_name', 'skill_percentage')
+                    ->where('skill_id', $id)
+                    ->get();
+                    
+                    $teamSkill = TeamSkill::orderBy('developer_id','desc')
+                    ->where('developer_id', $id)
+                    ->paginate(10);
+                    
+        
+                    return view('teams-languages.index',compact('teamSkill' , 'teamUser'));
+                }
+    
+    
+        
+                public function createSkills (TeamUser $teamUser, TeamSkill $teamSkill, $id) {
+    
+    
+                    $teamUser = TeamUser::find($id);
+                    $teamSkill = TeamSkill::select('skill_id', 'developer_id', 'skill_name', 'skill_percentage')
+                    ->where('skill_id', $id)
+                    ->get();
+        
+                    return view('teams-languages.create',compact('teamUser'));
+        
+                }
+        
+                public function storeSkills (Request $request) {
+        
+                    
+                    $teamSkill = New TeamSkill;
+                    $teamSkill->skill_name = $request->skill_name;
+                    $teamSkill->skill_percentage = $request->skill_percentage;
+                    $teamSkill->developer_id = $request->developer_id;
+    
+    
+                    $teamSkill->save();
+        
+                    return redirect()->route('teams.index');
+        
+                }
+        
+                public function editSkills($id)
+                {
+                    $teamSkill = TeamSkill::find($id);
+                    // dd($teamUser);
+                    return view('teams-language.edit',compact('teamSkill'));
+                }
+            
+                /**
+                 * Update the specified resource in storage.
+                 *
+                 * @param  \Illuminate\Http\Request  $request
+                 * @param  \App\Models\TeamUser  $teamUser
+                 * @return \Illuminate\Http\Response
+                 */
+                public function updateSkills(Request $request, TeamSkill $teamSkill, $id)
+                {
+                    $teamSkill = TeamSkill::find($id);
+        
+                    $teamSkill->developer_id = $request->developer_id;
+                    $teamSkill->skill_name = $request->skill_name;
+                    $teamSkill->skill_percentage = $request->skill_percentage;
+    
+    
+                    $teamExperience->save();
+        
+                    return redirect()->route('teams.index');
+        
+                }
+            
+                /**
+                 * Remove the specified resource from storage.
+                 *
+                 * @param  \App\Models\TeamUser  $teamUser
+                 * @return \Illuminate\Http\Response
+                 */
+                    public function destroySkills(TeamSkill $teamSkill, $id)
+        
+                    {            
+                    $teamSkill = TeamSkill::find($id);
+                    $teamSkill->delete();
+                    return redirect()->route('teams.index');
+        
+        
+                    }
         
 
 

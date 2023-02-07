@@ -27,9 +27,9 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Title</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('title', old('title', $teamEducation->title), [
+                {!! Form::text('education_title', old('education_title', $teamEducation->education_title), [
                     'required',
-                    'id' => 'title',
+                    'id' => 'education_title',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'Title',
                 ]) !!}
@@ -44,9 +44,9 @@
          <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Country</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('country', old('country', $teamEducation->country), [
+                {!! Form::text('education_country', old('education_country', $teamEducation->education_country), [
                     'required',
-                    'id' => 'country',
+                    'id' => 'education_country',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'Country',
                 ]) !!}
@@ -59,9 +59,9 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('description', old('description', $teamEducation->description), [
+                {!! Form::text('education_description', old('education_description', $teamEducation->education_description), [
                     'required',
-                    'id' => 'description',
+                    'id' => 'education_description',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'description',
                 ]) !!}
@@ -72,9 +72,9 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('date', old('date', $teamEducation->date), [
+                {!! Form::text('education_date', old('education_date', $teamEducation->date), [
                     'required',
-                    'id' => 'date',
+                    'id' => 'education_date',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'date',
                 ]) !!}

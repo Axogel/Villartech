@@ -65,6 +65,59 @@
                         </div>
 
 
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Youtube Video</label>
+                            {!! Form::text('team_presentation', null, ['placeholder' => 'Insert a url of a youtube video',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">CV LINK</label>
+                            {!! Form::text('cv_link', null, ['placeholder' => 'Insert a url of a CV',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Residence</label>
+                            {!! Form::text('Residence', null, ['placeholder' => 'Insert a Residence for the about section',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Freelance</label>
+                            {!! Form::text('Freelance', null, ['placeholder' => '',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Category</label>
+                            {!! Form::text('team_category', null, ['placeholder' => 'Insert a url of a CV',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Work Time</label>
+                            {!! Form::text('work_time', null, ['placeholder' => 'Insert a amount of hours per week',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Overview</label>
+                            {!! Form::text('overview', null, ['placeholder' => 'Insert a overview',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
+
 
                         <br>
                      

@@ -19,49 +19,32 @@
                 <table class="table align-items-center table-dark" id="example">
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Country</th>
+                            <th scope="col">Skill Name</th>
+                            <th scope="col">Skill Percent</th>
+
 
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    @foreach ($teamEducation as $teamSkill)
+                    @foreach ($teamSkill as $teamSkill)
                         <tbody>
                             <tr>
                                 
 
                                 <td>
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->education_title }}
+                                        {{ $teamSkill->skill_name }}
                                     </span>
                                 </td>
                                
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->education_date }}
+                                        {{ $teamSkill->skill_percentage }}
                                     </span>
 
                                 </td>
 
-
-                                <td>
-
-                                    <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->education_description }}
-                                    </span>
-
-                                </td>
-
-                                <td>
-
-                                    <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->education_country }}
-                                    </span>
-
-                                </td>
 
                               
                                 <td class="text-right">
@@ -72,9 +55,9 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item"
-                                                href="{{ route('teams-skills.edit', ['education' => $teamSkill->education_id]) }}">Edit</a>
+                                                href="{{ route('teams-skills.edit', ['education' => $teamSkill->skill_id]) }}">Edit</a>
 
-                                            <form action="{{ route('teams-skills.destroy', $teamSkill->education_id) }}" method="Post">
+                                            <form action="{{ route('teams-skills.destroy', $teamSkill->skill_id) }}" method="Post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item">
@@ -93,8 +76,8 @@
                     @endforeach
                 </table>
 
-                <a href="{{ route('teams-skills.create', ['team' => $teamUser->id]) }}" class="btn btn-info" style="margin-left: 500px; margin-top:5%;">Create
-                    a Education</a>
+                <a href="{{ route('teams-language.create', ['team' => $teamUser->id]) }}" class="btn btn-info" style="margin-left: 500px; margin-top:5%;">Create
+                    a Skill</a>
             </div>
 
         </div>

@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'title' => 'Teams Experiences',
+    'title' => 'Teams Skills',
 ])
 
 
@@ -12,10 +12,9 @@
             </div>
         </div>
 
-    </div>
     <div class="row mt-5" style="display:grid; padding-top:80px; width:80%; margin-left:125px;">
         {!! Form::open([
-            'route' => ['teams-experience.update', ['id' => $teamExperience->experience_id]],
+            'route' => ['teams-language.update', ['id' => $teamSkill->id]],
             'method' => 'PUT',
             'files' => true,
         ]) !!}
@@ -25,13 +24,13 @@
        
  
         <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Company</label>
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skill Name</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('experience_company', old('experience_company', $teamExperience->experience_company), [
+                {!! Form::text('skill_name', old('skill_name', $teamSkill->skill_name), [
                     'required',
-                    'id' => 'experience_company',
+                    'id' => 'skill_name',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Company',
+                    'placeholder' => 'Skill Name',
                 ]) !!}
             </div>
         </div>
@@ -42,13 +41,13 @@
 
         
          <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skill Percent</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('experience_category', old('experience_category', $teamExperience->experience_category), [
+                {!! Form::text('skill_percentage', old('skill_percentage', $teamSkill->skill_percentage), [
                     'required',
-                    'id' => 'experience_category',
+                    'id' => 'skill_percentage',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Category',
+                    'placeholder' => 'Skill percentage',
                 ]) !!}
             </div>
         </div> 
@@ -56,36 +55,13 @@
 
        
 
-        <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('experience_description', old('experience_description', $teamExperience->experience_description), [
-                    'required',
-                    'id' => 'experience_description',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'description',
-                ]) !!}
-            </div>
-        </div> 
-
-
-        <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('experience_date', old('experience_date', $teamExperience->experience_date), [
-                    'required',
-                    'id' => 'experience_date',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'date',
-                ]) !!}
-            </div>
-        </div> 
+   
 
 
         <div class="invisible">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Developer_id</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('developer_id', old('developer_id', $teamExperience->developer_id), [
+                {!! Form::text('developer_id', old('developer_id', $teamSkill->developer_id), [
                     'required',
                     'id' => 'developer_id',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',

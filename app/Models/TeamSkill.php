@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TeamEducation extends Model
+class TeamSkill extends Model
 {
     use HasFactory;
 
-    protected $table = 'team_educations';
-	protected $primaryKey = 'education_id';
+    protected $table = 'team_skills';
+	protected $primaryKey = 'skill_id';
     public $timestamps = false;
 
     protected $fillable = [
+		'skill_id',
 		'developer_id',
-		'education_title',
-		'education_country',
-		'education_date',
-        'education_description',
+		'skill_name',
+		'skill_percentage',
 	];
 }

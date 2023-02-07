@@ -23,7 +23,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Title</label>
-                            {!! Form::text('title', null, ['placeholder' => 'Title',
+                            {!! Form::text('education_title', null, ['placeholder' => 'Title',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
@@ -33,7 +33,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Country</label>
-                            {!! Form::text('country', null, ['placeholder' => 'Country',
+                            {!! Form::text('education_country', null, ['placeholder' => 'Country',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
@@ -43,7 +43,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                            {!! Form::text('description', null, ['placeholder' => 'Description',
+                            {!! Form::text('education_description', null, ['placeholder' => 'Description',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
@@ -51,7 +51,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
-                            {!! Form::text('date', null, ['placeholder' => 'Date',
+                            {!! Form::text('education_date', null, ['placeholder' => 'Date',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>

@@ -24,7 +24,7 @@
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 {!! Form::text('id_name', old('id_name', $teamUser->id_name), [
-                    'required',
+                    
                     'id' => 'id_name',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'Name',
@@ -38,7 +38,7 @@
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 {!! Form::text('email', old('email', $teamUser->email), [
-                    'required',
+                   
                     'id' => 'email',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'email',
@@ -61,7 +61,7 @@
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 {!! Form::text('skills', old('skills', $teamUser->skills), [
-                    'required',
+                    
                     'id' => 'skills',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'skills',
@@ -74,7 +74,7 @@
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Age</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 {!! Form::text('age', old('age', $teamUser->age), [
-                    'required',
+                    
                     'id' => 'age',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'Age',
@@ -87,7 +87,7 @@
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Address</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 {!! Form::text('address', old('address', $teamUser->address), [
-                    'required',
+                    
                     'id' => 'address',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'Address',
@@ -100,7 +100,7 @@
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 {!! Form::text('description', old('description', $teamUser->description), [
-                    'required',
+                    
                     'id' => 'description',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                     'placeholder' => 'description',
@@ -108,6 +108,97 @@
             </div>
         </div> 
 
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Youtube Video</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('team_presentation', old('team_presentation', $teamUser->team_presentation), [
+                    
+                    'id' => 'team_presentation',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Insert a url of a youtube video',
+                ]) !!}
+            </div>
+        </div> 
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">CV LINK</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('cv_link', old('cv_link', $teamUser->cv_link), [
+                    
+                    'id' => 'cv_link',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Insert a url of a CV',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Residence</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('residence', old('residence', $teamUser->residence), [
+                    
+                    'id' => 'residence',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Insert a Residence',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Freelance</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('freelance', old('freelance', $teamUser->freelance), [
+                  
+                    'id' => 'freelance',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => '',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('team_category', old('team_category', $teamUser->team_category), [
+                    
+                    'id' => 'team_category',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Insert Category',
+                ]) !!}
+            </div>
+        </div> 
+
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Work Time</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('work_time', old('work_time', $teamUser->work_time), [
+                   
+                    'id' => 'work_time',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Insert a amount of hours per week',
+                ]) !!}
+            </div>
+        </div> 
+
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Work Time</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('overview', old('overview', $teamUser->overview), [
+                   
+                    'id' => 'overview',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Insert a overview',
+                ]) !!}
+            </div>
+        </div> 
+        
         <div class="row mb-6">
 
             </div> 

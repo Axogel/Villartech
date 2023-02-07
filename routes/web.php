@@ -75,6 +75,15 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::delete('/deleteEmployeeExperience/{education}/', 'App\Http\Controllers\TeamUserController@destroyExperience')->name('teams-experience.destroy');
 
 
+	/* EMPLOYEES SKILL CRUD */
+
+
+	Route::get('/getEmployeeSkill/{team}', 'App\Http\Controllers\TeamUserController@getEmployeeSkills')->name('employeeSkill');
+	Route::get('/createEmployeeSkill/{team}', 'App\Http\Controllers\TeamUserController@createSkills')->name('teams-language.create');
+	Route::post('/storeEmployeeSkill/', 'App\Http\Controllers\TeamUserController@storeSkills')->name('teams-language.store');
+	Route::get('/editEmployeeSkill/{skill}/', 'App\Http\Controllers\TeamUserController@editSkills')->name('teams-language.edit');
+	Route::put('/updateEmployeeSkill/{id}/', 'App\Http\Controllers\TeamUserController@updateSkills')->name('teams-language.update');
+	Route::delete('/deleteEmployeeSkill/{skill}/', 'App\Http\Controllers\TeamUserController@destroySkills')->name('teams-language.destroy');
 
 
 

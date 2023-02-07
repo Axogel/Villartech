@@ -216,17 +216,17 @@
 
             <!--Isotope filter start -->
             <!--
-                                      <div class="row text-center">
-                                        <div class="isotope-nav" data-isotope-nav="isotope">
-                                          <ul>
-                                            <li><a href="#" class="active" data-filter="*">All</a></li>
+                                          <div class="row text-center">
+                                            <div class="isotope-nav" data-isotope-nav="isotope">
+                                              <ul>
+                                                <li><a href="#" class="active" data-filter="*">All</a></li>
 
-                                            <li><a href="#" data-filter=".web-design">Web Design</a></li>
-                                            
-                                          </ul>
-                                        </div>
-                                      </div>
-                                      -->
+                                                <li><a href="#" data-filter=".web-design">Web Design</a></li>
+                                                
+                                              </ul>
+                                            </div>
+                                          </div>
+                                          -->
             <!-- Isotope filter end -->
 
             <div class="">
@@ -245,8 +245,8 @@
                                         $cad = str_replace('"', '', $cad);
                                     @endphp
                                     <!--
-                                                <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                                                -->
+                                                    <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                                    -->
                                     <img src="{{ asset('/storage/' . $cad) }}" alt="">
 
                                     <figcaption>
@@ -267,16 +267,16 @@
                                     <div class="modal-header">
                                         <h4 class="modal-title">{{ $portafolio->name }}</h4>
                                         <!--
-                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  -->
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      -->
                                     </div>
 
                                     <!-- Modal body -->
                                     <div class="modal-body modal-custom">
                                         <div class="modal-custom-body">
                                             <!--
-                                                    <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                                                    -->
+                                                        <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                                        -->
                                             <img style="width:100%;" src="{{ asset('/storage/' . $cad) }}"
                                                 alt="">
                                         </div>
@@ -368,53 +368,61 @@
                                         <div class="col-lg-1 h-100 col-sm-1" style="background-color:#045A97;">
 
                                             <div class="text-center" style="list-style;none:">
-                                                <div  class="active">
+                                                <div class="active">
                                                     <div class="about pt-3">
                                                         <img src="{{ asset('assets/img/modal-teams/user.png') }}"
                                                             class="mx-auto d-block">
-                                                        <a class="fs-6 text-center " style="font-family: 'Lato'; font-weight: 500; color:white;" href="#tab_about" data-toggle="tab">                                                        
+                                                        <a class="fs-6 text-center "
+                                                            style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                            href="#tab_about_{{ $team->id }}" data-toggle="tab">
                                                             ABOUT
                                                         </a>
                                                     </div>
-                                                </div >
+                                                </div>
 
                                                 <hr style="height:3px;border:none;color:white;background-color:white; width:76px;"
-                                                class="mx-auto d-block">
+                                                    class="mx-auto d-block">
 
 
-                                                <div >
-                                                    <img src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png') }}" class="mx-auto d-block">
-                                                        <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;" href="#tab_experience" data-toggle="tab">
-                                                            EXPERIENCE
-                                                        </a>
-                                                </div >
-
-                                                <hr style="height:3px;border:none;color:white;background-color:white; width:76px;"
-                                                class="mx-auto d-block">
-
-
-
-                                                <div >
-                                                    <img src="{{ asset('assets/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png') }}" class="mx-auto d-block">
-                                                        <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;" href="#tab_education" data-toggle="tab">
-                                                            EDUCATION
-                                                        </a>
-                                                    </div>
+                                                <div>
+                                                    <img src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png') }}"
+                                                        class="mx-auto d-block">
+                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                        href="#tab_experience_{{ $team->id }}" data-toggle="tab">
+                                                        EXPERIENCE
+                                                    </a>
+                                                </div>
 
                                                 <hr style="height:3px;border:none;color:white;background-color:white; width:76px;"
-                                                class="mx-auto d-block">
+                                                    class="mx-auto d-block">
 
-                                                <div >
-                                                    <img src="{{ asset('assets/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48.png') }}" class="mx-auto d-block">
-                                                        <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;" href="#tab_overview" data-toggle="tab">
-                                                            OVERVIEW
-                                                        </a>
-                                                </div >
+
+
+                                                <div>
+                                                    <img src="{{ asset('assets/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png') }}"
+                                                        class="mx-auto d-block">
+                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                        href="#tab_education_{{ $team->id }}" data-toggle="tab">
+                                                        EDUCATION
+                                                    </a>
+                                                </div>
 
                                                 <hr style="height:3px;border:none;color:white;background-color:white; width:76px;"
-                                                class="mx-auto d-block">
+                                                    class="mx-auto d-block">
 
-                                            </div >
+                                                <div>
+                                                    <img src="{{ asset('assets/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48.png') }}"
+                                                        class="mx-auto d-block">
+                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                        href="#tab_overview_{{ $team->id }}" data-toggle="tab">
+                                                        OVERVIEW
+                                                    </a>
+                                                </div>
+
+                                                <hr style="height:3px;border:none;color:white;background-color:white; width:76px;"
+                                                    class="mx-auto d-block">
+
+                                            </div>
 
                                             <div class="logo" style="padding-top:200px;">
                                                 <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }} "
@@ -426,25 +434,24 @@
 
 
                                         <div class="col-5  ml-0">
-                                            <iframe width="450" height="315"
-                                                src="https://www.youtube.com/embed/RwgRuc1s4uQ"
+                                            <iframe width="450" height="315" src="{{ $team->team_presentation }}"
                                                 title="YouTube video player" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                 allowfullscreen></iframe>
 
                                             <p style="font-family: 'Lato', Bold;  color:black; font-size:30px;"
                                                 class="text-center pt-3">
-                                                Jose Rojas
+                                                {{ $team->name }}
                                             </p>
                                             <p class="text-center fs-3"
                                                 style="color:#045A97; font-family:'Lato'; font-weight:900;">
-                                                Full-Stack
+                                                {{ $team->team_category }}
                                             </p>
                                             <p class="text-center" style="color:#323232;">
-                                                Táchira,Venezuela
+                                                {{ $team->residence }}
                                             </p>
                                             <p class="text-center" style="color:#323232;">
-                                                Full-Time
+                                                {{ $team->work_time }}
                                             </p>
 
                                             <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:422px;"
@@ -454,8 +461,9 @@
                                                 <div class="col-1"></div>
                                                 <div
                                                     style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
-                                                    <p style="text-align: center; padding-top:8px; color:white;">DOWNLOAD
-                                                        CV</p>
+                                                    <p style="text-align: center; padding-top:8px; color:white;"><a
+                                                            href="{{ $team->cv_link }}" style="color:white;">DOWNLOAD
+                                                            CV</a></p>
                                                 </div>
                                                 <div class="col-1"></div>
                                                 <div
@@ -466,134 +474,177 @@
                                             </div>
                                         </div>
 
-                                      <div class="col-6">
-                                        
-                                        <div class="tab-content">
-                                           
-                                            <div class="tab-pane active animated fadeInRight" id="tab_about">
-                                                <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">About <span style="color:#323232;">Me</span>   <img src="{{ asset('assets/img/modal-teams/user-1.png') }}" style="height: 51px; float:right;"></p>
-                                                <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
-                                                    class="mx-auto d-block">
-                                                
-                                                <p style="font-size:15px; color:#323232;"> I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</p>
-                                                
-                                                <div class="col-11 h-25" style="background-color: #045A97;">
-                                                   
-                                                    <div class="row">
-                                                        
-                                                    <div class="col">
-                                                     <img src="{{ asset('assets/img/modal-teams/folder_shared_FILL1_wght400_GRAD0_opsz48.png') }} "
-                                                    alt="" style="height: 80px; margin-left:35px; margin-top:25px;">
-                                                    </div>
-                                                
-                                                   
-                                                    <div class="col" style="color:#FFFFFF;line-height:2px; padding-top:7px; ">
-                                                     <p>Age</p>
-                                                    <p>Residence</p>
-                                                    <p>Freelance</p>
-                                                    <p>Address</p>
-                                                    
-                                                    </div>
-                                                
-                                                
-                                                      <div class="col" style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
-                                                    <p>24</p>
-                                                    <p>Venezuela</p>
-                                                    <p>Available</p>
-                                                    <p>Tachira,San Cristobal</p>
-                                                    </div>
-                                                    
-                                                    </div>
-                                                
-                                                
-                                                  
-                                                
-                                                </div>
-                                                
-                                                
-                                                <div class="col-11 pt-5">
-                                                    <p style="color:#045A97; font-size:33px; font-weight:600;">
-                                                        Skills
-                                                    </p>
-                                                
+                                        <div class="col-6">
+
+                                            <div class="tab-content">
+
+                                                <div class="tab-pane active animated fadeInRight"
+                                                    id="tab_about_{{ $team->id }}">
+                                                    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
+                                                        class="fs-1 pt-4">About <span style="color:#323232;">Me</span>
+                                                        <img src="{{ asset('assets/img/modal-teams/user-1.png') }}"
+                                                            style="height: 51px; float:right;"></p>
                                                     <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
-                                                    class="mx-auto d-block">
-                                                
-                                                    <p>2-5 years</p>
-                                                
-                                                    <div
-                                                    style="height: 5%; width:15%; background-color:#404346; border-radius:20px;">
-                                                    <p style="text-align: center; padding-top:0px; color:white;">PHP</p>
-                                                </div>
-                                                
-                                                
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane animated fadeInLeft" id="tab_experience">
-                                                <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">Experience  <img src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48@2x.png') }}" style="height: 40px; float:right;"></p>
-                                                <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
-                                                    class="mx-auto d-block">
+                                                        class="mx-auto d-block">
 
-                                                <div class="col-12 lh-1">
-                                                    <div style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
-                                                        <p style="text-align: center;  color:white; margin-top:2px;">
-                                                            2010-2022
-                                                        </p>
+                                                    <p style="font-size:15px; color:#323232;">{{ $team->description }}</p>
+
+                                                    <div class="col-11 h-25" style="background-color: #045A97;">
+
+                                                        <div class="row">
+
+                                                            <div class="col">
+                                                                <img src="{{ asset('assets/img/modal-teams/folder_shared_FILL1_wght400_GRAD0_opsz48.png') }} "
+                                                                    alt=""
+                                                                    style="height: 80px; margin-left:35px; margin-top:25px;">
+                                                            </div>
+
+
+                                                            <div class="col"
+                                                                style="color:#FFFFFF;line-height:2px; padding-top:7px; ">
+                                                                <p>Age</p>
+                                                                <p>Residence</p>
+                                                                <p>Freelance</p>
+                                                                <p>Address</p>
+
+                                                            </div>
+
+
+                                                            <div class="col"
+                                                                style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
+                                                                <p>{{ $team->age }}</p>
+                                                                <p>{{ $team->residence }}</p>
+                                                                <p>{{ $team->freelance }}</p>
+                                                                <p>{{ $team->address }}</p>
+                                                            </div>
+
+                                                        </div>
+
+
+
+
                                                     </div>
-                                                    <p class="text-left fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900;">
-                                                         Full-Stack
-                                                         
-                                                    </p>
-                                                    <p>
-                                                        VillarTechnologies
-                                                    </p>
-                                                    
-                                                    <p style="font-size:15px; color:#323232;"> I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</p>
-                                                </div>
 
 
-                                            </div>
-
-
-                                            <div class="tab-pane animated  fadeInLeft" id="tab_education">
-                                            
-                                                <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">Education  <img src="{{ asset('assets/img/modal-teams/educationblue.png') }}" style="height: 40px; float:right;"></p>
-                                                <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
-                                                    class="mx-auto d-block">
-
-                                                <div class="col-12 lh-1">
-                                                    <div style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
-                                                        <p style="text-align: center;  color:white; margin-top:2px;">
-                                                            2010-2022
+                                                    <div class="col-11 pt-5">
+                                                        <p style="color:#045A97; font-size:33px; font-weight:600;">
+                                                            Skills
                                                         </p>
+
+                                                        <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
+                                                            class="mx-auto d-block">
+
+                                                        <p>2-5 years</p>
+
+                                                        @foreach (explode(',', $team->skills) as $skill)
+                                                            <h1 style="display: inline-block; font-family:'Lato';"><span
+                                                                    class="badge rounded-pill bg-secondary">{{ $skill }}</span>
+                                                            </h1>
+                                                        @endforeach
+
+
                                                     </div>
-                                                    <p class="text-left fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900;">
-                                                         Art University
-                                                         
-                                                    </p>
-                                                    <p>
-                                                        Venezuela
-                                                    </p>
-                                                    
-                                                    <p style="font-size:15px; color:#323232;"> I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and building and customization, also I am good at wordpress. I love to talk with you about our unique.</p>
                                                 </div>
-                                            </div>
-                                            <div class="tab-pane animated  fadeInLeft" id="tab_overview">
-                                              <p>
-                                                chao
-                                              </p>
-                                            </div>
-                                            
-                                        </div><!-- tab content -->
+                                                <div class="tab-pane animated fadeInLeft"
+                                                    id="tab_experience_{{ $team->id }}">
+                                                    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
+                                                        class="fs-1 pt-4">Experience <img
+                                                            src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48@2x.png') }}"
+                                                            style="height: 40px; float:right;"></p>
+                                                    <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
+                                                        class="mx-auto d-block">
+
+
+
+                                                    <div class="col-12 lh-1">
+                                                        <div
+                                                            style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
+                                                            <p style="text-align: center;  color:white; margin-top:2px;">
+                                                                {{ $team->experience_date }}
+                                                            </p>
+                                                        </div>
+                                                        <p class="text-left fs-3"
+                                                            style="color:#045A97; font-family:'Lato'; font-weight:900;">
+                                                            {{ $team->experience_category }}
+
+                                                        </p>
+                                                        <p>
+                                                            {{ $team->experience_company }}
+                                                        </p>
+
+                                                        <p style="font-size:15px; color:#323232;">
+                                                            {{ $team->experience_description }} </p>
+                                                    </div>
+                                                    |
+
+                                                </div>
+
+
+                                                <div class="tab-pane animated  fadeInLeft"
+                                                    id="tab_education_{{ $team->id }}">
+
+                                                    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
+                                                        class="fs-1 pt-4">Education <img
+                                                            src="{{ asset('assets/img/modal-teams/educationblue.png') }}"
+                                                            style="height: 40px; float:right;"></p>
+                                                    <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
+                                                        class="mx-auto d-block">
+
+                                                    <div class="col-12 lh-1">
+                                                        <div
+                                                            style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
+                                                            <p style="text-align: center;  color:white; margin-top:2px;">
+                                                                2010-2022
+                                                            </p>
+                                                        </div>
+                                                        <p class="text-left fs-3"
+                                                            style="color:#045A97; font-family:'Lato'; font-weight:900;">
+                                                            Art University
+
+                                                        </p>
+                                                        <p>
+                                                            Venezuela
+                                                        </p>
+
+                                                        <p style="font-size:15px; color:#323232;"> I am Ryan Adlard, web
+                                                            designer from USA, California. I have rich experience in web
+                                                            site design and building and customization, also I am good at
+                                                            wordpress. I love to talk with you about our unique.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane animated  fadeInLeft"
+                                                    id="tab_overview_{{ $team->id }}">
+                                                    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
+                                                        class="fs-1 pt-4">Overview <img
+                                                            src="{{ asset('assets/img/modal-teams/OVERVIEW.png') }}"
+                                                            style="height: 40px; float:right;"></p>
+                                                    <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
+                                                        class="mx-auto d-block">
+                                                    <p style="font-size:15px; color:#323232;"> I am Ryan Adlard, web
+                                                        designer from USA, California. I have rich experience in web site
+                                                        design and building and customization, also I am good at wordpress.
+                                                        I love to talk with you about our unique.</p>
+
+                                                    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
+                                                        class="fs-1 pt-4">Languages</p>
+                                                    <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
+                                                        class="mx-auto d-block">
+
+
+                                                    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
+                                                        class="fs-1 pt-4">Coding</p>
+                                                    <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:545px;"
+                                                        class="mx-auto d-block">
+                                                    <input type="text" value="80" class="dial">
+                                                    <p>HTML/CSS</p>
+
+                                                </div>
+
+                                            </div><!-- tab content -->
 
                                         </div>
-                                        
-                                      </div>
 
-                                    </div> 
-
-
-                                  
+                                    </div>
 
                                 </div>
 
@@ -601,13 +652,18 @@
 
 
                             </div>
-                            <br>
-                            <br>
+
+
 
 
                         </div>
+                        <br>
+                        <br>
+
+
                     </div>
                 </div>
+        </div>
         </div>
         @endforeach
 
@@ -841,7 +897,21 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"
+        integrity="sha512-NhRZzPdzMOMf005Xmd4JonwPftz4Pe99mRVcFeRDcdCtfjv46zPIi/7ZKScbpHD/V0HB1Eb+ZWigMqw94VUVaw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+        $('.dial').knob({
+            'min': 10,
+            'max': 100,
+            'width': 80,
+            'height': 100,
+            'displayInput': true,
+            'fgColor': "#045A97"
+
+        });
+    </script>
     <style>
         h1 {
             font-family: 'JaapokkiRegular';

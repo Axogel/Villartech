@@ -10,6 +10,10 @@ use App\Models\Flicker;
 use App\Models\Declaration;
 use App\Http\Controllers\AdminSettingController;
 use App\Models\TeamEducation;
+use App\Models\TeamExperience;
+use App\Models\TeamSkill;
+
+
 
 use App\Http\Controllers\FlickerController;
 class FrontController extends Controller
@@ -41,14 +45,20 @@ class FrontController extends Controller
 
     public function welcome()
     {
+
+
         $agregar = array();
 
         $portfolio = Portfolio::select('id','name','image','url','description', 'skills')
                      ->get();
         
-        $team = TeamUser::select('id','id_name','name','email','photo','skills')->where('status',1)
+        $team = TeamUser::select('*')
+                    ->leftJoin('team_experience','team_users.id','team_experience.developer_id')
+                    ->leftJoin('team_educations','team_users.id','team_educations.developer_id')
+                    ->where('status',1)
                      ->get();
 
+                    
 
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
                     ->get();
@@ -62,8 +72,20 @@ class FrontController extends Controller
 
 
 
-        $teamEducation = TeamEducation::select('id', 'country','developer_id','date','description')
+        $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_date','education_description')
+                    
                     ->get();
+
+
+                    
+
+        $teamExperience = TeamExperience::select('experience_id', 'experience_category','developer_id','experience_date','experience_description', 'experience_company')
+                    ->get();
+
+        
+        $teamSkill = TeamSkill::select('skill_id', 'skill_name','skill_percentage','developer_id')
+        ->get();
+
 
         /*$i=0; 
          foreach ($portfolio as $portafolio) {
@@ -79,7 +101,7 @@ class FrontController extends Controller
           }*/
          //dd($portfolio);
 
-        return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation]);
+        return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill]);
 
     }
 

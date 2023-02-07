@@ -11,7 +11,7 @@
 
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="col mt-5" style="display:grid; padding-top:80px; width:80%; margin-left:125px;">
-                    {!! Form::open(['method' => 'POST', 'route' => ['teams-experience.store'], 'files' => 'true']) !!}
+                    {!! Form::open(['method' => 'POST', 'route' => ['teams-language.store'], 'files' => 'true']) !!}
 
                     <div class="row mb-6">
 
@@ -22,8 +22,8 @@
 
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Company</label>
-                            {!! Form::text('experience_company', null, ['placeholder' => 'Company',
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skill Name</label>
+                            {!! Form::text('skill_name', null, ['placeholder' => 'Skill Name',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
@@ -32,26 +32,8 @@
                       
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
-                            {!! Form::text('experience_category', null, ['placeholder' => 'Category',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                        </div>
-
-
-                     
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                            {!! Form::text('experience_description', null, ['placeholder' => 'Description',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                        </div>
-
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
-                            {!! Form::text('experience_date', null, ['placeholder' => 'Date',
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skill Percent</label>
+                            {!! Form::text('skill_percentage', null, ['placeholder' => 'Skill Percentage',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
