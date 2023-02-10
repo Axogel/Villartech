@@ -45,7 +45,7 @@ class FrontController extends Controller
 
     public function welcome()
     {
-
+        
 
         $agregar = array();
 
@@ -53,8 +53,6 @@ class FrontController extends Controller
                      ->get();
         
         $team = TeamUser::select('*')
-                    ->leftJoin('team_experience','team_users.id','team_experience.developer_id')
-                    ->leftJoin('team_educations','team_users.id','team_educations.developer_id')
                     ->where('status',1)
                      ->get();
 
@@ -73,17 +71,23 @@ class FrontController extends Controller
 
 
         $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_date','education_description')
-                    
+                    ->leftJoin('team_users', 'team_users.id', 'team_educations.developer_id')
                     ->get();
 
 
                     
 
-        $teamExperience = TeamExperience::select('experience_id', 'experience_category','developer_id','experience_date','experience_description', 'experience_company')
-                    ->get();
+        $teamExperience = TeamExperience::select('*')
+                    ->leftJoin('team_users', 'team_users.id', 'team_experience.developer_id')
+                     ->get();
 
+              
         
+          
+
         $teamSkill = TeamSkill::select('skill_id', 'skill_name','skill_percentage','developer_id')
+        ->leftJoin('team_users', 'team_users.id', 'team_skills.developer_id')
+
         ->get();
 
 
