@@ -422,7 +422,7 @@
                                                     </a>
                                                 </div>
 
-                                                <hr style="height:3px;border:none;color:white;background-color:white;"
+                                                <hr style="height:3px;border:none; color:white;background-color:white;"
                                                     class="mx-auto d-block w-100">
 
                                             </div>
@@ -645,7 +645,7 @@
                                                     <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); "
                                                         class="mx-auto d-block">
 
-0
+
 
                                                     <p style="font-size:15px; color:#323232;">{{ $team->overview }}</p>
 
