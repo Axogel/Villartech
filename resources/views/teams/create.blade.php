@@ -82,7 +82,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label  fw-bold fs-6">Residence</label>
-                            {!! Form::text('Residence', null, ['placeholder' => 'Insert a Residence for the about section',
+                            {!! Form::text('residence', null, ['placeholder' => 'Insert a Residence for the about section',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
@@ -90,7 +90,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label  fw-bold fs-6">Freelance</label>
-                            {!! Form::text('Freelance', null, ['placeholder' => '',
+                            {!! Form::text('freelance', null, ['placeholder' => '',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
