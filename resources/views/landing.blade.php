@@ -372,11 +372,11 @@
                                             id="navbarNavAltMarkup">
                                             <div class="text-center" style="list-style;none:">
                                                 <div class="active">
-                                                    <div class="about pt-3">
-                                                        <img src="{{ asset('assets/img/modal-teams/user.png') }}"
-                                                            class="mx-auto d-block">
+                                                    <div class="about pt-3"  href="#tab_about_{{ $team->id }}" data-toggle="tab">
+                                                        <a href=" #tab_about_{{ $team->id }}" data-toggle="tab"> <img src="{{ asset('assets/img/modal-teams/user.png') }}"
+                                                            class="mx-auto d-block" href="#tab_about_{{ $team->id }}" data-toggle="tab"></a>
                                                         <a class="fs-6 text-center "
-                                                            style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                            style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                             href="#tab_about_{{ $team->id }}" data-toggle="tab">
                                                             ABOUT
                                                         </a>
@@ -388,9 +388,9 @@
 
 
                                                 <div>
-                                                    <img src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png') }}"
-                                                        class="mx-auto d-block">
-                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                    <a href="#tab_experience_{{ $team->id }}" data-toggle="tab"><img src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png') }}"
+                                                        class="mx-auto d-block"></a>
+                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                         href="#tab_experience_{{ $team->id }}" data-toggle="tab">
                                                         EXPERIENCE
                                                     </a>
@@ -401,10 +401,10 @@
 
 
 
-                                                <div>
-                                                    <img src="{{ asset('assets/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png') }}"
-                                                        class="mx-auto d-block">
-                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                <div href="#tab_education_{{ $team->id }}" data-toggle="tab">
+                                                    <a  href="#tab_education_{{ $team->id }}" data-toggle="tab"><img src="{{ asset('assets/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png') }}"
+                                                        class="mx-auto d-block"></a>
+                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                         href="#tab_education_{{ $team->id }}" data-toggle="tab">
                                                         EDUCATION
                                                     </a>
@@ -413,10 +413,12 @@
                                                 <hr style="height:3px;border:none;color:white;background-color:white; width:76px;"
                                                     class="mx-auto d-block">
 
-                                                <div>
-                                                    <img src="{{ asset('assets/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48.png') }}"
+                                                <div href="#tab_overview_{{ $team->id }}" data-toggle="tab">
+                                                    <a href="#tab_overview_{{ $team->id }}" data-toggle="tab">
+                                                        <img src="{{ asset('assets/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48.png') }}"
                                                         class="mx-auto d-block">
-                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 500; color:white;"
+                                                    </a>
+                                                    <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                         href="#tab_overview_{{ $team->id }}" data-toggle="tab">
                                                         OVERVIEW
                                                     </a>
@@ -425,6 +427,9 @@
                                                 <hr style="height:3px;border:none; color:white;background-color:white;"
                                                     class="mx-auto d-block w-100">
 
+                                                    <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}"
+                                                    class="mx-auto d-block pt-5" style="height: 80px;">
+                                                
                                             </div>
                                         </div>
                                         <!-- MODAL SIDEBAR END -->
@@ -440,19 +445,19 @@
                                                     allowfullscreen></iframe>
 
 
-                                                <div class="col-12">
-                                                    <p style="font-family: 'Lato', Bold;  color:black; font-size:30px;"
-                                                        class="text-center pt-3">
+                                                <div class="col-12" style="line-height: 1.3em;">
+                                                    <p style="font-family: 'Lato', Bold;  color:black; font-size:30px; line-height: 1.3em;"
+                                                        class="text-center pt-1">
                                                         {{ $team->name }}
                                                     </p>
                                                     <p class="text-center fs-3"
-                                                        style="color:#045A97; font-family:'Lato'; font-weight:900;">
+                                                        style="color:#045A97; font-family:'Lato'; font-weight:900; line-height: 1.3em;">
                                                         {{ $team->team_category }}
                                                     </p>
-                                                    <p class="text-center" style="color:#323232;">
+                                                    <p class="text-center" style="color:#323232; line-height: 1.3em; font-weight:light">
                                                         {{ $team->residence }}
                                                     </p>
-                                                    <p class="text-center" style="color:#323232;">
+                                                    <p class="text-center" style="color:#323232; line-height: 1.3em; font-weight:lightr">
                                                         {{ $team->work_time }}
                                                     </p>
 
@@ -493,7 +498,7 @@
                                                     <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);"
                                                         class="mx-auto d-block  w-100">
 
-                                                    <p style="font-size:15px; color:#323232;">{{ $team->description }}</p>
+                                                    <p style="font-size:18px; color:#323232; font-weight:300;">{{ $team->description }}</p>
 
                                                     <div class="col-11 h-25" style="background-color: #045A97;">
 
@@ -508,20 +513,20 @@
 
                                                             <div class="col"
                                                                 style="color:#FFFFFF;line-height:2px; padding-top:7px; ">
-                                                                <p>Age</p>
-                                                                <p>Residence</p>
-                                                                <p>Freelance</p>
-                                                                <p>Address</p>
+                                                                <p style="line-height: 1.3em; ">Age</p>
+                                                                <p style="line-height: 1.3em; ">Residence</p>
+                                                                <p style="line-height: 1.3em; ">Freelance</p>
+                                                                <p style="line-height: 1.3em; ">Address</p>
 
                                                             </div>
 
 
                                                             <div class="col"
                                                                 style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
-                                                                <p>{{ $team->age }}</p>
-                                                                <p>{{ $team->residence }}</p>
-                                                                <p>{{ $team->freelance }}</p>
-                                                                <p>{{ $team->address }}</p>
+                                                                <p style="line-height: 1.3em; ">{{ $team->age }}</p>
+                                                                <p style="line-height: 1.3em; ">{{ $team->residence }}</p>
+                                                                <p style="line-height: 1.3em; ">{{ $team->freelance }}</p>
+                                                                <p style="line-height: 1.3em; ">{{ $team->address }}</p>
                                                             </div>
 
                                                         </div>
@@ -543,7 +548,7 @@
                                                         <p>2-5 years</p>
 
                                                         @foreach (explode(',', $team->skills) as $skill)
-                                                            <h1 style="display: inline-block; font-family:'Lato';"><span
+                                                            <h1 style="display: inline-block; font-family:'Lato'; font-weight:200;"><span
                                                                     class="badge rounded-pill bg-secondary">{{ $skill }}</span>
                                                             </h1>
                                                         @endforeach
@@ -698,7 +703,7 @@
         <!-- MODAL END -->
 
 
-
+        <!-- TEAM SLIDER-->
         <div class="row" style="padding: 5em 0;">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators" style="top: 100%; padding-top: 1em;">
@@ -746,6 +751,8 @@
                                     <span class="img-top"></span>
                                     <span class="img-bottom"></span>
                                 </div>
+
+                                
                                 <div class="team-content">
                                     <a class="link icon-pentagon" href="#" data-toggle="modal"
                                         data-target="#{{ $team->id }}"><i class="fa fa-link"></i></a>
@@ -774,6 +781,8 @@
             </div>
         </div>
         </div>
+
+          <!-- TEAM SLIDER END-->
         </div>
     </section>
 
