@@ -219,17 +219,17 @@
 
             <!--Isotope filter start -->
             <!--
-                                                      <div class="row text-center">
-                                                        <div class="isotope-nav" data-isotope-nav="isotope">
-                                                          <ul>
-                                                            <li><a href="#" class="active" data-filter="*">All</a></li>
+                                                          <div class="row text-center">
+                                                            <div class="isotope-nav" data-isotope-nav="isotope">
+                                                              <ul>
+                                                                <li><a href="#" class="active" data-filter="*">All</a></li>
 
-                                                            <li><a href="#" data-filter=".web-design">Web Design</a></li>
-                                                            
-                                                          </ul>
-                                                        </div>
-                                                      </div>
-                                                      -->
+                                                                <li><a href="#" data-filter=".web-design">Web Design</a></li>
+                                                                
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                          -->
             <!-- Isotope filter end -->
 
             <div class="">
@@ -248,8 +248,8 @@
                                         $cad = str_replace('"', '', $cad);
                                     @endphp
                                     <!--
-                                                                <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                                                                -->
+                                                                    <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                                                    -->
                                     <img src="{{ asset('/storage/' . $cad) }}" alt="">
 
                                     <figcaption>
@@ -270,16 +270,16 @@
                                     <div class="modal-header">
                                         <h4 class="modal-title">{{ $portafolio->name }}</h4>
                                         <!--
-                                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                  -->
+                                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                      -->
                                     </div>
 
                                     <!-- Modal body -->
                                     <div class="modal-body modal-custom">
                                         <div class="modal-custom-body">
                                             <!--
-                                                                    <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                                                                    -->
+                                                                        <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                                                        -->
                                             <img style="width:100%;" src="{{ asset('/storage/' . $cad) }}"
                                                 alt="">
                                         </div>
@@ -684,87 +684,35 @@
 
     <!-- TEAM SLIDER-->
 
-
-    <div class="row" style="padding: 5em 0;">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators" style="top: 100%; padding-top: 1em;">
-                @php
-                    $i = 0;
-                    $j = 0;
-                    $cont = 0;
-                @endphp
-                @foreach ($teams as $team)
-                    @if ($i == 0)
-                        <li data-target="#myCarousel" data-slide-to="{{ $cont }}"
-                            class="block-color {{ $j == 0 ? 'active' : '' }}"></li>
-                    @endif
-                    @php
-                        $i++;
-                        $j = 1;
-                    @endphp
-                    @if ($i == 4)
-                        @php
-                            $i = 0;
-                            $cont++;
-                        @endphp
-                    @endif
-                @endforeach
-            </ol>
-            <div class="carousel-inner">
-                @php
-                    $i = 0;
-                    $j = 0;
-                @endphp
-                
-
-                @foreach ($teams as $team)
-                    @if ($i == 0)
-                        <div class="item {{ $j == 0 ? 'active' : '' }}">
-                    @endif
-                    @php
-                        $i++;
-                        $j = 1;
-                    @endphp
-                    <div class="col-12 col-sm-2 text-center" style="padding: 1em 0;">
+        <div class="row">
+            <div class="col-12" style="padding: 1em 0;">
+                <div class="owl-carousel owl-theme">
+                    @foreach($teams as $team)
+                    <div class="item">
                         <div class="team">
                             <div class="details">
-                                <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}"
-                                    class="pt-5" style="height: 65px; margin:0 auto">
-                                <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3">Jessica Contreras</p>
+                                <p class="pt-3 text-center">
+                                    <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}"
+                                    class="pt-5 mx-auto" style="height: 65px;">
+                                </p>
+
+                                <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3 text-center">Jessica Contreras</p>
                                 <hr style="width:60px; margin:0 auto; color:#FFFFFF; height:1px;">
-                                <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3">PHP Full Stack Web Developer Bootcamp</p>
+                                <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">PHP Full Stack Web Developer Bootcamp</p>
 
                             </div>
 
                             <div class="photo">
-                              
                                 <img src="{{ asset('storage') . '/' . $team->photo }}" alt=""
                                     style="height:90%; width:100%">
                             </div>
                         </div>
-
-                     
-
                     </div>
-                    @if ($i == 6)
-                        @php
-                            $i = 0;
-                        @endphp
+                    @endforeach
+                </div>
+
             </div>
-            @endif
-            @endforeach
-            
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-    </div>
-    </div>
 
     <!-- TEAM SLIDER END-->
     </div>
@@ -933,6 +881,30 @@
 
 
         });
+
+
+        $(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});
+
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+
     </script>
 
 
@@ -980,14 +952,16 @@
         .photo {
             z-index: 200;
         }
+
         .details {
-            height:0px;
+            height: 0px;
             background: linear-gradient(to bottom, #3E4043, #045A97);
             transition: all 2s;
             visibility: hidden;
             z-index: 0;
         }
-        .details *{
+
+        .details * {
             z-index: 0;
         }
 

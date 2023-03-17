@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('team_experiences', function (Blueprint $table) {
-            $table->id();
+        Schema::create('team_experience', function (Blueprint $table) {
+            $table->bigIncrements('experience_id');
+            $table->integer('developer_id');
+            $table->string('experience_category');
+            $table->string('experience_description');
+            $table->string('experience_date');
+            $table->string('experience_company');
             $table->timestamps();
         });
     }

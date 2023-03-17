@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('team_educations', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('education_id');
+            $table->integer('developer_id');
+            $table->string('education_title');
+            $table->string('education_date');
+            $table->string('education_description');
+            $table->string('education_country');
             $table->timestamps();
         });
     }

@@ -21,6 +21,17 @@ return new class extends Migration
             $table->string('photo');
             $table->string('skills');
             $table->integer('status')->default('1');
+            $table->string('age');
+            $table->string('address');
+            $table->string('description');
+            $table->string('team_presentation');
+            $table->string('cv_link');
+            $table->string('residence');
+            $table->string('freelance');
+            $table->string('team_category');
+            $table->string('work_time');
+            $table->string('overview');
+
             $table->timestamps();
         });
     }

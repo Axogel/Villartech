@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('portfolios', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('image');
-            $table->string('url');
-            $table->string('description');
+        Schema::create('team_skills', function (Blueprint $table) {
+            $table->bigIncrements('skill_id');
+            $table->string('skill_name');
+            $table->string('skill_percentage');
+            $table->integer('developer_id');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('portfolios');
+        Schema::dropIfExists('team_skills');
     }
 };
