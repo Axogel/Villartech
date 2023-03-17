@@ -19,7 +19,7 @@ class TeamUserController extends Controller
      */
     public function index()
     {
-        $teamUser = TeamUser::orderBy('id','desc')->paginate(10);
+        $teamUser = TeamUser::orderBy('id','desc')->paginate(12);
         return view ('teams.index', $teamUser)->with('teamUsers', $teamUser);
        
     }

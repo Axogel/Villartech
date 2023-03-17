@@ -50,7 +50,7 @@
         <div class="row mb-6">
             <label style="margin-left:10px;">Image:</label>
                 <span class="form-control" style="margin-left:320px; width:300px;">  
-                 {!! Form::file('image', null) !!}
+                 {!! Form::file('photo', null) !!}
                 </span>
                 <img src="{{ asset('storage') . '/' . $teamUser->photo }}" alt=" "style="width: 50px;height: 50px; margin-left:40px;">
             </div>
