@@ -696,9 +696,9 @@
                                     class="pt-5 mx-auto" style="height: 65px;">
                                 </p>
 
-                                <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3 text-center">Jessica Contreras</p>
+                                <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3 text-center">{{$team->name}}</p>
                                 <hr style="width:60px; margin:0 auto; color:#FFFFFF; height:1px;">
-                                <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">PHP Full Stack Web Developer Bootcamp</p>
+                                <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">{{$team->team_category}}</p>
 
                             </div>
 
