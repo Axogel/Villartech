@@ -34,7 +34,7 @@ class TeamUserFactory extends Factory
             'overview' => $this->faker->text(),
             'created_at' => $this->faker->date(),
             'updated_at' => $this->faker->date(),
-            'photo' => 'images/'.$this->faker->file(public_path('images'), storage_path('app/public/uploads/images/'), false),
+            'photo' => 'uploads/images/'.$this->faker->file(public_path('images'), storage_path('app/public/uploads/images/'), false),
 
         ];
     }
