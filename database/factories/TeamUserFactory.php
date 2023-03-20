@@ -22,7 +22,7 @@ class TeamUserFactory extends Factory
             'description' => $this->faker->text(),
             'email' =>  $this->faker->email(),
             'skills' => $this->faker->text(),
-            'status' => rand(0,1),
+            'status' => 1,
             'age' => rand(18,30),
             'address' => $this->faker->text(),
             'team_presentation' => $this->faker->text(),
