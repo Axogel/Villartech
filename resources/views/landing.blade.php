@@ -982,7 +982,7 @@
             position: absolute;
             top: 0px;
             background: linear-gradient(to bottom, #3E4043, #045A97);
-            transition: all 0.7s;
+            transition: all 0.5s;
             visibility: hidden;
             z-index: -9999999;
             
