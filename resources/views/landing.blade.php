@@ -894,7 +894,7 @@
             items:1
         },
         600:{
-            items:2
+            items:3
         },
         1000:{
             items:6
@@ -949,7 +949,7 @@
         }
 
         .photo {
-            z-index: 200;
+            z-index: 99999999;
         }
 
 
@@ -966,6 +966,14 @@
         .photo {
             top:50px;
             position: fixed;
+            transition: all 1s;
+
+        }
+
+        .photo:hover {
+            top: 100px;
+            transition: all 1s;
+
         }
 
         .details {
@@ -974,9 +982,9 @@
             position: absolute;
             top: 0px;
             background: linear-gradient(to bottom, #3E4043, #045A97);
-            transition: all 1.0s;
+            transition: all 0.7s;
             visibility: hidden;
-            z-index: 0;
+            z-index: -9999999;
             
         }
 
@@ -987,7 +995,7 @@
         .team:hover .details {
             width: 100%;
 
-            height: 250px;
+            height: 300px;
             position: fixed;
             top: -200px;
             visibility: visible;
