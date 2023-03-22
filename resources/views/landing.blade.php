@@ -684,9 +684,9 @@
 
     <!-- TEAM SLIDER-->
 
-        <div class="row">
+        <div class="row pt-5">
             <div class="col-12" style="padding: 1em 0;">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme" id="team-carousel">
                     @foreach($teams as $team)
                     <div class="item">
                         <div class="team">
@@ -882,28 +882,27 @@
 
         });
 
-
         $(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});
-
-
-$('.owl-carousel').owlCarousel({
-    loop:true,
+  $("#team-carousel").owlCarousel({
     margin:10,
-    nav:true,
+    navigation:true,
+    items:6,
+    pagination:false,
+    navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:17px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:17px;"></i>'],
     responsive:{
         0:{
             items:1
         },
         600:{
-            items:3
+            items:2
         },
         1000:{
-            items:5
+            items:6
         }
     }
-})
+  });
+});
+
 
     </script>
 
@@ -953,12 +952,32 @@ $('.owl-carousel').owlCarousel({
             z-index: 200;
         }
 
+
+        .item {
+            height: 400px;
+            position: relative;
+        }
+
+        .team{ 
+        height: 400px;
+        position: relative;
+        }
+
+        .photo {
+            top:50px;
+            position: fixed;
+        }
+
         .details {
             height: 0px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
             background: linear-gradient(to bottom, #3E4043, #045A97);
-            transition: all 2s;
+            transition: all 1.0s;
             visibility: hidden;
             z-index: 0;
+            
         }
 
         .details * {
@@ -966,8 +985,35 @@ $('.owl-carousel').owlCarousel({
         }
 
         .team:hover .details {
-            height: 270px;
+            width: 100%;
+
+            height: 250px;
+            position: fixed;
+            top: -200px;
             visibility: visible;
+            z-index: 99999999;
+
         }
+
+        .owl-carousel .owl-wrapper-outer {
+            overflow: initial;
+        }
+       .owl-next {
+            position: absolute !important;
+            top:35% !important;
+            font-size: 20px;
+            right:  0%;
+            background-color: white;
+        }
+
+        .owl-prev {
+            position: absolute !important;
+            top:35% !important;
+            font-size: 20px;
+            left: 0%;
+            background-color: white;
+
+        }
+
     </style>
 @endsection
