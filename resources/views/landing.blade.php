@@ -885,23 +885,26 @@
 
         $(document).ready(function(){
   $("#team-carousel").owlCarousel({
-    margin:10,
+    margin:0,
+    responsive:true,
     navigation:true,
-    items:6,
     pagination:false,
+    responsiveRefreshRate : 0,
     navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'],
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:6
-        }
-    }
+   
   });
+});
+
+
+
+window.addEventListener('resize', function(event) {
+  var tamanoAnterior = window.innerWidth;
+  setTimeout(function() {
+    var tamanoActual = window.innerWidth;
+    if (tamanoAnterior != tamanoActual) {
+      owlCarousel.reload();
+    }
+  }, 200);
 });
 
 
@@ -909,6 +912,20 @@
 
 
     <style>
+
+
+        @media (min-width:300px) and (max-width:600px) {
+
+            .owl-next {
+                top:40% !important;
+            }
+
+            .owl-prev {
+                top:40% !important;
+            }
+        }
+
+
         h1 {
             font-family: 'JaapokkiRegular';
             text-transform: uppercase;
@@ -1009,7 +1026,7 @@
         }
        .owl-next {
             position: absolute !important;
-            top:35% !important;
+            top:30% ;
             font-size: 20px;
             right:  0%;
             background-color: white;
@@ -1017,7 +1034,7 @@
 
         .owl-prev {
             position: absolute !important;
-            top:35% !important;
+            top:30%;
             font-size: 20px;
             left: 0%;
             background-color: white;
