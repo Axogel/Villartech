@@ -690,6 +690,7 @@
                     @foreach($teams as $team)
                     <div class="item">
                         <div class="team">
+                            
                             <div class="details">
                                 <p class="pt-3 text-center">
                                     <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}"
@@ -701,8 +702,8 @@
                                 <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">{{$team->team_category}}</p>
 
                             </div>
-
                             <div class="photo">
+                                
                                 <img src="{{ asset('storage') . '/' . $team->photo }}" alt=""
                                     style="height:90%; width:100%">
                             </div>
@@ -888,7 +889,7 @@
     navigation:true,
     items:6,
     pagination:false,
-    navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:17px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:17px;"></i>'],
+    navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'],
     responsive:{
         0:{
             items:1
@@ -959,7 +960,7 @@
         }
 
         .team{ 
-        height: 400px;
+        height: 0px;
         position: relative;
         }
 
