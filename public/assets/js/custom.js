@@ -118,7 +118,18 @@ jQuery(function($) {
       navigation : false, // Show next and prev buttons
       slideSpeed : 600,
       pagination:true,
-      singleItem:true
+      singleItem:true,
+       mouseDrag : false,
+        touchDrag : false,
+
+        itemsCustom : [
+          [0, 1],
+          [450, 1],
+          [600, 1],
+          [700, 1],
+          [1000, 5]
+        ],
+  
  
     });
 

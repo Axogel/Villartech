@@ -684,8 +684,8 @@
 
     <!-- TEAM SLIDER-->
 
-        <div class="row pt-5">
-            <div class="col-12" style="padding: 1em 0;">
+        <div class="">
+            <div class="" style="padding: 1em 0;">
                 <div class="owl-carousel owl-theme" id="team-carousel">
                     @foreach($teams as $team)
                     <div class="item">
@@ -714,6 +714,8 @@
 
             </div>
         </div>
+
+       
 
     <!-- TEAM SLIDER END-->
     </div>
@@ -891,21 +893,38 @@
     pagination:false,
     responsiveRefreshRate : 0,
     navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'],
-   
+    itemsCustom : [
+        [0, 1],
+        [375, 1],
+        [600, 1],
+        [700, 1],
+        [1000, 5]
+      ],
   });
 });
 
 
 
-window.addEventListener('resize', function(event) {
-  var tamanoAnterior = window.innerWidth;
-  setTimeout(function() {
-    var tamanoActual = window.innerWidth;
-    if (tamanoAnterior != tamanoActual) {
-      owlCarousel.reload();
-    }
-  }, 200);
+$(document).ready(function(){
+  $("#testimonial-carousel").owlCarousel({
+    margin:0,
+    responsive:true,
+    navigation:true,
+    pagination:false,
+    responsiveRefreshRate : 0,
+    navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'],
+    itemsCustom : [
+        [0, 1],
+        [375, 1],
+        [600, 1],
+        [700, 1],
+        [1000, 5]
+      ],
+  });
 });
+
+
+
 
 
     </script>
@@ -1006,6 +1025,34 @@ window.addEventListener('resize', function(event) {
             
         }
 
+
+        @media (min-width:300px) and (max-width:765px) {
+            .details {
+                width: 100%;
+
+        height: 300px;
+        visibility: visible;
+     
+            
+        }
+
+
+        .owl-carousel .owl-wrapper-outer {
+        overflow: hidden;
+      }
+
+      .photo {
+            top:208px;
+            position: fixed;
+            transition: all 1s;
+
+        }
+
+
+        }
+
+
+
         .details * {
             z-index: 0;
         }
@@ -1019,11 +1066,22 @@ window.addEventListener('resize', function(event) {
             visibility: visible;
             z-index: 99999999;
 
+            
+
         }
 
+        @media (min-width:765px) {
+           
+
+
         .owl-carousel .owl-wrapper-outer {
-            overflow: initial;
+        overflow: initial;
+      }
+
+
+
         }
+        
        .owl-next {
             position: absolute !important;
             top:30% ;
