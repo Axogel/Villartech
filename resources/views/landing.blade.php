@@ -1042,7 +1042,7 @@ $(document).ready(function(){
       }
 
       .photo {
-            top:208px;
+            top:194px;
             position: fixed;
             transition: all 1s;
 
