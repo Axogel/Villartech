@@ -58,20 +58,7 @@
 <body>
 
   <!-- Style switcher start -->
-  <div class="style-switch-wrapper">
-    <div class="style-switch-button">
-      <i class="fa fa-sliders"></i>
-    </div>
-    <h3>Style Options</h3>
-    <button id="preset1" class="btn btn-sm btn-primary"></button>
-    <button id="preset2" class="btn btn-sm btn-primary"></button>
-    <button id="preset3" class="btn btn-sm btn-primary"></button>
-    <button id="preset4" class="btn btn-sm btn-primary"></button>
-    <!--<button id="preset5" class="btn btn-sm btn-primary"></button>-->
-    <button id="preset6" class="btn btn-sm btn-primary"></button>
-    <br/><br/>
-    <a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
-  </div>
+  
   <!-- Style switcher end -->
 
   <div class="body-inner">
@@ -87,7 +74,7 @@
 
           <div class="navbar-brand">
             <a href="/">
-              <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: 0px; position: fixed; padding-left: 25px;" alt="logo">
+              <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -9px; position: fixed; padding-left: 25px;" alt="logo">
             </a> 
           </div>        
 
@@ -99,22 +86,22 @@
               <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">ABOUT US</a>
+              <a class="nav-link active text-light" aria-current="page" href="#about-us">ABOUT US</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">PORTFOLIO</a>
+              <a class="nav-link active text-light" aria-current="page" href="#portfolio">PORTFOLIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">SERVICES</a>
+              <a class="nav-link active text-light" aria-current="page" href="#services">SERVICES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">TESTIMONIALS</a>
+              <a class="nav-link active text-light" aria-current="page" href="#testimonial">TESTIMONIALS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">Team</a>
+              <a class="nav-link active text-light" aria-current="page" href="#our-team">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">CONTACT US</a>
+              <a class="nav-link active text-light" aria-current="page" href="#contact">CONTACT US</a>
             </li>
           </ul>
         </div>
@@ -188,25 +175,11 @@
 
       <div class="row">
 
-        <div class="col-md-6 col-sm-12 footer-widget">
-          <h3 class="widget-title">Flickr Photos</h3>
-
-          <div class="img-gallery">
-            <div class="img-container">
-              @foreach ($flickers as $flicker)
-              <a class="thumb-holder" data-rel="prettyPhoto" href="/assets/img/gallery/1.jpg">
-                <img src="{{ asset('storage') . '/' . $flicker->image }}" alt="">
-              </a>
-              @endforeach
-            </div>
-          </div>
-
-            
-        </div><!--/ end flickr -->
+      
 
         @foreach($settings as $setting)
         <div class="col-md-6 col-sm-12 footer-widget footer-about-us">
-          <h3 class="widget-title">About Villartechnologies</h3>
+         
           <p><strong>Address: </strong>{{ $setting->address }}</p>
           <div class="row">
             <div class="col-md-6">

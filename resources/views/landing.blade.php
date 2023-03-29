@@ -14,7 +14,7 @@
                 <div class="col-md-12 heading">
                     <span class="title-icon classic pull-left" style="padding-bottom:9px;"><i
                             class="fa fa-suitcase"></i></span>
-                    <h2 class="title classic" style="line-height: 57px; height:60px;">Company Profile</h2>
+                    <h2 class="title classic" style="line-height: 57px; height:60px; font-family: 'Lato';" id="about-us">Company Profile</h2>
                 </div>
             </div><!-- Title row end -->
             <div class="row">
@@ -24,7 +24,7 @@
                             <a class="animated fadeIn" href="#tab_a" data-toggle="tab">
                                 <span class="tab-icon"><i class="fa fa-info"></i></span>
                                 <div class="tab-info">
-                                    <h3>Who Are We</h3>
+                                    <h3 style="font-family: 'Lato'">Who Are We</h3>
                                 </div>
                             </a>
                         </li>
@@ -32,7 +32,7 @@
                             <a class="animated fadeIn" href="#tab_b" data-toggle="tab">
                                 <span class="tab-icon"><i class="fa fa-briefcase"></i></span>
                                 <div class="tab-info">
-                                    <h3>Our Company</h3>
+                                    <h3 style="font-family: 'Lato'">Our Company</h3>
                                 </div>
                             </a>
                         </li>
@@ -40,7 +40,7 @@
                             <a class="animated fadeIn" href="#tab_c" data-toggle="tab">
                                 <span class="tab-icon"><i class="fa fa-android"></i></span>
                                 <div class="tab-info">
-                                    <h3>What We Do</h3>
+                                    <h3 style="font-family: 'Lato'">What We Do</h3>
                                 </div>
                             </a>
                         </li>
@@ -48,7 +48,7 @@
                             <a class="animated fadeIn" href="#tab_d" data-toggle="tab">
                                 <span class="tab-icon"><i class="fa fa-pagelines"></i></span>
                                 <div class="tab-info">
-                                    <h3>Modern Design</h3>
+                                    <h3 style="font-family: 'Lato'">Modern Design</h3>
                                 </div>
                             </a>
                         </li>
@@ -56,7 +56,7 @@
                             <a class="animated fadeIn" href="#tab_e" data-toggle="tab">
                                 <span class="tab-icon"><i class="fa fa-support"></i></span>
                                 <div class="tab-info">
-                                    <h3>Dedicated Support</h3>
+                                    <h3 style="font-family: 'Lato'">Dedicated Support</h3>
                                 </div>
                             </a>
                         </li>
@@ -64,7 +64,7 @@
                     <div class="tab-content col-md-9 col-sm-7">
                         <div class="tab-pane active animated fadeInRight" id="tab_a">
                             <i class="fa fa-trophy big"></i>
-                            <h3>We Are Awarded Winning Company</h3>
+                            <h3 style="font-family: 'Lato'">We Are Awarded Winning Company</h3>
                             <p>We are Villar Technologies, one of the most reliable companies that you will find in the
                                 development and programmation market around the world. We have clients from different
                                 countries that can assured our work and responsability with the bussiness and we are ready
@@ -74,7 +74,7 @@
                         </div>
                         <div class="tab-pane animated fadeInLeft" id="tab_b">
                             <i class="fa fa-briefcase big"></i>
-                            <h3>We Have Worldwide Business</h3>
+                            <h3 style="font-family: 'Lato'">We Have Worldwide Business</h3>
                             <p>Us, VillarTechnologies as the company that we are today, we started working and providing our
                                 services on February 2017. Since that date, we became a formal bussiness company whose
                                 initiative was to incorporate a new platform that would be able to work on the latest skills
@@ -85,7 +85,7 @@
                         </div>
                         <div class="tab-pane animated fadeIn" id="tab_c">
                             <i class="fa fa-android big"></i>
-                            <h3>We Build Readymade Applications</h3>
+                            <h3 style="font-family: 'Lato'">We Build Readymade Applications</h3>
                             <p>VillarTechnologies provides a whole world of programmation and development services with the
                                 primacy base of software as a service. Therefore, our team is always preparing themselves in
                                 the latest skills and technologies so they are continuosly getting up to date with the
@@ -97,7 +97,7 @@
                         </div>
                         <div class="tab-pane animated fadeIn" id="tab_d">
                             <i class="fa fa-pagelines big"></i>
-                            <h3>Clean and Modern Design</h3>
+                            <h3 style="font-family: 'Lato'">Clean and Modern Design</h3>
                             <p>VillarTechnologies offers an excellent strategic program to keep the execution of each job as
                                 modern and effective as posible and as it´s required and requested by the client. We quickly
                                 adapt to any type of campaign or project inbound and outbound that you want to outsource,
@@ -105,7 +105,7 @@
                         </div>
                         <div class="tab-pane animated fadeIn" id="tab_e">
                             <i class="fa fa-support big"></i>
-                            <h3>24/7 Dedicated Support</h3>
+                            <h3 style="font-family: 'Lato'">24/7 Dedicated Support</h3>
                             <p>In VillarTechnologies we make sure that our team is available 24/7 or during the work
                                 schedule needed by the client. We have an excellent customer service team under the
                                 leadership of the company owner, totally trained to keep constant and direct contact with
@@ -125,7 +125,7 @@
             <div class="row">
                 <div class="col-md-12 heading">
                     <span class="title-icon classic pull-left"><i class="fa fa-cogs"></i></span>
-                    <h2 class="title classic">Our Services</h2>
+                    <h2 class="title classic" style="font-family: 'Lato'" id="services">Our Services</h2>
                 </div>
             </div>
 
@@ -134,7 +134,7 @@
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-delay=".5s">
                         <div class="service-content text-center">
                             <span class="service-icon icon-pentagon"><i class="fa fa-tachometer"></i></span>
-                            <h3>Web Design</h3>
+                            <h3 style="font-family: 'Lato'" class="pt-5">Web Design</h3>
                             <p>We adapt and create your web site to any type of screen, through the developing and usage of
                                 the latest trends, in order to always improve the user´s experience.</p>
                         </div>
@@ -144,7 +144,7 @@
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-delay=".8s">
                         <div class="service-content text-center">
                             <span class="service-icon icon-pentagon"><i class="fa fa-android"></i></span>
-                            <h3>Apps Development</h3>
+                            <h3 style="font-family: 'Lato'" class="pt-5">Apps Development</h3>
                             <p>We are your solution and your best option for the design and development of apps in the
                                 Android and IOS platform.</p>
                         </div>
@@ -155,7 +155,7 @@
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="1.1s">
                         <div class="service-content text-center">
                             <span class="service-icon icon-pentagon"><i class="fa fa-shopping-cart"></i></span>
-                            <h3>eCommerce Websites</h3>
+                            <h3 style="font-family: 'Lato'" class="pt-5">eCommerce Websites</h3>
                             <p>Creation of websites dedicated to the ecommerce service of selling and buying process of
                                 different products, articles and services.</p>
                         </div>
@@ -172,7 +172,7 @@
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-delay=".5s">
                         <div class="service-content text-center">
                             <span class="service-icon icon-pentagon"><i class="fa fa-bar-chart"></i></span>
-                            <h3>SEO Service</h3>
+                            <h3 style="font-family: 'Lato'" class="pt-5">SEO Service</h3>
                             <p>Guarantee of SEO positioning websites through a search engine optimization.</p>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="1.1s">
                         <div class="service-content text-center">
                             <span class="service-icon icon-pentagon"><i class="fa fa-comments"></i></span>
-                            <h3>Consultation</h3>
+                            <h3 style="font-family: 'Lato'" class="pt-5">Consultation</h3>
                             <p>As per the projects on develop, we provide uninterrupted user and customer support to assure
                                 the accurate and the effective assistance of the job.</p>
                         </div>
@@ -191,7 +191,7 @@
                     <div class="col-md-4 col-sm-4 wow fadeInDown" data-wow-delay="1.4s">
                         <div class="service-content text-center">
                             <span class="service-icon icon-pentagon"><i class="fa fa-lightbulb-o"></i></span>
-                            <h3>Design for Startups</h3>
+                            <h3 style="font-family: 'Lato'" class="pt-5">Design for Startups</h3>
                             <p>We design beautiful modern engaging websites that always latest responsive technologies.</p>
                         </div>
                     </div>
@@ -211,7 +211,7 @@
             <div class="row">
                 <div class="col-md-12 heading text-center">
                     <span class="icon-pentagon wow bounceIn"><i class="fa fa-suitcase"></i></span>
-                    <h2 class="title2">Project Completed
+                    <h2 class="title2" style="font-family: 'Lato'" id="portfolio">Project Completed
                         <span class="title-desc">A Quality Professional Team with 4 years experience</span>
                     </h2>
                 </div>
@@ -316,7 +316,7 @@
         </div><!-- Container end -->
     </section><!-- Portfolio end -->
 
-    <div class="col-12">
+    <div class="col-12" id="our-team">
         <p style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; padding-left:80px;">OUR TEAM</p>
     </div>
 
@@ -793,7 +793,7 @@
         <div class="container">
             <div class="col-md-12 heading">
                 <span class="title-icon classic pull-left"><i class="fa fa-globe"></i></span>
-                <h2 class="title classic">Contact Us</h2>
+                <h2 class="title classic" style="font-family: 'Lato'">Contact Us</h2>
             </div>
             <div class="row">
 
@@ -841,9 +841,7 @@
                 <div class="col-md-5">
                     @foreach ($settings as $setting)
                         <div class="contact-info">
-                            <h3>Contact Details</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget erat magna.
-                                Pellentesque justo ante</p>
+                            <h3 style="font-family: 'Lato'">Contact Details</h3>
                             <br>
                             <p><i class="fa fa-home info"></i>19 de Abril Avenida, San Cristóbal, Venezuela </p>
                             <p><i class="fa fa-phone info"></i> +58 276 3489292 </p>
@@ -1007,10 +1005,13 @@ $(document).ready(function(){
 
         }
 
+        @media (min-width:765px) {
+
         .photo:hover {
             top: 100px;
             transition: all 1s;
 
+        }
         }
 
         .details {
@@ -1048,14 +1049,30 @@ $(document).ready(function(){
 
         }
 
+    
+
+
+
+
+}
+
+
+
+@media (min-width:765px) {
+    
+    .team:hover .details {
+            width: 100%;
+
+            height: 300px;
+            position: fixed;
+            top: -200px;
+            visibility: visible;
+            z-index: 99999999;
+
+            
 
         }
 
-
-
-        .details * {
-            z-index: 0;
-        }
 
         .team:hover .details {
             width: 100%;
@@ -1069,6 +1086,17 @@ $(document).ready(function(){
             
 
         }
+
+
+        }
+
+
+
+        .details * {
+            z-index: 0;
+        }
+
+      
 
         @media (min-width:765px) {
            
