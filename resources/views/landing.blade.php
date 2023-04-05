@@ -347,7 +347,7 @@
                                     id="navbarNavAltMarkup">
                                     <div class="text-center" style="list-style;none:">
                                         <div class="active">
-                                            <div class="about pt-3" href="#tab_about_{{ $team->id }}"
+                                            <div class="about pt-5" href="#tab_about_{{ $team->id }}"
                                                 data-toggle="tab">
                                                 <a href=" #tab_about_{{ $team->id }}" data-toggle="tab"> <img
                                                         src="{{ asset('assets/img/modal-teams/user.png') }}"
@@ -365,7 +365,7 @@
                                             class="mx-auto d-block">
 
 
-                                        <div>
+                                        <div class="pt-4">
                                             <a href="#tab_experience_{{ $team->id }}" data-toggle="tab"><img
                                                     src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png') }}"
                                                     class="mx-auto d-block"></a>
@@ -380,7 +380,7 @@
 
 
 
-                                        <div href="#tab_education_{{ $team->id }}" data-toggle="tab">
+                                        <div class="pt-4" href="#tab_education_{{ $team->id }}" data-toggle="tab">
                                             <a href="#tab_education_{{ $team->id }}" data-toggle="tab"><img
                                                     src="{{ asset('assets/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png') }}"
                                                     class="mx-auto d-block"></a>
@@ -393,7 +393,7 @@
                                         <hr style="height:3px;border:none;color:white;background-color:white; width:76px;"
                                             class="mx-auto d-block">
 
-                                        <div href="#tab_overview_{{ $team->id }}" data-toggle="tab">
+                                        <div class="pt-4" href="#tab_overview_{{ $team->id }}" data-toggle="tab">
                                             <a href="#tab_overview_{{ $team->id }}" data-toggle="tab">
                                                 <img src="{{ asset('assets/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48.png') }}"
                                                     class="mx-auto d-block">
@@ -418,7 +418,7 @@
 
 
                                     <div class="d-inline-block">
-                                        <iframe width="450" height="315" src="{{ $team->team_presentation }}"
+                                        <iframe  src="{{ $team->team_presentation }}"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowfullscreen></iframe>
@@ -438,7 +438,7 @@
                                                 {{ $team->residence }}
                                             </p>
                                             <p class="text-center"
-                                                style="color:#323232; line-height: 1.3em; font-weight:lightr">
+                                                style="color:#323232; line-height: 1.3em; font-weight:light">
                                                 {{ $team->work_time }}
                                             </p>
 
@@ -451,13 +451,13 @@
                                     <div class="row">
                                         <div class="col-1"></div>
                                         <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
-                                            <p style="text-align: center; padding-top:8px; color:white;"><a
+                                            <p style="text-align: center; padding-top:8px; color:white; font-family: 'Lato';"><a
                                                     href="{{ $team->cv_link }}" style="color:white;">DOWNLOAD
                                                     CV</a></p>
                                         </div>
                                         <div class="col-1"></div>
                                         <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
-                                            <p style="text-align: center;  padding-top:8px; color:white;">CONTACT
+                                            <p style="text-align: center;  padding-top:8px; color:white; font-family: 'Lato';">CONTACT
                                                 ME</p>
                                         </div>
                                     </div>
@@ -477,7 +477,7 @@
                                             <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);"
                                                 class="mx-auto d-block  w-100">
 
-                                            <p style="font-size:18px; color:#323232; font-weight:300;">
+                                            <p style="font-size:18px; color:#323232; font-family: 'Lato'; font-weight:300;">
                                                 {{ $team->description }}</p>
 
                                             <div class="col-11 h-25" style="background-color: #045A97;">
@@ -529,10 +529,10 @@
 
                                                 @foreach (explode(',', $team->skills) as $skill)
                                                     <h1
-                                                        style="display: inline-block; font-family:'Lato'; font-weight:200;">
+                                                        style="display: inline-block; font-family: 'Lato';">
                                                         <span
-                                                            class="badge rounded-pill bg-secondary">{{ $skill }}</span>
-                                                    </h1>
+                                                            class="badge rounded-pill bg-size-lg" style="background-color: #323232; font-weight:300;">{{ $skill }}</span>
+                                            </h1>
                                                 @endforeach
 
 
@@ -631,7 +631,7 @@
 
 
 
-                                            <p style="font-size:15px; color:#323232;">{{ $team->overview }}</p>
+                                            <p style=" font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">{{ $team->overview }}</p>
 
                                             <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
                                                 class="fs-1 pt-4">Coding</p>
@@ -646,8 +646,8 @@
                                                         <li>
                                                             <input type="text"
                                                                 value="{{ $teamSkill->skill_percentage }}" class="dial"
-                                                                data-thickness=".2">
-                                                            <p style="padding-left:20px;">
+                                                                data-thickness=".1">
+                                                            <p  style="font-family: 'Lato'; text-align:center; font-size:12px;">
                                                                 {{ $teamSkill->skill_name }}</p>
                                                         </li>
                                                     </ul>
@@ -705,7 +705,9 @@
                             <div class="photo">
                                 
                                 <img src="{{ asset('storage') . '/' . $team->photo }}" alt=""
-                                    style="height:90%; width:100%">
+                                    style="height:90%; width:100%" href="#" data-toggle="modal"
+                                    data-target="#{{ $team->id }}">
+                                    
                             </div>
                         </div>
                     </div>
@@ -1012,6 +1014,14 @@ $(document).ready(function(){
             transition: all 1s;
 
         }
+
+
+
+        iframe {
+            width: 450px;
+            height: 315px;
+        }
+
         }
 
         .details {
