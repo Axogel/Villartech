@@ -389,7 +389,7 @@
                                         <div class="pt-4" href="#tab_education_{{ $team->id }}" data-toggle="tab">
                                             <a href="#tab_education_{{ $team->id }}" data-toggle="tab">
                                             
-                                                <svg class="svg-item mx-auto" xmlns="http://www.w3.org/2000/svg" width="41.941" height="51.942" viewBox="0 0 50 50">
+                                                <svg class="svg-item mx-auto" xmlns="http://www.w3.org/2000/svg" width="41.941" height="43.942" viewBox="0 0 50 50">
                                                     <path  d="M42.356,33.412V19.534L23.605,29.623,2,17.811,23.605,6l21.7,11.811v15.6ZM23.605,41.434,9.333,33.609V23.274L23.605,31.1l14.272-7.825V33.609Z" transform="translate(-2 -6)" fill="#fff"/>
                                                   </svg>
                                             
