@@ -14,7 +14,8 @@
                 <div class="col-md-12 heading">
                     <span class="title-icon classic pull-left" style="padding-bottom:9px;"><i
                             class="fa fa-suitcase"></i></span>
-                    <h2 class="title classic" style="line-height: 57px; height:60px; font-family: 'Lato';" id="about-us">Company Profile</h2>
+                    <h2 class="title classic" style="line-height: 57px; height:60px; font-family: 'Lato';" id="about-us">
+                        Company Profile</h2>
                 </div>
             </div><!-- Title row end -->
             <div class="row">
@@ -219,17 +220,17 @@
 
             <!--Isotope filter start -->
             <!--
-                                                          <div class="row text-center">
-                                                            <div class="isotope-nav" data-isotope-nav="isotope">
-                                                              <ul>
-                                                                <li><a href="#" class="active" data-filter="*">All</a></li>
+                                                              <div class="row text-center">
+                                                                <div class="isotope-nav" data-isotope-nav="isotope">
+                                                                  <ul>
+                                                                    <li><a href="#" class="active" data-filter="*">All</a></li>
 
-                                                                <li><a href="#" data-filter=".web-design">Web Design</a></li>
-                                                                
-                                                              </ul>
-                                                            </div>
-                                                          </div>
-                                                          -->
+                                                                    <li><a href="#" data-filter=".web-design">Web Design</a></li>
+                                                                    
+                                                                  </ul>
+                                                                </div>
+                                                              </div>
+                                                              -->
             <!-- Isotope filter end -->
 
             <div class="">
@@ -248,8 +249,8 @@
                                         $cad = str_replace('"', '', $cad);
                                     @endphp
                                     <!--
-                                                                    <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                                                                    -->
+                                                                        <img src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                                                        -->
                                     <img src="{{ asset('/storage/' . $cad) }}" alt="">
 
                                     <figcaption>
@@ -270,16 +271,16 @@
                                     <div class="modal-header">
                                         <h4 class="modal-title">{{ $portafolio->name }}</h4>
                                         <!--
-                                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                      -->
+                                                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                          -->
                                     </div>
 
                                     <!-- Modal body -->
                                     <div class="modal-body modal-custom">
                                         <div class="modal-custom-body">
                                             <!--
-                                                                        <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
-                                                                        -->
+                                                                            <img style="width:80%;" src="{{ asset('assets/img/portfolio/cultura_global.png') }}" alt="">
+                                                                            -->
                                             <img style="width:100%;" src="{{ asset('/storage/' . $cad) }}"
                                                 alt="">
                                         </div>
@@ -349,10 +350,13 @@
                                         <div class="active">
                                             <div class="about pt-5" href="#tab_about_{{ $team->id }}"
                                                 data-toggle="tab">
-                                                <a href=" #tab_about_{{ $team->id }}" data-toggle="tab"> <img
-                                                        src="{{ asset('assets/img/modal-teams/user.png') }}"
-                                                        class="mx-auto d-block" href="#tab_about_{{ $team->id }}"
-                                                        data-toggle="tab"></a>
+                                                <a href=" #tab_about_{{ $team->id }}" data-toggle="tab" onclick="toggle(this)"> 
+
+                                                    <svg class="svg-item active mx-auto" xmlns="http://www.w3.org/2000/svg" width="41.941" height="51.942" viewBox="0 0 50 50">
+                                                        <path d="M182.619,331.275H165.372c-1.162,0-1.212-.142-1.314-1.283-.293-3.214,1.323-5.207,4.023-6.563,1.8-.906,3.716-1.529,5.564-2.319a11.991,11.991,0,0,0,3.051-1.752,4.045,4.045,0,0,0,1.319-2.267.958.958,0,0,0-.244-.866,19.4,19.4,0,0,1-4.329-13.72,8.658,8.658,0,0,1,5.307-7.6,8.876,8.876,0,0,1,9.38.866c3.131,2.234,4.177,5.432,3.858,9.143a20.558,20.558,0,0,1-3.81,10.646c-.331.455-.985.783-.8,1.527a4.18,4.18,0,0,0,1.385,2.319,20.7,20.7,0,0,0,5.541,2.722,21.494,21.494,0,0,1,4.675,2.346c2.142,1.545,2.528,3.711,2.308,6.114-.052.582-.506.693-1.015.693-2.012-.009-4.024,0-6.038,0Z" transform="translate(-156.82 -286.761)" fill="#FFFFFF"/>
+                                                    </svg>
+
+                                                    </a>
                                                 <a class="fs-6 text-center "
                                                     style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                     href="#tab_about_{{ $team->id }}" data-toggle="tab">
@@ -366,9 +370,11 @@
 
 
                                         <div class="pt-4">
-                                            <a href="#tab_experience_{{ $team->id }}" data-toggle="tab"><img
-                                                    src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48.png') }}"
-                                                    class="mx-auto d-block"></a>
+                                            <a href="#tab_experience_{{ $team->id }}" data-toggle="tab">
+                                                <svg  class="svg-item mx-auto" xmlns="http://www.w3.org/2000/svg" width="41.941" height="41.942" viewBox="0 0 40 50">
+                                                    <path id="work_FILL1_wght400_GRAD0_opsz48" d="M6.859,40.208a2.742,2.742,0,0,1-2-.858,2.742,2.742,0,0,1-.858-2V14.481a2.742,2.742,0,0,1,.858-2,2.742,2.742,0,0,1,2-.858h8.576V6.859a2.742,2.742,0,0,1,.858-2,2.742,2.742,0,0,1,2-.858h9.529a2.742,2.742,0,0,1,2,.858,2.742,2.742,0,0,1,.858,2v4.764h8.576a2.931,2.931,0,0,1,2.859,2.859V37.35a2.931,2.931,0,0,1-2.859,2.859ZM18.293,11.623h9.529V6.859H18.293Z" transform="translate(-4 -4)" fill="#fff"/>
+                                                  </svg>
+                                                </a>
                                             <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                 href="#tab_experience_{{ $team->id }}" data-toggle="tab">
                                                 EXPERIENCE
@@ -381,9 +387,13 @@
 
 
                                         <div class="pt-4" href="#tab_education_{{ $team->id }}" data-toggle="tab">
-                                            <a href="#tab_education_{{ $team->id }}" data-toggle="tab"><img
-                                                    src="{{ asset('assets/img/modal-teams/school_FILL1_wght400_GRAD0_opsz48.png') }}"
-                                                    class="mx-auto d-block"></a>
+                                            <a href="#tab_education_{{ $team->id }}" data-toggle="tab">
+                                            
+                                                <svg class="svg-item mx-auto" xmlns="http://www.w3.org/2000/svg" width="41.941" height="51.942" viewBox="0 0 50 50">
+                                                    <path  d="M42.356,33.412V19.534L23.605,29.623,2,17.811,23.605,6l21.7,11.811v15.6ZM23.605,41.434,9.333,33.609V23.274L23.605,31.1l14.272-7.825V33.609Z" transform="translate(-2 -6)" fill="#fff"/>
+                                                  </svg>
+                                            
+                                            </a>
                                             <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                 href="#tab_education_{{ $team->id }}" data-toggle="tab">
                                                 EDUCATION
@@ -395,8 +405,10 @@
 
                                         <div class="pt-4" href="#tab_overview_{{ $team->id }}" data-toggle="tab">
                                             <a href="#tab_overview_{{ $team->id }}" data-toggle="tab">
-                                                <img src="{{ asset('assets/img/modal-teams/description_FILL1_wght400_GRAD0_opsz48.png') }}"
-                                                    class="mx-auto d-block">
+
+                                               <svg class="svg-item px-auto" xmlns="http://www.w3.org/2000/svg" width="41.941" height="41.942" viewBox="0 0 35 50">
+                                                <path  d="M15.417,33.386h15.02v-2.8H15.417Zm0-7.93h15.02v-2.8H15.417ZM10.8,41.316a2.87,2.87,0,0,1-2.8-2.8V6.8A2.685,2.685,0,0,1,8.84,4.84,2.685,2.685,0,0,1,10.8,4H27.638L37.853,14.215v24.3a2.87,2.87,0,0,1-2.8,2.8Zm15.44-25.841h8.816L26.238,6.8Z" transform="translate(-8 -4)" fill="#fff"/>
+                                                </svg>
                                             </a>
                                             <a class="fs-6 text-center"style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                 href="#tab_overview_{{ $team->id }}" data-toggle="tab">
@@ -418,8 +430,8 @@
 
 
                                     <div class="d-inline-block">
-                                        <iframe  src="{{ $team->team_presentation }}"
-                                            title="YouTube video player" frameborder="0"
+                                        <iframe src="{{ $team->team_presentation }}" title="YouTube video player"
+                                            frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowfullscreen></iframe>
 
@@ -451,13 +463,16 @@
                                     <div class="row">
                                         <div class="col-1"></div>
                                         <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
-                                            <p style="text-align: center; padding-top:8px; color:white; font-family: 'Lato';"><a
-                                                    href="{{ $team->cv_link }}" style="color:white;">DOWNLOAD
+                                            <p
+                                                style="text-align: center; padding-top:8px; color:white; font-family: 'Lato';">
+                                                <a href="{{ $team->cv_link }}" style="color:white;">DOWNLOAD
                                                     CV</a></p>
                                         </div>
                                         <div class="col-1"></div>
                                         <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
-                                            <p style="text-align: center;  padding-top:8px; color:white; font-family: 'Lato';">CONTACT
+                                            <p
+                                                style="text-align: center;  padding-top:8px; color:white; font-family: 'Lato';">
+                                                CONTACT
                                                 ME</p>
                                         </div>
                                     </div>
@@ -477,7 +492,8 @@
                                             <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);"
                                                 class="mx-auto d-block  w-100">
 
-                                            <p style="font-size:18px; color:#323232; font-family: 'Lato'; font-weight:300;">
+                                            <p
+                                                style="font-size:18px; color:#323232; font-family: 'Lato'; font-weight:300;">
                                                 {{ $team->description }}</p>
 
                                             <div class="col-11 h-25" style="background-color: #045A97;">
@@ -528,11 +544,10 @@
                                                 <p>2-5 years</p>
 
                                                 @foreach (explode(',', $team->skills) as $skill)
-                                                    <h1
-                                                        style="display: inline-block; font-family: 'Lato';">
-                                                        <span
-                                                            class="badge rounded-pill bg-size-lg" style="background-color: #323232; font-weight:300;">{{ $skill }}</span>
-                                            </h1>
+                                                    <h1 style="display: inline-block; font-family: 'Lato';">
+                                                        <span class="badge rounded-pill bg-size-lg"
+                                                            style="background-color: #323232; font-weight:300;">{{ $skill }}</span>
+                                                    </h1>
                                                 @endforeach
 
 
@@ -631,7 +646,9 @@
 
 
 
-                                            <p style=" font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">{{ $team->overview }}</p>
+                                            <p
+                                                style=" font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
+                                                {{ $team->overview }}</p>
 
                                             <p style="font-family: 'Lato'; color:#045A97; font-weight:700;"
                                                 class="fs-1 pt-4">Coding</p>
@@ -647,7 +664,8 @@
                                                             <input type="text"
                                                                 value="{{ $teamSkill->skill_percentage }}" class="dial"
                                                                 data-thickness=".1">
-                                                            <p  style="font-family: 'Lato'; text-align:center; font-size:12px;">
+                                                            <p
+                                                                style="font-family: 'Lato'; text-align:center; font-size:12px;">
                                                                 {{ $teamSkill->skill_name }}</p>
                                                         </li>
                                                     </ul>
@@ -684,40 +702,42 @@
 
     <!-- TEAM SLIDER-->
 
-        <div class="">
-            <div class="" style="padding: 1em 0;">
-                <div class="owl-carousel owl-theme" id="team-carousel">
-                    @foreach($teams as $team)
+    <div class="">
+        <div class="" style="padding: 1em 0;">
+            <div class="owl-carousel owl-theme" id="team-carousel">
+                @foreach ($teams as $team)
                     <div class="item">
                         <div class="team">
-                            
+
                             <div class="details">
                                 <p class="pt-3 text-center">
-                                    <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}"
-                                    class="pt-5 mx-auto" style="height: 65px;">
+                                    <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}" class="pt-5 mx-auto"
+                                        style="height: 65px;">
                                 </p>
 
-                                <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3 text-center">{{$team->name}}</p>
+                                <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3 text-center">
+                                    {{ $team->name }}</p>
                                 <hr style="width:60px; margin:0 auto; color:#FFFFFF; height:1px;">
-                                <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">{{$team->team_category}}</p>
+                                <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">
+                                    {{ $team->team_category }}</p>
 
                             </div>
                             <div class="photo">
-                                
+
                                 <img src="{{ asset('storage') . '/' . $team->photo }}" alt=""
                                     style="height:90%; width:100%" href="#" data-toggle="modal"
                                     data-target="#{{ $team->id }}">
-                                    
+
                             </div>
                         </div>
                     </div>
-                    @endforeach
-                </div>
-
+                @endforeach
             </div>
-        </div>
 
-       
+        </div>
+    </div>
+
+
 
     <!-- TEAM SLIDER END-->
     </div>
@@ -885,62 +905,92 @@
 
         });
 
-        $(document).ready(function(){
-  $("#team-carousel").owlCarousel({
-    margin:0,
-    responsive:true,
-    navigation:true,
-    pagination:false,
-    responsiveRefreshRate : 0,
-    navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'],
-    itemsCustom : [
-        [0, 1],
-        [375, 1],
-        [600, 1],
-        [700, 1],
-        [1000, 5]
-      ],
-  });
-});
+        $(document).ready(function() {
+            $("#team-carousel").owlCarousel({
+                margin: 0,
+                responsive: true,
+                navigation: true,
+                pagination: false,
+                responsiveRefreshRate: 0,
+                navigationText: [
+                    '<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>',
+                    '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'
+                ],
+                itemsCustom: [
+                    [0, 1],
+                    [375, 1],
+                    [600, 1],
+                    [700, 1],
+                    [1000, 5]
+                ],
+            });
+        });
 
 
 
-$(document).ready(function(){
-  $("#testimonial-carousel").owlCarousel({
-    margin:0,
-    responsive:true,
-    navigation:true,
-    pagination:false,
-    responsiveRefreshRate : 0,
-    navigationText: ['<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>', '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'],
-    itemsCustom : [
-        [0, 1],
-        [375, 1],
-        [600, 1],
-        [700, 1],
-        [1000, 5]
-      ],
-  });
-});
-
-
-
-
-
+        $(document).ready(function() {
+            $("#testimonial-carousel").owlCarousel({
+                margin: 0,
+                responsive: true,
+                navigation: true,
+                pagination: false,
+                responsiveRefreshRate: 0,
+                navigationText: [
+                    '<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>',
+                    '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'
+                ],
+                itemsCustom: [
+                    [0, 1],
+                    [375, 1],
+                    [600, 1],
+                    [700, 1],
+                    [1000, 5]
+                ],
+            });
+        });
     </script>
 
 
+
+<script>
+
+  // Obtén todos los elementos SVG
+  const svgs = document.querySelectorAll('.svg-item');
+
+// Agrega manejadores de eventos de clic a cada SVG
+svgs.forEach(svg => {
+    svg.addEventListener('click', () => {
+        // Remueve la clase de estilo de todos los SVGs
+        svgs.forEach(s => s.classList.remove('active'));
+        
+        // Agrega la clase de estilo al hacer clic
+        svg.classList.add('active');
+    });
+});
+
+</script>
+
     <style>
+
+                /* Estilos para los SVG */
+        .svg-item {
+        cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+        }
+
+        .svg-item.active path {
+        fill: #2AF7FE; /* Cambia el color de fondo al hacer clic */
+        transition: fill 0.5s ease;
+        }
 
 
         @media (min-width:300px) and (max-width:600px) {
 
             .owl-next {
-                top:40% !important;
+                top: 40% !important;
             }
 
             .owl-prev {
-                top:40% !important;
+                top: 40% !important;
             }
         }
 
@@ -995,13 +1045,13 @@ $(document).ready(function(){
             position: relative;
         }
 
-        .team{ 
-        height: 0px;
-        position: relative;
+        .team {
+            height: 0px;
+            position: relative;
         }
 
         .photo {
-            top:50px;
+            top: 50px;
             position: fixed;
             transition: all 1s;
 
@@ -1009,18 +1059,18 @@ $(document).ready(function(){
 
         @media (min-width:765px) {
 
-        .photo:hover {
-            top: 100px;
-            transition: all 1s;
+            .photo:hover {
+                top: 100px;
+                transition: all 1s;
 
-        }
+            }
 
 
 
-        iframe {
-            width: 450px;
-            height: 315px;
-        }
+            iframe {
+                width: 450px;
+                height: 315px;
+            }
 
         }
 
@@ -1033,7 +1083,7 @@ $(document).ready(function(){
             transition: all 0.5s;
             visibility: hidden;
             z-index: -9999999;
-            
+
         }
 
 
@@ -1041,61 +1091,61 @@ $(document).ready(function(){
             .details {
                 width: 100%;
 
-        height: 300px;
-        visibility: visible;
-     
-            
-        }
+                height: 300px;
+                visibility: visible;
 
 
-        .owl-carousel .owl-wrapper-outer {
-        overflow: hidden;
-      }
+            }
 
-      .photo {
-            top:194px;
-            position: fixed;
-            transition: all 1s;
 
-        }
+            .owl-carousel .owl-wrapper-outer {
+                overflow: hidden;
+            }
 
-    
+            .photo {
+                top: 194px;
+                position: fixed;
+                transition: all 1s;
 
+            }
 
 
 
-}
 
 
-
-@media (min-width:765px) {
-    
-    .team:hover .details {
-            width: 100%;
-
-            height: 300px;
-            position: fixed;
-            top: -200px;
-            visibility: visible;
-            z-index: 99999999;
-
-            
 
         }
 
 
-        .team:hover .details {
-            width: 100%;
 
-            height: 300px;
-            position: fixed;
-            top: -200px;
-            visibility: visible;
-            z-index: 99999999;
+        @media (min-width:765px) {
 
-            
+            .team:hover .details {
+                width: 100%;
 
-        }
+                height: 300px;
+                position: fixed;
+                top: -200px;
+                visibility: visible;
+                z-index: 99999999;
+
+
+
+            }
+
+
+            .team:hover .details {
+                width: 100%;
+
+                height: 300px;
+                position: fixed;
+                top: -200px;
+                visibility: visible;
+                z-index: 99999999;
+
+
+
+            }
 
 
         }
@@ -1106,36 +1156,35 @@ $(document).ready(function(){
             z-index: 0;
         }
 
-      
+
 
         @media (min-width:765px) {
-           
 
 
-        .owl-carousel .owl-wrapper-outer {
-        overflow: initial;
-      }
+
+            .owl-carousel .owl-wrapper-outer {
+                overflow: initial;
+            }
 
 
 
         }
-        
-       .owl-next {
+
+        .owl-next {
             position: absolute !important;
-            top:30% ;
+            top: 30%;
             font-size: 20px;
-            right:  0%;
+            right: 0%;
             background-color: white;
         }
 
         .owl-prev {
             position: absolute !important;
-            top:30%;
+            top: 30%;
             font-size: 20px;
             left: 0%;
             background-color: white;
 
         }
-
     </style>
 @endsection
