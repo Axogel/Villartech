@@ -469,7 +469,7 @@
                                                     CV</a></p>
                                         </div>
                                         <div class="col-1"></div>
-                                        <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
+                                        <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px; margin-left:20px;">
                                             <p
                                                 style="text-align: center;  padding-top:8px; color:white; font-family: 'Lato';">
                                                 CONTACT
@@ -572,7 +572,7 @@
 
                                                         <div
                                                             style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
-                                                            <p style="text-align: center;  color:white; margin-top:2px;">
+                                                            <p style="text-align: center;  color:white; margin-top:4px;">
                                                                 {{ $teamExperience->experience_date }}
                                                             </p>
                                                         </div>
@@ -612,7 +612,7 @@
                                                     <div class="col-12 lh-1">
                                                         <div
                                                             style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
-                                                            <p style="text-align: center;  color:white; margin-top:2px;">
+                                                            <p style="text-align: center;  color:white; margin-top:4px;">
                                                                 {{ $teamEducation->education_date }}
                                                             </p>
                                                         </div>
