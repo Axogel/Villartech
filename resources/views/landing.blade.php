@@ -328,7 +328,7 @@
             <div class="modal-dialog modal-xl" role="document" style="width: 90%;">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal-close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -1133,6 +1133,13 @@ svgs.forEach(svg => {
 
             }
 
+
+
+
+            .close {
+                position: absolute;
+                left: 98%;
+            }
 
             .team:hover .details {
                 width: 100%;
