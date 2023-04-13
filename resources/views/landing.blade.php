@@ -1120,6 +1120,14 @@ svgs.forEach(svg => {
 
         @media (min-width:765px) {
 
+
+
+
+            .close {
+                position: absolute;
+                left: 98%;
+            }
+
             .team:hover .details {
                 width: 100%;
 
