@@ -464,16 +464,15 @@
                                         <div class="col-1"></div>
                                         <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
                                             <p
-                                                style="text-align: center; padding-top:8px; color:white; font-family: 'Lato';">
+                                                style="text-align: center; padding-top:10px; color:white; font-family: 'Lato';">
                                                 <a href="{{ $team->cv_link }}" style="color:white;">DOWNLOAD
                                                     CV</a></p>
                                         </div>
                                         <div class="col-1"></div>
-                                        <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px; margin-left:20px;">
+                                        <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
                                             <p
-                                                style="text-align: center;  padding-top:8px; color:white; font-family: 'Lato';">
-                                                CONTACT
-                                                ME</p>
+                                                style="text-align: center; padding-top:10px; color:white; font-family: 'Lato';">
+                                                <a href="#" style="color:white;">CONTACT ME</a></p>
                                         </div>
                                     </div>
 
@@ -1094,7 +1093,7 @@ svgs.forEach(svg => {
                 height: 300px;
                 visibility: visible;
 
-
+c
             }
 
 
