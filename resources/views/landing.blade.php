@@ -7,14 +7,13 @@
         integrity="sha512-rSWTr6dChYCbhpHaT1hg2tf4re2jUxBWTuZbujxKg96+T87KQJriMzBzW5aqcb8jmzBhhNSx4XYGA6/Y+ok1vQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- About tab start -->
-    <section id="about" class="about angle">
+    <section id="about-us" class="about angle">
         <div class="container">
             <!-- Company Profile -->
             <div class="row">
-                <div class="col-md-12 heading">
-                    <span class="title-icon classic pull-left" style="padding-bottom:9px;"><i
-                            class="fa fa-suitcase"></i></span>
-                    <h2 class="title classic" style="line-height: 57px; height:60px; font-family: 'Lato';" id="about-us">
+                <div class="col-md-12 heading" >
+                    
+                    <h2 class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900;" >
                         Company Profile</h2>
                 </div>
             </div><!-- Title row end -->
@@ -23,7 +22,7 @@
                     <ul class="nav nav-tabs nav-stacked nav flex-column col-md-3 col-sm-5">
                         <li class="active">
                             <a class="animated fadeIn" href="#tab_a" data-toggle="tab">
-                                <span class="tab-icon"><i class="fa fa-info"></i></span>
+                                <span class="tab-icon" style="padding-left: 8px;"><i class="fa fa-info"></i></span>
                                 <div class="tab-info">
                                     <h3 style="font-family: 'Lato'">Who Are We</h3>
                                 </div>
@@ -125,8 +124,7 @@
             <!-- Services -->
             <div class="row">
                 <div class="col-md-12 heading">
-                    <span class="title-icon classic pull-left"><i class="fa fa-cogs"></i></span>
-                    <h2 class="title classic" style="font-family: 'Lato'" id="services">Our Services</h2>
+                    <h2 class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900;" id="services">Our Services</h2>
                 </div>
             </div>
 
@@ -317,8 +315,8 @@
         </div><!-- Container end -->
     </section><!-- Portfolio end -->
 
-    <div class="col-12" id="our-team">
-        <p style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; padding-left:80px;">OUR TEAM</p>
+    <div class="col-12 pt-5 heading" id="our-team">
+        <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; padding-left:88px;">OUR TEAM</h2>
     </div>
 
     <!-- The Modal Team -->
@@ -543,10 +541,10 @@
                                                 <p>2-5 years</p>
 
                                                 @foreach (explode(',', $team->skills) as $skill)
-                                                    <h1 style="display: inline-block; font-family: 'Lato';">
+                                                    <h2 style="display: inline-block; font-family: 'Lato';">
                                                         <span class="badge rounded-pill bg-size-lg"
                                                             style="background-color: #323232; font-weight:300;">{{ $skill }}</span>
-                                                    </h1>
+                                                    </h2>
                                                 @endforeach
 
 
@@ -812,9 +810,8 @@
     <!-- Newsletter start -->
     <section id="contact">
         <div class="container">
-            <div class="col-md-12 heading">
-                <span class="title-icon classic pull-left"><i class="fa fa-globe"></i></span>
-                <h2 class="title classic" style="font-family: 'Lato'">Contact Us</h2>
+            <div class="col-12 pt-5 heading">
+                <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; ">Contact Us</h2>
             </div>
             <div class="row">
 

@@ -64,7 +64,7 @@
   <div class="body-inner">
   <!-- Header start -->
   <header id="header" class="navbar-fixed-top header2" role="banner">
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light" style="padding-top:0px; padding-bottom:0px;">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -74,35 +74,40 @@
 
           <div class="navbar-brand">
             <a href="/">
-              <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -9px; position: fixed; padding-left: 25px;" alt="logo">
+              <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -4px; position: fixed; padding-left: 25px;" alt="logo">
             </a> 
           </div>        
 
 
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:600px;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:400px;">
 
            
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+              <a class="nav-link active text-light" aria-current="page" href="#" style="font-weight: bolder">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#about-us">ABOUT US</a>
+              <a class="nav-link active text-light" aria-current="page" href="#about-us" style="font-weight: bolder">ABOUT US</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#portfolio">PORTFOLIO</a>
+              <a class="nav-link active text-light" aria-current="page" href="#portfolio" style="font-weight: bolder">PORTFOLIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#services">SERVICES</a>
+              <a class="nav-link active text-light" aria-current="page" href="#services" style="font-weight: bolder">SERVICES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#testimonial">TESTIMONIALS</a>
+              <a class="nav-link active text-light" aria-current="page" href="#testimonial"style="font-weight: bolder">TESTIMONIALS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#our-team">Team</a>
+              <a class="nav-link active text-light" aria-current="page" href="#our-team" style="font-weight: bolder">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#contact">CONTACT US</a>
+              <div style="height: 50%; width:100%; background-color:#045A97; border-radius:20px; margin-left:10px; margin-top:15px;">
+
+              <a class="nav-link active text-light" aria-current="page" href="#contact" style="font-weight: bolder; font-size:14px; text-align:center;">CONTACT US</a>
+
+              </div>
             </li>
+            
           </ul>
         </div>
       </div>
@@ -123,10 +128,10 @@
             <div class="flex-caption slider-content">
                           <div class="col-md-12 text-center">
                           <h2 class="animated2">
-                              Need To Invent The Future!
+                            We develop custom technological solutions!
                             </h2>
                               <h3 class="animated3">
-                                We Making Difference To Great Things Possible
+                                to drive your ideas forward
                               </h3>
                           </div>
                       </div>
@@ -138,11 +143,10 @@
             <div class="flex-caption slider-content">
                           <div class="col-md-12 text-center">
                               <h2 class="animated4">
-                                  How Big Can You Dream?
+                                Our highly trained team ensures the quality and success of your projects.
+ 
                               </h2>
-                              <h3 class="animated5">
-                                We are here to make it happen
-                              </h3>         
+                              
                           </div>
                       </div>
           </li>
@@ -152,12 +156,9 @@
             </div>
             <div class="flex-caption slider-content">
                           <div class="col-md-12 text-center">
-                              <h2 class="animated7">
-                                  Your Challenge is Our Progress
+                              <h2 class="animated7" style="font-size: 49px;">
+                                We focus on your specific needs to offer personalized and efficient solutions.
                               </h2>
-                              <h3 class="animated8">
-                                So, You Don't Need to Go Anywhere Today
-                              </h3>      
                           </div>
                       </div>
           </li>
