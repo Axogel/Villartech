@@ -9,6 +9,7 @@
     <!-- About tab start -->
     <section id="about-us" class="about angle">
         <div class="container">
+            <br><br>
             <!-- Company Profile -->
             <div class="row">
                 <div class="col-md-12 heading" >
@@ -121,6 +122,8 @@
     <!--Our Services-->
     <section id="services" class="about angle">
         <div class="container">
+            <br><br>
+
             <!-- Services -->
             <div class="row">
                 <div class="col-md-12 heading">
@@ -315,8 +318,8 @@
         </div><!-- Container end -->
     </section><!-- Portfolio end -->
 
-    <div class="col-12 pt-5 heading" id="our-team">
-        <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; padding-left:88px;">OUR TEAM</h2>
+    <div class="col-12 heading" id="our-team">
+        <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900;">OUR TEAM</h2>
     </div>
 
     <!-- The Modal Team -->
@@ -992,39 +995,55 @@ svgs.forEach(svg => {
 
 
         h1 {
-            font-family: 'JaapokkiRegular';
+            font-weight: 900;
+
+            font-family: 'Lato';
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         h2 {
-            font-family: 'JaapokkiRegular';
+            font-family: 'Lato';
+            font-weight: 900;
+
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         h3 {
-            font-family: 'JaapokkiRegular';
+            font-family: 'Lato';
+
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         h4 {
-            font-family: 'JaapokkiRegular';
+            font-family: 'Lato';
+            font-weight: 900;
+
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         h5 {
-            font-family: 'JaapokkiRegular';
+            font-family: 'Lato';
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         h6 {
-            font-family: 'JaapokkiRegular';
+            font-family: 'Lato';
+            font-weight: 900;
+
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+
+        ul.navbar-nav > li > a {
+            font-family: 'Lato';
         }
 
         * {
@@ -1055,6 +1074,21 @@ svgs.forEach(svg => {
 
         @media (min-width:765px) {
 
+
+            #our-team {
+                padding-top:90px;
+                padding-left: 88px;
+            }
+
+            #contact-us-navbar {
+                margin-left:10px; margin-top:15px;
+            }
+
+            #navbar-villar {
+                padding-left: 
+                400px;
+            }
+
             .photo:hover {
                 top: 100px;
                 transition: all 1s;
@@ -1084,6 +1118,36 @@ svgs.forEach(svg => {
 
 
         @media (min-width:300px) and (max-width:765px) {
+
+
+            
+            #our-team {
+                padding-left:0px;
+            }
+
+
+
+            #contact-us-navbar {
+                margin-left: -5px;
+                margin-top:   3px;
+            }
+
+            #navbar-villar {
+                padding-left: 
+                25px;
+            }
+
+
+            .navbar-collapse { 
+                background-color: #045A97;
+            }
+
+            .navbar-nav {
+                
+                background-color: #045A97;
+
+            }
+
             .details {
                 width: 100%;
 

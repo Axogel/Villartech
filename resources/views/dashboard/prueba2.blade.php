@@ -64,46 +64,41 @@
   <div class="body-inner">
   <!-- Header start -->
   <header id="header" class="navbar-fixed-top header2" role="banner">
-    <nav class="navbar navbar-expand-lg navbar-light" style="padding-top:0px; padding-bottom:0px;">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-          <div class="navbar-brand">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
             <a href="/">
               <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -4px; position: fixed; padding-left: 25px;" alt="logo">
             </a> 
-          </div>        
 
 
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:400px;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"  id="navbar-villar">
 
-           
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#" style="font-weight: bolder">Home</a>
+              <a class="nav-link active text-light" aria-current="page" href="#" style="font-weight: 900">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#about-us" style="font-weight: bolder">ABOUT US</a>
+              <a class="nav-link active text-light" aria-current="page" href="#about-us" style="font-weight: 900">ABOUT US</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#portfolio" style="font-weight: bolder">PORTFOLIO</a>
+              <a class="nav-link active text-light" aria-current="page" href="#portfolio" style="font-weight: 900">PORTFOLIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#services" style="font-weight: bolder">SERVICES</a>
+              <a class="nav-link active text-light" aria-current="page" href="#services" style="font-weight: 900">SERVICES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#testimonial"style="font-weight: bolder">TESTIMONIALS</a>
+              <a class="nav-link active text-light" aria-current="page" href="#testimonial"style="font-weight: 900">TESTIMONIALS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#our-team" style="font-weight: bolder">Team</a>
+              <a class="nav-link active text-light" aria-current="page" href="#our-team" style="font-weight: 900">Team</a>
             </li>
             <li class="nav-item">
-              <div style="height: 50%; width:100%; background-color:#045A97; border-radius:20px; margin-left:10px; margin-top:15px;">
+              <div style="height: 50%; width:100%; background-color:#045A97; border-radius:20px;" id="contact-us-navbar">
 
-              <a class="nav-link active text-light" aria-current="page" href="#contact" style="font-weight: bolder; font-size:14px; text-align:center;">CONTACT US</a>
+              <a class="nav-link active text-light" aria-current="page" href="#contact" style="font-weight: 900; font-size:14px; text-align:center;">CONTACT US</a>
 
               </div>
             </li>
