@@ -65,7 +65,7 @@
   <!-- Header start -->
   <header id="header" class="navbar-fixed-top header2" role="banner">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style=" padding: 1.25rem 1.75rem;">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -138,10 +138,15 @@
             <div class="flex-caption slider-content">
                           <div class="col-md-12 text-center">
                               <h2 class="animated4">
-                                Our highly trained team ensures the quality and success of your projects.
+                                Our highly trained team ensures
  
                               </h2>
                               
+                              <h3 class="animated4">
+                                The quality and success of your projects.
+ 
+                              </h3>
+
                           </div>
                       </div>
           </li>
@@ -151,9 +156,12 @@
             </div>
             <div class="flex-caption slider-content">
                           <div class="col-md-12 text-center">
-                              <h2 class="animated7" style="font-size: 49px;">
-                                We focus on your specific needs to offer personalized and efficient solutions.
+                              <h2 class="animated7">
+                                We focus on your specific needs to offer
                               </h2>
+                              <h3 class="animated8">
+                                Personalized and efficient solutions.
+                              </h3>      
                           </div>
                       </div>
           </li>
