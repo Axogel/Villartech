@@ -19,8 +19,10 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-laravel" />
     <!--  Social tags      -->
-    <meta name="keywords" content="dashboard, bootstrap 4 dashboard, bootstrap 4 design, bootstrap 4 system, bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, argon, argon ui kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit, argon dashboard">
-    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="title" content="company developer web - VillarTechnologies">
+    <meta name="keywords" content="company developer,web developer, compañia de desarrollo, desarrollo web">
+    <meta name="description" content="We are a leading company developer in web development, delivering customized and efficient solutions for your online business needs.">
+    <meta name="author" content="Jose Villar.">
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="Argon - Free Dashboard for Bootstrap 4 by Creative Tim">
     <meta itemprop="description" content="Start your development with a Dashboard for Bootstrap 4.">
