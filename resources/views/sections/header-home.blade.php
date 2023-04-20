@@ -71,7 +71,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a href="/">
-              <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -4px; position: fixed; padding-left: 25px;" alt="logo">
+              <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 8%; top: -4px; position: fixed; padding-left: 25px;" alt="logo">
             </a> 
 
 

@@ -8,7 +8,7 @@
          @include('sections.services')
 
     <!-- Portfolio start -->
-        @include('sections.proyect')
+        @include('sections.portafolio')
     <!-- Portfolio end -->
 
     <!-- The Modal Team -->
