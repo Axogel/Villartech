@@ -1,36 +1,36 @@
-<header id="header" class="navbar-fixed-top header2" role="banner">
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style=" padding: 1.25rem 1.75rem;">
+<header id="header" class="navbar-fixed-top header2 nav-responsive-fixed" role="banner">
+  <nav class="navbar navbar-expand-lg navbar-light" style="justify-content: flex-start; padding-left: 2rem">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style=" padding: 1.25rem 1.75rem; margin-bottom: 10px;">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="max-height: 500px">
       <div class="navbar-nav">
         <a href="/">
-          <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -4px; position: fixed; padding-left: 25px;" alt="logo">
+          <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -9px; position: fixed; padding-left: 25px; left: 100px;" alt="logo">
         </a> 
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0"  id="navbar-villar">
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#" style="font-weight: 900">Home</a>
+          <li class="nav-item px-2">
+            <a class="nav-link active text-light bold-size" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#about-us" style="font-weight: 900">ABOUT US</a>
+          <li class="nav-item px-2 ">
+            <a class="nav-link active text-light bold-size" aria-current="page" href="#about-us "style="width: 90px" >ABOUT US</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#portfolio" style="font-weight: 900">PORTFOLIO</a>
+          <li class="nav-item px-2">
+            <a class="nav-link active text-light bold-size" aria-current="page" href="#portfolio" >PORTFOLIO</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#services" style="font-weight: 900">SERVICES</a>
+          <li class="nav-item px-2">
+            <a class="nav-link active text-light bold-size" aria-current="page" href="#services" >SERVICES</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#testimonial"style="font-weight: 900">TESTIMONIALS</a>
+          <li class="nav-item px-2">
+            <a class="nav-link active text-light bold-size" aria-current="page" href="#testimonial">TESTIMONIALS</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#our-team" style="font-weight: 900">Team</a>
+          <li class="nav-item px-2">
+            <a class="nav-link active text-light bold-size" aria-current="page" href="#our-team" >Team</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ps-lg-5 ps-sm-0 pe-sm-4">
             <div style="height: 50%; width:100%; background-color:#045A97; border-radius:20px;" id="contact-us-navbar">
-              <a class="nav-link active text-light" aria-current="page" href="#contact" style="font-weight: 900; font-size:14px; text-align:center;">CONTACT US</a>
+              <a class="nav-link active text-light bold-size ps-4 " aria-current="page" href="#contact" style="width: 125px; height: 50px; font-size:14px; text-align:center;">CONTACT US</a>
             </div>
           </li>
         </ul>
@@ -39,7 +39,7 @@
   </nav>
 </header>
 
-<section id="home" class="no-padding">  
+<section id="home" class="no-padding home-responsive">  
   <div id="main-slide" class="ts-flex-slider">
     <div class="flexSlideshow flexslider">
       <ul class="slides">

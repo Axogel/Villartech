@@ -9,7 +9,9 @@ cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo 
 fill: #2AF7FE; /* Cambia el color de fondo al hacer clic */
 transition: fill 0.5s ease;
 }
-
+.bold-size{
+    font-weight: 700;
+}
 
 @media (min-width:300px) and (max-width:600px) {
 
@@ -106,7 +108,7 @@ transition: all 1s;
 
 #our-team {
 padding-top:90px;
-padding-left: 88px;
+padding-left: 120px;
 }
 
 #contact-us-navbar {
@@ -114,8 +116,7 @@ margin-left:10px; margin-top:15px;
 }
 
 #navbar-villar {
-padding-left: 
-400px;
+padding-left: 700px;
 }
 
 .photo:hover {
@@ -147,8 +148,17 @@ z-index: -9999999;
 
 
 @media (min-width:300px) and (max-width:765px) {
-
-
+.pe-sm-4{
+    position: relative;
+    right: 15px;
+}
+.home-responsive{
+    margin-top: 70px;
+}
+.nav-responsive-fixed{
+    Animation: none;
+    background-color: #045A97 ;
+}
 
 #our-team {
 padding-left:0px;
@@ -162,8 +172,7 @@ margin-top:   3px;
 }
 
 #navbar-villar {
-padding-left: 
-25px;
+padding-left: 25px;
 }
 
 
