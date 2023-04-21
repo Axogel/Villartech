@@ -106,6 +106,45 @@ transition: all 1s;
 #navbar-villar {
     padding-left: 700px;
 }
+#our-team {
+padding-top:90px;
+padding-left: 120px;
+}
+
+#contact-us-navbar {
+margin-left:10px; margin-top:15px;
+}
+
+#navbar-villar {
+padding-left: 340px;
+}
+
+.photo:hover {
+top: 100px;
+transition: all 1s;
+
+}
+
+
+
+iframe {
+width: 450px;
+height: 315px;
+}
+
+}
+
+.details {
+height: 0px;
+width: 100%;
+position: absolute;
+top: 0px;
+background: linear-gradient(to bottom, #3E4043, #045A97);
+transition: all 0.5s;
+visibility: hidden;
+z-index: -9999999;
+
+
 }
 @media (min-width:992px) and (max-width:1299px) {
 
