@@ -1,69 +1,58 @@
- <!-- Footer start -->
- <footer id="footer" class="footer footer2">
-    <div class="container">
-
-      <div class="row">
-
-      
-
-        @foreach($settings as $setting)
-        <div class="col-md-6 col-sm-12 footer-widget footer-about-us">
-         
-          <p><strong>Address: </strong>{{ $setting->address }}</p>
-          <div class="row">
-            <div class="col-md-6">
-              <strong>Email: </strong>
-              <p>{{ $setting->email }}</p>
-            </div>
-            <div class="col-md-6">
-              <strong>Phone No.</strong>
-              <p>{{ $setting->phone }}</p>
-            </div>
+<footer id="footer" class="footer footer2">
+  <div class="container">
+    <div class="row">
+      @foreach($settings as $setting)
+      <div class="col-md-6 col-sm-12 footer-widget footer-about-us">
+        <p><strong>Address: </strong>{{ $setting->address }}</p>
+        <div class="row">
+          <div class="col-md-6">
+            <strong>Email: </strong>
+            <p>{{ $setting->email }}</p>
           </div>
-        </div><!--/ end about us -->
-        @endforeach
-
-
-
-      </div><!-- Row end -->
-    </div><!-- Container end -->
-  </footer><!-- Footer end -->
-  
-
-  <!-- Footer start -->
-  <section id="copyright" class="copyright angle">
-    @foreach($settings as $setting)
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <ul class="footer-social unstyled">
-            <li>
-              <a title="Facebook" href="{{ $setting->facebook }}">
-                <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
-              </a>
-              <a title="linkedin" href="{{ $setting->date }}">
-                <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-              </a>
-              <a title="instagram" href="{{ $setting->instagram }}">
-                <span class="icon-pentagon wow bounceIn"><i class="fa fa-instagram"></i></span>
-              </a>
-            </li>
-          </ul>
+          <div class="col-md-6">
+            <strong>Phone No.</strong>
+            <p>{{ $setting->phone }}</p>
+          </div>
         </div>
-      </div><!--/ Row end -->
-      @endforeach
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="copyright-info">
-               &copy; Copyright 2022 Villartechnologies.
-              </div>
-        </div>
-      </div><!--/ Row end -->
-       <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
-        <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
       </div>
-    </div><!--/ Container end -->
-  </section><!--/ Footer end -->
+      @endforeach
+    </div>
+  </div>
+</footer>
+  
+<section id="copyright" class="copyright angle">
+  <div class="container">
+    @foreach($settings as $setting)
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <ul class="footer-social unstyled">
+          <li>
+            <a title="Facebook" href="{{ $setting->facebook }}">
+              <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
+            </a>
+            <a title="linkedin" href="{{ $setting->date }}">
+              <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+            </a>
+            <a title="instagram" href="{{ $setting->instagram }}">
+              <span class="icon-pentagon wow bounceIn"><i class="fa fa-instagram"></i></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    @endforeach
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="copyright-info">
+          &copy; Copyright 2022 Villartechnologies.
+          </div>
+      </div>
+    </div>
+    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+    </div>
+    </div>
+</section>
 
   <!-- Javascript Files
   ================================================== -->
@@ -100,6 +89,3 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
-  </div><!-- Body inner end -->
-</body>
-</html>
