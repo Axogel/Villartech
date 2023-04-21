@@ -7,10 +7,10 @@
 @section('content')
 
     @include('sections.profile')
-    @include('sections.services')
     @include('sections.portafolio')
-    @include('sections.team')
+    @include('sections.services')
     @include('sections.testimonials')
+    @include('sections.team')
     @include('sections.contact')
 
 @endsection
