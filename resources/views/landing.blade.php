@@ -1,31 +1,20 @@
 @extends('layouts.home')
 
+@section('styles')
+    @include('sections.styles')
+@endsection
+
 @section('content')
 
-    <!-- About tab start -->
-         @include('sections.profile')
-    <!--Our Services-->
-         @include('sections.services')
+    @include('sections.profile')
+    @include('sections.portafolio')
+    @include('sections.services')
+    @include('sections.testimonials')
+    @include('sections.team')
+    @include('sections.contact')
 
-    <!-- Portfolio start -->
-        @include('sections.proyect')
-    <!-- Portfolio end -->
+@endsection
 
-    <!-- The Modal Team -->
-        @include('sections.team')
-
-    <!-- Testimonial start-->
-        @include('sections.testimonials')
-    <!--/ Testimonial end-->
-
-
-    <!-- Newsletter start -->
-        @include('sections.contact')
-    <!-- Newsletter end -->
-
-   <!-- script -->
-        @include('sections.scripts')
-
-    <!-- styles -->
-        @include('sections.styles')
+@section('scripts')
+    @include('sections.scripts')
 @endsection
