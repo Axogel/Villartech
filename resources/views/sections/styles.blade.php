@@ -10,7 +10,7 @@ fill: #2AF7FE; /* Cambia el color de fondo al hacer clic */
 transition: fill 0.5s ease;
 }
 .bold-size{
-    font-weight: 700px;
+    font-weight: bold;
 }
 
 @media (min-width:300px) and (max-width:992px) {
