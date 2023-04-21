@@ -115,10 +115,6 @@ padding-left: 120px;
 margin-left:10px; margin-top:15px;
 }
 
-#navbar-villar {
-padding-left: 340px;
-}
-
 .photo:hover {
 top: 100px;
 transition: all 1s;
