@@ -108,12 +108,13 @@ transition: all 1s;
 }
 #our-team {
 padding-top:90px;
-padding-left: 120px;
 }
 
 #contact-us-navbar {
 margin-left:10px; margin-top:15px;
 }
+
+
 
 .photo:hover {
 top: 100px;
@@ -147,7 +148,6 @@ z-index: -9999999;
 
 #our-team {
 padding-top:90px;
-padding-left: 120px;
 }
 
 #contact-us-navbar {
