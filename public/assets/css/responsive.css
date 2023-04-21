@@ -47,10 +47,6 @@
 /* Medium Devices, Desktops */
 @media (min-width : 992px) {
 
-	.flexslider .slides img,
-	.ts-flex-slider .flexSlideshow{
-		height: 750px;
-	}
 
 	.dropdown i{
 		display: none;

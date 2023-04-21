@@ -102,9 +102,9 @@ position: fixed;
 transition: all 1s;
 
 }
-@media (min-width:1300px) {
+@media (min-width:1400px) {
 #navbar-villar {
-    padding-left: 700px;
+    margin-left: 40%;
 }
 #our-team {
 padding-top:90px;
@@ -143,7 +143,7 @@ z-index: -9999999;
 
 
 }
-@media (min-width:992px) and (max-width:1299px) {
+@media (min-width:992px) and (max-width:1399px) {
 
 
 #our-team {
@@ -155,7 +155,7 @@ margin-left:10px; margin-top:15px;
 }
 
 #navbar-villar {
-padding-left: 340px;
+padding-left: 30%;
 }
 
 .photo:hover {

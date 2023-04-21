@@ -1,12 +1,12 @@
 <header id="header" class="navbar-fixed-top header2 nav-responsive-fixed" role="banner">
-  <nav class="navbar navbar-expand-lg navbar-light" style="justify-content: flex-start; padding-left: 2rem">
+  <nav class="navbar navbar-expand-lg navbar-light" style="justify-content: flex-start; padding-left: 2rem; ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style=" padding: 1.25rem 1.75rem; margin-bottom: 10px;">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="max-height: 500px">
-      <div class="navbar-nav">
-        <a href="/">
-          <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -9px; position: fixed; padding-left: 25px; left: 100px;" alt="logo">
+      <div class="navbar-nav" style="width: 100%;">
+        <a href="/" style="padding-left: 5%;" >
+            <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -9px; position: fixed; padding-left: 25px; " alt="logo">
         </a> 
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0"  id="navbar-villar">
@@ -29,7 +29,7 @@
             <a class="nav-link active text-light bold-size" aria-current="page" href="#our-team" >Team</a>
           </li>
           <li class="nav-item ps-lg-5 ps-sm-0 pe-sm-4 ">
-            <div style="height: 50%; width:100%; background-color:#045A97; border-radius:20px;" id="contact-us-navbar">
+            <div style="height: 50%; width:100%; background-color:#045A97; border-radius:8px;" id="contact-us-navbar">
               <a class="nav-link active text-light bold-size ps-4 " aria-current="page" href="#contact" style="width: 125px; height: 50px; font-size:14px; text-align:center;">CONTACT US</a>
             </div>
           </li>
