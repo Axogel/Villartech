@@ -13,7 +13,7 @@ transition: fill 0.5s ease;
     font-weight: 700;
 }
 
-@media (min-width:300px) and (max-width:600px) {
+@media (min-width:300px) and (max-width:992px) {
 
 .owl-next {
 top: 40% !important;
@@ -107,7 +107,7 @@ transition: all 1s;
     padding-left: 700px;
 }
 }
-@media (min-width:765px) and (max-width:1299px) {
+@media (min-width:992px) and (max-width:1299px) {
 
 
 #our-team {
@@ -151,7 +151,7 @@ z-index: -9999999;
 }
 
 
-@media (min-width:300px) and (max-width:765px) {
+@media (min-width:300px) and (max-width:992px) {
 .pe-sm-4{
     position: relative;
     right: 15px;
@@ -220,7 +220,7 @@ transition: all 1s;
 
 
 
-@media (min-width:765px) {
+@media (min-width:992px) {
 
 
 
@@ -275,7 +275,7 @@ z-index: 0;
 
 
 
-@media (min-width:765px) {
+@media (min-width:992px) {
 
 
 
