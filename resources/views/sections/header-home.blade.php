@@ -28,7 +28,7 @@
           <li class="nav-item px-2">
             <a class="nav-link active text-light bold-size" aria-current="page" href="#our-team" >Team</a>
           </li>
-          <li class="nav-item ps-lg-5 ps-sm-0 pe-sm-4">
+          <li class="nav-item ps-lg-5 ps-sm-0 pe-sm-4 ">
             <div style="height: 50%; width:100%; background-color:#045A97; border-radius:20px;" id="contact-us-navbar">
               <a class="nav-link active text-light bold-size ps-4 " aria-current="page" href="#contact" style="width: 125px; height: 50px; font-size:14px; text-align:center;">CONTACT US</a>
             </div>
