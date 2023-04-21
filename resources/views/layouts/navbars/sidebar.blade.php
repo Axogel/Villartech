@@ -99,11 +99,7 @@ $setting = DB::select('select * from admin_settings');
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profile.edit') }}" style="padding-left:57px;">
-                        {{ __('User Options') }}
-                    </a>
-                </li>
+                
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
 
@@ -147,6 +143,12 @@ $setting = DB::select('select * from admin_settings');
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('declarations.index') }}" style="padding-left:60px;">
                         {{ __('Declarations') }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('tags.index') }}" style="padding-left:60px;">
+                        {{ __('Tags') }}
                     </a>
                 </li>
 
