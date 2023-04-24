@@ -8,16 +8,16 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="max-height: 500px">
       <div class="navbar-nav row" style="width: 100%;">
-        <div class="col-1">
+        <div class="col-xxl-1 col-lg-1">
             <!-- margin -->
         </div>
           <div href="/" class="col-1">
             <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}"  alt="logo">
           </div> 
-        <div class="col-2">
+        <div class="col-xxl-2 col-lg-1 col-xl-2">
             <!-- margin -->
         </div>
-        <div class="col-5">
+        <div class="col-xxl-6 col-lg-5 col-xl-6">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"  id="navbar-villar">
               <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#">Home</a>
@@ -44,7 +44,7 @@
               </li>
           </ul>
         </div>
-        <div class="col-1">
+        <div class="col-xxl-2 col-lg-4 col-xl-2">
             <!-- margin -->
         </div>
 
