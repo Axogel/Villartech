@@ -116,7 +116,7 @@ ul.navbar-nav > li > a {
 .padding-menu{
     padding-left: 9%;
 }
-#our-team {
+.our-team {
     padding-top:90px;
 }
 
@@ -166,7 +166,7 @@ iframe {
     padding-left: 4%;
 }
 
-#our-team {
+.our-team {
     padding-top:90px;
 }
 
@@ -222,14 +222,14 @@ iframe {
     right: 15px;
 }
 .home-responsive{
-    margin-top: 70px;
+    margin-top: 150px;
 }
 .nav-responsive-fixed{
     Animation: none;
     background-color: #045A97 ;
 }
 
-#our-team {
+.our-team {
 padding-left:0px;
 }
 
