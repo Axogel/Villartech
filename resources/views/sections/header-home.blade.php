@@ -3,11 +3,12 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style=" padding: 1.25rem 1.75rem; margin-bottom: 10px;">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <a href="/" class="padding-menu">
+            <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}"  alt="logo">
+        </a> 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="max-height: 500px">
       <div class="navbar-nav" style="width: 100%;">
-        <a href="/" style="padding-left: 5%;" >
-            <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}" style="width: 9%; top: -9px; position: fixed; padding-left: 25px; " alt="logo">
-        </a> 
+
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0"  id="navbar-villar">
           <li class="nav-item px-2">

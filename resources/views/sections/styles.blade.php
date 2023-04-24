@@ -103,6 +103,15 @@ transition: all 1s;
 
 }
 @media (min-width:1400px) {
+.img-responsive{
+    width: 9%;
+    top: -9px;
+    position: fixed;
+    padding-left: 25px; 
+}
+.padding-menu{
+    padding-left: 9%;
+}
 #navbar-villar {
     margin-left: 40%;
 }
@@ -144,7 +153,15 @@ z-index: -9999999;
 
 }
 @media (min-width:992px) and (max-width:1399px) {
-
+    .img-responsive{
+    width: 9%;
+    top: -9px;
+    position: fixed;
+    padding-left: 25px; 
+}
+.padding-menu{
+    padding-left: 4%;
+}
 
 #our-team {
 padding-top:90px;
@@ -187,6 +204,13 @@ z-index: -9999999;
 
 
 @media (min-width:300px) and (max-width:992px) {
+.img-responsive{
+    width: 30%;
+    top: -9px;
+    position: fixed;
+    padding-left: 25px; 
+    left: 33%;
+}
 .pe-sm-4{
     position: relative;
     right: 15px;
