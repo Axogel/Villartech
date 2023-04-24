@@ -8,17 +8,13 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="max-height: 500px">
       <div class="navbar-nav row" style="width: 100%;">
-        <div class="col-xxl-1 col-lg-1">
-            <!-- margin -->
-        </div>
+        <div class="col-1"></div>
           <div href="/" class="col-1">
             <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}"  alt="logo">
           </div> 
-        <div class="col-xxl-2 col-lg-1 col-xl-2">
-            <!-- margin -->
-        </div>
-        <div class="col-xxl-6 col-lg-5 col-xl-6">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"  id="navbar-villar">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 50px;">
               <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#">Home</a>
               </li>
@@ -37,17 +33,16 @@
               <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#our-team" >Team</a>
               </li>
-              <li class="nav-item ps-lg-5 ps-sm-0 pe-sm-4 ">
-                <div style="height: 50%; width:100%; background-color:#045A97; border-radius:8px;" id="contact-us-navbar">
-                  <a class="nav-link active text-light bold-size ps-4 " aria-current="page" href="#contact" style="width: 125px; height: 50px; font-size:14px; text-align:center;">CONTACT US</a>
+              <li class="nav-item px-2 w-100">
+                <div id="contact-us-navbar">
+                  <a class="nav-link active text-light bold-size" aria-current="page" href="#contact" style="font-size: 14px; text-align: center; background-color: #045197; border-radius: 8px; margin-left: 50px;">
+                    CONTACT US
+                  </a>
                 </div>
               </li>
           </ul>
         </div>
-        <div class="col-xxl-2 col-lg-4 col-xl-2">
-            <!-- margin -->
-        </div>
-
+        <div class="col-1"></div>
       </div>
     </div>
   </nav>
