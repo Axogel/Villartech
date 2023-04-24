@@ -104,7 +104,7 @@ transition: all 1s;
 }
 @media (min-width:1400px) {
 .img-responsive{
-    width: 9%;
+    width: 8%;
     top: -9px;
     position: fixed;
     padding-left: 25px; 
@@ -210,6 +210,7 @@ z-index: -9999999;
     position: fixed;
     padding-left: 25px; 
     left: 33%;
+    display: none;
 }
 .pe-sm-4{
     position: relative;

@@ -1,7 +1,9 @@
 <header id="header" class="navbar-fixed-top header2 nav-responsive-fixed" role="banner">
   <nav class="navbar navbar-expand-lg navbar-light" style="justify-content: flex-start; padding-left: 2rem; ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style=" padding: 1.25rem 1.75rem; margin-bottom: 10px;">
-      <span class="navbar-toggler-icon"></span>
+      <span style = "color: #fff"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg></span>
     </button>
     <a href="/" class="padding-menu">
             <img class="img-responsive" src="{{asset('assets/img/villartechlogo2.png')}}"  alt="logo">

@@ -69,6 +69,21 @@
         });
     </script>
 
+<script>
+  document.addEventListener("click", function(event) {
+    var navbarMenu = document.getElementById("navbarNavAltMarkup");
+    var targetElement = event.target; 
+
+    do {
+        if (targetElement == navbarMenu) {
+            return;
+        }
+        targetElement = targetElement.parentNode;
+    } while (targetElement);
+
+    navbarMenu.classList.remove("show");
+  });
+</script>
 
 
 <script>
