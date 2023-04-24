@@ -104,16 +104,13 @@ transition: all 1s;
 }
 @media (min-width:1400px) {
 .img-responsive{
-    width: 8%;
-    top: -9px;
+    width: 90px;
+    height: 90px;
+    top: -4px;
     position: fixed;
-    padding-left: 25px; 
 }
 .padding-menu{
     padding-left: 9%;
-}
-#navbar-villar {
-    margin-left: 40%;
 }
 #our-team {
 padding-top:90px;
@@ -153,11 +150,11 @@ z-index: -9999999;
 
 }
 @media (min-width:992px) and (max-width:1399px) {
-    .img-responsive{
-    width: 9%;
-    top: -9px;
+.img-responsive{
+    width: 90px;
+    height: 90px;
+    top: -4px;
     position: fixed;
-    padding-left: 25px; 
 }
 .padding-menu{
     padding-left: 4%;
@@ -171,9 +168,6 @@ padding-top:90px;
 margin-left:10px; margin-top:15px;
 }
 
-#navbar-villar {
-padding-left: 30%;
-}
 
 .photo:hover {
 top: 100px;
@@ -204,6 +198,9 @@ z-index: -9999999;
 
 
 @media (min-width:300px) and (max-width:992px) {
+.nav-margin-responsive{
+    margin-top: 60px;
+}
 .img-responsive{
     width: 30%;
     top: -9px;
