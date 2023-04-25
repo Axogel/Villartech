@@ -16,7 +16,7 @@
         <div class="col-6">
             <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 50px;">
               <li class="nav-item px-2">
-                <a class="nav-link active text-light bold-size" aria-current="page" href="#">Home</a>
+                <a class="nav-link active text-light bold-size" aria-current="page"  href="#">Home</a>
               </li>
               <li class="nav-item px-2 ">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#about-us "style="width: 90px" >ABOUT US</a>

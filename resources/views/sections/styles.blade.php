@@ -222,7 +222,7 @@ iframe {
     right: 15px;
 }
 .home-responsive{
-    margin-top: 150px;
+    margin-top: 80px;
 }
 .nav-responsive-fixed{
     Animation: none;
@@ -230,7 +230,8 @@ iframe {
 }
 
 .our-team {
-padding-left:0px;
+    padding-left:0px;
+    margin-top: 60px;
 }
 
 #contact-us-navbar {
