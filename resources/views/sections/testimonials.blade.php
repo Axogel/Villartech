@@ -1,4 +1,5 @@
-<section id="testimonial" class="testimonial parallax parallax3">
+<div id="testimonial" style="position:relative; bottom:50px;"></div>
+<section  class="testimonial parallax parallax3">
     <div class="parallax-overlay"></div>
     <div class="container">
         <div class="row">

@@ -4,7 +4,7 @@
         <!-- Company Profile -->
         <div class="row">
             <div class="col-md-12 heading" >
-                <h2 class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900;" >
+                <h2 class="title classic nav-margin-responsive" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900;" >
                     Company Profile
                 </h2>
             </div>
