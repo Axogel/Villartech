@@ -24,13 +24,13 @@
                         </tr>
 
                     </thead>
-                    @foreach ($cacs as $cac)
+                    @foreach ($categories as $category)
                         <tbody>
                             <tr>
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <div class="media-body">
-                                            <span class="mb-0 text-sm">{{ $cac->name }}</span>
+                                            <span class="mb-0 text-sm">{{ $category->name }}</span>
                                         </div>
                                     </div>
                                 </th>
@@ -45,10 +45,10 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                             <a class="dropdown-item"
-                                                href="{{ route('cacs.edit', ['cac' => $cac->id]) }}">Edit</a>
+                                                href="{{ route('categories.edit', ['category' => $category->id]) }}">Edit</a>
 
                                               
-                                            <form action="{{ route('cacs.destroy', $cac->id) }}" method="Post">
+                                            <form action="{{ route('categories.destroy', $category->id) }}" method="Post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item">
@@ -66,7 +66,7 @@
                     @endforeach
                 </table>
 
-                <a href="{{ route('cacs.create') }}" class="btn btn-info" style="text-align:center; margin-top:5%;">Create
+                <a href="{{ route('categories.create') }}" class="btn btn-info" style="text-align:center; margin-top:5%;">Create
                 Category</a>
             </div>
 

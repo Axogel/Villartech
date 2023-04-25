@@ -12,7 +12,7 @@
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="col mt-5" style="display:grid; padding-top:80px; width:80%;">
                     {!! Form::open([
-                        'route' => ['cacs.update', ['cac' => $cac->id]],
+                        'route' => ['categories.update', ['category' => $category->id]],
                         'method' => 'PUT',
                         'files' => true,
                     ]) !!}
@@ -22,7 +22,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
-                            {!! Form::text('name', old('name', $cac->name), [
+                            {!! Form::text('name', old('name', $category->name), [
                             'id' => 'name',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                             'placeholder' => 'Name',
@@ -34,7 +34,7 @@
                     </div>
 
                     <div style="text-align:center; margin-top:50px; margin-left:1px;" class="row mb-6">
-                        <a href="{{ route('tags.index') }}" class="btn btn-light me-2">Back</a>
+                        <a href="{{ route('categories.index') }}" class="btn btn-light me-2">Back</a>
                         <button type="submit" class="btn btn-info" style="width:106px;">
                             <span class="indicator-label">Update</span>
                         </button>

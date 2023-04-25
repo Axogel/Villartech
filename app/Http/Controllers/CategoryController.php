@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cac;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CacController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CacController extends Controller
      */
     public function index()
     {
-        $cac = Cac::orderBy('id', 'desc')->paginate(12);
-        return view ('cacs.index', $cac)->with('cacs', $cac);
+        $category = Category::orderBy('id', 'desc')->paginate(12);
+        return view ('categories.index', $category)->with('categories', $category);
 
     }
 
@@ -26,7 +26,7 @@ class CacController extends Controller
      */
     public function create()
     {
-        return view('cacs.create');
+        return view('categories.create');
     }
 
     /**
@@ -37,20 +37,20 @@ class CacController extends Controller
      */
     public function store(Request $request)
     {
-        $cac = new Cac;
-        $cac->name = $request->name;
-        $cac->save();
-        return redirect()->route('cacs.index');
+        $category = new Category;
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('categories.index');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cac  $cac
+     * @param  \App\Models\Category  $cac
      * @return \Illuminate\Http\Response
      */
-    public function show(Cac $cac)
+    public function show(Category $category)
     {
         //
     }
@@ -63,8 +63,8 @@ class CacController extends Controller
      */
     public function edit($id)
     {
-        $cac = Cac::find($id);
-        return view('cacs.edit',compact('cac'));
+        $category = Category::find($id);
+        return view('categories.edit',compact('category'));
     }
 
     /**
@@ -76,10 +76,10 @@ class CacController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $cac = Cac::find($id);
-        $cac->name = $request->name;
-        $cac->save();
-        return redirect()->route('cacs.index');
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -90,8 +90,8 @@ class CacController extends Controller
      */
     public function destroy($id)
     {
-        $cac = Cac::find($id);
-        $cac->delete();
-        return redirect()->route('cacs.index');
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route('categories.index');
     }
 }

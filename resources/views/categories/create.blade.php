@@ -11,7 +11,7 @@
 
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="col mt-5" style="display:grid; padding-top:80px; width:80%;">
-                    {!! Form::open(['method' => 'POST', 'route' => ['cacs.store'], 'files' => 'false']) !!}
+                    {!! Form::open(['method' => 'POST', 'route' => ['categories.store'], 'files' => 'false']) !!}
 
                     <div class="row mb-6">
 
@@ -27,7 +27,7 @@
                     </div>
 
                     <div style="text-align:center; margin-top:50px; margin-left:1px;" class="row mb-6">
-                        <a href="{{ route('cacs.index') }}" class="btn btn-light me-2">Back</a>
+                        <a href="{{ route('categories.index') }}" class="btn btn-light me-2">Back</a>
                         <button type="submit" class="btn btn-info" style="width:106px;">
                             <span class="indicator-label">Create</span>
                         </button>

@@ -11,7 +11,7 @@ use App\Http\Controllers\TeamUserController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\DeclarationController;
 use App\Http\Controllers\TagController;
-use App\Http\Controllers\CacController;
+use App\Http\Controllers\CategoryController;
 
 use App\Models;
 
@@ -64,7 +64,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('tags', TagController::class);
 
 	/* CATEGORIES CRUD*/ 
-	Route::resource('cacs', CacController::class);
+	Route::resource('categories', CategoryController::class);
 
 	/* EMPLOYEES EDUCATION CRUD*/ 
 	Route::get('/getEmployee/{team}', 'App\Http\Controllers\TeamUserController@getEmployee')->name('employee');
