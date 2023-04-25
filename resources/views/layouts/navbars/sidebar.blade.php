@@ -152,6 +152,12 @@ $setting = DB::select('select * from admin_settings');
                     </a>
                 </li>
 
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('cacs.index') }}" style="padding-left:60px;">
+                        {{ __('Categories') }}
+                    </a>
+                </li>
         </div>
     </div>
 </nav>
