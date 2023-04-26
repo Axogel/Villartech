@@ -127,9 +127,8 @@ $setting = DB::select('select * from admin_settings');
 
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('portfolios.index')); ?>">
+                        <a class="nav-link" href="{{ route('portfolios.index') }}">
                             <?php echo e(__('Portfolios')); ?>
-
                         </a>
                     </li>
                 </ul>
