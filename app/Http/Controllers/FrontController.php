@@ -45,50 +45,34 @@ class FrontController extends Controller
 
     public function welcome()
     {
-        
 
-        $agregar = array();
-
-        $portfolio = Portfolio::select('id','name','image','url','description', 'skills')
-                     ->get();
+        $portfolios = Portfolio::select('id','name','image','url','description', 'skills')
+                               ->get();
         
         $team = TeamUser::select('*')
-                    ->where('status',1)
-                     ->get();
-
-                    
+                        ->where('status',1)
+                        ->get();                    
 
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
-                    ->get();
-
+                               ->get();
 
         $flicker = Flicker::select('id','name','image')
-                    ->get();
+                          ->get();
 
         $declaration = Declaration::select('id', 'client', 'client_image', 'testimony')
-                    ->get();
-
-
+                                  ->get();
 
         $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_date','education_description')
-                    ->leftJoin('team_users', 'team_users.id', 'team_educations.developer_id')
-                    ->get();
-
-
-                    
+                                      ->leftJoin('team_users', 'team_users.id', 'team_educations.developer_id')
+                                      ->get();                    
 
         $teamExperience = TeamExperience::select('*')
-                    ->leftJoin('team_users', 'team_users.id', 'team_experience.developer_id')
-                     ->get();
-
-              
-        
-          
+                                        ->leftJoin('team_users', 'team_users.id', 'team_experience.developer_id')
+                                        ->get();
 
         $teamSkill = TeamSkill::select('skill_id', 'skill_name','skill_percentage','developer_id')
-        ->leftJoin('team_users', 'team_users.id', 'team_skills.developer_id')
-
-        ->get();
+                              ->leftJoin('team_users', 'team_users.id', 'team_skills.developer_id')
+                              ->get();
 
 
         /*$i=0; 
@@ -103,9 +87,9 @@ class FrontController extends Controller
             $i++;
             $agregar = array();
           }*/
-         //dd($portfolio);
+        //  dd($portfolios);
 
-        return view('landing')->with(['portfolios' => $portfolio, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill]);
+        return view('landing')->with(['portfolios' => $portfolios, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill]);
 
     }
 

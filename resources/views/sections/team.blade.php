@@ -1,4 +1,5 @@
-<div class="col-12 heading container" id="our-team">
+<div id="our-team" style="position:relative; bottom:70px;"></div>
+<div class="col-12 heading container our-team" >
     <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900;">OUR TEAM</h2>
 </div>
 

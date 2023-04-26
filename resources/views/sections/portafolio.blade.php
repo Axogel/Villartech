@@ -1,4 +1,5 @@
-<section id="portfolio" class="portfolio portfolio-box">
+<div id="portfolio" style="position:relative; bottom:50px;"></div>
+<section  class="portfolio portfolio-box">
     <div class="container">
         <div class="row">
             <div class="col-md-12 heading text-center">
