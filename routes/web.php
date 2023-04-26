@@ -12,6 +12,8 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\DeclarationController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoryTypeController;
+
 
 use App\Models;
 
@@ -65,6 +67,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* CATEGORIES CRUD*/ 
 	Route::resource('categories', CategoryController::class);
+
+	/* CATEGORY TYPES CRUD*/ 
+	Route::resource('category-types', CategoryTypeController::class);
 
 	/* EMPLOYEES EDUCATION CRUD*/ 
 	Route::get('/getEmployee/{team}', 'App\Http\Controllers\TeamUserController@getEmployee')->name('employee');
