@@ -16,12 +16,12 @@ class TeamUserSeeder extends Seeder
      */
     public function run()
     {
-        if (!file_exists(storage_path('app/public/uploads/images'))) {
-            mkdir(storage_path('app/public/uploads/images'), 0755,true);
+        if (!file_exists(storage_path('app/public/uploads/images/teams'))) {
+            mkdir(storage_path('app/public/uploads/images/teams'), 0755,true);
         } //create a folder
 
         $file = new Filesystem;
-        $file->cleanDirectory('storage/app/public/uploads/images');
+        $file->cleanDirectory('storage/app/public/uploads/images/teams');
 
         TeamUser::factory()->count(10)->create();
     }
