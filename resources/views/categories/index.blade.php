@@ -20,6 +20,7 @@
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">Name</th>
+                            <th scope="col">Category Type</th>
                             <th></th>
                         </tr>
 
@@ -34,6 +35,15 @@
                                         </div>
                                     </div>
                                 </th>
+
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="mb-0 text-sm">{{ $category->categoryType->name }}</span>
+                                        </div>
+                                    </div>
+                                </th>
+                               
 
 
                                 <td class="text-right">

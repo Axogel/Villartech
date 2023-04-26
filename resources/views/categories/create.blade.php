@@ -23,6 +23,18 @@
 
                         </div>
 
+
+
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category Type</label>
+                            {!! Form::select('category_type_id', $opciones, null, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+
+                        </div>
+
+
+                       
+
            
                     </div>
 

@@ -88,7 +88,7 @@ class CategoryTypeController extends Controller
      * @param  \App\Models\CategoryType  $categoryType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoryType $categoryType)
+    public function destroy($id)
     {
         $categoryType = CategoryType::find($id);
         $categoryType->delete();

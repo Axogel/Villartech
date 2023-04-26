@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\CategoryType;
+
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,6 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
+
+        
         $category = Category::orderBy('id', 'desc')->paginate(12);
         return view ('categories.index', $category)->with('categories', $category);
 
@@ -26,7 +30,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+
+
+        $opciones = CategoryType::pluck('name', 'id');
+
+        return view('categories.create')->with('opciones', $opciones);;
     }
 
     /**
@@ -39,6 +47,8 @@ class CategoryController extends Controller
     {
         $category = new Category;
         $category->name = $request->name;
+        $category->category_type_id = $request->category_type_id;
+
         $category->save();
         return redirect()->route('categories.index');
 
@@ -63,8 +73,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        $opciones = CategoryType::pluck('name', 'id');
         $category = Category::find($id);
-        return view('categories.edit',compact('category'));
+        return view('categories.edit',compact('category', 'opciones'));
     }
 
     /**
@@ -78,6 +89,8 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->name = $request->name;
+        $category->category_type_id = $request->category_type_id;
+
         $category->save();
         return redirect()->route('categories.index');
     }

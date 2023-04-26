@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             TeamUserSeeder::class,
             TagSeeder::class,
+            CategoryTypeSeeder::class,
             CategoriesSeeder::class,
             TagSeeder::class,
             PortfoliosTableSeeder::class
