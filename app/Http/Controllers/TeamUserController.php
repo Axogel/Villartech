@@ -65,8 +65,8 @@ class TeamUserController extends Controller
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
 
-         $url = $request->photo->store('team', 'public');
-         $teamUser->photo = $url ?? null;      
+         $url = $request->photo->store('uploads/images/teams', 'public');
+         $teamUser->photo = $url ?? null;     
          $teamUser->save();
          return redirect()->route('teams.index');
     }
@@ -125,10 +125,10 @@ class TeamUserController extends Controller
         $teamUser->status = 1;
         if ($request->photo) {
 
-            if(File::exists(storage_path('app/public/'.$teamUser->photo)))
+            if(File::exists(storage_path('app/public/'.$teamUser->photo))){
                 unlink(storage_path('app/public/'.$teamUser->photo));
-
-            $url = $request->photo->store('images', 'public');
+            }
+            $url = $request->photo->store('uploads/images/teams', 'public');
             $teamUser->photo = $url ?? null;
         }
 
@@ -146,6 +146,9 @@ class TeamUserController extends Controller
         public function destroy(TeamUser $teamUser, $id)
         {           
             $teamUser = TeamUser::find($id);
+            if(File::exists(storage_path('app/public/'.$teamUser->photo))){
+                unlink(storage_path('app/public/'.$teamUser->photo));
+            }
             $teamUser->delete();
             return redirect()->route('teams.index');
         }
