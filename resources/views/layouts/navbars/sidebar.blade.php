@@ -127,7 +127,7 @@ $setting = DB::select('select * from admin_settings');
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('skills.index')); ?>">
-                            <?php echo e(__('Skill')); ?>
+                            <?php echo e(__('Skills')); ?>
 
                         </a>
                     </li>

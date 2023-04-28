@@ -16,47 +16,78 @@ class SkillSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('skills')->insert([
+        $skills = [
+        [
             'name' =>  'PHP',
-       ]);
-       DB::table('skills')->insert([
-        'name' =>  'NODEJS',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'name' =>  'NODEJS',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'HTML5',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'CSS3',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'ANGULAR',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'VUEJS',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'NUXT',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'NEXT',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'REACT',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'LARAVEL',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'CODEIGNITER',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'SLIM',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'SELENIUM',
-        ]);
-        DB::table('skills')->insert([
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
             'name' =>  'CHROME EXTENSION',
-        ]);
+            'created_at' => now(),
+            'updated_at' => now()
+        ]
+];
+Skill::insert($skills);
     }
 }
