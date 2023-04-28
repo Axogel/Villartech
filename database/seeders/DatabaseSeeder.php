@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             CategoryTypeSeeder::class,
             CategoriesSeeder::class,
             TagSeeder::class,
-            PortfoliosTableSeeder::class
+            PortfoliosTableSeeder::class,
+            SkillSeeder::class
         ]);
     }
 }

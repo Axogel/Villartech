@@ -11,6 +11,7 @@ use App\Http\Controllers\TeamUserController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\DeclarationController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryTypeController;
 
@@ -61,6 +62,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* EMPLOYEES CRUD*/ 
 	Route::resource('teams', TeamUserController::class);
+	 
+	// SKILLS CRUD
+
+	Route::resource('skills', SkillController::class);
 
 	/* TAGS CRUD*/ 
 	Route::resource('tags', TagController::class);
