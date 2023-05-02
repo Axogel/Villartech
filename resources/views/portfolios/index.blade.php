@@ -34,6 +34,8 @@
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <div class="media-body">
+                                <input type="checkbox" name="selected[]" value="{{ $portfolio->id }}">
+
                                             <span class="mb-0 text-sm">{{ $portfolio->name }}</span>
                                         </div>
                                     </div>
@@ -90,6 +92,8 @@
             
             <a href="{{ route('portfolios.create') }}" class="btn btn-info"
             style="margin-left: 500px; margin-top:5%;">Create Portfolio</a>
+            <button type="button" class="btn btn-sm btn-danger" style="height: 40px; margin-top:5%;" onclick="event.preventDefault(); deleteSelected();">Delete selected</button>
+    <button type="button" class="btn btn-sm btn-secondary" style="height: 40px; margin-top:5%;" onclick="event.preventDefault(); editSelected();">Edit selected</button>
         </div>
         
     </div>
@@ -113,7 +117,43 @@
     <br>
     <br>
     <br>
+    <!-- <script>
+    function deleteSelected() {
+        let ids = [];
+        $('input[name="selected[]"]:checked').each(function() {
+            ids.push($(this).val());
+        });
+        if (ids.length) {
+            if (confirm('Are you sure you want to delete the selected items?')) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: "{{ route('portfolios.destroyMultiple') }}",
+                    data: { ids: ids },
+                    success: function () {
+                        location.reload();
+                    },
+                    error: function () {
+                        alert('Error deleting selected items');
+                    }
+                });
+            }
+        } else {
+            alert('Please select items to delete');
+        }
+    }
 
+    function editSelected() {
+        let ids = [];
+        $('input[name="selected[]"]:checked').each(function() {
+            ids.push($(this).val());
+        });
+        if (ids.length) {
+            window.location.href = '{{ route('portfolios.updateMultiple') }}?ids=' + ids.join(',');
+        } else {
+            alert('Please select items to edit');
+        }
+    }
+</script> -->
     @include('layouts.footers.auth')
 @endsection
 
@@ -123,6 +163,7 @@
 @endpush
 
 @section('scripts')
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

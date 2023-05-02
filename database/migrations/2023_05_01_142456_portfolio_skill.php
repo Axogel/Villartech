@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('portfolio_skill', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->id();
-            $table->string('name');
-            $table->string('image');
-            $table->string('url');
-            $table->longText('description');
+            $table->unsignedBigInteger('portfolio_id');
+            $table->unsignedBigInteger('skill_id');
             $table->timestamps();
+            $table->foreign('portfolio_id')->references('id')->on('portfolios')->onDelete('cascade');
+            $table->foreign('skill_id')->references('id')->on('skills')->onDelete('cascade');
         });
+        
     }
 
     /**
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('portofolios');
+        //
     }
 };

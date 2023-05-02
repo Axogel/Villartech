@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Skill;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -26,7 +26,8 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('portfolios.create');
+        $skills = Skill::pluck('name','id');
+        return view('portfolios.create', compact('skills'));
     }
     
 
@@ -39,14 +40,15 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         $portfolio = new Portfolio;
+        $portfolio->id = $request->id;
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
-        $portfolio->skills = $request->skills;
+        // $portfolio->skills = $request->skills;
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
-
+        //  $portfolio->skills()->attach($portfolio->id,$request->input('skills'));
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
          $portfolio->save();
@@ -84,6 +86,20 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
+    public function updateMultiple(Request $request)
+    {
+    $portfolio = $request->input('portfolio_ids', []);
+    $updatedData = [
+        'name' => $request->input('name', []),
+        'url' => $request->input('url', []),
+        'description' => $request->input('description', []),
+
+    ];
+    foreach ($portfolioIds as $id) {
+        Portfolio::where('id', $id)->update($updatedData);
+    }
+    return redirect()->route('portfolios.index')->with('success', 'Portfolios updated successfully.');
+    }   
     public function update(Request $request, Portfolio $portfolio)
     {
         $portfolio->name = $request->name;
@@ -110,6 +126,12 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
+    public function destroyMultiple(Request $request)
+    {
+    $portfolio = $request->input('portfolio_ids', []);
+    Portfolio::whereIn('id', $portfolioIds)->delete();
+    return redirect()->route('portfolios.index')->with('success', 'Portfolios deleted successfully.');
+    }
     public function destroy(Portfolio $portfolio)
     {
 

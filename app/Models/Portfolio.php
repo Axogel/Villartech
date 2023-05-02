@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Portfolio extends Model
 {
+
     use HasFactory;
     protected $table = 'portfolios';
     protected $primaryKey = 'id';
@@ -18,6 +18,9 @@ class Portfolio extends Model
         'image',
         'url',
         'client',
-        'skills'
     ];
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class, 'portfolio_skill', 'portfolio_id', 'skill_id');
+    }
 }

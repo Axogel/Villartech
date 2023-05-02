@@ -39,8 +39,12 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
-                            {!! Form::text('skills', null, ['placeholder' => 'Insert the skills',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+                            {!! Form::select('skills[]', ['' => 'Seleccione una habilidad'] + $skills->toArray(), null, [
+    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+    'multiple' => true,
+    'onchange' => 'this.className=(this.value!="") ? "form-control form-control-solid mb-3 mb-lg-0 selected" : "form-control form-control-solid mb-3 mb-lg-0"',
+]) !!}
+
 
                         </div>
 
