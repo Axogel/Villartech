@@ -12,15 +12,18 @@ class Portfolio extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
+ 
     protected $filliable = [
         'name',
         'description',
         'image',
         'url',
+        'skills',
         'client',
     ];
     public function skills()
     {
-        return $this->belongsToMany(Skill::class, 'portfolio_skill', 'portfolio_id', 'skill_id');
+        return $this->belongsToMany(Skill::class, 'portfolio_skill');
     }
+
 }

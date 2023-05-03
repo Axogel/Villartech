@@ -20,10 +20,10 @@ class PortfolioSkill extends Model
 
 
 
-    // public function portfolios()
-    // {
-    //     return $this->belongsToMany(Portfolio::class, 'portfolio_skill')->withTimestamps();
-    // }
+    public function portfolios()
+    {
+        return $this->belongsToMany(Portfolio::class, 'portfolio_skill');
+    }
     // public function skills()
     // {
     //     return $this->belongsToMany(Skill::class, 'portfolio_skill')->withTimestamps();

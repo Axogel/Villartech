@@ -4,7 +4,7 @@
 </div>
 
 @foreach ($teams as $team)
-    <div class="modal fade" id="{{ $team->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="modal_team_{{ $team->id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document" style="width: 90%;">
             <div class="modal-content">
                 <div class="modal-header">
@@ -306,7 +306,7 @@
                             </p>
                         </div>
                         <div class="photo">
-                            <img src="{{ asset('storage') . '/' . $team->photo }}" alt="" style="height:90%; width:100%" href="#" data-toggle="modal" data-target="#{{ $team->id }}">
+                            <img src="{{ asset('storage') . '/' . $team->photo }}" alt="" style="height:90%; width:100%" href="#" data-toggle="modal" data-target="#modal_team_{{ $team->id }}">
                         </div>
                     </div>
                 </div>

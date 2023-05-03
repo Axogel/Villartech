@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Skill;
 use App\Models\Portfolio;
+use App\Models\Skill;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -15,7 +16,9 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolio = Portfolio::orderBy('id', 'desc')->paginate(10);
+        $portfolio = Portfolio::with('skills')
+        ->orderBy('id', 'desc')
+        ->paginate(10);
         return view('portfolios.index', $portfolio)->with('portfolios', $portfolio);
 
     }
@@ -44,12 +47,16 @@ class PortfolioController extends Controller
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $portfolio->skills = $jsonSkillIds;
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
          $portfolio->save();
+         $portfolio->skills()->attach($request->input('skills'));
          return redirect()->route('portfolios.index');
 
 
