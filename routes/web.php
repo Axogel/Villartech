@@ -108,6 +108,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* PORTFOLIOS CRUD*/ 
 	Route::resource('portfolios', PortfolioController::class);
+	Route::delete('/selected-portfolio', [PortfolioController::class, 'destroyMultiple'])->name('portfolio.delete');
 
 		/* PORTFOLIOS CRUD*/ 
 		Route::resource('declarations', DeclarationController::class);

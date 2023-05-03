@@ -44,11 +44,9 @@ class PortfolioController extends Controller
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
-        // $portfolio->skills = $request->skills;
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
-        //  $portfolio->skills()->attach($portfolio->id,$request->input('skills'));
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
          $portfolio->save();
@@ -128,9 +126,10 @@ class PortfolioController extends Controller
      */
     public function destroyMultiple(Request $request)
     {
-    $portfolio = $request->input('portfolio_ids', []);
-    Portfolio::whereIn('id', $portfolioIds)->delete();
-    return redirect()->route('portfolios.index')->with('success', 'Portfolios deleted successfully.');
+        $ids= $request->ids;
+        Portfolio::whereIn('id', $ids)->delete();
+        return response()->json(["success"=> "portfolio have been deleted"]);
+    return redirect()->route('portfolios.index');
     }
     public function destroy(Portfolio $portfolio)
     {
