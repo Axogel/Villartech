@@ -81,7 +81,10 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        return view('portfolios.edit',compact('portfolio'));
+        $skills = Skill::all()->pluck('name', 'id');
+        $selectedOptions = $portfolio->skills;
+
+        return view('portfolios.edit',compact('portfolio', 'skills','selectedOptions'));
     }
 
     /**
@@ -111,6 +114,9 @@ class PortfolioController extends Controller
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
         $portfolio->skills = $request->skills;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $portfolio->skills = $jsonSkillIds;
         if ($request->image) {
 
             if(File::exists(storage_path('app/public/'.$portfolio->image))){
@@ -122,6 +128,7 @@ class PortfolioController extends Controller
         }
 
         $portfolio->save();
+        $portfolio->skills()->attach($request->input('skills'));
         return redirect()->route('portfolios.index');
     }
 
