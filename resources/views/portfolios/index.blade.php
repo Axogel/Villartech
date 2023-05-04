@@ -30,10 +30,12 @@
                     </thead>
                     @foreach ($portfolios as $portfolio)
                         <tbody>
-                            <tr>
+                            <tr id="portfolio_ids {{ $portfolio->id }}">
                                 <th scope="row">
                                     <div class="media align-items-center">
                                         <div class="media-body">
+                                <input type="checkbox" name="ids" value="{{ $portfolio->id }}">
+
                                             <span class="mb-0 text-sm">{{ $portfolio->name }}</span>
                                         </div>
                                     </div>
@@ -49,7 +51,10 @@
 
                                 <td>
                                     <span class="badge badge-dot mr-4">
-                                        {{ $portfolio->skills }}
+                                    @foreach ($portfolio->skills()->get() as $skill)
+                                                <span class="mb-0 text-sm">{{ $skill->name }}</span>
+                                            @endforeach
+                
                                     </span>
                                 </td>
                                 <td>
@@ -90,6 +95,7 @@
             
             <a href="{{ route('portfolios.create') }}" class="btn btn-info"
             style="margin-left: 500px; margin-top:5%;">Create Portfolio</a>
+            <button type="button" class="btn btn-sm btn-danger" style="height: 40px; margin-top:5%;" id="deletedAll" >Delete selected</button>
         </div>
         
     </div>
@@ -123,6 +129,30 @@
 @endpush
 
 @section('scripts')
+<script>
+      $('#deletedAll').click(function(e){
+    e.preventDefault();
+    var all_ids = [];
+    $('input:checkbox[name=ids]:checked').each(function(){
+        all_ids.push($(this).val());
+    });
+    $.ajax({
+        url:"{{ route('portfolio.delete') }} ",
+        type: "DELETE",
+        data:{
+            ids: all_ids,
+            _token:'{{ csrf_token() }}'
+        },
+        success:function(response){
+            $.each(all_ids, function(key,val){
+                $('#portfolio_ids'+val).remove();
+            });
+            location.reload(); // Agregar recarga de página
+        }
+    });
+});
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -11,6 +11,7 @@ use App\Http\Controllers\TeamUserController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\DeclarationController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryTypeController;
 use App\Http\Controllers\BlogController;
@@ -63,6 +64,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* EMPLOYEES CRUD*/ 
 	Route::resource('teams', TeamUserController::class);
+	 
+	// SKILLS CRUD
+
+	Route::resource('skills', SkillController::class);
 
 	/* TAGS CRUD*/ 
 	Route::resource('tags', TagController::class);
@@ -108,6 +113,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* PORTFOLIOS CRUD*/ 
 	Route::resource('portfolios', PortfolioController::class);
+	Route::delete('/selected-portfolio', [PortfolioController::class, 'destroyMultiple'])->name('portfolio.delete');
 
 		/* PORTFOLIOS CRUD*/ 
 		Route::resource('declarations', DeclarationController::class);

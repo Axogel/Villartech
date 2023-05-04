@@ -22,6 +22,6 @@ class PortfoliosTableSeeder extends Seeder
       $file = new Filesystem;
       $file->cleanDirectory('storage/app/public/uploads/images/portfolios');
 
-      Portfolio::factory()->count(5)->create();
+      Portfolio::factory()->count(15)->create();
     }
 }

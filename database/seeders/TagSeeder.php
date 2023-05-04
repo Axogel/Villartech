@@ -16,34 +16,35 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tags')->insert([
-            'name' =>  'PHP',
-            'created_at' => now(),
-            'updated_at' => now()
-       ]);
+        $tags =
+        [
+            [
+                'name' =>  'PHP',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' =>  'CSS',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' =>  'JAVA',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' =>  'HTML',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' =>  'TEST',
+                'created_at' => now(),
+                'updated_at' => now()
+            ] 
+            ];
+            Tag::insert($tags);
 
-       DB::table('tags')->insert([
-        'name' =>  'CSS',
-        'created_at' => now(),
-        'updated_at' => now()
-         ]);
-
-        DB::table('tags')->insert([
-        'name' =>  'JAVA',
-        'created_at' => now(),
-        'updated_at' => now()
-    ]);
-
-    DB::table('tags')->insert([
-        'name' =>  'HTML',
-        'created_at' => now(),
-        'updated_at' => now()
-    ]);
-
-    DB::table('tags')->insert([
-        'name' =>  'TEST',
-        'created_at' => now(),
-        'updated_at' => now()
-    ]);
     }
 }
