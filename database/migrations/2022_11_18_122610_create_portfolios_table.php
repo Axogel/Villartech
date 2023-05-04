@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('url');
-            $table->string('skills');
+            $table->string('skills', 255);
             $table->longText('description');
             $table->timestamps();
         });
