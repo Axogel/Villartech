@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
 class PortfolioController extends Controller
@@ -48,7 +47,7 @@ class PortfolioController extends Controller
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
 
-         $url = $request->image->store('images', 'public');
+         $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
          $portfolio->save();
          return redirect()->route('portfolios.index');
@@ -93,10 +92,11 @@ class PortfolioController extends Controller
         $portfolio->skills = $request->skills;
         if ($request->image) {
 
-            if(File::exists(storage_path('app/public/'.$portfolio->image)))
+            if(File::exists(storage_path('app/public/'.$portfolio->image))){
                 unlink(storage_path('app/public/'.$portfolio->image));
-
-            $url = $request->image->store('images', 'public');
+            }
+       
+            $url = $request->image->store('uploads/images/portfolios', 'public');
             $portfolio->image = $url ?? null;
         }
 
@@ -112,10 +112,11 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        if(File::exists(storage_path('app/public/'.$portfolio->image))) {
-            unlink(storage_path('app/public/'.$portfolio->image));
 
+        if(File::exists(storage_path('app/public/'.$portfolio->image))){
+            unlink(storage_path('app/public/'.$portfolio->image));
         }
+   
             $portfolio->delete();
             return redirect()->route('portfolios.index');
     }

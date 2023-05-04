@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('blog_tag', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('image');
-            $table->string('url');
-            $table->longText('description');
-            $table->string('skills');
+            $table->unsignedBigInteger('blog_id');
+            $table->unsignedBigInteger('tag_id');
             $table->timestamps();
+    
+            $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('portofolios');
+        Schema::dropIfExists('blog_tags');
     }
 };
