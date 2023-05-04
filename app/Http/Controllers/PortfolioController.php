@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Portfolio;
+use App\Models\Skill;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -15,7 +16,9 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolio = Portfolio::orderBy('id', 'desc')->paginate(10);
+        $portfolio = Portfolio::with('skills')
+        ->orderBy('id', 'desc')
+        ->paginate(10);
         return view('portfolios.index', $portfolio)->with('portfolios', $portfolio);
 
     }
@@ -26,7 +29,8 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('portfolios.create');
+        $skills = Skill::pluck('name','id');
+        return view('portfolios.create', compact('skills'));
     }
     
 
@@ -39,17 +43,20 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         $portfolio = new Portfolio;
+        $portfolio->id = $request->id;
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
-        $portfolio->skills = $request->skills;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $portfolio->skills = $jsonSkillIds;
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
-
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
          $portfolio->save();
+         $portfolio->skills()->attach($request->input('skills'));
          return redirect()->route('portfolios.index');
 
 
@@ -74,7 +81,10 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        return view('portfolios.edit',compact('portfolio'));
+        $skills = Skill::all()->pluck('name', 'id');
+        $selectedOptions = $portfolio->skills;
+
+        return view('portfolios.edit',compact('portfolio', 'skills','selectedOptions'));
     }
 
     /**
@@ -84,12 +94,29 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
+    public function updateMultiple(Request $request)
+    {
+    $portfolio = $request->input('portfolio_ids', []);
+    $updatedData = [
+        'name' => $request->input('name', []),
+        'url' => $request->input('url', []),
+        'description' => $request->input('description', []),
+
+    ];
+    foreach ($portfolioIds as $id) {
+        Portfolio::where('id', $id)->update($updatedData);
+    }
+    return redirect()->route('portfolios.index')->with('success', 'Portfolios updated successfully.');
+    }   
     public function update(Request $request, Portfolio $portfolio)
     {
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
         $portfolio->skills = $request->skills;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $portfolio->skills = $jsonSkillIds;
         if ($request->image) {
 
             if(File::exists(storage_path('app/public/'.$portfolio->image))){
@@ -101,6 +128,7 @@ class PortfolioController extends Controller
         }
 
         $portfolio->save();
+        $portfolio->skills()->attach($request->input('skills'));
         return redirect()->route('portfolios.index');
     }
 
@@ -110,6 +138,13 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
+    public function destroyMultiple(Request $request)
+    {
+        $ids= $request->ids;
+        Portfolio::whereIn('id', $ids)->delete();
+        return response()->json(["success"=> "portfolio have been deleted"]);
+    return redirect()->route('portfolios.index');
+    }
     public function destroy(Portfolio $portfolio)
     {
 

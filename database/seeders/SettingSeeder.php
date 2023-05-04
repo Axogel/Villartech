@@ -16,13 +16,16 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-       DB::table('admin_settings')->insert([
+        $admin_settings =
+        [
             'email' =>  'villar88@gmail.com',
             'phone' =>  '+18042391855',
             'address' => 'Address: 19 de Abril Av., 2nd Floor, Office #2-D, San Cristóbal, Venezuela',
             'instagram' => 'https://www.instagram.com/villartechnologies/',
             'facebook' => 'https://www.facebook.com/villartechnologies/',
             'date' =>  'https://www.linkedin.com/company/villartechnologies/',
-       ]);
+        ];
+        
+        AdminSetting::insert($admin_settings);
     }
 }

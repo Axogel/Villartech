@@ -46,7 +46,7 @@ class FrontController extends Controller
     public function welcome()
     {
 
-        $portfolios = Portfolio::select('id','name','image','url','description', 'skills')
+        $portfolios = Portfolio::select('id','name','image','url','description')
                                ->get();
         
         $team = TeamUser::select('*')

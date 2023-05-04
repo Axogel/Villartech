@@ -22,79 +22,69 @@ class CategoriesSeeder extends Seeder
     {
 
         $categoryType = CategoryType::all()->random();
-
-        DB::table('categories')->insert([
-            'name' =>  'News',
-            'created_at' => now(),
-            'updated_at' => now(),
-            'category_type_id' => $categoryType->id,
-       ]);
-
-       DB::table('categories')->insert([
-        'name' =>  'Entertaiment',
-        'created_at' => now(),
-        'updated_at' => now(),
-        'category_type_id' => $categoryType->id,
-         ]);
-
-        DB::table('categories')->insert([
-        'name' =>  'Programming',
-        'created_at' => now(),
-        'updated_at' => now(),
-        'category_type_id' => $categoryType->id,
-
-    ]);
-
-    DB::table('categories')->insert([
-        'name' =>  'Learning',
-        'created_at' => now(),
-        'updated_at' => now(),
-        'category_type_id' => $categoryType->id,
-
-    ]);
-
-    DB::table('categories')->insert([
-        'name' =>  'Landings',
-        'created_at' => now(),
-        'updated_at' => now(),
-        'category_type_id' => $categoryType->id,
-
-    ]);
-
-
-    DB::table('categories')->insert([
-        'name' =>  'Bootcamps',
-        'created_at' => now(),
-        'updated_at' => now(),
-        'category_type_id' => $categoryType->id,
-   ]);
-
-   DB::table('categories')->insert([
-    'name' =>  'Virtualization',
-    'created_at' => now(),
-    'updated_at' => now(),
-    'category_type_id' => $categoryType->id,
-     ]);
-
-    DB::table('categories')->insert([
-    'name' =>  'Operating Systems',
-    'created_at' => now(),
-    'updated_at' => now(),
-    'category_type_id' => $categoryType->id,
-]);
-
-    DB::table('categories')->insert([
-        'name' =>  'Code Writers',
-        'created_at' => now(),
-        'updated_at' => now(),
-        'category_type_id' => $categoryType->id,
-    ]);
-
-    DB::table('categories')->insert([
-        'name' =>  'Designings',
-        'created_at' => now(),
-        'updated_at' => now(),
-        'category_type_id' => $categoryType->id,
-    ]);
+        $category = 
+        [
+            [
+                'name' =>  'News',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Entertaiment',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Programming',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Learning',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Landings',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Bootcamps',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Virtualization',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Operating Systems',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Code Writers',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+            [
+                'name' =>  'Designings',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'category_type_id' => $categoryType->id,
+            ],
+        ];
+        Category::insert($category);
     }
 }
