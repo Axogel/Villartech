@@ -117,12 +117,18 @@ class BlogController extends Controller
         $tagIds = $request->input('tags');
         $jsonTagIds = json_encode($tagIds);
         $blog->tags = $jsonTagIds;
+        if ($request->image) {
 
+            if(File::exists(storage_path('app/public/'.$blog->image))){
+                unlink(storage_path('app/public/'.$blog->image));
+            }
+       
+            $url = $request->image->store('uploads/images/blogs', 'public');
+            $blog->image = $url ?? null;
+        }
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
-         $url = $request->image->store('uploads/images/blogs', 'public');
-         $blog->image = $url ?? null; 
          $blog->category_id = $request->category_id;
          
          $blog->slug = $blog->title;
