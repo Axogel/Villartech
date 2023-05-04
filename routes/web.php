@@ -14,6 +14,8 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryTypeController;
+use App\Http\Controllers\BlogController;
+
 
 
 use App\Models;
@@ -75,6 +77,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* CATEGORY TYPES CRUD*/ 
 	Route::resource('category-types', CategoryTypeController::class);
+
+	/* BLOGS CRUD*/ 
+	Route::resource('blogs', BlogController::class);
 
 	/* EMPLOYEES EDUCATION CRUD*/ 
 	Route::get('/getEmployee/{team}', 'App\Http\Controllers\TeamUserController@getEmployee')->name('employee');

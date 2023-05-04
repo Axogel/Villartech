@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -14,7 +17,12 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $opciones = Category::pluck('name', 'id');
+        $blog = Blog::with('tags')
+        ->orderBy('id', 'desc')
+        ->paginate(10);
+        //$tags = Blog::with('tags')->get(); 
+        return view('blogs.index', compact('blog'));
     }
 
     /**
@@ -24,7 +32,10 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        $opciones = Category::pluck('name', 'id');
+        $tags = Tag::all()->pluck('name', 'id');
+        return view('blogs.create',compact('opciones', 'tags'));
+
     }
 
     /**
@@ -35,7 +46,34 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $blog = new Blog;
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->author = $request->author;
+        $tagIds = $request->input('tags');
+        $jsonTagIds = json_encode($tagIds);
+        $blog->tags = $jsonTagIds;
+
+        $request->validate([
+            'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
+         ]);
+        
+           
+       
+            $url = $request->image->store('uploads/images/blogs', 'public');
+            $blog->image = $url ?? null;
+        
+         $blog->category_id = $request->category_id;
+         
+         $blog->slug = $blog->title;
+         $blog->save();
+
+         $blog->tags()->attach($request->input('tags'));
+        return redirect()->route('blogs.index');
+
+
     }
 
     /**
@@ -57,7 +95,11 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        $opciones = Category::pluck('name', 'id');
+        $tags = Tag::all()->pluck('name', 'id');
+        $selectedOptions = $blog->tags()->pluck('tag_id')->toArray();
+        return view('blogs.edit',compact('blog', 'opciones', 'tags', 'selectedOptions'));
+        
     }
 
     /**
@@ -69,7 +111,31 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->author = $request->author;
+        $tagIds = $request->input('tags');
+        $jsonTagIds = json_encode($tagIds);
+        $blog->tags = $jsonTagIds;
+        if ($request->image) {
+
+            if(File::exists(storage_path('app/public/'.$blog->image))){
+                unlink(storage_path('app/public/'.$blog->image));
+            }
+       
+            $url = $request->image->store('uploads/images/blogs', 'public');
+            $blog->image = $url ?? null;
+        }
+        $request->validate([
+            'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
+         ]);
+         $blog->category_id = $request->category_id;
+         
+         $blog->slug = $blog->title;
+         $blog->save();
+
+         $blog->tags()->attach($request->input('tags'));
+        return redirect()->route('blogs.index');
     }
 
     /**
@@ -80,6 +146,12 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        if(File::exists(storage_path('app/public/'.$blog->image))){
+            unlink(storage_path('app/public/'.$blog->image));
+        }
+   
+            $blog->delete();
+            return redirect()->route('blogs.index');
     }
+    
 }

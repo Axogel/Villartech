@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Blog;
+
 
 class Tag extends Model
 {
@@ -12,8 +14,16 @@ class Tag extends Model
     protected $table = 'tags';
 	protected $primaryKey = 'id';
 
+   
+
     protected $fillable = [
 		'name',
-		'description',
 	];
+
+	public function posts()
+    {
+
+        
+        return $this->belongsToMany(Blog::class);
+    }
 }

@@ -172,6 +172,16 @@ $setting = DB::select('select * from admin_settings');
                         {{ __('Category Types') }}
                     </a>
                 </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('blogs.index') }}" style="padding-left:60px;">
+                        {{ __('Blogs') }}
+                    </a>
+                </li>
+
+               
         </div>
     </div>
 </nav>
