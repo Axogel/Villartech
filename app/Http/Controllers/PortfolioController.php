@@ -53,11 +53,10 @@ class PortfolioController extends Controller
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
-         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $url = $request->image->store('uploads/images/portfolios', 'public');
-            $portfolio->image = $url ?? null;  
-        }
-           
+       
+         $url = $request->image->store('uploads/images/portfolios', 'public');
+         dd($url);
+         $portfolio->image = $url ?? null;      
          $portfolio->save();
          $portfolio->skills()->attach($request->input('skills'));
          return redirect()->route('portfolios.index');
