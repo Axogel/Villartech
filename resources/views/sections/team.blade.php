@@ -15,11 +15,6 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                                    aria-expanded="true" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
                             <!-- MODAL SIDEBAR -->
                             <nav class="navbar navbar-expand-lg navbar-light col-sm-11 col-md-1 col-lg-1 navbarAjustResponsive" style="background-color:#045A97; justify-content: start;">
                                 <button class="navbar-toggler" style="box-shadow:none;"  type="button" data-toggle="collapse" data-target="#navbarModalTeam" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
