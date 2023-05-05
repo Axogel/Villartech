@@ -10,7 +10,7 @@ class Portfolio extends Model
     use HasFactory;
     protected $table = 'portfolios';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
 
  
     protected $filliable = [

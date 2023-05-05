@@ -10,7 +10,7 @@ class TeamUser extends Model
     use HasFactory;
     protected $table = 'team_users';
 	protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
 		'name',

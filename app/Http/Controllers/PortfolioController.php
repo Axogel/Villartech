@@ -55,7 +55,6 @@ class PortfolioController extends Controller
          ]);
        
          $url = $request->image->store('uploads/images/portfolios', 'public');
-         dd($url);
          $portfolio->image = $url ?? null;      
          $portfolio->save();
          $portfolio->skills()->attach($request->input('skills'));

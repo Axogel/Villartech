@@ -12,9 +12,47 @@
 .bold-size{
     font-weight: 700;
 }
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    .navbarAjustResponsive{
+        width:98%;
+    }
+    .responsiveAjustAbout{
+        text-align:center;
+    }
+    .margin-hr-responsive{
+        padding-right: 50px;
+    }
+    .navbar-collapse.collapse{
+        display: none !important;
+    }
+    .height-responsive-modal{
+        height: 25%;
+    }
+    .modalAjustResponsive{
+        text-align: start;
+    }
+  }
 
 @media (min-width:300px) and (max-width:992px) {
-
+    .navbarAjustResponsive{
+        width:98%;
+    }
+    .responsiveAjustAbout{
+        text-align:center;
+    }
+    .margin-hr-responsive{
+        padding-right: 50px;
+    }
+    .modalAjustResponsive{
+        text-align: start;
+        position: static;
+    }
+    .height-responsive-modal{
+        height: auto;
+    }
+.modal-responsive-width{
+    width: 100%;
+}
 .owl-next {
     top: 40% !important;
 }
@@ -104,6 +142,21 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .responsiveAjustAbout{
+        text-align: start;
+    }
+    .margin-hr-responsive{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .modalAjustResponsive{
+        text-align: center;
+        position: relative;
+        right: 5px;
+    }
+    .height-responsive-modal{
+        height: 25%;
+    }
 .margin-contactUs{
     margin-left: 50px;
 }
@@ -153,6 +206,21 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .responsiveAjustAbout{
+        text-align: start;
+    }
+    .margin-hr-responsive{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .modalAjustResponsive{
+        text-align: center;
+        position: relative;
+        right: 5px;
+    }
+    .height-responsive-modal{
+        height: 25%;
+    }
 .margin-contactUs{
     margin-left: 50px;
 }
