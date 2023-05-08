@@ -53,7 +53,9 @@ class PortfolioController extends Controller
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
+       
          $url = $request->image->store('uploads/images/portfolios', 'public');
+         dd($url);
          $portfolio->image = $url ?? null;      
          $portfolio->save();
          $portfolio->skills()->attach($request->input('skills'));
@@ -122,7 +124,7 @@ class PortfolioController extends Controller
             if(File::exists(storage_path('app/public/'.$portfolio->image))){
                 unlink(storage_path('app/public/'.$portfolio->image));
             }
-       
+
             $url = $request->image->store('uploads/images/portfolios', 'public');
             $portfolio->image = $url ?? null;
         }
