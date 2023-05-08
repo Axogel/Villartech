@@ -20,9 +20,9 @@ class BlogController extends Controller
         $opciones = Category::pluck('name', 'id');
         $blog = Blog::with('tags')
         ->orderBy('id', 'desc')
-        ->paginate(10);
+        ->paginate(5);
         //$tags = Blog::with('tags')->get(); 
-        return view('blogs.index', compact('blog'));
+        return view ('blogs.index', $blog)->with('blogs', $blog);
     }
 
     /**

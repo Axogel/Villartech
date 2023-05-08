@@ -15,6 +15,8 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryTypeController;
 use App\Http\Controllers\BlogController;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 
@@ -120,6 +122,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 	Route::get('/dashboard', function () {
+
+		Alert::success('Bienvenido al Dashboard de Villartechnologies', 'Logueado exitosamente!');
+
 		return view('welcome');
 
 

@@ -18,7 +18,7 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::with('skills')
         ->orderBy('id', 'desc')
-        ->paginate(10);
+        ->paginate(5);
         return view('portfolios.index', $portfolio)->with('portfolios', $portfolio);
 
     }
