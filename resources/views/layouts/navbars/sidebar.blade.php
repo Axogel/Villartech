@@ -5,8 +5,22 @@ $setting = DB::select('select * from admin_settings');
 
 @endphp
 
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<script src="https://kit.fontawesome.com/91356adb35.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light" id="sidenav-main" style="background-color: #045A97;">
     <div class="container-fluid">
         <!-- Toggler -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
@@ -14,11 +28,8 @@ $setting = DB::select('select * from admin_settings');
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <span><img alt="Image placeholder" src="{{ asset('assets') }}/img/villartechlogo.png" style="height:50px ">
-                <br>
-                VillarTechnologies</span>
-        </a>
+        <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}" class="mx-auto d-block" style="height: 50px;">
+
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
@@ -93,32 +104,22 @@ $setting = DB::select('select * from admin_settings');
                 </div>
             </form>
             <!-- Navigation -->
-            <ul class="navbar-nav">
+            <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
+                    <a class="nav-link" href="<?php echo e(route('home')); ?>">
+                        <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-laptop"></i>Dashboard</p>
+
                     </a>
                 </li>
+            </ul>
                 
-                <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
+                
 
-                    </li>
-                </ul>
-
-                <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('flickers.index')); ?>">
-                            <?php echo e(__('Flickers')); ?>
-
-                        </a>
-                    </li>
-                </ul>
 
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('teams.index')); ?>">
-                            <?php echo e(__('Employees')); ?>
+                            <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-user"></i> Emplooyes</p>
 
                         </a>
                     </li>
@@ -127,7 +128,7 @@ $setting = DB::select('select * from admin_settings');
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('skills.index')); ?>">
-                            <?php echo e(__('Skills')); ?>
+                            <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-star" style="color: #ffffff;"></i> Skills</p>
 
                         </a>
                     </li>
@@ -137,51 +138,85 @@ $setting = DB::select('select * from admin_settings');
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('portfolios.index') }}">
-                            <?php echo e(__('Portfolios')); ?>
+                           <p style="font-weight: 900; font-size:15px; color:white;"> <i class="fa-solid fa-suitcase" style="color: #ffffff;"></i> Portfolios</p>
                         </a>
                     </li>
                 </ul>
 
+
+
+                <ul class="nav nav-sm flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('settings.edit', $setting[0]->id) }}">
+                           <p style="font-weight: 900; font-size:15px; color:white;"> <i class="fa-solid fa-gear" style="color: #ffffff;"></i> Settings</p>
+                        </a>
+                    </li>
+                </ul>
+
+
+               
+
+                <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('settings.edit', $setting[0]->id) }}" style="padding-left:60px;">
-                        {{ __('Settings') }}
+                    <a class="nav-link" href="{{ route('tags.index') }}">
+                    <p style="font-weight: 900; font-size:15px; color:white;"> <i class="fa-solid fa-tag" style="color: #ffffff;"></i> Tags</p>
                     </a>
                 </li>
+            </ul>
+
+            <ul class="nav nav-sm flex-column">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('declarations.index') }}" style="padding-left:60px;">
-                        {{ __('Declarations') }}
+                    <a class="nav-link" href="{{ route('categories.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"> <i class="fa-solid fa-folder" style="color: #fafafa;"></i> Categories</p>
                     </a>
                 </li>
+            </ul>
+
+            <ul class="nav nav-sm flex-column">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tags.index') }}" style="padding-left:60px;">
-                        {{ __('Tags') }}
+                    <a class="nav-link" href="{{ route('category-types.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"> <i  class="fa-solid fa-layer-group" style="color: #ffffff;"></i>Category Types</p>
                     </a>
                 </li>
+            </ul>
 
+
+            <ul class="nav nav-sm flex-column">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('categories.index') }}" style="padding-left:60px;">
-                        {{ __('Categories') }}
+                    <a class="nav-link" href="{{ route('blogs.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-pencil" style="color: #ffffff;"></i> Blogs</p>
                     </a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('category-types.index') }}" style="padding-left:60px;">
-                        {{ __('Category Types') }}
-                    </a>
-                </li>
-
-
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('blogs.index') }}" style="padding-left:60px;">
-                        {{ __('Blogs') }}
-                    </a>
-                </li>
+            </ul>
 
                
         </div>
     </div>
+
+
+
+  
+    <style>
+
+        ul {
+            list-style: none;
+        }
+
+        html {
+        scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, h5, h6, img {
+        transition: transform .2s ease-out;
+    }
+    
+    h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, img:hover {
+        transform: scale(1.05);
+    }
+    </style>
+    
 </nav>
+

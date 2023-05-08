@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             CategoriesSeeder::class,
             TagSeeder::class,
             PortfoliosTableSeeder::class,
-            SkillSeeder::class
+            SkillSeeder::class,
+            BlogSeeder::class,
         ]);
     }
 }

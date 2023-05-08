@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use App\Models\TeamSkill;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class TeamUserController extends Controller
@@ -19,7 +20,11 @@ class TeamUserController extends Controller
      */
     public function index()
     {
-        $teamUser = TeamUser::orderBy('id','desc')->paginate(12);
+        $teamUser = TeamUser::orderBy('id','desc')->paginate(5);
+        $title = 'Delete Emplooye!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view ('teams.index', $teamUser)->with('teamUsers', $teamUser);
        
     }
@@ -68,6 +73,8 @@ class TeamUserController extends Controller
          $url = $request->photo->store('uploads/images/teams', 'public');
          $teamUser->photo = $url ?? null;     
          $teamUser->save();
+
+         
          return redirect()->route('teams.index');
     }
 
@@ -134,7 +141,7 @@ class TeamUserController extends Controller
 
         $teamUser->save();
 
-        return redirect()->route('teams.index');
+        return redirect()->route('teams.index')->with('success', 'Usuario eliminado con éxito.');
     }
 
     /**

@@ -7,6 +7,9 @@
         integrity="sha512-NhRZzPdzMOMf005Xmd4JonwPftz4Pe99mRVcFeRDcdCtfjv46zPIi/7ZKScbpHD/V0HB1Eb+ZWigMqw94VUVaw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+
     <script>
         $('.dial').knob({
             'min': 10,

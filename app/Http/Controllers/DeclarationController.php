@@ -85,7 +85,7 @@ class DeclarationController extends Controller
      */
     public function update(Request $request, Declaration $declaration)
     {
-        $declaration = Declaration::find($id);
+        $declaration = Declaration::find($declaration);
 
         $declaration->client = $request->client;
         $declaration->testimony = $request->testimony;

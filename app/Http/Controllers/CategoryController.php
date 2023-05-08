@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
 
         
-        $category = Category::orderBy('id', 'desc')->paginate(12);
+        $category = Category::orderBy('id', 'desc')->paginate(5);
         return view ('categories.index', $category)->with('categories', $category);
 
     }
