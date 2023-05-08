@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-
+    @include('sections.header-home')
     @include('sections.profile')
     @include('sections.portafolio')
     @include('sections.services')
