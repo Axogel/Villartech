@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
             PortfoliosTableSeeder::class,
             SkillSeeder::class,
             BlogSeeder::class,
+            TeamEducationTableSeeder::class,
+            TeamExperienceTableSeeder::class,
+            TeamSkillTableSeeder::class,
         ]);
     }
 }

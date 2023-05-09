@@ -57,7 +57,15 @@
                                  {!! Form::file('image', null) !!}
                                 </span>
                             </div>
-
+                            @if ($errors->any())
+                              <div class="alert alert-danger mx-2 my-2">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                          <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                               </div>
+                            @endif
 
                         <div style="margin-left:450px; margin-top:50px;">
                             <a href="{{ route('portfolios.index') }}" class="btn btn-light me-2" style="width:106px;">Back</a>

@@ -51,8 +51,9 @@ class PortfolioController extends Controller
         $jsonSkillIds = json_encode($skillIds);
         $portfolio->skills = $jsonSkillIds;
         $request->validate([
-            'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
-         ]);
+            'image' => 'mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'required|url',
+        ],$message=['image'=>'image is required', 'url'=>'url not validate']);
        
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
@@ -127,6 +128,10 @@ class PortfolioController extends Controller
             $url = $request->image->store('uploads/images/portfolios', 'public');
             $portfolio->image = $url ?? null;
         }
+        $request->validate([
+            'image' => 'mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'required|url',
+        ],$message=['image'=>'image is required', 'url'=>'url not validate']);
 
         $portfolio->save();
         $portfolio->skills()->attach($request->input('skills'));
