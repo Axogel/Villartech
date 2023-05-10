@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\BlogTag;
+
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -125,6 +127,8 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
+        $blog->blogTag()->delete();
+
         $blog->title = $request->title;
         $blog->description = $request->description;
         $blog->author = $request->author;

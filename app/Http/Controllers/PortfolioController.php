@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Portfolio;
+use App\Models\PortfolioSkill;
 use App\Models\Skill;
 
 use Illuminate\Http\Request;
@@ -19,8 +20,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolio = Portfolio::with('skills')
-        ->orderBy('id', 'desc')
+        $portfolio = Portfolio::orderBy('id', 'desc')
         ->paginate(5);
 
         if(session('success_message')) {
@@ -70,6 +70,11 @@ class PortfolioController extends Controller
        
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
+
+         $itemIdsToKeep = $request->input('skills');
+    
+    
+
          $portfolio->save();
          $portfolio->skills()->attach($request->input('skills'));
          return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been created', 'Portfolio have been created');
@@ -125,13 +130,17 @@ class PortfolioController extends Controller
     }   
     public function update(Request $request, Portfolio $portfolio)
     {
+
+        $portfolio->test()->delete();
+
+         
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
         $portfolio->skills = $request->skills;
         $skillIds = $request->input('skills');
         $jsonSkillIds = json_encode($skillIds);
-        $portfolio->skills = $jsonSkillIds;
+        $portfolio->skills = $request->skills;
         if ($request->image) {
 
             if(File::exists(storage_path('app/public/'.$portfolio->image))){
