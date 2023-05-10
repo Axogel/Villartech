@@ -54,13 +54,8 @@
                                                     href="{{ route('categories.edit', ['category' => $category->id]) }}">Edit</a>
     
                                                   
-                                                <form action="{{ route('categories.destroy', $category->id) }}" method="Post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="dropdown-item delete-link" onclick="return confirm('¿Are you sure you want to delete this Category!?')">
-                                                        Delete
-                                                    </button>
-                                                </form>
+                                                    <a href="{{ route('categories.destroy', $category->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>
+
         
                                             </div>
                                         </div>

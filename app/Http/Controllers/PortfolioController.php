@@ -7,6 +7,9 @@ use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+
 class PortfolioController extends Controller
 {
     /**
@@ -19,6 +22,16 @@ class PortfolioController extends Controller
         $portfolio = Portfolio::with('skills')
         ->orderBy('id', 'desc')
         ->paginate(5);
+
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete Portfolio!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('portfolios.index', $portfolio)->with('portfolios', $portfolio);
 
     }
@@ -59,7 +72,7 @@ class PortfolioController extends Controller
          $portfolio->image = $url ?? null;      
          $portfolio->save();
          $portfolio->skills()->attach($request->input('skills'));
-         return redirect()->route('portfolios.index');
+         return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been created', 'Portfolio have been created');
 
 
     }
@@ -85,8 +98,8 @@ class PortfolioController extends Controller
     {
         $skills = Skill::all()->pluck('name', 'id');
         $selectedOptions = $portfolio->skills;
-
-        return view('portfolios.edit',compact('portfolio', 'skills','selectedOptions'));
+        //dd(json_decode($portfolio->skills));
+        return view('portfolios.edit',compact('portfolio', 'skills', 'selectedOptions'));
     }
 
     /**
@@ -139,7 +152,7 @@ class PortfolioController extends Controller
 
         $portfolio->save();
         $portfolio->skills()->attach($request->input('skills'));
-        return redirect()->route('portfolios.index');
+        return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been updated', 'Portfolio have been updated');
     }
 
     /**

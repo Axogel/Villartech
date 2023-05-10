@@ -60,5 +60,4 @@
 
     <br>
 
-    @include('layouts.footers.auth')
 @endsection

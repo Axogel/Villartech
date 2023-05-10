@@ -78,12 +78,8 @@
                                                     href="{{ route('portfolios.edit', ['portfolio' => $portfolio->id]) }}">Edit</a>
     
                                                   
-                                                <form action="{{ route('portfolios.destroy', $portfolio->id) }}" method="Post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="dropdown-item delete-link" onclick="return confirm('¿Are you sure you want to delete this skill!?')">
-                                                        Delete
-                                                    </button>
+                                                    <a href="{{ route('portfolios.destroy', $portfolio->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>
+
                                                 </form>
         
                                             </div>

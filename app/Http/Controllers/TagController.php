@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class TagController extends Controller
 {
@@ -15,6 +17,16 @@ class TagController extends Controller
     public function index()
     {
         $tag = Tag::orderBy('id','desc')->paginate(5);
+
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete Tag!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view ('tags.index', $tag)->with('tags', $tag);
     }
 
@@ -39,7 +51,7 @@ class TagController extends Controller
         $tag = new Tag;
         $tag->name = $request->name;
         $tag->save();
-        return redirect()->route('tags.index');
+        return redirect()->route('tags.index')->withSuccessMessage('Tag have been created', 'Tag have been created');
         
     }
 
@@ -79,7 +91,7 @@ class TagController extends Controller
      $tag = Tag::find($id);
         $tag->name = $request->name;
         $tag->save();
-        return redirect()->route('tags.index');
+        return redirect()->route('tags.index')->withSuccessMessage('Tag have been updated', 'Tag have been updated');
     }
 
     /**
@@ -92,6 +104,6 @@ class TagController extends Controller
     {
         $tag = Tag::find($id);
         $tag->delete();
-        return redirect()->route('tags.index');
+        return redirect()->route('tags.index')->withSuccessMessage('Tag have been deleted', 'Tag have been deleted');
     }
 }
