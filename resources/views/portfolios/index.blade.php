@@ -55,7 +55,7 @@
                                         <span class="badge badge-dot mr-4">
                                         @foreach ($portfolio->skills()->get() as $skill)
                                                     <span class="mb-0 text-sm">{{ $skill->name }}</span>
-                                                @endforeach
+                                    @endforeach
                     
                                         </span>
                                     </td>
