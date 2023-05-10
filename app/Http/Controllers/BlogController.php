@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\BlogTag;
+
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class BlogController extends Controller
 {
@@ -21,6 +26,17 @@ class BlogController extends Controller
         $blog = Blog::with('tags')
         ->orderBy('id', 'desc')
         ->paginate(5);
+
+
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete Blog!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         //$tags = Blog::with('tags')->get(); 
         return view ('blogs.index', $blog)->with('blogs', $blog);
     }
@@ -71,7 +87,7 @@ class BlogController extends Controller
          $blog->save();
 
          $blog->tags()->attach($request->input('tags'));
-        return redirect()->route('blogs.index');
+        return redirect()->route('blogs.index')->withSuccessMessage('Blog  have been created', 'Blog have been created');
 
 
     }
@@ -111,6 +127,8 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
+        $blog->blogTag()->delete();
+
         $blog->title = $request->title;
         $blog->description = $request->description;
         $blog->author = $request->author;
@@ -135,7 +153,7 @@ class BlogController extends Controller
          $blog->save();
 
          $blog->tags()->attach($request->input('tags'));
-        return redirect()->route('blogs.index');
+        return redirect()->route('blogs.index')->withSuccessMessage('Blog  have been updated', 'Blog have been updated');
     }
 
     /**
@@ -151,7 +169,7 @@ class BlogController extends Controller
         }
    
             $blog->delete();
-            return redirect()->route('blogs.index');
+            return redirect()->route('blogs.index')->withSuccessMessage('Blog  have been deleted', 'Blog have been deleted');
     }
     
 }

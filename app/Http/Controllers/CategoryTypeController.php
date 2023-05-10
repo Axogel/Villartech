@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\CategoryType;
 use Illuminate\Http\Request;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+
 class CategoryTypeController extends Controller
 {
     /**
@@ -14,7 +17,17 @@ class CategoryTypeController extends Controller
      */
     public function index()
     {
-        $categoryType= CategoryType::orderBy('id', 'desc')->paginate(12);
+        $categoryType= CategoryType::orderBy('id', 'desc')->paginate(5);
+
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete Category Type!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view ('category-types.index', $categoryType)->with('categoryTypes', $categoryType);
 
     }
@@ -41,7 +54,7 @@ class CategoryTypeController extends Controller
         $categoryType = new CategoryType;
         $categoryType->name = $request->name;
         $categoryType->save();
-        return redirect()->route('category-types.index');
+        return redirect()->route('category-types.index')->withSuccessMessage('Category type have been created', 'Category have been created');
     }
 
     /**
@@ -79,7 +92,7 @@ class CategoryTypeController extends Controller
         $categoryType = CategoryType::find($id);
         $categoryType->name = $request->name;
         $categoryType->save();
-        return redirect()->route('category-types.index');
+        return redirect()->route('category-types.index')->withSuccessMessage('Category type have been updated', 'Category have been updated');
     }
 
     /**
@@ -92,6 +105,6 @@ class CategoryTypeController extends Controller
     {
         $categoryType = CategoryType::find($id);
         $categoryType->delete();
-        return redirect()->route('category-types.index');
+        return redirect()->route('category-types.index')->withSuccessMessage('Category type have been deleted', 'Category have been deleted');
     }
 }

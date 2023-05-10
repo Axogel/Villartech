@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Models\Portfolio;
+use App\Models\PortfolioSkill;
 use App\Models\Skill;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PortfolioController extends Controller
 {
@@ -16,9 +20,18 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolio = Portfolio::with('skills')
-        ->orderBy('id', 'desc')
+        $portfolio = Portfolio::orderBy('id', 'desc')
         ->paginate(5);
+
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete Portfolio!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view('portfolios.index', $portfolio)->with('portfolios', $portfolio);
 
     }
@@ -51,14 +64,20 @@ class PortfolioController extends Controller
         $jsonSkillIds = json_encode($skillIds);
         $portfolio->skills = $jsonSkillIds;
         $request->validate([
-            'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
-         ]);
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'required|url',
+        ],$message=['image'=>'the image does not have a valid format', 'url'=>'The URL is not valid']);
        
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
+
+         $itemIdsToKeep = $request->input('skills');
+    
+    
+
          $portfolio->save();
          $portfolio->skills()->attach($request->input('skills'));
-         return redirect()->route('portfolios.index');
+         return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been created', 'Portfolio have been created');
 
 
     }
@@ -84,8 +103,8 @@ class PortfolioController extends Controller
     {
         $skills = Skill::all()->pluck('name', 'id');
         $selectedOptions = $portfolio->skills;
-
-        return view('portfolios.edit',compact('portfolio', 'skills','selectedOptions'));
+        //dd(json_decode($portfolio->skills));
+        return view('portfolios.edit',compact('portfolio', 'skills', 'selectedOptions'));
     }
 
     /**
@@ -111,13 +130,17 @@ class PortfolioController extends Controller
     }   
     public function update(Request $request, Portfolio $portfolio)
     {
+
+        $portfolio->test()->delete();
+
+         
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
         $portfolio->skills = $request->skills;
         $skillIds = $request->input('skills');
         $jsonSkillIds = json_encode($skillIds);
-        $portfolio->skills = $jsonSkillIds;
+        $portfolio->skills = $request->skills;
         if ($request->image) {
 
             if(File::exists(storage_path('app/public/'.$portfolio->image))){
@@ -127,10 +150,17 @@ class PortfolioController extends Controller
             $url = $request->image->store('uploads/images/portfolios', 'public');
             $portfolio->image = $url ?? null;
         }
+        $request->validate([
+            'image' => 'mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'required|url',
+        ],$message=[
+            'image.mimes' =>'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
+            'url'=>'The URL is not valid'
+        ]);
 
         $portfolio->save();
         $portfolio->skills()->attach($request->input('skills'));
-        return redirect()->route('portfolios.index');
+        return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been updated', 'Portfolio have been updated');
     }
 
     /**

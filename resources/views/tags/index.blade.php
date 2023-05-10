@@ -48,13 +48,8 @@
                                                     href="{{ route('tags.edit', ['tag' => $tag->id]) }}">Edit</a>
     
                                                   
-                                                <form action="{{ route('tags.destroy', $tag->id) }}" method="Post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="dropdown-item delete-link" onclick="return confirm('¿Are you sure you want to delete this Tag!?')">
-                                                        Delete
-                                                    </button>
-                                                </form>
+                                                    <a href="{{ route('tags.destroy', $tag->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>
+
         
                                             </div>
                                         </div>

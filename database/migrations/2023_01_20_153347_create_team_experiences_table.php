@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('experience_id');
             $table->integer('developer_id');
             $table->string('experience_category');
-            $table->string('experience_description');
+            $table->string('experience_description', 255);
             $table->string('experience_date');
             $table->string('experience_company');
             $table->timestamps();

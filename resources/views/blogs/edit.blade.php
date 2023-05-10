@@ -65,7 +65,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Tags</label>
-                            {!! Form::select('tags[]', $tags, null, ['class' => 'form-control',  'multiple' => 'multiple']) !!}
+                            {!! Form::select('tags[]', $tags, json_decode($blog->tags), ['class' => 'form-control js-example-basic-multiple',  'multiple' => 'multiple']) !!}
 
                         </div>
                        
@@ -73,10 +73,11 @@
                       
                             <div style="margin-top:20px;">
 
-                            <label style="padding-left:30px;">Image:</label>
-                                <span class="form-control" style="margin-left:15px; width:360px;">  
-                                 {!! Form::file('image', null) !!}
-                                </span>
+                               <label style="padding-left:30px;">Image:  <img src="{{ asset('storage') . '/' . $blog->image }}" alt=""
+                            style="width: 50px;height: 50px;" style="padding-left:60px;"></label>
+                            <span class="form-control" style="margin-left:15px; width:360px;">  
+                             {!! Form::file('image', null) !!}
+                            </span>
 
                             </div>
                        
@@ -109,6 +110,17 @@
 
     </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+    });
+    </script>
+
+
     <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('description');

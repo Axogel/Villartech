@@ -21,8 +21,8 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Photo</th>
                                 <th scope="col">Skills</th>
-                                <th scope="col">Address</th>
                                 <th scope="col">Age</th>
+                                <th scope="col">Address</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Youtube Video</th>
                                 <th scope="col">CV LINK</th>
@@ -163,20 +163,15 @@
                                                     href="{{ route('teams.edit', ['team' => $teamUser->id]) }}">Edit</a>
     
                                                   
-                                                <form action="{{ route('teams.destroy', $teamUser->id) }}" method="Post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="dropdown-item delete-link" onclick="return confirm('¿Are you sure you want to delete this emplooye!?')">
-                                                        Delete
-                                                    </button>
-                                                </form>
+                                                <a href="{{ route('teams.destroy', $teamUser->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>
+        
                                                 <a class="dropdown-item" style="padding-top: 0px;"
                                                 href="{{ route('employee', ['team' => $teamUser->id]) }}">Education</a>
     
-                                                <a class="dropdown-item" style="padding-top: 15px;"
+                                                <a class="dropdown-item"
                                                 href="{{ route('employeeExperience', ['team' => $teamUser->id]) }}">Experience</a>
     
-                                                <a class="dropdown-item" style="padding-top: 15px;"
+                                                <a class="dropdown-item"
                                                 href="{{ route('employeeSkill', ['team' => $teamUser->id]) }}">Skills</a>
                                             </div>
                                         </div>
@@ -204,6 +199,7 @@
     </div>
 
 
+    @include('sweetalert::alert')
 
   
 @endsection

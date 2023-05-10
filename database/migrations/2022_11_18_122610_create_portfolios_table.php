@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->string('url');
+            $table->string('url',255);
             $table->string('skills', 255);
             $table->longText('description');
             $table->timestamps();

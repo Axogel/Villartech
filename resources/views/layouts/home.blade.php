@@ -62,7 +62,7 @@
   
 <body>
     <div class="body-inner">
-        @include('sections.header-home')
+     
 
             @yield('content')
             @yield('scripts')

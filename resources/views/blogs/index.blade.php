@@ -109,13 +109,8 @@
                                                     href="{{ route('blogs.edit', ['blog' => $blog->id]) }}">Edit</a>
     
                                                   
-                                                <form action="{{ route('blogs.destroy', $blog->id) }}" method="Post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="dropdown-item delete-link" onclick="return confirm('¿Are you sure you want to delete this Category Type!?')">
-                                                        Delete
-                                                    </button>
-                                                </form>
+                                                    <a href="{{ route('blogs.destroy', $blog->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>
+
         
                                             </div>
                                         </div>

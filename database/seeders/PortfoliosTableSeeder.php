@@ -15,12 +15,12 @@ class PortfoliosTableSeeder extends Seeder
     public function run()
     {
   
-      if (!file_exists(storage_path('app/public/uploads/images/portfolios'))) {
-        mkdir(storage_path('app/public/uploads/images/portfolios'), 0755,true);
+      if (!file_exists(storage_path('app/public/storage/uploads/images/portfolios'))) {
+        mkdir(storage_path('app/public/storage/uploads/images/portfolios'), 0755,true);
       }
 
       $file = new Filesystem;
-      $file->cleanDirectory('storage/app/public/uploads/images/portfolios');
+      $file->cleanDirectory('storage/app/public/storage/uploads/images/portfolios');
 
       Portfolio::factory()->count(10)->create();
     }

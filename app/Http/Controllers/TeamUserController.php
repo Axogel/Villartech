@@ -20,8 +20,17 @@ class TeamUserController extends Controller
      */
     public function index()
     {
-        $teamUser = TeamUser::orderBy('id','desc')->paginate(5);
-        $title = 'Delete Emplooye!';
+        $teamUser = TeamUser::latest()->paginate(5);
+ 
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+
+        
+
+        $title = 'Delete Employee!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
 
@@ -67,15 +76,27 @@ class TeamUserController extends Controller
         $teamUser->status = 1;
 
         $request->validate([
-            'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
-         ]);
+            'email' => 'required|email|unique:team_users,email',
+            'photo' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/']
+
+        ],$message=[
+            'email.required' => 'Please provide an email address',
+            'email.email' => 'Please provide a valid email address',
+            'email.unique' => 'This email address is already taken',
+            'photo.required' => 'Please provide an image',
+            'photo.mimes' => 'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
+            'team_presentation.required' => 'The video field is required.',
+            'team_presentation.url' => 'The video field must be a valid URL.',
+            'team_presentation.regex' => 'The video URL must be a valid YouTube link.'
+        ]);
 
          $url = $request->photo->store('uploads/images/teams', 'public');
          $teamUser->photo = $url ?? null;     
          $teamUser->save();
 
          
-         return redirect()->route('teams.index');
+         return redirect()->route('teams.index')->withSuccessMessage('Employee have been created', 'Employee have been created');
     }
 
     /**
@@ -138,10 +159,23 @@ class TeamUserController extends Controller
             $url = $request->photo->store('uploads/images/teams', 'public');
             $teamUser->photo = $url ?? null;
         }
+        $request->validate([
+            'email' => 'required|email',
+            'photo' => 'mimes:jpeg,png,jpg,gif,svg',
+            'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/']
+        ],$message=[
+            'email.email' => 'Please provide a valid email address',
+            'email.unique' => 'This email address is already taken',
+            'photo.required' => 'Please provide an image',
+            'photo.mimes' => 'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
+            'team_presentation.required' => 'The video field is required.',
+            'team_presentation.url' => 'The video field must be a valid URL.',
+            'team_presentation.regex' => 'The video URL must be a valid YouTube link.'
+        ]);
 
         $teamUser->save();
 
-        return redirect()->route('teams.index')->with('success', 'Usuario eliminado con éxito.');
+        return redirect()->route('teams.index')->withSuccessMessage('Employee have been updated', 'Employee have been updated successfully');
     }
 
     /**
@@ -156,8 +190,9 @@ class TeamUserController extends Controller
             if(File::exists(storage_path('app/public/'.$teamUser->photo))){
                 unlink(storage_path('app/public/'.$teamUser->photo));
             }
+          
             $teamUser->delete();
-            return redirect()->route('teams.index');
+            return redirect()->route('teams.index')->withSuccessMessage('Employee have been deleted', 'Employee have been deleted');
         }
 
 

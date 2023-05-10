@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('portfolio_skill', function (Blueprint $table) {
             $table->engine='InnoDB';
-            $table->id();
             $table->unsignedBigInteger('portfolio_id');
             $table->unsignedBigInteger('skill_id');
             $table->timestamps();
