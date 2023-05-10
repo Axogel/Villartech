@@ -151,10 +151,9 @@ class PortfolioController extends Controller
             $portfolio->image = $url ?? null;
         }
         $request->validate([
-            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'mimes:jpeg,png,jpg,gif,svg',
             'url' => 'required|url',
         ],$message=[
-            'image.required' => 'Please provide an image',
             'image.mimes' =>'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
             'url'=>'The URL is not valid'
         ]);
