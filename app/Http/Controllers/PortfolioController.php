@@ -64,9 +64,9 @@ class PortfolioController extends Controller
         $jsonSkillIds = json_encode($skillIds);
         $portfolio->skills = $jsonSkillIds;
         $request->validate([
-            'image' => 'mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
             'url' => 'required|url',
-        ],$message=['image'=>'image is required', 'url'=>'url not validate']);
+        ],$message=['image'=>'the image does not have a valid format', 'url'=>'The URL is not valid']);
        
          $url = $request->image->store('uploads/images/portfolios', 'public');
          $portfolio->image = $url ?? null;      
@@ -150,9 +150,13 @@ class PortfolioController extends Controller
             $portfolio->image = $url ?? null;
         }
         $request->validate([
-            'image' => 'mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
             'url' => 'required|url',
-        ],$message=['image'=>'image is required', 'url'=>'url not validate']);
+        ],$message=[
+            'image.required' => 'Please provide an image',
+            'image.mimes' =>'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
+            'url'=>'The URL is not valid'
+        ]);
 
         $portfolio->save();
         $portfolio->skills()->attach($request->input('skills'));
