@@ -19,7 +19,7 @@ class PortfolioFactory extends Factory
             'name' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
             'image' => 'storage/uploads/images/portfolios/'.$this->faker->file(public_path('images/portfolios'), storage_path('app/public/storage/uploads/images/portfolios/'), false),
-            'url' => $this->faker->paragraph(),
+            'url' => $this->faker->url(),
             'skills' => $this->faker->sentence(),
             'created_at' => $this->faker->date(),
             'updated_at' => $this->faker->date()

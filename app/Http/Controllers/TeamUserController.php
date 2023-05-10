@@ -67,8 +67,19 @@ class TeamUserController extends Controller
         $teamUser->status = 1;
 
         $request->validate([
-            'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
-         ]);
+            'email' => 'required|email|unique:team_users,email',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'team_presentation' => ['required', 'url', 'regex:/^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})$/'],
+        ],$message=[
+            'email.required' => 'Please provide an email address',
+            'email.email' => 'Please provide a valid email address',
+            'email.unique' => 'This email address is already taken',
+            'image.required' => 'Please provide an image',
+            'image.mimes' => 'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
+            'team_presentation.required' => 'The video field is required.',
+            'team_presentation.url' => 'The video field must be a valid URL.',
+            'team_presentation.regex' => 'The video URL must be a valid YouTube link.'
+        ]);
 
          $url = $request->photo->store('uploads/images/teams', 'public');
          $teamUser->photo = $url ?? null;     
@@ -138,6 +149,20 @@ class TeamUserController extends Controller
             $url = $request->photo->store('uploads/images/teams', 'public');
             $teamUser->photo = $url ?? null;
         }
+        $request->validate([
+            'email' => 'required|email|unique:team_users,email',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'team_presentation' => ['required', 'url', 'regex:/^(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})$/'],
+        ],$message=[
+            'email.required' => 'Please provide an email address',
+            'email.email' => 'Please provide a valid email address',
+            'email.unique' => 'This email address is already taken',
+            'image.required' => 'Please provide an image',
+            'image.mimes' => 'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
+            'team_presentation.required' => 'The video field is required.',
+            'team_presentation.url' => 'The video field must be a valid URL.',
+            'team_presentation.regex' => 'The video URL must be a valid YouTube link.'
+        ]);
 
         $teamUser->save();
 
