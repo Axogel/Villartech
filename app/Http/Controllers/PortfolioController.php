@@ -185,6 +185,6 @@ class PortfolioController extends Controller
         }
    
             $portfolio->delete();
-            return redirect()->route('portfolios.index');
+            return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been deleted', 'Portfolio have been deleted');
     }
 }
