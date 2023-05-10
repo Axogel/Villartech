@@ -131,7 +131,8 @@ class PortfolioController extends Controller
     public function update(Request $request, Portfolio $portfolio)
     {
 
-        PortfolioSkill::truncate();
+        $portfolio->test()->delete();
+
          
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;

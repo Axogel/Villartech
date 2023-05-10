@@ -127,8 +127,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-
-        BlogTag::truncate();
+        $blog->blogTag()->delete();
 
         $blog->title = $request->title;
         $blog->description = $request->description;
