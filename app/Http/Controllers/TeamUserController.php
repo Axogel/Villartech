@@ -20,8 +20,17 @@ class TeamUserController extends Controller
      */
     public function index()
     {
-        $teamUser = TeamUser::orderBy('id','desc')->paginate(5);
-        $title = 'Delete Emplooye!';
+        $teamUser = TeamUser::latest()->paginate(5);
+ 
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+
+        
+
+        $title = 'Delete Employee!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
 
@@ -75,7 +84,7 @@ class TeamUserController extends Controller
          $teamUser->save();
 
          
-         return redirect()->route('teams.index');
+         return redirect()->route('teams.index')->withSuccessMessage('Employee have been created', 'Employee have been created');
     }
 
     /**
@@ -141,7 +150,7 @@ class TeamUserController extends Controller
 
         $teamUser->save();
 
-        return redirect()->route('teams.index')->with('success', 'Usuario eliminado con éxito.');
+        return redirect()->route('teams.index')->withSuccessMessage('Employee have been updated', 'Employee have been updated successfully');
     }
 
     /**
@@ -156,8 +165,9 @@ class TeamUserController extends Controller
             if(File::exists(storage_path('app/public/'.$teamUser->photo))){
                 unlink(storage_path('app/public/'.$teamUser->photo));
             }
+          
             $teamUser->delete();
-            return redirect()->route('teams.index');
+            return redirect()->route('teams.index')->withSuccessMessage('Employee have been deleted', 'Employee have been deleted');
         }
 
 

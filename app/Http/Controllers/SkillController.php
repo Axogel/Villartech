@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SkillController extends Controller
 {
@@ -15,7 +16,19 @@ class SkillController extends Controller
     public function index()
     {
          $skill = Skill::orderBy('id','desc')->paginate(5);
+
+         if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete Skill!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view ('skills.index', $skill)->with('skills', $skill);
+
+        
     }
 
     /**
@@ -39,7 +52,7 @@ class SkillController extends Controller
         $skill = new Skill;
         $skill->name = $request->name;
         $skill->save();
-        return redirect()->route('skills.index');
+        return redirect()->route('skills.index')->withSuccessMessage('Skill have been created', 'Skill have been created');
     }
 
     /**
@@ -77,7 +90,7 @@ class SkillController extends Controller
         $skill = Skill::find($id);
         $skill->name = $request->name;
         $skill->save();
-        return redirect()->route('skills.index');
+        return redirect()->route('skills.index')->withSuccessMessage('Skill have been updated', 'Skill have been updated');
     }
 
     /**
@@ -90,6 +103,6 @@ class SkillController extends Controller
     {
         $skill = Skill::find($id);
         $skill->delete();
-        return redirect()->route('skills.index');
+        return redirect()->route('skills.index')->withSuccessMessage('Skill have been deleted', 'Skill have been deleted');
     }
 }

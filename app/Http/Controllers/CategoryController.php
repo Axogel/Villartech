@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\CategoryType;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 
@@ -19,6 +20,16 @@ class CategoryController extends Controller
 
         
         $category = Category::orderBy('id', 'desc')->paginate(5);
+
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete Category!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view ('categories.index', $category)->with('categories', $category);
 
     }
@@ -50,7 +61,7 @@ class CategoryController extends Controller
         $category->category_type_id = $request->category_type_id;
 
         $category->save();
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->withSuccessMessage('Category have been created', 'Category have been created');
 
     }
 
@@ -92,7 +103,7 @@ class CategoryController extends Controller
         $category->category_type_id = $request->category_type_id;
 
         $category->save();
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->withSuccessMessage('Category have been updated', 'Category have been updated');
     }
 
     /**
@@ -105,6 +116,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->withSuccessMessage('Category have been deleted', 'Category have been deleted');
     }
 }

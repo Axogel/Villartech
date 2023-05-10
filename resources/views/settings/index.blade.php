@@ -108,7 +108,6 @@
     <br>
     <br>
 
-    @include('layouts.footers.auth')
 @endsection
 
 @push('js')

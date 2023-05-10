@@ -104,7 +104,7 @@ $setting = DB::select('select * from admin_settings');
                 </div>
             </form>
             <!-- Navigation -->
-            <ul class="nav nav-sm flex-column">
+            <ul class="nav nav-sm flex-column img-zoom">
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(route('home')); ?>">
                         <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-laptop"></i>Dashboard</p>
@@ -116,7 +116,7 @@ $setting = DB::select('select * from admin_settings');
                 
 
 
-                <ul class="nav nav-sm flex-column">
+                <ul class="nav nav-sm flex-column img-zoom">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('teams.index')); ?>">
                             <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-user"></i> Emplooyes</p>
@@ -125,7 +125,7 @@ $setting = DB::select('select * from admin_settings');
                     </li>
                 </ul>
                 <!-- skils CRUD -->
-                <ul class="nav nav-sm flex-column">
+                <ul class="nav nav-sm flex-column img-zoom">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('skills.index')); ?>">
                             <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-star" style="color: #ffffff;"></i> Skills</p>
@@ -135,7 +135,7 @@ $setting = DB::select('select * from admin_settings');
                 </ul>
 
 
-                <ul class="nav nav-sm flex-column">
+                <ul class="nav nav-sm flex-column img-zoom">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('portfolios.index') }}">
                            <p style="font-weight: 900; font-size:15px; color:white;"> <i class="fa-solid fa-suitcase" style="color: #ffffff;"></i> Portfolios</p>
@@ -145,7 +145,7 @@ $setting = DB::select('select * from admin_settings');
 
 
 
-                <ul class="nav nav-sm flex-column">
+                <ul class="nav nav-sm flex-column img-zoom">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('settings.edit', $setting[0]->id) }}">
                            <p style="font-weight: 900; font-size:15px; color:white;"> <i class="fa-solid fa-gear" style="color: #ffffff;"></i> Settings</p>
@@ -156,7 +156,7 @@ $setting = DB::select('select * from admin_settings');
 
                
 
-                <ul class="nav nav-sm flex-column">
+                <ul class="nav nav-sm flex-column img-zoom">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('tags.index') }}">
                     <p style="font-weight: 900; font-size:15px; color:white;"> <i class="fa-solid fa-tag" style="color: #ffffff;"></i> Tags</p>
@@ -164,7 +164,7 @@ $setting = DB::select('select * from admin_settings');
                 </li>
             </ul>
 
-            <ul class="nav nav-sm flex-column">
+            <ul class="nav nav-sm flex-column img-zoom">
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('categories.index') }}">
@@ -173,7 +173,7 @@ $setting = DB::select('select * from admin_settings');
                 </li>
             </ul>
 
-            <ul class="nav nav-sm flex-column">
+            <ul class="nav nav-sm flex-column img-zoom ">
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('category-types.index') }}">
@@ -183,7 +183,7 @@ $setting = DB::select('select * from admin_settings');
             </ul>
 
 
-            <ul class="nav nav-sm flex-column">
+            <ul class="nav nav-sm flex-column img-zoom">
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('blogs.index') }}">
@@ -200,6 +200,17 @@ $setting = DB::select('select * from admin_settings');
 
   
     <style>
+
+
+        .img-zoom {
+            transition: transform ease-in-out 0.3s;
+        }
+
+        .img-zoom:hover { 
+            transform: scale(1.2); 
+        }
+
+
 
         ul {
             list-style: none;

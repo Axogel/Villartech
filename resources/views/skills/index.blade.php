@@ -48,14 +48,8 @@
                                                     href="{{ route('skills.edit', ['skill' => $skill->id]) }}">Edit</a>
     
                                                   
-                                                <form action="{{ route('skills.destroy', $skill->id) }}" method="Post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="dropdown-item delete-link" onclick="return confirm('¿Are you sure you want to delete this skill!?')">
-                                                        Delete
-                                                    </button>
-                                                </form>
-        
+                                                    <a href="{{ route('skills.destroy', $skill->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>
+
                                             </div>
                                         </div>
                                     </td>
