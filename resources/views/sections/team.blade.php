@@ -171,15 +171,13 @@
                                                     <p>
                                                         {{ $teamEducation->education_country }}
                                                     </p>
-                                                    <div class="scrollable-container">
                                                     <p style="font-size:15px; color:#323232;">
                                                         {{ $teamEducation->education_description }}
                                                     </p>
-                                                    </div>
                                                 </div>
                                             @endif
                                         @endforeach
-</div>
+                                    </div>
 
                                     </div>
 
@@ -189,7 +187,7 @@
                                             <img src="{{ asset('assets/img/modal-teams/OVERVIEW.png') }}" style="height: 40px; float:right;">
                                         </p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); " class="mx-auto d-block">
-                                        <div class="scrollable-container">
+                                        <div class=" scrollable-container">
                                              <p style=" font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
                                                     {{ $team->overview }}
                                               </p>
@@ -197,12 +195,12 @@
 
                                         <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">Coding</p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
-                                        <div class="scrollable-container-area">
+                                        <div class="scrollable-container">
                                         @foreach ($teamSkills as $teamSkill)
                                             @if ($team->id == $teamSkill->developer_id)
                                             <ul class="d-inline-block">
-                                                <li>
-                                                    <input type="text" value="{{ $teamSkill->skill_percentage }}" class="dial" data-thickness=".1">
+                                                <li >
+                                                    <input  type="text" value="{{ $teamSkill->skill_percentage }}" class="dial" data-thickness=".1">
                                                         <p  style="font-family: 'Lato'; text-align:center; font-size:12px;">
                                                             {{ $teamSkill->skill_name }}
                                                         </p>

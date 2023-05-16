@@ -4,6 +4,10 @@
 .svg-item {
     cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
 }
+.dial{
+    position: relative !important;
+    bottom: 40px;
+}
 
 .svg-item.active path {
     fill: #2AF7FE; /* Cambia el color de fondo al hacer clic */
@@ -15,6 +19,7 @@
 .scrollable-container {
         max-height: 150px;
         overflow-y: auto;
+        padding-right: 10px;
     }
 
     .scrollable-container::-webkit-scrollbar {
@@ -35,6 +40,7 @@
     .scrollable-container-area {
         max-height: 400px;
         overflow-y: auto;
+        padding-right: 10px;
     }
 
     .scrollable-container-area::-webkit-scrollbar {

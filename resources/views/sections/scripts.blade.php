@@ -97,42 +97,39 @@ $(document).ready(function() {
 </script>
 
     <script>
-          document.addEventListener("click", function(event) {
-          var navbarMenu = document.getElementById("navbarModalTeam");
-         var targetElement = event.target; 
-
-        do {
-            if (targetElement == navbarMenu) {
-                 return;
-         }
-             targetElement = targetElement.parentNode;
-         } while (targetElement);
-
-        navbarMenu.classList.remove("show");
-        });
-    var navbarLinks = document.querySelectorAll("#navbarModalTeam a");
-    for (var i = 0; i < navbarLinks.length; i++) {
-        navbarLinks[i].addEventListener("click", function() {
-        var navbarMenu = document.getElementById("navbarModalTeam");
-        navbarMenu.classList.remove("show");
+  document.addEventListener("click", function(event) {
+    var navbarMenu = document.querySelector(".navbar-collapse.show");
+    var targetElement = event.target;
+    
+    do {
+      if (targetElement == navbarMenu) {
+        return;
+      }
+      targetElement = targetElement.parentNode;
+    } while (targetElement);
+    
+    navbarMenu.classList.remove("show");
+  });
+  var navbarLinks = document.querySelectorAll(".navbar-collapse a");
+  navbarLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+      var navbarMenu = this.closest(".navbar-collapse");
+      navbarMenu.classList.remove("show");
     });
-    }
+  });
     </script>
 <script>
-  // Selecciona todos los elementos "a" que contienen el atributo "data-svg"
   const svgLinks = document.querySelectorAll('a[data-svg]');
 
-  // Agrega un "event listener" para el evento "click" en cada elemento "a"
+
   svgLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault(); // Evita que el enlace realice su acción predeterminada
       const svgId = link.dataset.svg; // Obtiene el ID del SVG del atributo "data-svg"
       const svg = document.getElementById(svgId); // Encuentra el elemento SVG con el ID correspondiente
       if (svg) {
-        // Quita la clase "active" de todos los elementos SVG
         const activeSvgs = document.querySelectorAll('.svg-item.active');
         activeSvgs.forEach(activeSvg => activeSvg.classList.remove('active'));
-        // Agrega la clase "active" al elemento SVG correspondiente
         svg.classList.add('active');
       }
     });
@@ -142,13 +139,10 @@ $(document).ready(function() {
   // Obtén todos los elementos SVG
   const svgs = document.querySelectorAll('.svg-item');
 
-// Agrega manejadores de eventos de clic a cada SVG
+
 svgs.forEach(svg => {
     svg.addEventListener('click', () => {
-        // Remueve la clase de estilo de todos los SVGs
         svgs.forEach(s => s.classList.remove('active'));
-        
-        // Agrega la clase de estilo al hacer clic
         svg.classList.add('active');
     });
 });
