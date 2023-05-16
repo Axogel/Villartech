@@ -159,7 +159,6 @@
                                         <div class="scrollable-container-area">
                                         @foreach ($teamEducations as $teamEducation)
                                             @if ($team->id == $teamEducation->developer_id)
-                                            @dump( $teamEducation->education_title)
                                                 <div class="col-12 lh-1">
                                                     <div style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
                                                         <p style="text-align: center;  color:white; margin-top:4px;">
