@@ -199,7 +199,7 @@
                                         @foreach ($teamSkills as $teamSkill)
                                             @if ($team->id == $teamSkill->developer_id)
                                             <ul class="d-inline-block">
-                                                <li >
+                                                <li style="width:72px;">
                                                     <input  type="text" value="{{ $teamSkill->skill_percentage }}" class="dial" data-thickness=".1">
                                                         <p  style="font-family: 'Lato'; text-align:center; font-size:12px;">
                                                             {{ $teamSkill->skill_name }}
