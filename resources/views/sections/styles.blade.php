@@ -17,7 +17,7 @@
     font-weight: 700;
 }
 .scrollable-container {
-        max-height: 150px;
+        max-height: 130px;
         overflow-y: auto;
         padding-right: 10px;
     }

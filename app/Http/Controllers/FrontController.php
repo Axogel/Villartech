@@ -62,7 +62,7 @@ class FrontController extends Controller
         $declaration = Declaration::select('id', 'client', 'client_image', 'testimony')
                                   ->get();
 
-        $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_date','education_description')
+        $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_title','education_date','education_description')
                                       ->leftJoin('team_users', 'team_users.id', 'team_educations.developer_id')
                                       ->get();                    
 

@@ -118,33 +118,51 @@ $(document).ready(function() {
     });
   });
     </script>
+
 <script>
   const svgLinks = document.querySelectorAll('a[data-svg]');
 
-
   svgLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault(); // Evita que el enlace realice su acción predeterminada
-      const svgId = link.dataset.svg; // Obtiene el ID del SVG del atributo "data-svg"
-      const svg = document.getElementById(svgId); // Encuentra el elemento SVG con el ID correspondiente
+      e.preventDefault(); 
+      const svgId = link.dataset.svg;
+      const svg = document.getElementById(svgId); 
       if (svg) {
         const activeSvgs = document.querySelectorAll('.svg-item.active');
         activeSvgs.forEach(activeSvg => activeSvg.classList.remove('active'));
         svg.classList.add('active');
+        const navbarLinks = link.parentNode.parentNode.querySelectorAll('a');
+        navbarLinks.forEach(navbarLink => navbarLink.classList.remove('active'));
+
+       
+        link.classList.add('active');
       }
     });
   });
-  
 
-  // Obtén todos los elementos SVG
+  
   const svgs = document.querySelectorAll('.svg-item');
 
-
-svgs.forEach(svg => {
+  svgs.forEach(svg => {
     svg.addEventListener('click', () => {
-        svgs.forEach(s => s.classList.remove('active'));
-        svg.classList.add('active');
-    });
-});
+      svgs.forEach(s => s.classList.remove('active'));
+      svg.classList.add('active');
 
+     
+      const navbarLinks = svg.parentNode.parentNode.querySelectorAll('a');
+      navbarLinks.forEach(navbarLink => navbarLink.classList.remove('active'));
+      svg.parentNode.classList.add('active');
+    });
+  });
+
+ 
+  const activeLink = document.querySelector('a.active[data-svg]');
+  if (activeLink) {
+    const activeSvgId = activeLink.dataset.svg;
+    const activeSvg = document.getElementById(activeSvgId);
+    if (activeSvg) {
+      activeSvg.classList.add('active');
+    }
+  }
 </script>
+

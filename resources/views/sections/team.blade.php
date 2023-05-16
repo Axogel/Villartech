@@ -96,7 +96,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-11 pt-5">
+                                        <div class="col-11 pt-2">
                                             <p style="color:#045A97; font-size:33px; font-weight:600;">
                                                 Skills
                                             </p>
@@ -159,6 +159,7 @@
                                         <div class="scrollable-container-area">
                                         @foreach ($teamEducations as $teamEducation)
                                             @if ($team->id == $teamEducation->developer_id)
+                                            @dump( $teamEducation->education_title)
                                                 <div class="col-12 lh-1">
                                                     <div style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
                                                         <p style="text-align: center;  color:white; margin-top:4px;">
@@ -166,8 +167,8 @@
                                                         </p>
                                                     </div>
                                                     <p class="text-left fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900;">
-                                                        {{ $teamEducation->education_title }}
-                                                    </p>
+                                                    {{ $teamEducation->education_title}}
+                                                </p>
                                                     <p>
                                                         {{ $teamEducation->education_country }}
                                                     </p>
