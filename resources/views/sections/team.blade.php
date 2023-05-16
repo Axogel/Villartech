@@ -41,7 +41,7 @@
                                         </p>
                                     </div>
 
-                                    <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:422px;" class="mx-auto d-block">
+                                    <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); width:80%;" class="mx-auto d-block">
                                 </div>
                                 <div class="row">
                                     <div class="col-1"></div>
@@ -121,10 +121,12 @@
                                         </p>
                                             
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
-
+                                        <div class="scrollable-container-area">
                                         @foreach ($teamExperiences as $teamExperience)
                                             @if ($team->id == $teamExperience->developer_id)
+                                         
                                             <div class="col-12 lh-1">
+                                          
                                                 <div style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
                                                     <p style="text-align: center;  color:white; margin-top:4px;">
                                                         {{ $teamExperience->experience_date }}
@@ -136,14 +138,16 @@
                                                 <p>
                                                     {{ $teamExperience->experience_company }}
                                                 </p>
-                                                <div class="scrollable-container">
+                                             
                                                 <p style="font-size:15px; color:#323232;">
                                                     {{ $teamExperience->experience_description }}
                                                 </p>
-                                                </div>
+                                              
                                             </div>
+                                          
                                             @endif
                                         @endforeach
+                                        </div>
                                     </div>
 
                                     <div class="tab-pane animated  fadeInLeft" id="tab_education_{{ $team->id }}">
@@ -152,7 +156,7 @@
                                             <img src="{{ asset('assets/img/modal-teams/educationblue.png') }}" style="height: 40px; float:right;">
                                         </p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
-
+                                        <div class="scrollable-container-area">
                                         @foreach ($teamEducations as $teamEducation)
                                             @if ($team->id == $teamEducation->developer_id)
                                                 <div class="col-12 lh-1">
@@ -175,6 +179,7 @@
                                                 </div>
                                             @endif
                                         @endforeach
+</div>
 
                                     </div>
 
@@ -192,7 +197,7 @@
 
                                         <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">Coding</p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
-
+                                        <div class="scrollable-container-area">
                                         @foreach ($teamSkills as $teamSkill)
                                             @if ($team->id == $teamSkill->developer_id)
                                             <ul class="d-inline-block">
@@ -205,6 +210,7 @@
                                                 </ul>
                                             @endif
                                         @endforeach
+                                        </div>
                                     </div>
 
                                 </div>

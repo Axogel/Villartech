@@ -32,6 +32,27 @@
     .scrollable-container::-webkit-scrollbar-thumb:hover {
         background-color: #555;
     }
+    .scrollable-container-area {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .scrollable-container-area::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .scrollable-container-area::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+
+    .scrollable-container-area::-webkit-scrollbar-thumb {
+        background-color: #888;
+    }
+
+    .scrollable-container-area::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+
 @media only screen and (min-width: 769px) and (max-width: 991px) {
     .navbarAjustResponsive{
         width:98%;
