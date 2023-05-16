@@ -4,21 +4,19 @@
 
 @section('content')
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
-    <div class="container-fluid mt--7">
+@include('sweetalert::alert')
+    <div class="container-fluid mt--12">
         <div class="row">
-            <div class="col-xl-8 mb-5 mb-xl-0">
-
-            </div>
-        </div>
-
-    </div>
-    <div class="row mt-5">
-        <div class="col-xl-8 mb-5 mb-xl-0" style="margin-left: 25px; margin-top:80px;">
-            <div class="table-responsive" style="width: 146%">
-                <table class="table align-items-center table-dark" id="example">
-                    <thead class="thead-light">
-                        <tr>
+           
+            <div class="col-xl-12 mb-5 mb-xl-0">
+                
+                <p class="pt-5" style="font-size:25px; color:#045A97; font-weight:900;">Employee Skill <span> <a href="{{ route('teams-language.create', ['team' => $teamUser->id]) }}" class="btn btn-success" style="float:right;">Create
+                    Employee Skill</a></span></p>
+               
+                <div class="table-responsive" style="width: 100%;">
+                    <table class="table align-items-center table-light" id="myTable">
+                        <thead  class = "text-light" style="background-color: #045A97;">
+                            <tr>
                             <th scope="col">Skill Name</th>
                             <th scope="col">Skill Percent</th>
 
@@ -76,8 +74,6 @@
                     @endforeach
                 </table>
 
-                <a href="{{ route('teams-language.create', ['team' => $teamUser->id]) }}" class="btn btn-info" style="margin-left: 500px; margin-top:5%;">Create
-                    a Skill</a>
             </div>
 
         </div>

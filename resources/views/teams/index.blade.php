@@ -184,9 +184,7 @@
                             
                         @endforeach
                     </table>
-                    <nav aria-label="Page navigation example">
-                        {{ $teamUsers->links('pagination::bootstrap-4') }}
-                      </nav>                    
+                 
                 </div>
             </div>
     

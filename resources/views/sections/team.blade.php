@@ -69,28 +69,29 @@
                                             <img src="{{ asset('assets/img/modal-teams/user-1.png') }}" style="height: 51px; float:right;">
                                         </p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block  w-100">
-                                        <p style="font-size:18px; color:#323232; font-family: 'Lato'; font-weight:300;">
-                                            {{ $team->description }}
-                                        </p>
+                                        <div class="scrollable-container">
+                                             <p style="font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
+                                                 {{ $team->description }}
+                                             </p>
+                                        </div>
 
                                         <div class="col-11 height-responsive-modal responsiveAjustAbout" style="background-color: #045A97;">
                                             <div class="row">
-                                                <div class="col-lg-4 col-sm-12">
+                                                <div class="col-lg-4 col-sm-10">
                                                     <img src="{{ asset('assets/img/modal-teams/folder_shared_FILL1_wght400_GRAD0_opsz48.png') }} " alt="" style="height: 80px; margin-left:10px; margin-top:25px;">
                                                 </div>
-
-                                                <div class="col-lg-4 col-sm-6" style="color:#FFFFFF;line-height:2px; padding-top:7px; ">
-                                                    <p style="line-height: 1.3em; ">Age</p>
-                                                    <p style="line-height: 1.3em; ">Residence</p>
-                                                    <p style="line-height: 1.3em; ">Freelance</p>
-                                                    <p style="line-height: 1.3em; ">Address</p>
+                                                <div class="col-lg-4 col-6 pe-2" style="color:#FFFFFF;line-height:2px; padding-top:7px; ">
+                                                    <p class="py-2" style="line-height: 1.3em; ">Age</p>
+                                                    <p class="py-2" style="line-height: 1.3em; ">Residence</p>
+                                                    <p class="py-2" style="line-height: 1.3em; ">Freelance</p>
+                                                    <p class="py-2" style="line-height: 1.3em; ">Address</p>
                                                 </div>
 
-                                                <div class="col-lg-4 col-sm-6" style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
-                                                    <p style="line-height: 1.3em; ">{{ $team->age }}</p>
-                                                    <p style="line-height: 1.3em; ">{{ $team->residence }}</p>
-                                                    <p style="line-height: 1.3em; ">{{ $team->freelance }}</p>
-                                                    <p style="line-height: 1.3em; ">{{ $team->address }}</p>
+                                                <div class="col-lg-4 col-6 pe-3" style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
+                                                    <p class="py-1" style="line-height: 1.3em; ">{{ $team->age }}</p>
+                                                    <p class="py-1" style="line-height: 1.3em; ">{{ $team->residence }}</p>
+                                                    <p class="py-1" style="line-height: 1.3em; ">{{ $team->freelance }}</p>
+                                                    <p class="py-1" style="line-height: 1.3em; ">{{ $team->address }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -135,9 +136,11 @@
                                                 <p>
                                                     {{ $teamExperience->experience_company }}
                                                 </p>
+                                                <div class="scrollable-container">
                                                 <p style="font-size:15px; color:#323232;">
                                                     {{ $teamExperience->experience_description }}
                                                 </p>
+                                                </div>
                                             </div>
                                             @endif
                                         @endforeach
@@ -164,10 +167,11 @@
                                                     <p>
                                                         {{ $teamEducation->education_country }}
                                                     </p>
-
+                                                    <div class="scrollable-container">
                                                     <p style="font-size:15px; color:#323232;">
                                                         {{ $teamEducation->education_description }}
                                                     </p>
+                                                    </div>
                                                 </div>
                                             @endif
                                         @endforeach
@@ -180,10 +184,11 @@
                                             <img src="{{ asset('assets/img/modal-teams/OVERVIEW.png') }}" style="height: 40px; float:right;">
                                         </p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); " class="mx-auto d-block">
-
-                                        <p style=" font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
-                                            {{ $team->overview }}
-                                        </p>
+                                        <div class="scrollable-container">
+                                             <p style=" font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
+                                                    {{ $team->overview }}
+                                              </p>
+                                        </div>
 
                                         <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">Coding</p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">

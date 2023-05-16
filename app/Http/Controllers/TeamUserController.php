@@ -245,7 +245,7 @@ class TeamUserController extends Controller
             $teamEducation->education_description = $request->education_description;
             $teamEducation->save();
 
-            return redirect()->route('teams.index');
+            return redirect()->route('teams.index')->withSuccessMessage('Education have been created', 'Employee have been created');
 
         }
 
@@ -275,7 +275,7 @@ class TeamUserController extends Controller
            
             $teamEducation->save();
 
-            return redirect()->route('teams.index');
+            return redirect()->route('teams.index')->withSuccessMessage('Employee have been updated', 'Employee have been updated successfully');
 
         }
     
@@ -290,7 +290,7 @@ class TeamUserController extends Controller
             {            
             $teamEducation = TeamEducation::find($id);
             $teamEducation->delete();
-            return redirect()->route('teams.index');
+            return redirect()->route('teams.index')->withSuccessMessage('Employee Education have been deleted', 'Employee have been deleted');
 
 
             }
@@ -340,7 +340,7 @@ class TeamUserController extends Controller
 
                 $teamExperience->save();
     
-                return redirect()->route('teams.index');
+                return redirect()->route('teams.index')->withSuccessMessage('Experience have been created', 'Employee have been created');
     
             }
     
@@ -371,7 +371,7 @@ class TeamUserController extends Controller
 
                 $teamExperience->save();
     
-                return redirect()->route('teams.index');
+                return redirect()->route('teams.index')->withSuccessMessage('Employee experience have been updated', 'Employee have been updated successfully');
     
             }
         
@@ -386,7 +386,7 @@ class TeamUserController extends Controller
                 {            
                 $teamExperience = TeamExperience::find($id);
                 $teamExperience->delete();
-                return redirect()->route('teams.index');
+                return redirect()->route('teams.index')->withSuccessMessage('Employee Experience have been deleted', 'Employee have been deleted');
     
     
                 }
@@ -435,7 +435,7 @@ class TeamUserController extends Controller
     
                     $teamSkill->save();
         
-                    return redirect()->route('teams.index');
+                    return redirect()->route('teams.index')->withSuccessMessage('Employee Skill have been created', 'Employee have been created');
         
                 }
         
@@ -464,7 +464,7 @@ class TeamUserController extends Controller
     
                     $teamExperience->save();
         
-                    return redirect()->route('teams.index');
+                    return redirect()->route('teams.index')->withSuccessMessage('Employee Skill have been updated', 'Employee have been updated successfully');
         
                 }
             
@@ -479,7 +479,7 @@ class TeamUserController extends Controller
                     {            
                     $teamSkill = TeamSkill::find($id);
                     $teamSkill->delete();
-                    return redirect()->route('teams.index');
+                    return redirect()->route('teams.index')->withSuccessMessage('Employee Skill have been deleted', 'Employee have been deleted');
         
         
                     }

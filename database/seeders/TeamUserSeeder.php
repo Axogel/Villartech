@@ -23,10 +23,7 @@ class TeamUserSeeder extends Seeder
         $file = new Filesystem;
         $file->cleanDirectory('storage/app/public/uploads/images/teams');
 
-<<<<<<< HEAD
-        TeamUser::factory()->count(6)->create();
-=======
         TeamUser::factory()->count(10)->create();
->>>>>>> 05e4c40e60b3787c3e24560533fbf8b8bf5c4c2e
+
     }
 }

@@ -12,6 +12,26 @@
 .bold-size{
     font-weight: 700;
 }
+.scrollable-container {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    .scrollable-container::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .scrollable-container::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+
+    .scrollable-container::-webkit-scrollbar-thumb {
+        background-color: #888;
+    }
+
+    .scrollable-container::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
 @media only screen and (min-width: 769px) and (max-width: 991px) {
     .navbarAjustResponsive{
         width:98%;
