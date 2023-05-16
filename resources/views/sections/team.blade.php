@@ -81,10 +81,10 @@
                                                     <img src="{{ asset('assets/img/modal-teams/folder_shared_FILL1_wght400_GRAD0_opsz48.png') }} " alt="" style="height: 80px; margin-left:10px; margin-top:25px;">
                                                 </div>
                                                 <div class="col-lg-4 col-6 pe-2" style="color:#FFFFFF;line-height:2px; padding-top:7px; ">
-                                                    <p class="py-2" style="line-height: 1.3em; ">Age</p>
-                                                    <p class="py-2" style="line-height: 1.3em; ">Residence</p>
-                                                    <p class="py-2" style="line-height: 1.3em; ">Freelance</p>
-                                                    <p class="py-2" style="line-height: 1.3em; ">Address</p>
+                                                    <p class="py-1" style="line-height: 1.3em; ">Age</p>
+                                                    <p class="py-1" style="line-height: 1.3em; ">Residence</p>
+                                                    <p class="py-1" style="line-height: 1.3em; ">Freelance</p>
+                                                    <p class="py-1" style="line-height: 1.3em; ">Address</p>
                                                 </div>
 
                                                 <div class="col-lg-4 col-6 pe-3" style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
