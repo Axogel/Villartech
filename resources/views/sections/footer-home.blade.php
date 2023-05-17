@@ -61,6 +61,9 @@
 
 
 <style>
+  
+
+@media  (min-width: 768px) {
   #whatsapp {
     position: fixed;
     bottom: 100px;
@@ -69,11 +72,16 @@
     z-index: 10;
     -webkit-backface-visibility: hidden;
 }
+}
 
-@media min-width(360px) and (max-width: 700px) { 
+@media (min-width: 300px) and (max-width: 700px) { 
 #whatsapp {
+  position: fixed;
   bottom: 59px;
   right: 15px;
+  top: auto;
+  z-index: 10;
+  -webkit-backface-visibility: hidden;
 
 }
 
