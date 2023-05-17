@@ -129,9 +129,12 @@
         			</div>
 				</div>
 			</div><!--/ Row end -->
-		   <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
-				<button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+
+		   	<div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+					<i class="fa-brands fa-whatsapp" style="color: #0f4fbd;"></i>
+					<button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
 			</div>
+
 		</div><!--/ Container end -->
 	</section><!--/ Footer end -->
 
