@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminSettingController;
 use App\Models\TeamEducation;
 use App\Models\TeamExperience;
 use App\Models\TeamSkill;
+use App\Models\Skill;
 
 
 
@@ -41,7 +42,24 @@ class FrontController extends Controller
     
     }
 
-
+    public function portfolioView() {
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+        $skill = Skill::select('id','name')->get();
+        $portfolios = Portfolio::select('id','name','image','url','description')
+        ->get();
+        foreach ($portfolios as $portafolio) {
+            $cad = str_replace('[', '', $portafolio->image);
+            $cad = str_replace(']', '', $cad);
+            $cad = str_replace('%', '', $cad);
+            $cad = str_replace('\/', '/', $cad);
+            $cad = str_replace('22', '', $cad);
+            $cad = str_replace('"', '', $cad);
+            
+            $portafolio->formattedImage = $cad;
+        }
+        return view('portfolioView')->with(['portfolios' => $portfolios,'skills' => $skill ,'settings' => $setting ]);
+    }
 
     public function welcome()
     {

@@ -26,7 +26,7 @@
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#about-us "style="width: 90px" >ABOUT US</a>
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link active text-light bold-size" aria-current="page" href="#portfolio" >PORTFOLIO</a>
+                <a class="nav-link active text-light bold-size" aria-current="page" href="/portfolioView" >PORTFOLIO</a>
               </li>
               <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#services" >SERVICES</a>

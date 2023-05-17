@@ -1,6 +1,15 @@
 <style>
 
 /* Estilos para los SVG */
+.portfolio-view-item{
+    background: #fff;
+    width:450px; 
+    height: 500px;
+}
+.mx-6{
+    margin-right: 4rem!important;
+    margin-left: 4rem!important;
+}
 .svg-item {
     cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
 }
@@ -81,6 +90,10 @@
   }
 
 @media (min-width:300px) and (max-width:992px) {
+    .mx-6{
+    margin-right: 0rem!important;
+    margin-left: 0rem!important;
+}
     .navbarAjustResponsive{
         width:98%;
     }
