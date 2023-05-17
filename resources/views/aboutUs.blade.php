@@ -6,6 +6,7 @@
 
 @section('content')
     @include('sections.header-aboutUs')
+     @include('sections.content-aboutUs')
 @endsection
 
 @section('scripts')
