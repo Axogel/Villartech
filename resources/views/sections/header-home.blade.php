@@ -20,13 +20,13 @@
         <div class="col-xxl-6 col-xl-6 col-lg-6">
             <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 50px;">
               <li class="nav-item px-2">
-                <a class="nav-link active text-light bold-size" aria-current="page"  href="#">Home</a>
+                <a class="nav-link active text-light bold-size" aria-current="page"  href="{{ route ('home') }}">Home</a>
               </li>
               <li class="nav-item px-2 ">
-                <a class="nav-link active text-light bold-size" aria-current="page" href="#about-us "style="width: 90px" >ABOUT US</a>
+                <a class="nav-link active text-light bold-size" aria-current="page" href="{{ route ('aboutUs') }}"style="width: 90px" >ABOUT US</a>
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link active text-light bold-size" aria-current="page" href="#portfolio" >PORTFOLIO</a>
+                <a class="nav-link active text-light bold-size" aria-current="page" href="{{ route ('portfolioView') }}" >PORTFOLIO</a>
               </li>
               <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#services" >SERVICES</a>

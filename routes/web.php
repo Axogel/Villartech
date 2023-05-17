@@ -1,20 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FrontController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SendGmailController;
-use App\Http\Controllers\AdminSettingController;
-use App\Http\Controllers\PortfolioTechnologiesController;
-use App\Http\Controllers\FlickerController;
-use App\Http\Controllers\TeamUserController;
-use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\DeclarationController;
-use App\Http\Controllers\TagController;
-use App\Http\Controllers\SkillController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CategoryTypeController;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController};
+
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -46,7 +34,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-Route::get('/aboutUs', 'App\Http\Controllers\AboutUsController@index');
+Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
+Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
