@@ -458,6 +458,11 @@ iframe {
 
 /* aboutUs*/ 
 
+.cards-aboutUs{
+    background-color:#F9F9F9;
+}
+
+
 .animated7{
   margin-top:5rem;
 }
@@ -484,6 +489,7 @@ iframe {
     margin-bottom: 2rem;
     }
   }
+
   
   #ourCompany-aboutUs{
     background-color:#2E2E2E;
@@ -492,9 +498,7 @@ iframe {
   }
   
   
-  .container-cards{
-    background-color:#F9F9F9;
-  }
+
 
   .img-cards{
   border-radius:50%;
@@ -522,8 +526,8 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-
+    margin-left:7rem;
+    margin-top:4rem;
   }
 }
 
@@ -534,73 +538,6 @@ iframe {
 .card-body{
   text-align:center;
 }
-
-    /*  margin: 0 auto;
-  }
-
-@media only screen and (max-width: 768px) {
-  .card-aboutUs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-
-  }*/
-
-
-  /*margin-left: -15%;*/
-
-  /*.col-md-3 {
-    margin-top: 80px;
-    padding-top: 80px;
-    margin-left:11%;
-  }
-}
-
-
-
-  .card-aboutUs{
-    padding-top: 40px;
-    background-color:white;
-    margin-top:-80px;
-    margin-left:11%;
-
-  }
-
-
-.card-body{
-  text-align:center;
-}
-
-.card-text{
-  padding:3rem;
-}
-
-.img-cards{
-  border-radius:50%;
-  background-color:#005397;
-  padding: 20px;
-  height: 10rem;
-  width: 10rem;
-  margin-left: 31%;
-}
-
-@media only screen and (max-width: 768px) {
-  .img-cards{
-    margin-left: 0px;
-  }
-}
-
-
-.card-aboutUs:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.btn-aboutUs{
-  background-color:#005397; !important;
-  border-radius:15%;
-  padding:20px;
-}*/
 
 </style>
 
