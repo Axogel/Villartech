@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @include('sections.header-aboutUs')
+    @include('sections.header-view')
     <x-header-view-dinamic :titleDinamic="'Portafolio'" />
     @include('sections.content-portfolio')
 @endsection

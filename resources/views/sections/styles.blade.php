@@ -455,6 +455,153 @@ iframe {
     background-color: white;
 
 }
+
+/* aboutUs*/ 
+
+.animated7{
+  margin-top:5rem;
+}
+
+.dashboard-aboutUs-img{
+  height: 30rem;
+}
+
+.img-aboutUs {
+    height: 55rem;
+    width: 21rem;
+    object-fit: cover;
+  }
+
+
+
+  .text-aboutUs{
+    margin-left:3rem
+  }
+
+  @media (max-width: 767.98px) {
+    .text-aboutUs{
+    margin-left: 0;
+    margin-bottom: 2rem;
+    }
+  }
+  
+  #ourCompany-aboutUs{
+    background-color:#2E2E2E;
+    color:white;
+    padding-bottom:117px
+  }
+  
+  
+  .container-cards{
+    background-color:#F9F9F9;
+  }
+
+  .img-cards{
+  border-radius:50%;
+  background-color:#005397;
+  padding: 20px;
+  height: 10rem;
+  width: 10rem;
+  margin: 0px 60px 30px 70px;
+}
+
+.img-cards svg {
+  fill: white;
+}
+
+  .card-aboutUs{
+    padding-top: 40px;
+    background-color:white;
+    margin-top:-80px;
+    margin-left:11%;
+    margin-bottom:70px;
+  }
+
+@media only screen and (max-width: 768px) {
+  .card-aboutUs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+  }
+}
+
+.card-aboutUs:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-body{
+  text-align:center;
+}
+
+    /*  margin: 0 auto;
+  }
+
+@media only screen and (max-width: 768px) {
+  .card-aboutUs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+  }*/
+
+
+  /*margin-left: -15%;*/
+
+  /*.col-md-3 {
+    margin-top: 80px;
+    padding-top: 80px;
+    margin-left:11%;
+  }
+}
+
+
+
+  .card-aboutUs{
+    padding-top: 40px;
+    background-color:white;
+    margin-top:-80px;
+    margin-left:11%;
+
+  }
+
+
+.card-body{
+  text-align:center;
+}
+
+.card-text{
+  padding:3rem;
+}
+
+.img-cards{
+  border-radius:50%;
+  background-color:#005397;
+  padding: 20px;
+  height: 10rem;
+  width: 10rem;
+  margin-left: 31%;
+}
+
+@media only screen and (max-width: 768px) {
+  .img-cards{
+    margin-left: 0px;
+  }
+}
+
+
+.card-aboutUs:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-aboutUs{
+  background-color:#005397; !important;
+  border-radius:15%;
+  padding:20px;
+}*/
+
 </style>
 
 

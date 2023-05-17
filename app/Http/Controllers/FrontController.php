@@ -138,4 +138,12 @@ class FrontController extends Controller
 
         return view('portfolio')->with(['details' => $porta_details, 'technologies' => $technologies]);
     }
+
+    public function AboutUs(){
+
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+        return view('/aboutUs')->with('settings', $setting);
+
+    }
 }

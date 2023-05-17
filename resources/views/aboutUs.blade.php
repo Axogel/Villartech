@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-    @include('sections.header-aboutUs')
+    @include('sections.header-view')
+    <x-header-view-dinamic :titleDinamic="'About Us'" />
+     @include('sections.content-aboutUs')
 @endsection
 
 @section('scripts')
