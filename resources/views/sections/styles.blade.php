@@ -458,10 +458,6 @@ iframe {
 
 /* aboutUs*/ 
 
-.cards-aboutUs{
-    background-color:#F9F9F9;
-}
-
 
 .animated7{
   margin-top:5rem;
@@ -494,18 +490,35 @@ iframe {
   #ourCompany-aboutUs{
     background-color:#2E2E2E;
     color:white;
-    padding-bottom:117px
+    padding-bottom:117px;
+    position: relative;
+    padding-top:13rem;
   }
   
-  
+  .logo-aboutUs{
+    width:16rem;
+    height:16rem;
+    border-radius:50%;
+    background-color:#005397;
+    position: relative;
+    margin-bottom:-6rem;
 
+  }
+
+@media (max-width: 768px) {
+  .logo-aboutUs {
+    position: relative;
+    margin-top: -40px;
+    margin-right: 100px;
+  }
+}
 
   .img-cards{
   border-radius:50%;
   background-color:#005397;
-  padding: 20px;
-  height: 10rem;
-  width: 10rem;
+  padding: 60px;
+  height: 7rem;
+  width: 7rem;
   margin: 0px 60px 30px 70px;
 }
 
@@ -515,10 +528,11 @@ iframe {
 
   .card-aboutUs{
     padding-top: 40px;
-    background-color:white;
+    background-color:#F9F9F9;
     margin-top:-80px;
     margin-left:11%;
     margin-bottom:70px;
+
   }
 
 @media only screen and (max-width: 768px) {
@@ -532,13 +546,22 @@ iframe {
 }
 
 .card-aboutUs:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
+
+
 
 .card-body{
   text-align:center;
 }
 
+
+
+.img-redirect{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  
 </style>
 
 
