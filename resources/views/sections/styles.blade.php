@@ -4,6 +4,45 @@
     bottom:50px;
 
 }
+.effect-portfolio figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .effect-portfolio:hover figcaption {
+        opacity: 1;
+    }
+
+    .effect-portfolio .link {
+        display: none;
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .effect-portfolio:hover .link {
+        display: block;
+    }
+.icon-portfolio{
+    background-color: #005597;
+    width:80px;
+    height:80px;
+    border-radius:1000px;
+    position:relative;
+    top:50px;
+}
+.fa-link{
+    font-size:50px;
+    margin-top:20%;
+}
 /* Estilos para los SVG */
 .portfolio-view-item{
     background: #fff;

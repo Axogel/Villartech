@@ -25,7 +25,7 @@
                     @foreach ($firstFourPortfolios as $portfolio)
                                         <div class="col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover">
                                             <div class="grid">
-                                                <figure class="effect-oscar" style="height:250px;">
+                                                <figure class="effect-portfolio" style="height:250px;">
                                                     @php
                                                         $cad = str_replace('[', '', $portfolio['image']);
                                                         $cad = str_replace(']', '', $cad);
@@ -34,9 +34,9 @@
                                                         $cad = str_replace('22', '', $cad);
                                                         $cad = str_replace('"', '', $cad);
                                                     @endphp
-                                                    <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%;">
+                                                    <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
-                                                        <a class="link icon-pentagon" href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
+                                                        <a class="link icon-portfolio " href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
                                                             <i class="fa fa-link"></i>
                                                         </a>
                                                     </figcaption>
@@ -66,7 +66,7 @@
                                     @foreach ($new as $portfolio)
                                         <div class="col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover">
                                             <div class="grid">
-                                                <figure class="effect-oscar" style="height:250px;">
+                                                <figure class="effect-portfolio" style="height:250px;">
                                                     @php
                                                         $cad = str_replace('[', '', $portfolio['image']);
                                                         $cad = str_replace(']', '', $cad);
@@ -75,10 +75,10 @@
                                                         $cad = str_replace('22', '', $cad);
                                                         $cad = str_replace('"', '', $cad);
                                                     @endphp
-                                                    <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%;">
+                                                    <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
-                                                        <a class="link icon-pentagon" href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
-                                                            <i class="fa fa-link"></i>
+                                                        <a class="link icon-portfolio" href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
+                                                            <i  class="fa fa-link"></i>
                                                         </a>
                                                     </figcaption>
                                                 </figure>
@@ -179,10 +179,10 @@
                 portfolioItem.className = 'col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover';
                 portfolioItem.innerHTML = `
                     <div class="grid">
-                        <figure class="effect-oscar" style="height:250px;">
-                            <img class="" src="${url+'/'+'storage/'+portfolio.image}" alt="" style="height:100%;">
+                        <figure class="effect-portfolio" style="height:250px;">
+                            <img class="" src="${url+'/'+'storage/'+portfolio.image}" alt="" style="height:100%; width:100%;">
                             <figcaption>
-                                <a class="link icon-pentagon" href="#" data-toggle="modal" data-target="#${portfolio.id}">
+                                <a class="link icon-portfolio" href="#" data-toggle="modal" data-target="#${portfolio.id}">
                                     <i class="fa fa-link"></i>
                                 </a>
                             </figcaption>
