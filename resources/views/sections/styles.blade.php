@@ -6,6 +6,20 @@
     width:450px; 
     height: 500px;
 }
+.div-light-bulb{
+    position:relative;
+    bottom:80px;
+    background-color:#005597;
+    border-radius: 1000px;
+    height: 150px;
+    width: 150px;
+}
+.button-skill-nav{
+    background-color: #323232 !important;
+}
+.button-skill-nav.active{
+    background-color: #005597 !important;
+}
 .mx-6{
     margin-right: 4rem!important;
     margin-left: 4rem!important;
@@ -69,6 +83,10 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .div-light-bulb{
+    position:relative;
+    bottom:40px;
+    }
     .navbarAjustResponsive{
         width:98%;
     }
@@ -90,6 +108,10 @@
   }
 
 @media (min-width:300px) and (max-width:992px) {
+    .div-light-bulb{
+    position:relative;
+    bottom:40px;
+    }
     .mx-6{
     margin-right: 0rem!important;
     margin-left: 0rem!important;
@@ -527,7 +549,7 @@ iframe {
   }
 }
 
-.card-aboutUs:hover {
+.card-hover:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
