@@ -77,7 +77,9 @@ class AdminSettingController extends Controller
             'date' => 'nullable',
             'facebook' => 'nullable',
             'instagram' => 'nullable',
-            'address' => 'nullable'
+            'address' => 'nullable',
+            'upwork' => 'nullable'
+
         ]);
      
         $setting = AdminSetting::find($id);
@@ -87,6 +89,7 @@ class AdminSettingController extends Controller
         $setting->facebook = $request->facebook;
         $setting->instagram = $request->instagram;
         $setting->address = $request->address;
+        $setting->upwork = $request->upwork;
         $setting->save();
         return redirect()->route('settings.edit',  $setting->id);
     }

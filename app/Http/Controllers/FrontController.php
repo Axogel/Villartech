@@ -41,8 +41,8 @@ class FrontController extends Controller
     return  $launch;
     
     }
-    public function portfolioView(Request $request) {
-        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+    public function portfolioView() {
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
         ->get();
         $skill = Skill::select('id','name')->get();
         $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills', 'description')
@@ -142,7 +142,7 @@ class FrontController extends Controller
 
     public function AboutUs(){
 
-        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
         ->get();
         return view('/aboutUs')->with('settings', $setting);
 

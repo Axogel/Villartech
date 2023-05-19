@@ -23,6 +23,7 @@
                             <th scope="col">Facebook</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Upwork</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -64,6 +65,14 @@
 
                                     <span class="badge badge-dot mr-4">
                                         {{ $setting->date }}
+                                    </span>
+
+                                </td>
+
+                                                                <td>
+
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $setting->upwork }}
                                     </span>
 
                                 </td>

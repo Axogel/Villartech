@@ -2,13 +2,13 @@
     <div class="container">
         <div class="" role="tablist">
             <ul class="nav nav-tabs d-flex justify-content-center mx-5" id="myTab" role="tablist" style="    border-bottom:0 ;">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item" style="height:50px;" role="presentation">
     <button class="nav-link active badge rounded-pill button-skill-nav bg-size-lg text-light px-5 mx-3 my-5 py-3" style=" font-weight: 100;
     font-size: 11px;
 " id="home-tab" data-toggle="tab" data-target="#homeWelcome" type="button" role="tab" aria-controls="home" aria-selected="true">All</button>
   </li>
                 @foreach ($skills as $skill)
-                    <li class="nav-item" role="presentation">
+                    <li class="nav-item" style="height:50px;" role="presentation">
                         <button class="text-center nav-link button-skill-nav badge rounded-pill bg-size-lg text-light px-5 mx-3 my-5 py-3" id="{{ $skill->name }}-tab" style="background-color: #323232; font-weight: 100;
     font-size: 11px;
 " data-toggle="tab" data-target="#{{ $skill->name }}" type="button" role="tab" aria-controls="{{ $skill->name }}" aria-selected="false">{{ $skill->name }}</button>
@@ -120,54 +120,54 @@
                     </div>
                 </div>
                 <div class="row justify-content-start">
-                        <div class="col-3 col-md-5 mx-5 my-4" style="background-color:#fff; border-radius: 100px; height: 50px; width: 150px;;">
-                            <a href="">
-                                <img src="" alt="">
+                    @foreach($settings as $setting)
+                        <div class="col-3 col-md-5 mx-5 my-4 img-link-up" style="background-color:#fff; border-radius: 100px; height: 50px; width: 150px;">
+                            <a href="{{ $setting->upwork }}">
+                                <img class=""    style="height: 50px; width: 120px; margin-left:0.8rem; margin-top:0.2rem;" src="{{asset('assets/img/upwork2.png')}}" alt="">
                             </a>
                         </div>
-                        <div class="col-3 col-md-5 mx-5 my-4" style="background-color:#fff; border-radius: 100px; height: 50px; width: 150px;;">
-                            <a href="">
-                                <img src="" alt="">
+                        <div class="col-3 col-md-5 mx-5 my-4 img-link-up" style="background-color:#fff; border-radius: 100px; height: 50px; width: 150px;">
+                            <a href="{{ $setting->date }}">
+                                <img  class="" style="height: 30px; width: 120px; margin-left:0.8rem; margin-top:1rem;" src="{{asset('assets/img/linkIn2.png')}}" alt="">
                             </a>
                         </div>
+                    @endforeach
                 </div>
     </div>
 </div>
 <!-- img languages -->
-<div class="container">
-    <div claas="row justify-content-center">
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="" alt="" style="width:100px; height:90px;">
+<div class="container ">
+    <div class="row text-center justify-content-center my-5">
+        <div class="col-6 col-md-3 col-lg-1 mx-4">
+            <img class="img-redirect" src="{{asset('assets/img/theme/laravel.png')}}" alt="" style="width:100px; height:90px;">
         </div>
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="" alt="" style="width:100px; height:90px;">
+        <div class="col-6 col-md-3 col-lg-1 mx-4">
+            <img class="img-redirect" src="{{asset('assets/img/theme/php.png')}}" alt="" style="width:100px; height:90px;">
         </div>
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="" alt="" style="width:100px; height:90px;">
+        <div class="col-6 col-md-3 col-lg-1 mx-4">
+            <img class="img-redirect" src="{{asset('assets/img/theme/vue.jpg')}}" alt="" style="width:100px; height:90px;">
         </div>
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="{{asset('theme/angular.jpg')}}" alt="" style="width:100px; height:90px;">
+        <div class="col-6 col-md-3 col-lg-1 mx-4">
+            <img class="img-redirect" src="{{asset('assets/img/theme/angular.jpg')}}" alt="" style="width:100px; height:90px;">
         </div>
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="" alt="" style="width:100px; height:90px;">
+        <div class="col-6 col-md-3 col-lg-1 mx-4">
+            <img class="img-redirect" src="{{asset('assets/img/theme/react.jpg')}}" alt="" style="width:100px; height:90px;">
         </div>
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="" alt="" style="width:100px; height:90px;">
+        <div class="col-6 col-md-3 col-lg-1 mx-4">
+            <img class="img-redirect mt-2" src="{{asset('assets/img/theme/html.png')}}" alt="" style="width:80px; height:70px;">
         </div>
-        <div class="col-12 col-md-3 col-lg-2">
-            <img src="" alt="" style="width:100px; height:90px;">
+        <div class="col-6 col-md-3 col-lg-1 mx-4">
+            <img class="img-redirect mt-2" src="{{asset('assets/img/theme/css.png')}}" alt="" style="width:80px; height:70px;">
         </div>
     </div>
 </div>
 <script>
-    // Variables para controlar la carga de elementos del portfolio
     var portfolioData = {!! json_encode($portfolios) !!};
     var url = `{{ url('/') }}`;
     
-    var currentIndex = 0; // Índice inicial para cargar más elementos
-    var batchSize = 4; // Cantidad de elementos a cargar en cada carga adicional
+    var currentIndex = 0; 
+    var batchSize = 4; 
 
-    // Función para agregar elementos del portfolio al contenedor
     function addPortfolioItems(startIndex, endIndex) {
         var portfolioContainer = document.getElementById('portfolioContainer');
 
