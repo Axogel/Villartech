@@ -39,7 +39,7 @@
     position:relative;
     top:50px;
 }
-.fa-link{
+.fa-link-portfolio{
     font-size:50px;
     margin-top:20%;
 }
@@ -267,6 +267,10 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .contact-section{
+        position: relative;
+        bottom:140px;
+    }
     .responsiveAjustAbout{
         text-align: start;
     }
@@ -331,6 +335,10 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .contact-section{
+        position: relative;
+        bottom:140px;
+    }
     .responsiveAjustAbout{
         text-align: start;
     }

@@ -13,7 +13,7 @@ class Portfolio extends Model
     public $timestamps = true;
 
  
-    protected $filliable = [
+    protected $fillable = [
         'name',
         'description',
         'image',

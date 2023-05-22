@@ -43,7 +43,26 @@
                 ],
             });
         });
-
+        $(document).ready(function() {
+            $("#portfolio-carousel").owlCarousel({
+                margin: 0,
+                responsive: true,
+                navigation: true,
+                pagination: false,
+                responsiveRefreshRate: 0,
+                navigationText: [
+                    '<i class="fa fa-chevron-left" style= "color:#045A97; font-size:20px;"></i>',
+                    '<i class="fa fa-chevron-right" style= "color:#045A97; font-size:20px;"></i>'
+                ],
+                itemsCustom: [
+                    [0, 1],
+                    [375, 1],
+                    [600, 1],
+                    [700, 1],
+                    [1000, 5]
+                ],
+            });
+        });
 
 
         $(document).ready(function() {

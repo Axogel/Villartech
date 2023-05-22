@@ -10,22 +10,21 @@ class PortfolioSkill extends Model
     use HasFactory;
 
     protected $table = 'portfolio_skill';
-	protected $primaryKey = 'id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-		'portfolio_id',
+        'portfolio_id',
         'skill_id',
-	];
+    ];
 
-
-
-
-    public function portfolios()
+    public function portfolio()
     {
-        return $this->belongsToMany(Portfolio::class, 'portfolio_skill');
+        return $this->belongsTo(Portfolio::class, 'portfolio_id','id');
     }
-    // public function skills()
-    // {
-    //     return $this->belongsToMany(Skill::class, 'portfolio_skill')->withTimestamps();
-    // }
+
+    public function skill()
+    {
+        return $this->belongsTo(Skill::class, 'skill_id','id');
+    }
 }
+
