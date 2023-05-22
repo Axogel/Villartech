@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use App\Models\Portfolio;
-use App\Models\Skill;
+use App\Models\PortfolioSkill;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,8 +15,19 @@ class PortfolioSkillSeeder extends Seeder
      */
     public function run()
     {
-        $portfolio_skill = Portfolio::find(1);
-        $skills = $portfolio_skill->skills;
+        $portfolios = Portfolio::all();
+
+        foreach ($portfolios as $portafolio) {
+
+            foreach(json_decode($portafolio->skills) as $skill){
+                PortfolioSkill::insert( [
+                    'portfolio_id' =>  $portafolio->id,
+                    'skill_id' =>  $skill,
+                    'created_at' => now(),
+                    'updated_at' => now(), 
+                ]);
+            }
+        }
         
     }
 }

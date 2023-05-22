@@ -1,10 +1,67 @@
 <style>
+.img-link-up{
+    position:relative;
+    bottom:50px;
 
+}
+.effect-portfolio figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .effect-portfolio:hover figcaption {
+        opacity: 1;
+    }
+
+    .effect-portfolio .link {
+        display: none;
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .effect-portfolio:hover .link {
+        display: block;
+    }
+.icon-portfolio{
+    background-color: #005597;
+    width:80px;
+    height:80px;
+    border-radius:1000px;
+    position:relative;
+    top:50px;
+}
+.fa-link{
+    font-size:50px;
+    margin-top:20%;
+}
 /* Estilos para los SVG */
 .portfolio-view-item{
     background: #fff;
     width:450px; 
     height: 500px;
+}
+.div-light-bulb{
+    position:relative;
+    bottom:80px;
+    background-color:#005597;
+    border-radius: 1000px;
+    height: 150px;
+    width: 150px;
+}
+.button-skill-nav{
+    background-color: #323232 !important;
+}
+.button-skill-nav.active{
+    background-color: #005597 !important;
 }
 .mx-6{
     margin-right: 4rem!important;
@@ -69,6 +126,10 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .div-light-bulb{
+    position:relative;
+    bottom:40px;
+    }
     .navbarAjustResponsive{
         width:98%;
     }
@@ -90,6 +151,10 @@
   }
 
 @media (min-width:300px) and (max-width:992px) {
+    .div-light-bulb{
+    position:relative;
+    bottom:40px;
+    }
     .mx-6{
     margin-right: 0rem!important;
     margin-left: 0rem!important;
@@ -545,10 +610,10 @@ iframe {
   }
 }
 
-.card-aboutUs:hover {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
 
+.card-hover:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
 
 .card-body{

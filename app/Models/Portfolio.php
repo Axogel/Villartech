@@ -27,7 +27,7 @@ class Portfolio extends Model
     }
 
 
-    public function test () {
+    public function portfolioSkill () {
 
         return $this->hasMany(PortfolioSkill::class, 'portfolio_id', 'id');
     }

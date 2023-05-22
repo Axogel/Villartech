@@ -41,23 +41,24 @@ class FrontController extends Controller
     return  $launch;
     
     }
-
     public function portfolioView() {
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
         ->get();
         $skill = Skill::select('id','name')->get();
-        $portfolios = Portfolio::select('id','name','image','url','description')
-        ->get();
+        $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills', 'description')
+        ->get()->toArray();
         foreach ($portfolios as $portafolio) {
-            $cad = str_replace('[', '', $portafolio->image);
+            $cad = str_replace('[', '', $portafolio['image']);
             $cad = str_replace(']', '', $cad);
             $cad = str_replace('%', '', $cad);
             $cad = str_replace('\/', '/', $cad);
             $cad = str_replace('22', '', $cad);
             $cad = str_replace('"', '', $cad);
             
-            $portafolio->formattedImage = $cad;
+            $portafolio['formattedImage'] = $cad;
         }
+
+
         return view('portfolioView')->with(['portfolios' => $portfolios,'skills' => $skill ,'settings' => $setting ]);
     }
 
