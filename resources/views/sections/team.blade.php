@@ -248,7 +248,7 @@
                             </p>
                         </div>
                         <div class="photo">
-                            <img src="{{ asset('storage') . '/' . $team->photo }}" alt="" style="height:270px; width:100%; position: relative; bottom:60px;" href="#" data-toggle="modal" data-target="#modal_team_{{ $team->id }}">
+                            <img src="{{ asset('storage') . '/' . $team->photo }}" alt="" style="cursor: pointer; height:270px; width:100%; position: relative; bottom:60px;" href="#" data-toggle="modal" data-target="#modal_team_{{ $team->id }}">
                         </div>
                     </div>
                 </div>
