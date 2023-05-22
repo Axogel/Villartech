@@ -620,7 +620,7 @@ iframe {
 
 
 .card-hover:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 
@@ -635,6 +635,19 @@ iframe {
     filter: grayscale(100%);
   }
   
+.img-redirect2{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+@media (max-width: 768px) {
+  .img-redirect2 {
+    margin-top: 40px;
+    padding-left: 3rem;
+    margin-bottom: 4rem;
+  }
+}
+
 </style>
 
 
