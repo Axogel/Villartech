@@ -39,7 +39,7 @@
               </li>
               <li class="nav-item px-2 w-100">
                 <div id="contact-us-navbar">
-                  <a class="nav-link active text-light bold-size margin-contactUs" aria-current="page" href="#contact" style="font-size: 14px; text-align: center; background-color: #045197; border-radius: 8px; width: 150px ">
+                  <a class="nav-link active text-light bold-size margin-contactUs" aria-current="page" href="{{ route ('contactUs') }}" style="font-size: 14px; text-align: center; background-color: #045197; border-radius: 8px; width: 150px ">
                     CONTACT US
                   </a>
                 </div>

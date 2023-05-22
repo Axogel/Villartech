@@ -36,7 +36,7 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
-
+Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);

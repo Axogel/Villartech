@@ -635,7 +635,7 @@ iframe {
 @media (max-width: 768px) {
   .img-redirect2 {
     margin-top: 40px;
-    padding-left: 3rem;
+    padding-left: 5rem;
     margin-bottom: 4rem;
   }
 }
