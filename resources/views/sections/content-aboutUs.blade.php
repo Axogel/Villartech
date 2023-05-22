@@ -115,7 +115,7 @@ We quickly adapt to any type of campaign or project inbound and outbound that yo
 
 
    
-        <div class="img-redirect d-flex justify-content-start col-12 col-md-5 mx-5">
+        <div class="img-redirect2 d-flex justify-content-start col-12 col-md-5 mx-5">
            <a href="{{ $setting->date }}">
           <img src="{{asset('assets/img/linkedin.png')}}">
              </a>

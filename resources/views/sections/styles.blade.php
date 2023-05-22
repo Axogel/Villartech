@@ -562,6 +562,19 @@ iframe {
     filter: grayscale(100%);
   }
   
+.img-redirect2{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+@media (max-width: 768px) {
+  .img-redirect2 {
+    margin-top: 40px;
+    padding-left: 3rem;
+    margin-bottom: 4rem;
+  }
+}
+
 </style>
 
 
