@@ -1,4 +1,4 @@
-<section id="services" class="about angle">
+<section id="services" class="about angle " style="padding:0 0;">
     <div class="container">
         <br><br>
 

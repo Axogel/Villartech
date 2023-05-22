@@ -1,24 +1,27 @@
 <div style="background-color: #f4f4f4;">
     <div class="container">
         <div class="" role="tablist">
-            <ul class="nav nav-tabs d-flex justify-content-center mx-5" id="myTab" role="tablist" style="    border-bottom:0 ;">
-            <li class="nav-item" style="height:50px;" role="presentation">
-    <button class="nav-link active badge rounded-pill button-skill-nav bg-size-lg text-light px-5 mx-3 my-5 py-3" style=" font-weight: 100;
-    font-size: 11px;
-" id="home-tab" data-toggle="tab" data-target="#homeWelcome" type="button" role="tab" aria-controls="home" aria-selected="true">All</button>
-  </li>
-                @foreach ($skills as $skill)
-                    <li class="nav-item" style="height:50px;" role="presentation">
-                        <button class="text-center nav-link button-skill-nav badge rounded-pill bg-size-lg text-light px-5 mx-3 my-5 py-3" id="{{ $skill->name }}-tab" style="background-color: #323232; font-weight: 100;
-    font-size: 11px;
-" data-toggle="tab" data-target="#{{ $skill->name }}" type="button" role="tab" aria-controls="{{ $skill->name }}" aria-selected="false">{{ $skill->name }}</button>
-                    </li>
-                @endforeach
+            <ul class="nav nav-tabs d-flex justify-content-center mx-5 mb-5" id="myTab" role="tablist" style="    border-bottom:0 ;">
+                <li class="nav-item" style="height:50px;" role="presentation">
+                    <button class="nav-link active badge rounded-pill button-skill-nav bg-size-lg text-light px-5 mx-3 my-5 py-3" style=" font-weight: 100;font-size: 11px;" id="home-tab" data-toggle="tab" data-target="#homeWelcome" type="button" role="tab" aria-controls="home" aria-selected="true">All</button>
+                </li>
+                        @foreach ($skills as $skill)
+                                @php 
+                                    $new = array_filter($portfolios, function ($var) use ($skill) {
+                                        return (in_array($skill->id, json_decode($var['skills'])));
+                                    });
+                                @endphp
+                            @if (!empty($new))
+                                    <li class="nav-item" style="height:50px;" role="presentation">
+                                        <button class="text-center nav-link button-skill-nav badge rounded-pill bg-size-lg text-light px-5 mx-3 my-5 py-3" id="{{ $skill->name }}-tab" style="background-color: #323232; font-weight: 100; font-size: 11px;" data-toggle="tab" data-target="#{{ $skill->name }}" type="button" role="tab" aria-controls="{{ $skill->name }}" aria-selected="false">{{ $skill->name }}</button>
+                                    </li>
+                            @endif
+                        @endforeach
             </ul>
-            <div class="tab-content" id="myTabContent">
+        <div class="tab-content " id="myTabContent">
             <div class="tab-pane fade show active in" id="homeWelcome" role="tabpanel" aria-labelledby="home-tab">
                 <div class="container">
-                    <div id="portfolioContainer" class="row justify-content-center">
+                    <div id="portfolioContainer" class="row justify-content-center mt-5">
                      @php
                             $firstFourPortfolios = array_slice($portfolios, 0, 4);
                       @endphp
@@ -37,7 +40,7 @@
                                                     <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
                                                         <a class="link icon-portfolio " href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
-                                                            <i class="fa fa-link"></i>
+                                                            <i class="fa fa-link fa-link-portfolio"></i>
                                                         </a>
                                                     </figcaption>
                                                 </figure>
@@ -58,11 +61,6 @@
                         @endphp
                         <div class="container">
                             <div class="row justify-content-center">
-                                @if (empty($new))
-                                    <div class="col-12 text-center py-5">
-                                        <p>No portfolios to display</p>
-                                    </div>
-                                @else
                                     @foreach ($new as $portfolio)
                                         <div class="col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover">
                                             <div class="grid">
@@ -78,7 +76,7 @@
                                                     <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
                                                         <a class="link icon-portfolio" href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
-                                                            <i  class="fa fa-link"></i>
+                                                            <i  class="fa fa-link fa-link-portfolio"></i>
                                                         </a>
                                                     </figcaption>
                                                 </figure>
@@ -87,7 +85,7 @@
                                             <p class="">{{ $portfolio['description'] }}</p>
                                         </div>
                                     @endforeach
-                                @endif
+
                             </div>
                         </div>
                     </div>
@@ -183,7 +181,7 @@
                             <img class="" src="${url+'/'+'storage/'+portfolio.image}" alt="" style="height:100%; width:100%;">
                             <figcaption>
                                 <a class="link icon-portfolio" href="#" data-toggle="modal" data-target="#${portfolio.id}">
-                                    <i class="fa fa-link"></i>
+                                    <i class="fa fa-link fa-link-portfolio"></i>
                                 </a>
                             </figcaption>
                         </figure>
