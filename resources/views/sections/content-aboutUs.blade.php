@@ -48,7 +48,7 @@
 
       <div class="col-md-3">
 
-        <div class="card-aboutUs card-hover" style="width: 25.5rem;">
+        <div class="card-aboutUs card-hover" style="width: 25.5rem; height:75rem">
           <div class="img-cards d-flex justify-content-center align-items-center" style="text-align: center;">
             <img src="{{asset('assets/img/codificacion.svg')}}" >
           </div>
@@ -66,7 +66,7 @@
 
       <div class="col-md-3">
 
-        <div class="card-aboutUs card-hover" style="width: 25.5rem;">
+        <div class="card-aboutUs card-hover" style="width: 25.5rem; height:75rem">
           <div class="img-cards d-flex justify-content-center align-items-center">
             <img src="{{asset('assets/img/diseno-grafico.svg')}}" >
           </div>
@@ -84,7 +84,7 @@ We quickly adapt to any type of campaign or project inbound and outbound that yo
 
       <div class="col-md-3">
 
-        <div class="card-aboutUs card-hover" style="width: 25.5rem;">
+        <div class="card-aboutUs card-hover" style="width: 25.5rem; height:75rem">
 
           <div class="img-cards d-flex justify-content-center align-items-center">
             <img src="{{asset('assets/img/servicio.svg')}}" >
