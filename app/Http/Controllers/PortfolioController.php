@@ -131,7 +131,7 @@ class PortfolioController extends Controller
     public function update(Request $request, Portfolio $portfolio)
     {
 
-        $portfolio->test()->delete();
+        $portfolio->portfolioSkill()->delete();
 
          
         $portfolio->name = $request->name;

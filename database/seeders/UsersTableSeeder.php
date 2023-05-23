@@ -36,6 +36,7 @@ class UsersTableSeeder extends Seeder
             'instagram' => 'https://www.instagram.com/villartechnologies/',
             'facebook' => 'https://www.facebook.com/villartechnologies/',
             'date' =>  'https://www.linkedin.com/company/villartechnologies/',
+            'upwork' =>  'https://www.upwork.com/ag/villartechnologies/',
         ];
         
         User::insert($user);

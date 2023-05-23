@@ -1,4 +1,4 @@
-<section id="contact">
+<section id="contact" class="contact-section" style="padding:50px 0 20px 0;">
     <div class="container">
         <div class="col-12 pt-5 heading">
             <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; ">Contact Us</h2>

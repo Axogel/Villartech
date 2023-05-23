@@ -13,7 +13,7 @@ class Portfolio extends Model
     public $timestamps = true;
 
  
-    protected $filliable = [
+    protected $fillable = [
         'name',
         'description',
         'image',
@@ -27,7 +27,7 @@ class Portfolio extends Model
     }
 
 
-    public function test () {
+    public function portfolioSkill () {
 
         return $this->hasMany(PortfolioSkill::class, 'portfolio_id', 'id');
     }

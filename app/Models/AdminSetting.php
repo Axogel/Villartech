@@ -16,7 +16,8 @@ class AdminSetting extends Model
         'date',
         'facebook',
         'instagram',
-        'address'
+        'address',
+        'upwork'
     ];
     
 }

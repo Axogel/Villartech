@@ -1,10 +1,67 @@
 <style>
+.img-link-up{
+    position:relative;
+    bottom:50px;
 
+}
+.effect-portfolio figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .effect-portfolio:hover figcaption {
+        opacity: 1;
+    }
+
+    .effect-portfolio .link {
+        display: none;
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .effect-portfolio:hover .link {
+        display: block;
+    }
+.icon-portfolio{
+    background-color: #005597;
+    width:80px;
+    height:80px;
+    border-radius:1000px;
+    position:relative;
+    top:50px;
+}
+.fa-link-portfolio{
+    font-size:50px;
+    margin-top:20%;
+}
 /* Estilos para los SVG */
 .portfolio-view-item{
     background: #fff;
     width:450px; 
     height: 500px;
+}
+.div-light-bulb{
+    position:relative;
+    bottom:80px;
+    background-color:#005597;
+    border-radius: 1000px;
+    height: 150px;
+    width: 150px;
+}
+.button-skill-nav{
+    background-color: #323232 !important;
+}
+.button-skill-nav.active{
+    background-color: #005597 !important;
 }
 .mx-6{
     margin-right: 4rem!important;
@@ -69,6 +126,10 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .div-light-bulb{
+    position:relative;
+    bottom:40px;
+    }
     .navbarAjustResponsive{
         width:98%;
     }
@@ -90,6 +151,10 @@
   }
 
 @media (min-width:300px) and (max-width:992px) {
+    .div-light-bulb{
+    position:relative;
+    bottom:40px;
+    }
     .mx-6{
     margin-right: 0rem!important;
     margin-left: 0rem!important;
@@ -202,6 +267,10 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .contact-section{
+        position: relative;
+        bottom:140px;
+    }
     .responsiveAjustAbout{
         text-align: start;
     }
@@ -266,6 +335,10 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .contact-section{
+        position: relative;
+        bottom:140px;
+    }
     .responsiveAjustAbout{
         text-align: start;
     }
@@ -458,6 +531,7 @@ iframe {
 
 /* aboutUs*/ 
 
+
 .animated7{
   margin-top:5rem;
 }
@@ -484,24 +558,40 @@ iframe {
     margin-bottom: 2rem;
     }
   }
+
   
   #ourCompany-aboutUs{
     background-color:#2E2E2E;
     color:white;
-    padding-bottom:117px
+    padding-bottom:117px;
+    position: relative;
+    padding-top:13rem;
   }
   
-  
-  .container-cards{
-    background-color:#F9F9F9;
+  .logo-aboutUs{
+    width:16rem;
+    height:16rem;
+    border-radius:50%;
+    background-color:#005397;
+    position: relative;
+    margin-bottom:-6rem;
+
   }
+
+@media (max-width: 768px) {
+  .logo-aboutUs {
+    position: relative;
+    margin-top: -40px;
+    margin-right: 100px;
+  }
+}
 
   .img-cards{
   border-radius:50%;
   background-color:#005397;
-  padding: 20px;
-  height: 10rem;
-  width: 10rem;
+  padding: 60px;
+  height: 7rem;
+  width: 7rem;
   margin: 0px 60px 30px 70px;
 }
 
@@ -511,10 +601,11 @@ iframe {
 
   .card-aboutUs{
     padding-top: 40px;
-    background-color:white;
+    background-color:#F9F9F9;
     margin-top:-80px;
     margin-left:11%;
     margin-bottom:70px;
+
   }
 
 @media only screen and (max-width: 768px) {
@@ -522,85 +613,40 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-
-  }
-}
-
-.card-aboutUs:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.card-body{
-  text-align:center;
-}
-
-    /*  margin: 0 auto;
-  }
-
-@media only screen and (max-width: 768px) {
-  .card-aboutUs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-
-  }*/
-
-
-  /*margin-left: -15%;*/
-
-  /*.col-md-3 {
-    margin-top: 80px;
-    padding-top: 80px;
-    margin-left:11%;
+    margin-left:7rem;
+    margin-top:4rem;
   }
 }
 
 
-
-  .card-aboutUs{
-    padding-top: 40px;
-    background-color:white;
-    margin-top:-80px;
-    margin-left:11%;
-
-  }
+.card-hover:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
 
 
 .card-body{
   text-align:center;
 }
 
-.card-text{
-  padding:3rem;
-}
 
-.img-cards{
-  border-radius:50%;
-  background-color:#005397;
-  padding: 20px;
-  height: 10rem;
-  width: 10rem;
-  margin-left: 31%;
-}
 
-@media only screen and (max-width: 768px) {
-  .img-cards{
-    margin-left: 0px;
+.img-redirect{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  
+.img-redirect2{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+@media (max-width: 768px) {
+  .img-redirect2 {
+    margin-top: 40px;
+    padding-left: 3rem;
+    margin-bottom: 4rem;
   }
 }
-
-
-.card-aboutUs:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.btn-aboutUs{
-  background-color:#005397; !important;
-  border-radius:15%;
-  padding:20px;
-}*/
 
 </style>
 

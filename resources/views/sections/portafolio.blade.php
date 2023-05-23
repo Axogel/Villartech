@@ -1,6 +1,6 @@
-<div id="portfolio" style="position:relative; bottom:50px;"></div>
+<div id="portfolio" style="position:relative; bottom:50px; padding:0 0;">
 <section  class="portfolio portfolio-box">
-    <div class="container">
+    <div class="container" style="height:600px;">
         <div class="row">
             <div class="col-md-12 heading text-center">
                 <span class="icon-pentagon wow bounceIn"><i class="fa fa-suitcase"></i></span>
@@ -10,9 +10,11 @@
             </div>
         </div> 
         <div class="">
-            <div id="isotope" class="isotope">
+         <div class="owl-carousel owl-theme"  id="portfolio-carousel">
+
                 @foreach ($portfolios as $portafolio)
-                    <div class="col-12 col-sm-4 web-design isotope-item" style="padding: 1em">
+           
+                    <div class=" web-design item mt-5" style="padding: 1em">
                         <div class="grid">
                             <figure class="effect-oscar">
                                 @php
@@ -24,7 +26,7 @@
                                     $cad = str_replace('"', '', $cad);
                                 @endphp
                    
-                                <img src="{{ asset('/storage/' . $cad) }}" alt="">
+                                <img src="{{ asset('/storage/' . $cad) }}" alt="" style="height:220px;">
 
                                 <figcaption>
                                     <h5>{{ $portafolio->name }}</h5>
@@ -36,43 +38,15 @@
                         </div>
                     </div>
 
-                    <div class="modal" id="{{ $portafolio->id }}">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">{{ $portafolio->name }}</h4>
-                                </div>
-
-                                <div class="modal-body modal-custom">
-                                    <div class="modal-custom-body">
-                                        <img style="width:100%;" src="{{ asset('/storage/' . $cad) }}"  alt="">
-                                    </div>
-                                    <div class="modal-custom-content">
-                                        <div class="modal-custom-description">
-                                            <strong class="modal-custom-title">Description:</strong>
-                                            <p>{{ $portafolio->description }}</p>
-                                        </div>
-                                        <div class="modal-custom-skills">
-                                            <strong class="modal-custom-title">Skills:</strong>
-                                            @foreach (explode(',', $portafolio->skills) as $portfolioskill)
-                                                <span class="badge badge-secondary">{{ $portfolioskill }}</span>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                                    
-                                <div class="modal-footer">
-                                    <a href="{{ $portafolio->url }}" target="_blank" class="btn btn-info">
-                                        Ir al Sitio
-                                    </a>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 @endforeach
             </div>
+          </div>
+                    <div class="text-center" style="position:relative; bottom:70px;"><br>
+                        <a  href="{{ route ('portfolioView') }}">
+                            <button class="btn btn-primary solid blank">View All</button>
+                        </a>
+                    </div>
         </div>
     </div>
 </section>
+</div>
