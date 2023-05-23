@@ -61,6 +61,15 @@ class FrontController extends Controller
         return view('portfolioView')->with(['portfolios' => $portfolios,'skills' => $skill ,'settings' => $setting ]);
     }
 
+    public function servicesView() {
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+        
+
+        return view('services')->with(['settings' => $setting ]);
+    }
+
+
     public function welcome()
     {
 

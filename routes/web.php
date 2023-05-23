@@ -28,12 +28,14 @@ Route::get('/', [FrontController::class, 'welcome']);
 Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/services', [FrontController::class, 'servicesView'])->name('servicesView');
 Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 
