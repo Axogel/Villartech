@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Faq extends Model
 {
     use HasFactory;
+
+    protected $table = 'faqs';
+    protected $primaryKey = 'id';
+    protected $filliable  = [
+        'title',
+        'answer'
+       
+    ];
 }

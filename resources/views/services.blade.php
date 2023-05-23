@@ -8,7 +8,7 @@
     @include('sections.header-view')
     <x-header-view-dinamic :titleDinamic="'services'" />
 
-    <div class="container-fluid">
+    <div class="container-fluid no-gutters">
         <div class="row pt-5 pb-5">
 
             <div class="col-sm-6">
@@ -152,15 +152,168 @@
         </div>
 
         <!-- FAQ SECTION -->
+            
+
+        <div class="circle" id="hola-como-vas"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 116 116" class="svg"> <g id="preguntas-mas-frecuentes" transform="translate(-1 -1)"> <path id="Trazado_112" data-name="Trazado 112" d="M90.636,1H27.364A26.394,26.394,0,0,0,1,27.364V69.545A26.413,26.413,0,0,0,22.091,95.377v16.351a5.274,5.274,0,0,0,8.2,4.387L60.6,95.909H90.636A26.394,26.394,0,0,0,117,69.545V27.364A26.394,26.394,0,0,0,90.636,1ZM56.074,86.249,32.636,101.873V90.636a5.271,5.271,0,0,0-5.273-5.273A15.837,15.837,0,0,1,11.545,69.545V27.364A15.837,15.837,0,0,1,27.364,11.545H90.636a15.837,15.837,0,0,1,15.818,15.818V69.545A15.837,15.837,0,0,1,90.636,85.364H59a5.249,5.249,0,0,0-2.926.886Z" fill="#fff"/> <path id="Trazado_113" data-name="Trazado 113" d="M24.818,4A15.837,15.837,0,0,0,9,19.818a5.273,5.273,0,0,0,10.545,0,5.273,5.273,0,1,1,8.389,4.26c-5.331,3.9-8.389,9.533-8.389,15.444v1.387a5.273,5.273,0,0,0,10.545,0V39.522c0-3.443,2.552-5.826,4.076-6.944A15.818,15.818,0,0,0,24.818,4Z" transform="translate(34.182 12.818)" fill="#fff"/> <ellipse id="Elipse_22" data-name="Elipse 22" cx="5" cy="5.5" rx="5" ry="5.5" transform="translate(54 64)" fill="#fff"/> </g></svg></div>
+
 
         <div class="col-12 no-gutters" style="background-color: #2E2E2E;">
-            
-        </div>
+            <div class="container" id="container-faq">
+              <p class="faq-title pl-5 pt-5">Frequently Asked Questions (FAQ)</p>
+              @foreach ($faqs as $faq)
+                <p class="question-title pt-4">
+                  <span style="color:white; padding-right:5px;" class="question-title">{{ $faq->id }}.</span>
+                  {{ $faq->title }}
+                </p>
+                <div class="accordion-toggle">
+                  <p class="question-answer">{{ $faq->answer }}</p>
+                </div>
+                <hr style="color:white; height:3px;">
+              @endforeach
+              <br><br>
+              <br><br>
+            </div>
+                
+          </div>
 
+          <div class="col-8 mx-auto" style="background-color: #F9F9F9;" id="contact-form">
+            <div class="" id="container-contact-us">
+                <p class="title-contact pt-5">CONTACT US</p>
+                <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
+                <p class="subtitle-contact" style="font-weight: 400; font-size:15px;F">Contact Us to Discuss Your Project Requirements and Receive a Customized Solution</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="contact-form-container">
+                      <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                          <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                          <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                          <div class="form-group">
+                            <label for="number">Your Number</label>
+                            <input type="text" class="form-control" id="number" placeholder="Enter your number">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                          <div class="form-group">
+                            <label for="interest">What you are interested in</label>
+                            <input type="text" class="form-control" id="interest" placeholder="Enter your interest">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                          <div class="form-group">
+                            <label for="budget">Project Budget</label>
+                            <input type="text" class="form-control" id="budget" placeholder="Enter project budget">
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                          </div>
+                        </div>
+                        <div class="col-12 text-center">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <br>
+        </div>
+        <div class="circle" id="hola-como-vas2"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 116 116" class="svg"> <g id="preguntas-mas-frecuentes" transform="translate(-1 -1)"> <path id="Trazado_112" data-name="Trazado 112" d="M90.636,1H27.364A26.394,26.394,0,0,0,1,27.364V69.545A26.413,26.413,0,0,0,22.091,95.377v16.351a5.274,5.274,0,0,0,8.2,4.387L60.6,95.909H90.636A26.394,26.394,0,0,0,117,69.545V27.364A26.394,26.394,0,0,0,90.636,1ZM56.074,86.249,32.636,101.873V90.636a5.271,5.271,0,0,0-5.273-5.273A15.837,15.837,0,0,1,11.545,69.545V27.364A15.837,15.837,0,0,1,27.364,11.545H90.636a15.837,15.837,0,0,1,15.818,15.818V69.545A15.837,15.837,0,0,1,90.636,85.364H59a5.249,5.249,0,0,0-2.926.886Z" fill="#fff"/> <path id="Trazado_113" data-name="Trazado 113" d="M24.818,4A15.837,15.837,0,0,0,9,19.818a5.273,5.273,0,0,0,10.545,0,5.273,5.273,0,1,1,8.389,4.26c-5.331,3.9-8.389,9.533-8.389,15.444v1.387a5.273,5.273,0,0,0,10.545,0V39.522c0-3.443,2.552-5.826,4.076-6.944A15.818,15.818,0,0,0,24.818,4Z" transform="translate(34.182 12.818)" fill="#fff"/> <ellipse id="Elipse_22" data-name="Elipse 22" cx="5" cy="5.5" rx="5" ry="5.5" transform="translate(54 64)" fill="#fff"/> </g></svg></div>
+
+        <br>
+
+           
     </div>
 
 
+    <script>
+        const toggleButtons = document.querySelectorAll('.accordion-toggle');
+      
+        toggleButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            button.classList.toggle('active');
+            const answer = button.querySelector('.question-answer');
+            if (answer.style.maxHeight) {
+              answer.style.maxHeight = null;
+            } else {
+              answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+          });
+        });
+      </script>
+
     <style>
+
+
+#contact-form {
+    position: relative;
+    top:-60px;
+}
+
+
+.question-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .accordion-toggle {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .accordion-toggle::before {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid white;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-toggle.active::before {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  
+
+  #hola-como-vas {
+    position: relative;
+    left: 64%;
+    top:48px;
+  }
+
+  #hola-como-vas2 {
+    position: relative;
+    left: 64%;
+    top:-140px;
+  }
+
+  
+
         .circle {
             width: 130px;
             height: 130px;
@@ -190,6 +343,30 @@
 
         }
 
+        .faq-title {
+            	color:#FFFFFF;
+                font-size:25px;
+                font-family: 'Lato';
+                font-weight: 700;
+        }
+
+        .question-title {
+            color:#FFFFFF;
+                font-size:15px;
+                font-family: 'Lato';
+                font-weight: 600;
+        }
+
+
+        .question-answer {
+            color:#FFFFFF;
+                font-size:15px;
+                font-family: 'Lato';
+                font-weight: 300;
+        }
+
+
+
         #circulo {
             margin-right: -20%;
         }
@@ -202,6 +379,39 @@
         #text-right {
          margin-right:39%;   
         }
+
+        #container-faq {
+    padding-right: var(--bs-gutter-x,10.75rem);
+    padding-left: var(--bs-gutter-x,10.75rem);
+
+  }
+
+
+  
+       }
+
+
+       .title-contact {
+    font-family: 'Lato';
+    color: #005397;
+    font-weight: 900;
+    font-size: 30px;
+    padding-left:50px;
+}
+
+.subtitle-contact{
+    font-family: 'Lato';
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+    padding-left:50px;
+}
+  
+
+
+.container-fluid {
+        padding-right: var(--bs-gutter-x,-0.25rem);
+        padding-left: var(--bs-gutter-x,-0.25rem);
        }
     </style>
 @endsection

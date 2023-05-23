@@ -29,7 +29,7 @@
                 <a class="nav-link active text-light bold-size" aria-current="page" href="{{ route ('portfolioView') }}" >PORTFOLIO</a>
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link active text-light bold-size" aria-current="page" href="#services" >SERVICES</a>
+                <a class="nav-link active text-light bold-size" aria-current="page" href="/services" >SERVICES</a>
               </li>
               <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="#testimonial">TESTIMONIALS</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faq;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FaqController extends Controller
 {
@@ -14,7 +15,21 @@ class FaqController extends Controller
      */
     public function index()
     {
-        //
+
+        $faq = Faq::latest()->paginate(5);
+
+
+ 
+        if(session('success_message')) {
+
+            Alert::success('Congratulations!', session('success_message'));
+        }
+
+        $title = 'Delete FAQ!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
+        return view ('faqs.index', $faq)->with('faqs', $faq);
     }
 
     /**
@@ -24,7 +39,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        return view('faqs.create');
     }
 
     /**
@@ -35,7 +50,14 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $faq = New Faq;
+        $faq->title = $request->title;
+        $faq->answer = $request->answer;
+        $faq->save();
+
+        return redirect()->route('faqs.index')->withSuccessMessage('FAQ have been created', 'FAQ have been created');
+
     }
 
     /**
@@ -57,7 +79,9 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
-        //
+        $faq = Faq::find($faq)[0];
+        //dd($faq);
+        return view('faqs.edit', compact('faq'));
     }
 
     /**
@@ -69,7 +93,11 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        //
+        $faq->title = $request->title;
+        $faq->answer = $request->answer;
+        $faq->save();
+
+        return redirect()->route('faqs.index')->withSuccessMessage('FAQ have been updated', 'updated');
     }
 
     /**
@@ -80,6 +108,9 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
-        //
+      $faq = Faq::find($faq)[0];
+      $faq->delete();
+      return redirect()->route('faqs.index')->withSuccessMessage('FAQ have been deleted', 'FAQ have been deleted');
+      
     }
 }

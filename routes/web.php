@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController};
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController};
 
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -103,6 +103,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/editEmployeeSkill/{skill}/', 'App\Http\Controllers\TeamUserController@editSkills')->name('teams-language.edit');
 	Route::put('/updateEmployeeSkill/{id}/', 'App\Http\Controllers\TeamUserController@updateSkills')->name('teams-language.update');
 	Route::delete('/deleteEmployeeSkill/{skill}/', 'App\Http\Controllers\TeamUserController@destroySkills')->name('teams-language.destroy');
+
+	/* FAQS CRUD*/
+
+	Route::resource('faqs', FaqController::class);
 
 
 
