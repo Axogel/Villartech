@@ -1,6 +1,6 @@
-<div id="portfolio" style="position:relative; bottom:50px;"></div>
+<div id="portfolio" style="position:relative; bottom:50px; padding:0 0;">
 <section  class="portfolio portfolio-box">
-    <div class="container">
+    <div class="container" style="height:600px;">
         <div class="row">
             <div class="col-md-12 heading text-center">
                 <span class="icon-pentagon wow bounceIn"><i class="fa fa-suitcase"></i></span>
@@ -41,6 +41,12 @@
                 @endforeach
             </div>
           </div>
+                    <div class="text-center" style="position:relative; bottom:70px;"><br>
+                        <a  href="{{ route ('portfolioView') }}">
+                            <button class="btn btn-primary solid blank">View All</button>
+                        </a>
+                    </div>
         </div>
     </div>
 </section>
+</div>
