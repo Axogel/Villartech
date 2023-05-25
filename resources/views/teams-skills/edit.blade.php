@@ -15,7 +15,7 @@
     </div>
     <div class="row mt-5" style="display:grid; padding-top:80px; width:80%; margin-left:125px;">
         {!! Form::open([
-            'route' => ['teams-skills.update', ['id' => $teamEducation->id]],
+            'route' => ['teams-skills.update', ['id' => $teamEducation->education_id]],
             'method' => 'PUT',
             'files' => true,
         ]) !!}

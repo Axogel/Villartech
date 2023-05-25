@@ -226,7 +226,7 @@
         margin-left: 0.5rem!important;
     }
     .section-links-portfolio{
-        height:600px;
+        height:650px;
     }
     .img-link-up {
     position: relative;
@@ -247,7 +247,7 @@
     }
     .div-light-bulb{
     position:relative;
-    bottom:580px;
+    bottom:610px;
     }
     .mx-6{
     margin-right: 0rem!important;
@@ -542,12 +542,20 @@ iframe {
 .nav-margin-responsive{
     margin-top: 60px;
 }
-.img-responsive{
+.img-responsive-nav {
     width: 23%;
-    top: 15px;
+    top: 21px;
     position: fixed;
     padding-left: 25px;
-    left: 72%;
+    left: 70%;
+    display: block;
+}
+.img-responsive{
+    width: 5.5%;
+    top: 25px;
+    position: fixed;
+    padding-left: 25px;
+    left: 17%;
     display: block;
 }
 .pe-sm-4{

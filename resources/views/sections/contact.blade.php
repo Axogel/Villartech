@@ -5,7 +5,7 @@
         </div>
         <div class="row">
             <div class="col-md-7">
-                <form id="contact-form" action="/sendemail" method="post" role="form">
+                <form id="contact-form" action="{{route('enviar')}}" method="post" role="form">
                     <input type="hidden" name="_method" value="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     @foreach (['danger', 'warning', 'success', 'info'] as $key)

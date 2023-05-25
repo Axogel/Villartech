@@ -13,6 +13,8 @@ use App\Models\TeamEducation;
 use App\Models\TeamExperience;
 use App\Models\TeamSkill;
 use App\Models\Skill;
+use App\Models\Faq;
+
 
 
 
@@ -62,6 +64,17 @@ class FrontController extends Controller
         return view('portfolioView')->with(['portfolios' => $portfolios,'skills' => $skill ,'settings' => $setting ]);
     }
 
+    public function servicesView() {
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+
+        $faq = Faq::select('id', 'title', 'answer')->get(); 
+        
+
+        return view('services')->with(['settings' => $setting, 'faqs' => $faq ]);
+    }
+
+
     public function welcome()
     {
 
@@ -93,6 +106,8 @@ class FrontController extends Controller
                               ->leftJoin('team_users', 'team_users.id', 'team_skills.developer_id')
                               ->get();
 
+         $faq = Faq::select('id', 'title', 'answer')->get();                     
+
 
         /*$i=0; 
          foreach ($portfolio as $portafolio) {
@@ -108,7 +123,7 @@ class FrontController extends Controller
           }*/
         //  dd($portfolios);
 
-        return view('landing')->with(['portfolios' => $portfolios, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill]);
+        return view('landing')->with(['portfolios' => $portfolios, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill, 'faqs' => $faq]);
 
     }
 

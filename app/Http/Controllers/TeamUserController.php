@@ -252,7 +252,6 @@ class TeamUserController extends Controller
         public function editEducation($id)
         {
             $teamEducation = TeamEducation::find($id);
-            // dd($teamUser);
             return view('teams-skills.edit',compact('teamEducation'));
         }
     
