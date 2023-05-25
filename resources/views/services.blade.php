@@ -11,14 +11,14 @@
     <div class="container-fluid no-gutters">
         <div class="row pt-5 pb-5">
 
-            <div class="col-sm-6">
+            <div class="col-sm-6" id="left-div">
 
                     <div class="row">
 
 
                         <div class="col" id="text">
                                 <p class="title" id="web-design">Web design</p>
-                                <p class="subtitle">We adapt and create your web site to any type of screen, through the developing and usage of the latest trends, in order to always improve the user´s experience.</p>
+                                <p class="subtitle">We adapt and create your web site to any type of screen, through the developing and usage of the latest trends.</p>
        
                         </div>
 
@@ -37,7 +37,7 @@
 
                         <div class="col" id="text">
                                 <p class="title" id="ecommerce">Ecommerce websites</p>
-                                <p class="subtitle">Creation of websites dedicated to the ecommerce service of selling and buying process of different products, articles and services.</p>
+                                <p class="subtitle">Creation of websites dedicated to the ecommerce service of selling and buying process of different products and services.</p>
        
                         </div>
 
@@ -154,21 +154,21 @@
         <!-- FAQ SECTION -->
             
 
-        <div class="circle" id="hola-como-vas"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 116 116" class="svg"> <g id="preguntas-mas-frecuentes" transform="translate(-1 -1)"> <path id="Trazado_112" data-name="Trazado 112" d="M90.636,1H27.364A26.394,26.394,0,0,0,1,27.364V69.545A26.413,26.413,0,0,0,22.091,95.377v16.351a5.274,5.274,0,0,0,8.2,4.387L60.6,95.909H90.636A26.394,26.394,0,0,0,117,69.545V27.364A26.394,26.394,0,0,0,90.636,1ZM56.074,86.249,32.636,101.873V90.636a5.271,5.271,0,0,0-5.273-5.273A15.837,15.837,0,0,1,11.545,69.545V27.364A15.837,15.837,0,0,1,27.364,11.545H90.636a15.837,15.837,0,0,1,15.818,15.818V69.545A15.837,15.837,0,0,1,90.636,85.364H59a5.249,5.249,0,0,0-2.926.886Z" fill="#fff"/> <path id="Trazado_113" data-name="Trazado 113" d="M24.818,4A15.837,15.837,0,0,0,9,19.818a5.273,5.273,0,0,0,10.545,0,5.273,5.273,0,1,1,8.389,4.26c-5.331,3.9-8.389,9.533-8.389,15.444v1.387a5.273,5.273,0,0,0,10.545,0V39.522c0-3.443,2.552-5.826,4.076-6.944A15.818,15.818,0,0,0,24.818,4Z" transform="translate(34.182 12.818)" fill="#fff"/> <ellipse id="Elipse_22" data-name="Elipse 22" cx="5" cy="5.5" rx="5" ry="5.5" transform="translate(54 64)" fill="#fff"/> </g></svg></div>
+        <div class="circle" id="hola-como-vas"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 116 116" class="svg" id="svg-faq"> <g id="preguntas-mas-frecuentes" transform="translate(-1 -1)"> <path id="Trazado_112" data-name="Trazado 112" d="M90.636,1H27.364A26.394,26.394,0,0,0,1,27.364V69.545A26.413,26.413,0,0,0,22.091,95.377v16.351a5.274,5.274,0,0,0,8.2,4.387L60.6,95.909H90.636A26.394,26.394,0,0,0,117,69.545V27.364A26.394,26.394,0,0,0,90.636,1ZM56.074,86.249,32.636,101.873V90.636a5.271,5.271,0,0,0-5.273-5.273A15.837,15.837,0,0,1,11.545,69.545V27.364A15.837,15.837,0,0,1,27.364,11.545H90.636a15.837,15.837,0,0,1,15.818,15.818V69.545A15.837,15.837,0,0,1,90.636,85.364H59a5.249,5.249,0,0,0-2.926.886Z" fill="#fff"/> <path id="Trazado_113" data-name="Trazado 113" d="M24.818,4A15.837,15.837,0,0,0,9,19.818a5.273,5.273,0,0,0,10.545,0,5.273,5.273,0,1,1,8.389,4.26c-5.331,3.9-8.389,9.533-8.389,15.444v1.387a5.273,5.273,0,0,0,10.545,0V39.522c0-3.443,2.552-5.826,4.076-6.944A15.818,15.818,0,0,0,24.818,4Z" transform="translate(34.182 12.818)" fill="#fff"/> <ellipse id="Elipse_22" data-name="Elipse 22" cx="5" cy="5.5" rx="5" ry="5.5" transform="translate(54 64)" fill="#fff"/> </g></svg></div>
 
 
         <div class="col-12 no-gutters" style="background-color: #2E2E2E;">
             <div class="container" id="container-faq">
-              <p class="faq-title pl-5 pt-5">Frequently Asked Questions (FAQ)</p>
+              <p class="faq-title pl-5">Frequently Asked Questions (FAQ)</p>
               @foreach ($faqs as $faq)
-                <p class="question-title pt-4">
+                <p class="question-title pt-5">
                   <span style="color:white; padding-right:5px;" class="question-title">{{ $faq->id }}.</span>
                   {{ $faq->title }}
                 </p>
                 <div class="accordion-toggle">
                   <p class="question-answer">{{ $faq->answer }}</p>
                 </div>
-                <hr style="color:white; height:3px;">
+                <hr style="color:white; height:0.5px; opacity:1.25;">
               @endforeach
               <br><br>
               <br><br>
@@ -180,18 +180,19 @@
             <input type="hidden" name="_method" value="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-          <div class="col-6 mx-auto" style="background-color: #F9F9F9;" id="contact-form">
+          <div class="col-10 mx-auto" style="background-color: #F9F9F9;" id="contact-form">
             <div class="" id="container-contact-us">
-                <p class="title-contact pt-5">CONTACT US</p>
-                <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
-                <p class="subtitle-contact" style="font-weight: 400; font-size:15px;F">Contact Us to Discuss Your Project Requirements and Receive a Customized Solution</p>
+                <p class="title-contact pt-5" style="font-size: 25px;">CONTACT US</p>
+                <p class="subtitle-contact" style="font-size: 25px;">Get in Touch for Exceptional Service</p>
+                <p class="subtitle-contact" style="font-weight: 400; font-size:17px;">Contact Us to Discuss Your Project Requirements and Receive a Customized Solution</p>
             </div>
                 
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="contact-form-container">
-                          <div class="row">
+                          <div class="row" style="    margin-right: calc(var(--bs-gutter-x) * 0.5);
+                          margin-left: calc(var(--bs-gutter-x) * 0.5);">
                             <div class="col-lg-4 col-md-6">
                               <div class="form-group">
                                 <label for="name" class="form-title-contact">Your Name</label>
@@ -228,8 +229,8 @@
                                 <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
                               </div>
                             </div>
-                            <div class="col-12 text-center">
-                              <button type="submit" class="btn btn-primary" href="/enviar-correo">Submit</button>
+                            <div class="col-12" style="padding-left:25px;">
+                              <button type="submit" class="btn btn-primary" href="/enviar-correo">Just Send</button>
                             </div>
                           </div>
                         </div>
@@ -242,7 +243,7 @@
               <br>
               <br>
         </div>
-        <div class="circle" id="hola-como-vas2"><svg xmlns="http://www.w3.org/2000/svg" class="svg" width="139.44" height="109.53" viewBox="0 0 139.44 109.53" style="padding-left:0px; padding-right:7px; padding-top:28px;"> <g id="layer1" transform="translate(-0.529 760.01)"> <path id="path1983" d="M20.459-760.01A19.971,19.971,0,0,0,.529-740.119v29.89A20,20,0,0,0,20.459-690.3v14.96a4.982,4.982,0,0,0,3.086,4.566,4.982,4.982,0,0,0,5.405-1.075L47.4-690.3H80.229a19.97,19.97,0,0,0,19.891-19.929v-29.89A19.938,19.938,0,0,0,80.229-760.01Zm0,9.969h59.77a9.807,9.807,0,0,1,9.97,9.922v29.89a9.839,9.839,0,0,1-9.97,9.959H45.349a4.982,4.982,0,0,0-3.5,1.469L30.419-687.363v-7.907a4.98,4.98,0,0,0-4.961-5h-5a9.83,9.83,0,0,1-9.96-9.959v-29.89a9.8,9.8,0,0,1,9.96-9.922Zm84.66,9.922v9.959h14.93a9.839,9.839,0,0,1,9.96,9.969v29.89a9.832,9.832,0,0,1-9.96,9.961h-4.97a4.978,4.978,0,0,0-3.54,1.458,4.979,4.979,0,0,0-1.459,3.541v7.867l-11.39-11.4a4.982,4.982,0,0,0-3.531-1.467H60.309a9.807,9.807,0,0,1-8.618-4.961H49.464l-5.816,5.817a19.93,19.93,0,0,0,16.662,9.1H93.1l18.461,18.452a4.981,4.981,0,0,0,5.419,1.068,4.98,4.98,0,0,0,3.073-4.589V-670.38a19.986,19.986,0,0,0,19.92-19.92v-29.89a20,20,0,0,0-19.92-19.929Z" transform="translate(0 0)" fill="#fff"/> </g></svg></div>
+        <div class="circle" id="hola-como-vas2"><svg xmlns="http://www.w3.org/2000/svg" class="svg" width="100%" height="100%" viewBox="0 0 150 130" style="padding-left:21px; padding-right:0px; padding-top:28px;" id="svg-contact"> <g id="layer1" transform="translate(-0.529 760.01)"> <path id="path1983" d="M20.459-760.01A19.971,19.971,0,0,0,.529-740.119v29.89A20,20,0,0,0,20.459-690.3v14.96a4.982,4.982,0,0,0,3.086,4.566,4.982,4.982,0,0,0,5.405-1.075L47.4-690.3H80.229a19.97,19.97,0,0,0,19.891-19.929v-29.89A19.938,19.938,0,0,0,80.229-760.01Zm0,9.969h59.77a9.807,9.807,0,0,1,9.97,9.922v29.89a9.839,9.839,0,0,1-9.97,9.959H45.349a4.982,4.982,0,0,0-3.5,1.469L30.419-687.363v-7.907a4.98,4.98,0,0,0-4.961-5h-5a9.83,9.83,0,0,1-9.96-9.959v-29.89a9.8,9.8,0,0,1,9.96-9.922Zm84.66,9.922v9.959h14.93a9.839,9.839,0,0,1,9.96,9.969v29.89a9.832,9.832,0,0,1-9.96,9.961h-4.97a4.978,4.978,0,0,0-3.54,1.458,4.979,4.979,0,0,0-1.459,3.541v7.867l-11.39-11.4a4.982,4.982,0,0,0-3.531-1.467H60.309a9.807,9.807,0,0,1-8.618-4.961H49.464l-5.816,5.817a19.93,19.93,0,0,0,16.662,9.1H93.1l18.461,18.452a4.981,4.981,0,0,0,5.419,1.068,4.98,4.98,0,0,0,3.073-4.589V-670.38a19.986,19.986,0,0,0,19.92-19.92v-29.89a20,20,0,0,0-19.92-19.929Z" transform="translate(0 0)" fill="#fff"/> </g></svg></div>
 
         <br>
 
@@ -271,14 +272,14 @@
 
 #contact-form {
     position: relative;
-    top:-60px;
+    top:-30px;
 }
 
 
 
 .form-title-contact {
   font-family: 'Lato';
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 900 !important;
 }
 
@@ -325,7 +326,7 @@
 
   #hola-como-vas2 {
     position: relative;
-    left: 64%;
+    left: 59%;
     top:-140px;
   }
 
@@ -350,7 +351,7 @@
             font-weight: 900;
 	          border-left: 0px solid #e7e7e7;
 
-            font-size: 19px;
+            font-size: 25px;
             display: inline-block;
         }
 
@@ -358,8 +359,9 @@
             color: #000000;
             font-family: 'Lato';
             font-weight: 400;
-            font-size: 14px;
-            text-align: justify
+            font-size: 18px;
+            text-align: justify;
+            line-height: 25px;
 
         }
 
@@ -368,11 +370,12 @@
                 font-size:25px;
                 font-family: 'Lato';
                 font-weight: 700;
+                padding-top:40px;
         }
 
         .question-title {
             color:#FFFFFF;
-                font-size:15px;
+                font-size:18px;
                 font-family: 'Lato';
                 font-weight: 600;
         }
@@ -380,7 +383,7 @@
 
         .question-answer {
             color:#FFFFFF;
-                font-size:15px;
+                font-size:18px;
                 font-family: 'Lato';
                 font-weight: 300;
         }
@@ -400,6 +403,18 @@
          margin-right:39%;   
         }
 
+        #left-div {
+          padding-right:30px;
+        }
+
+        .faq-title {
+            	color:#FFFFFF;
+                font-size:25px;
+                font-family: 'Lato';
+                font-weight: 700;
+                padding-top:10rem;
+        }
+
         #container-faq {
     padding-right: var(--bs-gutter-x,10.75rem);
     padding-left: var(--bs-gutter-x,10.75rem);
@@ -407,16 +422,16 @@
                        }
 
         #web-design {
-          padding-left: 178px;
+          padding-left: 146px;
         }
   
 
         #ecommerce {
-          padding-left:100px;
+          padding-left:42px;
         }
 
         #consulation {
-          padding-left: 168px;
+          padding-left: 134px;
         }
 
         #app-dev {
@@ -430,6 +445,30 @@
         #designfor{
           padding-left:0px;
         }
+
+
+      #hola-como-vas {
+      position: relative;
+      left: 64%;
+      top:107px;
+      width: 211px;
+      height: 211px;
+    }
+
+    #hola-como-vas2 {
+      position: relative;
+      left: 70%;
+      top:-140px;
+      width: 211px;
+      height: 211px;
+    }
+
+
+    #svg-faq {
+      width: 87%;
+    height: 89%;
+    }
+
 
        }
 
