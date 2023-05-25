@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController};
-
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController};
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -22,10 +21,12 @@ use App\Models;
 */
 
 
+Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
 
 
 Route::get('/', [FrontController::class, 'welcome']);
 Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
+
 
 
 Auth::routes();
@@ -34,7 +35,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
+Route::get('/services', [FrontController::class, 'servicesView'])->name('servicesView');
+Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
 
@@ -101,6 +103,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/editEmployeeSkill/{skill}/', 'App\Http\Controllers\TeamUserController@editSkills')->name('teams-language.edit');
 	Route::put('/updateEmployeeSkill/{id}/', 'App\Http\Controllers\TeamUserController@updateSkills')->name('teams-language.update');
 	Route::delete('/deleteEmployeeSkill/{skill}/', 'App\Http\Controllers\TeamUserController@destroySkills')->name('teams-language.destroy');
+
+	/* FAQS CRUD*/
+
+	Route::resource('faqs', FaqController::class);
 
 
 

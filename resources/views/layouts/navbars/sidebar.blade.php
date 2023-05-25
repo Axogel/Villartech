@@ -192,6 +192,17 @@ $setting = DB::select('select * from admin_settings');
                 </li>
             </ul>
 
+
+
+            <ul class="nav nav-sm flex-column img-zoom">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('faqs.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-question" style="color: #ffffff;"></i> Faqs</p>
+                    </a>
+                </li>
+            </ul>
+
                
         </div>
     </div>
