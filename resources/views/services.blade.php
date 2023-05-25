@@ -17,7 +17,7 @@
 
 
                         <div class="col" id="text">
-                                <p class="title">Web design</p>
+                                <p class="title" id="web-design">Web design</p>
                                 <p class="subtitle">We adapt and create your web site to any type of screen, through the developing and usage of the latest trends, in order to always improve the user´s experience.</p>
        
                         </div>
@@ -36,7 +36,7 @@
 
 
                         <div class="col" id="text">
-                                <p class="title">Ecommerce websites</p>
+                                <p class="title" id="ecommerce">Ecommerce websites</p>
                                 <p class="subtitle">Creation of websites dedicated to the ecommerce service of selling and buying process of different products, articles and services.</p>
        
                         </div>
@@ -57,7 +57,7 @@
 
 
                         <div class="col" id="text">
-                                <p class="title">Consultation</p>
+                                <p class="title" id="consulation">Consultation</p>
                                 <p class="subtitle">As per the projects on develop, we provide uninterrupted user and customer support to assure the accurate and the effective assistance of the job.</p>
        
                         </div>
@@ -92,7 +92,7 @@
                         </div>
 
                         <div class="col" id="text-right">
-                                <p class="title">Apps development</p>
+                                <p class="title" id="app-dev">Apps development</p>
                                 <p class="subtitle">We are your solution and your best option for the design and development of apps in the android and ios platform.</p>
        
                         </div>
@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="col" id="text-right">
-                                <p class="title">SEO service</p>
+                                <p class="title" id="seo">SEO service</p>
                                 <p class="subtitle">Guarantee of seo positioning websites through a search engine optimization.</p>
        
                         </div>
@@ -136,7 +136,7 @@
                         </div>
 
                         <div class="col" id="text-right">
-                                <p class="title">Design for startups</p>
+                                <p class="title" id="designfor">Design for startups</p>
                                 <p class="subtitle">We design beautiful modern engaging websites that always latest responsive technologies.</p>
        
                         </div>
@@ -176,67 +176,73 @@
                 
           </div>
 
-          <div class="col-8 mx-auto" style="background-color: #F9F9F9;" id="contact-form">
+          <form form id="contact-form" action="{{route('enviar')}}" method="post" role="form">
+            <input type="hidden" name="_method" value="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+          <div class="col-6 mx-auto" style="background-color: #F9F9F9;" id="contact-form">
             <div class="" id="container-contact-us">
                 <p class="title-contact pt-5">CONTACT US</p>
                 <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
                 <p class="subtitle-contact" style="font-weight: 400; font-size:15px;F">Contact Us to Discuss Your Project Requirements and Receive a Customized Solution</p>
             </div>
-            <div class="container">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="contact-form-container">
-                      <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                          <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="contact-form-container">
+                          <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                              <div class="form-group">
+                                <label for="name" class="form-title-contact">Your Name</label>
+                                <input type="text" class="form-control" id="name"  name="name" placeholder="Enter your name">
+                              </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                              <div class="form-group">
+                                <label for="email" class="form-title-contact" >Your Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                              </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                              <div class="form-group">
+                                <label for="number" class="form-title-contact">Your Number</label>
+                                <input type="text" class="form-control" id="number" placeholder="Enter your number" name="number"> 
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <div class="form-group">
+                                <label for="interest" class="form-title-contact">What you are interested in</label>
+                                <input type="text" class="form-control" id="interest" placeholder="Enter your interest" name="interest">
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <div class="form-group">
+                                <label for="budget" class="form-title-contact">Project Budget</label>
+                                <input type="text" class="form-control" id="budget" placeholder="Enter project budget" name="budget" >
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-group">
+                                <label for="message" class="form-title-contact">Message</label>
+                                <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-12 text-center">
+                              <button type="submit" class="btn btn-primary" href="/enviar-correo">Submit</button>
+                            </div>
                           </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="form-group">
-                            <label for="number">Your Number</label>
-                            <input type="text" class="form-control" id="number" placeholder="Enter your number">
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                          <div class="form-group">
-                            <label for="interest">What you are interested in</label>
-                            <input type="text" class="form-control" id="interest" placeholder="Enter your interest">
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                          <div class="form-group">
-                            <label for="budget">Project Budget</label>
-                            <input type="text" class="form-control" id="budget" placeholder="Enter project budget">
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
-                          </div>
-                        </div>
-                        <div class="col-12 text-center">
-                          <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </form>
               <br>
               <br>
               <br>
               <br>
         </div>
-        <div class="circle" id="hola-como-vas2"><svg xmlns="http://www.w3.org/2000/svg" class="svg" width="139.44" height="109.53" viewBox="0 0 139.44 109.53" style="padding-left:0px;"> <g id="layer1" transform="translate(-0.529 760.01)"> <path id="path1983" d="M20.459-760.01A19.971,19.971,0,0,0,.529-740.119v29.89A20,20,0,0,0,20.459-690.3v14.96a4.982,4.982,0,0,0,3.086,4.566,4.982,4.982,0,0,0,5.405-1.075L47.4-690.3H80.229a19.97,19.97,0,0,0,19.891-19.929v-29.89A19.938,19.938,0,0,0,80.229-760.01Zm0,9.969h59.77a9.807,9.807,0,0,1,9.97,9.922v29.89a9.839,9.839,0,0,1-9.97,9.959H45.349a4.982,4.982,0,0,0-3.5,1.469L30.419-687.363v-7.907a4.98,4.98,0,0,0-4.961-5h-5a9.83,9.83,0,0,1-9.96-9.959v-29.89a9.8,9.8,0,0,1,9.96-9.922Zm84.66,9.922v9.959h14.93a9.839,9.839,0,0,1,9.96,9.969v29.89a9.832,9.832,0,0,1-9.96,9.961h-4.97a4.978,4.978,0,0,0-3.54,1.458,4.979,4.979,0,0,0-1.459,3.541v7.867l-11.39-11.4a4.982,4.982,0,0,0-3.531-1.467H60.309a9.807,9.807,0,0,1-8.618-4.961H49.464l-5.816,5.817a19.93,19.93,0,0,0,16.662,9.1H93.1l18.461,18.452a4.981,4.981,0,0,0,5.419,1.068,4.98,4.98,0,0,0,3.073-4.589V-670.38a19.986,19.986,0,0,0,19.92-19.92v-29.89a20,20,0,0,0-19.92-19.929Z" transform="translate(0 0)" fill="#fff"/> </g></svg></div>
+        <div class="circle" id="hola-como-vas2"><svg xmlns="http://www.w3.org/2000/svg" class="svg" width="139.44" height="109.53" viewBox="0 0 139.44 109.53" style="padding-left:0px; padding-right:7px; padding-top:28px;"> <g id="layer1" transform="translate(-0.529 760.01)"> <path id="path1983" d="M20.459-760.01A19.971,19.971,0,0,0,.529-740.119v29.89A20,20,0,0,0,20.459-690.3v14.96a4.982,4.982,0,0,0,3.086,4.566,4.982,4.982,0,0,0,5.405-1.075L47.4-690.3H80.229a19.97,19.97,0,0,0,19.891-19.929v-29.89A19.938,19.938,0,0,0,80.229-760.01Zm0,9.969h59.77a9.807,9.807,0,0,1,9.97,9.922v29.89a9.839,9.839,0,0,1-9.97,9.959H45.349a4.982,4.982,0,0,0-3.5,1.469L30.419-687.363v-7.907a4.98,4.98,0,0,0-4.961-5h-5a9.83,9.83,0,0,1-9.96-9.959v-29.89a9.8,9.8,0,0,1,9.96-9.922Zm84.66,9.922v9.959h14.93a9.839,9.839,0,0,1,9.96,9.969v29.89a9.832,9.832,0,0,1-9.96,9.961h-4.97a4.978,4.978,0,0,0-3.54,1.458,4.979,4.979,0,0,0-1.459,3.541v7.867l-11.39-11.4a4.982,4.982,0,0,0-3.531-1.467H60.309a9.807,9.807,0,0,1-8.618-4.961H49.464l-5.816,5.817a19.93,19.93,0,0,0,16.662,9.1H93.1l18.461,18.452a4.981,4.981,0,0,0,5.419,1.068,4.98,4.98,0,0,0,3.073-4.589V-670.38a19.986,19.986,0,0,0,19.92-19.92v-29.89a20,20,0,0,0-19.92-19.929Z" transform="translate(0 0)" fill="#fff"/> </g></svg></div>
 
         <br>
 
@@ -267,6 +273,17 @@
     position: relative;
     top:-60px;
 }
+
+
+
+.form-title-contact {
+  font-family: 'Lato';
+    font-size: 13px;
+    font-weight: 900 !important;
+}
+
+
+
 
 
 .question-answer {
@@ -331,6 +348,8 @@
             color:#000000;
             font-family: 'Lato';
             font-weight: 900;
+	          border-left: 0px solid #e7e7e7;
+
             font-size: 19px;
             display: inline-block;
         }
@@ -340,6 +359,7 @@
             font-family: 'Lato';
             font-weight: 400;
             font-size: 14px;
+            text-align: justify
 
         }
 
@@ -384,10 +404,33 @@
     padding-right: var(--bs-gutter-x,10.75rem);
     padding-left: var(--bs-gutter-x,10.75rem);
 
-  }
+                       }
 
-
+        #web-design {
+          padding-left: 178px;
+        }
   
+
+        #ecommerce {
+          padding-left:100px;
+        }
+
+        #consulation {
+          padding-left: 168px;
+        }
+
+        #app-dev {
+          padding-left: 0px;
+        }
+
+        #seo {
+          padding-left:0px;
+        }
+
+        #designfor{
+          padding-left:0px;
+        }
+
        }
 
 
@@ -414,6 +457,8 @@
         padding-left: var(--bs-gutter-x,-0.25rem);
        }
     </style>
+
+
 @endsection
 
 @section('scripts')

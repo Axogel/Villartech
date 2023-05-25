@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController};
-
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController};
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -22,6 +21,7 @@ use App\Models;
 */
 
 
+Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
 
 
 Route::get('/', [FrontController::class, 'welcome']);
