@@ -30,14 +30,9 @@
               <li class="nav-item  ps-5 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('portfolioView') }}" >PORTFOLIO</a>
               </li>
-<<<<<<< HEAD
               <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="/services" >SERVICES</a>
-=======
-              <li class="nav-item ps-5 pe-2">
-                <a class="nav-link active text-light bold-size" aria-current="page" href="/services" >SERVICES</a>
 
->>>>>>> bde3ce543fd81abdfcdbe2f9fe87f67b9d8eb3b4
               </li>
               <li class="nav-item  ps-5 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="#testimonial">TESTIMONIALS</a>
