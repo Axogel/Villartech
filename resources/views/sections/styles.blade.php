@@ -1,4 +1,24 @@
 <style>
+    .button-contactUs{
+        font-size: 14px; 
+        text-align: center; 
+        background-color: #045197; 
+        border-radius: 8px; 
+        width: 150px
+    }
+    .section-links-portfolio{
+        height:320px;
+    }
+    .margin-ul-portfolio{
+        margin-right: 13rem!important;
+        margin-left: 13rem!important;
+    }
+    .margin-section-portfolio{
+        margin-bottom:12rem;
+    }
+.padding-dinamic-show{
+    padding-right:13rem;
+}
 .img-link-up{
     position:relative;
     bottom:50px;
@@ -47,15 +67,15 @@
 .portfolio-view-item{
     background: #fff;
     width:450px; 
-    height: 500px;
+    height: 425px;
 }
 .div-light-bulb{
     position:relative;
-    bottom:80px;
+    bottom:120px;
     background-color:#005597;
     border-radius: 1000px;
-    height: 150px;
-    width: 150px;
+    height: 210px;
+    width: 210px;
 }
 .button-skill-nav{
     background-color: #323232 !important;
@@ -126,9 +146,46 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+
+    .button-navbar-responsive{
+        width:700px;
+    }
+    .div-navbarBlack{
+        height:60px;
+        background:#323232;
+        width:100%;
+    }
+    .button-contactUs{
+        padding:15px 0;
+        background:#323232;
+    }
+    .margin-ul-portfolio{
+        margin-right: 0.5rem!important;
+        margin-left: 0.5rem!important;
+    }
+    .section-links-portfolio{
+        height:450px;
+    }
+    .img-link-up {
+    position: relative;
+    bottom: 0;
+    left: 10%;
+    }
+    .margin-section-portfolio{
+        margin-bottom:18rem;
+    }
+    .padding-dinamic-show{
+        padding-right:0.5rem;
+    }
+    .margin-portfolio-section{
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top: 10rem;
+        margin-bottom: 3rem;
+    }
     .div-light-bulb{
     position:relative;
-    bottom:40px;
+   bottom:0;
     }
     .navbarAjustResponsive{
         width:98%;
@@ -150,10 +207,47 @@
     }
   }
 
-@media (min-width:300px) and (max-width:992px) {
+@media (min-width:300px) and (max-width:768px) {
+
+    .button-navbar-responsive{
+        width:700px;
+    }
+    .div-navbarBlack{
+        height:60px;
+        background:#323232;
+        width:100%;
+    }
+    .button-contactUs{
+        padding:15px 0;
+        background:#323232;
+    }
+    .margin-ul-portfolio{
+        margin-right: 0.5rem!important;
+        margin-left: 0.5rem!important;
+    }
+    .section-links-portfolio{
+        height:650px;
+    }
+    .img-link-up {
+    position: relative;
+    bottom: 250px;
+    left: 25%;
+    }
+    .margin-section-portfolio{
+        margin-bottom:18rem;
+    }
+    .padding-dinamic-show{
+    padding-right:0.5rem;
+    }
+    .margin-portfolio-section{
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-top: 10rem;
+        margin-bottom: 3rem;
+    }
     .div-light-bulb{
     position:relative;
-    bottom:40px;
+    bottom:610px;
     }
     .mx-6{
     margin-right: 0rem!important;
@@ -267,6 +361,25 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .displayNoneDesktop{
+        display:none;
+    }
+    .img-link-up2{
+        position: relative;
+        left:10%;
+        bottom:70px;
+    }
+    .img-link-up1{
+        position: relative;
+        left:50%;
+        bottom:150px;
+    }
+    .margin-portfolio-section{
+        margin-left: 3rem;
+        margin-right: 19rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
     .contact-section{
         position: relative;
         bottom:140px;
@@ -335,6 +448,25 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .displayNoneDesktop{
+        display:none;
+    }
+    .img-link-up2{
+        position: relative;
+        left:10%;
+        bottom:70px;
+    }
+    .img-link-up1{
+        position: relative;
+        left:50%;
+        bottom:150px;
+    }
+    .margin-portfolio-section{
+        margin-left: 3rem;
+        margin-right: 19rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
     .contact-section{
         position: relative;
         bottom:140px;
@@ -410,13 +542,21 @@ iframe {
 .nav-margin-responsive{
     margin-top: 60px;
 }
-.img-responsive{
-    width: 30%;
-    top: -9px;
+.img-responsive-nav {
+    width: 23%;
+    top: 21px;
     position: fixed;
-    padding-left: 25px; 
-    left: 33%;
-    display: none;
+    padding-left: 25px;
+    left: 70%;
+    display: block;
+}
+.img-responsive{
+    width: 5.5%;
+    top: 25px;
+    position: fixed;
+    padding-left: 25px;
+    left: 17%;
+    display: block;
 }
 .pe-sm-4{
     position: relative;
