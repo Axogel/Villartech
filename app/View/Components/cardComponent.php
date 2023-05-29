@@ -11,21 +11,27 @@ class cardComponent extends Component
     public $img;
     public  $title;
     public $subtitle;
+    public $height;
+    public $width;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($description, $img, $title, $subtitle)
+    public function __construct($description, $height, $img, $title = null, $subtitle, $width)
     {
         $this->description = $description;
+
+         $this->height = $height;
 
         $this->img = $img;
 
         $this->title = $title;
 
         $this->subtitle = $subtitle;
+
+        $this->width = $width;
     }
 
     /**
