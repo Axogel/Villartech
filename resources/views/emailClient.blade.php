@@ -1,0 +1,1 @@
+<h1> Thank you for contact {!! $name !!} is a pleasure to working with you</h1>
