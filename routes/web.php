@@ -110,14 +110,17 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('faqs', FaqController::class);
 
-
-
 	/* PORTFOLIOS CRUD*/ 
 	Route::resource('portfolios', PortfolioController::class);
 	Route::delete('/selected-portfolio', [PortfolioController::class, 'destroyMultiple'])->name('portfolio.delete');
 
-		/* PORTFOLIOS CRUD*/ 
-		Route::resource('declarations', DeclarationController::class);
+	/* DECLARATIONS CRUD*/ 
+	Route::resource('declarations', DeclarationController::class);
+
+	/* RECIEVED EMAILS TABLE */
+	Route::resource('contacts', ContactController::class);
+	Route::delete('/deleteEmail/{id}/', 'App\Http\Controllers\ContactController@destroy')->name('contact.destroy');
+
 
 
 	Route::get('/dashboard', function () {
@@ -130,12 +133,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 	});
 	
-	Route::get('/testModal', function () {
-		return view('teams.modal-employees.show');
-
-
-
-	});
 
 });
 
