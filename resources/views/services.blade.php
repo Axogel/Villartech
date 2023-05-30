@@ -672,12 +672,12 @@
             }
 
             #web-design {
-                padding-left: 146px;
+                padding-left: 145px;
             }
 
 
             #ecommerce {
-                padding-left: 42px;
+                padding-left: 38px;
             }
 
             #consulation {

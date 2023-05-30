@@ -13,48 +13,61 @@ class ContactController extends Controller
     public function sendEmail(Request $request)
     {
 
-        $email = $request->input('email');
-        $interest = $request->input('interest');
-        $to = 'unop0203@gmail.com';
+        {
 
-
-
-        $validator = Validator::make($request->all(), [
-            'number' => ['required', 'regex:/^[0-9\W]+$/'],
-            'budget' => ['nullable', 'regex:/^[0-9\W]+$/'],
-        ]);
+            $email = $request->input('email');
+            $interest = $request->input('interest');
+            $to = 'infovillartech@gmail.com';
     
-        if ($validator->fails()) {
-
-            Alert::error('Error', 'Check the data and try again.');
-            return redirect('/services');
-        }
-
-        else {
-            Mail::send('email', $request->all(), function($msg) use ($interest,$to,$email)  {
-
-            $msg->from($email);
-            $msg->subject($interest);
-            $msg->to($to);
     
-            });
     
-            $contact = new Contact;
-            $contact->name = $request->input('name');
-            $contact->email = $request->input('email');
-            $contact->number = $request->input('number');
-            $contact->interest = $request->input('interest');
-            $contact->budget = $request->input('budget');
-            $contact->message = $request->input('mensaje');
-            $contact->save();
+            $validator = Validator::make($request->all(), [
+                'number' => ['required', 'regex:/^[0-9\W]+$/'],
+                'budget' => ['nullable', 'regex:/^[0-9\W]+$/'],
+            ]);
+        
+            if ($validator->fails()) {
+    
+                Alert::error('Error', 'Check the data and try again.');
+                return redirect('/services');
+            }
+    
+            else {
+                Mail::send('email', $request->all(), function($msg) use ($interest,$to,$email)  {
+    
+                $msg->from($email);
+                $msg->subject($interest);
+                $msg->to($to);
+        
+                });
 
-            Alert::success('Success', 'Email sended Succesfully!');
-            return redirect('/services');
 
-        }
+
+                Mail::send('emailClient', $request->all(), function($msg) use ($interest,$to,$email)  {
+    
+                    $msg->from('infovillartech@gmail.com');
+                    $msg->subject('Contact Email and Information');
+                    $msg->to($email);
+            
+                    });
+        
+                $contact = new Contact;
+                $contact->name = $request->input('name');
+                $contact->email = $request->input('email');
+                $contact->number = $request->input('number');
+                $contact->interest = $request->input('interest');
+                $contact->budget = $request->input('budget');
+                $contact->message = $request->input('mensaje');
+                $contact->save();
+    
+                Alert::success('Success', 'Email sended Succesfully!');
+                return redirect('/services');
+    
+            }
 
        
     }
+}
 
 
     public function index() {
