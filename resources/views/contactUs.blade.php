@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+@include('sweetalert::alert')
     @include('sections.header-view')
     <x-header-view-dinamic :titleDinamic="'Contact Us'" />
      @include('sections.content-contactUs')

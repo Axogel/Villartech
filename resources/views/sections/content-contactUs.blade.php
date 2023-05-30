@@ -32,12 +32,12 @@
 
 <section class="cards-aboutUs" style="padding-bottom:0;">
   <div class="container-cards">
-    <div class="row justify-content-center " style="margin-top: -200px; background-color: #FAFAFA;  gap:50px; " >
+    <div class="row justify-content-center " style="margin-top: -200px; background-color: #FAFAFA;  padding-left:6rem; " >
 
-      <div class="col-11 col-md-2">
+      <div class="col-11 col-md-3">
 
     <x-card-component
-    :width="'100%'"
+    :width="'80%'"
     :height="'36rem'"
     :img="'quedarse-en-casa.svg'"
     :subtitle="'Address'"
@@ -49,10 +49,10 @@
         </div>
 
 
-      <div class="col-11 col-md-2">
+      <div class="col-11 col-md-3">
 
     <x-card-component
-    :width="'100%'"
+    :width="'80%'"
     :height="'36rem'"
     :img="'telefono (1).svg'"
     :subtitle="'Phone'"
@@ -63,10 +63,10 @@
 
         </div>
 
-      <div class="col-11 col-md-2">
+      <div class="col-11 col-md-3">
 
     <x-card-component
-    :width="'100%'"
+    :width="'80%'"
     :height="'36rem'"
     :img="'correo.svg'"
     :subtitle="'Email'"

@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 
-use App\Models\Faq;
+use App\Models\Contact;
+use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 class EmailController extends Controller
@@ -15,23 +18,45 @@ class EmailController extends Controller
     public function send(Request $request)
     {
 
-      $email = $request->input('email');
-      $message = $request->input('message');
-      $to = 'unop0203@gmail.com';
-
-      // Validar si $message es nulo y asignar un valor predeterminado en ese caso
-      if (!$message) {
-          $message = 'Default subject';
-      }
-
-      Mail::send('send', $request->all(), function($msg) use ($message, $to, $email)  {
-          $msg->from($email);
-          $msg->to($to);
-          $msg->subject($message);
-      });
+        $email = $request->input('email');
+        $interest = $request->input('interest');
+        $to = 'unop0203@gmail.com';
 
 
-        return redirect('/contactUs')->withSuccessMessage('Email have been send', 'FAQ have been created');
+
+        $validator = Validator::make($request->all(), [
+            'number' => ['required', 'regex:/^[0-9\W]+$/'],
+            'budget' => ['nullable', 'regex:/^[0-9\W]+$/'],
+        ]);
+    
+        if ($validator->fails()) {
+
+            Alert::error('Error', 'Check the data and try again.');
+            return redirect('/contactUs');
+        }
+
+        else {
+            Mail::send('send', $request->all(), function($msg) use ($interest,$to,$email)  {
+
+            $msg->from($email);
+            $msg->subject($interest);
+            $msg->to($to);
+    
+            });
+    
+            $contact = new Contact;
+            $contact->name = $request->input('name');
+            $contact->email = $request->input('email');
+            $contact->number = $request->input('number');
+            $contact->interest = $request->input('interest');
+            $contact->message = $request->input('mensaje');
+            $contact->save();
+
+            Alert::success('Success', 'Email sended Succesfully!');
+            return redirect('/contactUs');
+
+        }
+
        
     }
 }

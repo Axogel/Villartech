@@ -737,7 +737,7 @@ iframe {
   padding: 60px;
   height: 7rem;
   width: 7rem;
-  margin: 0px 20px 30px 25%;
+  margin: 0px 20px 30px 30%;
 }
 
 @media (max-width: 768px) {

@@ -45,12 +45,12 @@ font-family: 'Lato', sans-serif;">Villar Technologies as the company that we are
 
 <section class="cards-aboutUs" style="padding-bottom:0;">
   <div class="container-cards">
-    <div class="row justify-content-center " style="margin-top: -80px; gap:50px; " >
+    <div class="row justify-content-center " style="margin-top: -80px; gap:-8rem; padding-left:6rem;" >
 
-      <div class="col-11 col-md-2">
+      <div class="col-11 col-md-3">
         
           <x-card-component
-          :width="'100%'"
+          :width="'80%'"
           :height="'75rem'"
           :img="'codificacion.svg'"
           :title="'WHAT WE DO'"
@@ -60,10 +60,10 @@ font-family: 'Lato', sans-serif;">Villar Technologies as the company that we are
       </div>
 
 
-      <div class=" col-11 col-md-2">
+      <div class=" col-11 col-md-3">
         
           <x-card-component
-          :width="'100%'"
+          :width="'80%'"
           :height="'75rem'"
           :img="'diseno-grafico.svg'"
           :title="'MODERN DESIGN'"
@@ -72,10 +72,10 @@ font-family: 'Lato', sans-serif;">Villar Technologies as the company that we are
         
       </div>
 
-      <div class="col-11 col-md-2">
+      <div class="col-11 col-md-3">
         
           <x-card-component
-          :width="'100%'"
+          :width="'80%'"
           :height="'75rem'"
           :img="'servicio.svg'"
           :title="'DEDICATED SUPPORT'"
