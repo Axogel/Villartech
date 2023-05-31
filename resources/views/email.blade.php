@@ -1,4 +1,4 @@
-<h1>CORREO SEXUAL ENVIADO DESDE MI {!! $email !!}</h1>
+<h1>CORREO  DESDE MI {!! $email !!}</h1>
 <h1>TELEFONO : {!! $number !!}</h1>
 <h1>Tengo {!! $budget!!}</h1> 
 <h1>Me interesa {!! $interest !!}</h1>

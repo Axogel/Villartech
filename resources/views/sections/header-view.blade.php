@@ -31,9 +31,8 @@
               <li class="nav-item  ps-5 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('portfolioView') }}" >PORTFOLIO</a>
               </li>
-              <li class="nav-item ps-5 pe-2">
+              <li class="nav-item px-2">
                 <a class="nav-link active text-light bold-size" aria-current="page" href="/services" >SERVICES</a>
-
               </li>
               <li class="nav-item  ps-5 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="#testimonial">TESTIMONIALS</a>
@@ -41,9 +40,9 @@
               <li class="nav-item  ps-5 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="#our-team" >Team</a>
               </li>
-              <li class="nav-item  button-navbar-responsive " >
-                <div id="contact-us-navbar" class="div-navbarBlack">
-                  <a class="nav-link active text-light bold-size margin-contactUs button-contactUs" aria-current="page" href="#contact" style=" ">
+              <li class="nav-item px-2 w-100">
+                <div id="contact-us-navbar">
+                  <a class="nav-link active text-light bold-size margin-contactUs" aria-current="page" href="{{ route ('contactUs') }}"  style="font-size: 14px; text-align: center; background-color: #045197; border-radius: 8px; width: 150px ">
                     CONTACT US
                   </a>
                 </div>

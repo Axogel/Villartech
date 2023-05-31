@@ -711,17 +711,20 @@ iframe {
 
 /* aboutUs*/ 
 
+#content-aboutUs{
+  background-color: #F9F9F9;
+}
 
 .animated7{
   margin-top:5rem;
 }
 
 .dashboard-aboutUs-img{
-  height: 30rem;
+  height: 37rem;
 }
 
 .img-aboutUs {
-    height: 55rem;
+    height: 61rem;
     width: 21rem;
     object-fit: cover;
   }
@@ -766,13 +769,21 @@ iframe {
   }
 }
 
+
+
   .img-cards{
   border-radius:50%;
   background-color:#005397;
   padding: 60px;
   height: 7rem;
   width: 7rem;
-  margin: 0px 60px 30px 70px;
+  margin: 0px 20px 30px 30%;
+}
+
+@media (max-width: 768px) {
+  .img-cards {
+     margin: 0px 60px 0px 70px;
+  }
 }
 
 .img-cards svg {
@@ -783,7 +794,7 @@ iframe {
     padding-top: 40px;
     background-color:#F9F9F9;
     margin-top:-80px;
-    margin-left:11%;
+
     margin-bottom:70px;
 
   }
@@ -793,7 +804,7 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left:7rem;
+
     margin-top:4rem;
   }
 }
@@ -806,8 +817,8 @@ iframe {
 
 .card-body{
   text-align:center;
+  margin-top:-3rem;
 }
-
 
 
 .img-redirect{
@@ -823,11 +834,92 @@ iframe {
 @media (max-width: 768px) {
   .img-redirect2 {
     margin-top: 40px;
-    padding-left: 3rem;
+    padding-left: 5rem;
     margin-bottom: 4rem;
   }
 }
 
+
+/* contactUs*/ 
+
+.container-contactInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 400vh; /* Esto es opcional, ajusta la altura según tus necesidades */
+  margin-top: -4.5rem; /* Ajusta el valor según tus necesidades */
+  font-size:2rem;
+}
+
+@media (max-width: 768px) {
+  .container-contactInfo {
+    height: 10vh;
+  }
+}
+
+.centered {
+  text-align: center;
+  font-size:25px; 
+  font-weight: 1000; 
+  font-family: 'Barlow', sans-serif; 
+  font-family: 'Lato', sans-serif;
+  
+}
+
+
+
+.text-contactUs {
+    margin-left: -3rem;
+}
+
+@media (max-width: 768px) {
+  .text-contactUs {
+    margin-left: 0rem;
+  }
+}
+
+
+.img-contactUs {
+  position: relative;
+}
+
+
+.black{
+  background-color:#2E2E2E;
+  height: 40rem;
+  color:white;
+}
+
+.section-form-contactUs{
+  margin-top:-5em;
+  padding-top:0rem;
+}
+
+
+#contact-form{
+  background-color:white;
+  padding:4rem;
+}
+
+.title-contact{
+  font-size:25px; 
+  font-weight: 1000; 
+  font-family: 'Barlow', sans-serif; 
+  font-family: 'Lato', sans-serif;
+}
+
+.subtitle-contact{
+  font-size:17px; 
+  font-weight: 1000 !important;
+  font-family: 'Barlow', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+.text-contact{
+  font-weight: 600; 
+  font-size:17px; 
+  font-family: 'Lato', sans-serif;
+}
 </style>
 
 

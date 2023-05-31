@@ -183,4 +183,12 @@ class FrontController extends Controller
         return view('/aboutUs')->with('settings', $setting);
 
     }
+
+        public function ContactUs(){
+
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
+        ->get();
+        return view('/contactUs')->with('settings', $setting);
+
+    }
 }

@@ -6,7 +6,8 @@
     </div>
     <div class="col-md-5">
       <div class="text-aboutUs text-left my-5">
-        <h4>Villar Technologies as the company that we are today</h4>
+                        <p class="title-contact pt-5" style="font-size:18px; font-weight: 1000; font-family: 'Barlow', sans-serif;
+font-family: 'Lato', sans-serif;">Villar Technologies as the company that we are today</p>
         <br>
         <p>We started working and providing our services on February
           2017. Since that date, we became a formal business company whose initiative was to incorporate a new platform that would be able to work on the latest skills and technologies related to the development and programmation world that updates on daily basis. Our team is composed by the owner of the company and working beside him, we have a number of professional trained coworkers that are responsable to accomplish all of the tasks and Jobs that are constantly been assigned.</p>
@@ -44,65 +45,49 @@
 
 <section class="cards-aboutUs" style="padding-bottom:0;">
   <div class="container-cards">
-    <div class="row justify-content-center " style="margin-top: -80px; " >
+    <div class="row justify-content-center " style="margin-top: -80px; gap:-8rem; padding-left:6rem;" >
 
-      <div class="col-md-3">
-
-        <div class="card-aboutUs card-hover" style="width: 25.5rem; height:75rem">
-          <div class="img-cards d-flex justify-content-center align-items-center" style="text-align: center;">
-            <img src="{{asset('assets/img/codificacion.svg')}}" >
-          </div>
-          <div class="card-body">
-            <h4 style="color:#0B5A9B">WHAT WE DO</h4>
-            <br>
-            <b style="font-size:18px">We build readymade Aplications</b>
-            <br>
-            <br>
-            <p class="card-text">Provides a whole world of programmation and development services with the primacy base of software as a service. Therefore, our team is alwavs preparing themselves In the latest skills and technologies so they are continuosly getting up to date with the global growth of the system's world. We have the professionals to SEO, Web Design, SaaS, programmation, Lead Generation, Translations, Marketing,
-11 Help and any tvpe of task that a freelancer does but backed by the trust that only a company can give you.</p>
-          </div>
-        </div>
+      <div class="col-11 col-md-3">
+        
+          <x-card-component
+          :width="'80%'"
+          :height="'75rem'"
+          :img="'codificacion.svg'"
+          :title="'WHAT WE DO'"
+          :subtitle="'We build readymade Applications'"
+          :description="'Provides a whole world of programming and development services with the primary base of software as a service. Therefore, our team is always preparing themselves in the latest skills and technologies, so they are continuously getting up to date with the global growth of the systems world. We have professionals in SEO, Web Design, SaaS, programming, Lead Generation, Translations, Marketing, Help, and any type of task that a freelancer does but backed by the trust that only a company can give you.'"/>
+        
       </div>
 
-      <div class="col-md-3">
 
-        <div class="card-aboutUs card-hover" style="width: 25.5rem; height:75rem">
-          <div class="img-cards d-flex justify-content-center align-items-center">
-            <img src="{{asset('assets/img/diseno-grafico.svg')}}" >
-          </div>
-          <div class="card-body">
-            <h4 style="color:#0B5A9B">modern design</h4>
-            <br>
-            <b style="font-size:18px">We build readymade Aplications</b>
-            <br>
-            <br>
-            <p class="card-text">Villar Technologies offers an excellent strategic program to keep the execution of each job as modern and effective as posible and as it's required and requested by the client.
-We quickly adapt to any type of campaign or project inbound and outbound that you want to outsource, créate, improve or manage.</p>
-          </div>
-        </div>
+      <div class=" col-11 col-md-3">
+        
+          <x-card-component
+          :width="'80%'"
+          :height="'75rem'"
+          :img="'diseno-grafico.svg'"
+          :title="'MODERN DESIGN'"
+          :subtitle="'We build readymade Aplications'"
+          :description="'Villar Technologies offers an excellent strategic program to keep the execution of each job as modern and effective as posible and as it is required and requested by the client. We quickly adapt to any type of campaign or project inbound and outbound that you want to outsource, créate, improve or manage.'"/>
+        
       </div>
 
-      <div class="col-md-3">
-
-        <div class="card-aboutUs card-hover" style="width: 25.5rem; height:75rem">
-
-          <div class="img-cards d-flex justify-content-center align-items-center">
-            <img src="{{asset('assets/img/servicio.svg')}}" >
-          </div>
-          <div class="card-body">
-            <h4 style="color:#0B5A9B">dedicated support</h4>
-            <br>
-            <b style="font-size:18px">We build readymade Aplications</b>
-            <br>
-            <br>
-            <p class="card-text">In Villar Technologies we make sure that our team is available 24/7 or during the work schedule needed by the client. We have an excellent customer service team under the leadership of the company owner, totally trained to keep constant and direct contact with each client and accomplish all of the work timing related to the Project in develop</p>
-          </div>
-        </div>
+      <div class="col-11 col-md-3">
+        
+          <x-card-component
+          :width="'80%'"
+          :height="'75rem'"
+          :img="'servicio.svg'"
+          :title="'DEDICATED SUPPORT'"
+          :subtitle="'We build readymade Aplications'"
+          :description="'In Villar Technologies we make sure that our team is available 24/7 or during the work schedule needed by the client. We have an excellent customer service team under the leadership of the company owner, totally trained to keep constant and direct contact with each client and accomplish all of the work timing related to the Project in develop.'"/>
+        
       </div>
 
     </div>
   </div>
 </section>
+
 
 
   <div class="container-redirect" stye="margin-top:-10rem;">

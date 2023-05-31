@@ -202,11 +202,18 @@ $setting = DB::select('select * from admin_settings');
                     </a>
                 </li>
             </ul>
+            
+            <ul class="nav nav-sm flex-column img-zoom">
 
-               
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('contacts.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>Emails</p>
+                    </a>
+                </li>
+            </ul>
+
         </div>
     </div>
-
 
 
   

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController};
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -20,7 +20,7 @@ use App\Models;
 |
 */
 
-
+Route::post('/send', 'App\Http\Controllers\EmailController@send')->name('send');
 Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
 
 
@@ -36,10 +36,14 @@ Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/services', [FrontController::class, 'servicesView'])->name('servicesView');
+
+Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 
 Route::get('/detail/{id}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
+Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
@@ -108,14 +112,17 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('faqs', FaqController::class);
 
-
-
 	/* PORTFOLIOS CRUD*/ 
 	Route::resource('portfolios', PortfolioController::class);
 	Route::delete('/selected-portfolio', [PortfolioController::class, 'destroyMultiple'])->name('portfolio.delete');
 
-		/* PORTFOLIOS CRUD*/ 
-		Route::resource('declarations', DeclarationController::class);
+	/* DECLARATIONS CRUD*/ 
+	Route::resource('declarations', DeclarationController::class);
+
+	/* RECIEVED EMAILS TABLE */
+	Route::resource('contacts', ContactController::class);
+	Route::delete('/deleteEmail/{id}/', 'App\Http\Controllers\ContactController@destroy')->name('contact.destroy');
+
 
 
 	Route::get('/dashboard', function () {
@@ -128,12 +135,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 	});
 	
-	Route::get('/testModal', function () {
-		return view('teams.modal-employees.show');
-
-
-
-	});
 
 });
 
