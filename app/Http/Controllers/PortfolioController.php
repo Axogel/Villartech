@@ -64,24 +64,48 @@ class PortfolioController extends Controller
         $jsonSkillIds = json_encode($skillIds);
         $portfolio->skills = $jsonSkillIds;
         $request->validate([
-            'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'image' => ['nullable', function ($attribute, $value, $fail) use ($request) {
+                if (!$request->hasFile('image_file') && empty($request->image_url) && empty($value)) {
+                    $fail('The image field is required.');
+                }
+            }],
+            'image_file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'image_url' => ['nullable', function ($attribute, $value, $fail) use ($request) {
+                if (!$request->hasFile('image_file') && empty($value)) {
+                    $fail('The image or URL field is required.');
+                }
+            }],
             'url' => 'required|url',
-        ],$message=['image'=>'the image does not have a valid format', 'url'=>'The URL is not valid']);
-       
-         $url = $request->image->store('uploads/images/portfolios', 'public');
-         $portfolio->image = $url ?? null;      
-
-         $itemIdsToKeep = $request->input('skills');
+        ], $message = [
+            'image.required' => 'The image field is required.',
+            'image_file' => 'The image field is required.',
+            'image_file.image' => 'The image does not have a valid format',
+            'image_file.mimes' => 'The image does not have a valid format',
+            'image_url.required' => 'The image or URL field is required',
+            'url.required' => 'The URL field is required',
+            'url' => 'The URL is not valid',
+        ]);
     
+        if (!$request->hasFile('image_file') && empty($request->image_url) && empty($request->image)) {
+            return redirect()->back()->withErrors(['image' => 'The image field is required.']);
+        }
     
-
-         $portfolio->save();
-         $portfolio->skills()->attach($request->input('skills'));
-         return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been created', 'Portfolio have been created');
-
-
+        if ($request->hasFile('image_file')) {
+            $url = $request->image_file->store('uploads/images/portfolios', 'public');
+            $portfolio->image = $url;
+        } elseif ($request->filled('image_url')) {
+            $portfolio->image = $request->image_url;
+        } elseif (!empty($request->image)) {
+            $portfolio->image = $request->image;
+        }
+    
+        $itemIdsToKeep = $request->input('skills');
+    
+        $portfolio->save();
+        $portfolio->skills()->attach($request->input('skills'));
+        return redirect()->route('portfolios.index')->withSuccessMessage('Portfolio have been created', 'Portfolio have been created');
     }
-
+    
     /**
      * Display the specified resource.
      *

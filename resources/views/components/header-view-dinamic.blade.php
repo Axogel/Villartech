@@ -1,5 +1,5 @@
 
-<section id="home" class="no-padding home-responsive">  
+<section id="home" class="no-padding home-responsive" style="padding-bottom: 0;">  
   <div id="main-slide" class="ts-flex-slider">
     <div class="flexSlideshow flexslider">
       <ul class="slides">
@@ -12,6 +12,10 @@
               <h2 class="animated7">
                 {{ $titleDinamic }}
               </h2>   
+              <p class="animated7" style="    position: relative;
+    bottom: 57px; font-size:30px;">
+                {{$subtitleDinamic}}
+</p>
             </div>
           </div>
         </li>
