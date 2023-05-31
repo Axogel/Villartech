@@ -7,14 +7,16 @@ use Illuminate\View\Component;
 class headerViewDinamic extends Component
 {
     public $titleDinamic;
+    public $subtitleDinamic;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($titleDinamic)
+    public function __construct($titleDinamic, $subtitleDinamic)
     {
         $this->titleDinamic = $titleDinamic;
+        $this->subtitleDinamic = $subtitleDinamic;
     }
 
     /**

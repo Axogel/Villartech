@@ -67,7 +67,7 @@
 .portfolio-view-item{
     background: #fff;
     width:450px; 
-    height: 425px;
+    height: 455px;
 }
 .div-light-bulb{
     position:relative;
@@ -146,6 +146,23 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .margin-section-deatil-responsive{
+        margin-top:100px;
+    }
+
+    .img-responsive-nav {
+    width: 13%;
+    top: 21px;
+    position: fixed;
+    padding-left: 25px;
+    left: 70%;
+    display: block;
+}
+    .position-details{
+        position: relative;
+        left: 40%;
+        top: -367px;
+    }
 
     .button-navbar-responsive{
         width:700px;
@@ -208,6 +225,25 @@
   }
 
 @media (min-width:300px) and (max-width:768px) {
+    #team-carousel{
+        overflow-x: hidden;
+    }
+    .margin-section-deatil-responsive{
+        margin-top:70px;
+    }
+    .img-responsive-nav {
+    width: 23%;
+    top: 21px;
+    position: fixed;
+    padding-left: 25px;
+    left: 70%;
+    display: block;
+    }
+    .position-details{
+        position: relative;
+        left: 30%;
+        top: -380px;
+    }
 
     .button-navbar-responsive{
         width:700px;
@@ -361,6 +397,12 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .position-details{
+        position: relative;
+        top: -296px;
+        left: 808px;
+    }
+
     .displayNoneDesktop{
         display:none;
     }
@@ -448,6 +490,11 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .position-details{
+        position: relative;
+        top: -296px;
+        left: 608px;
+    }
     .displayNoneDesktop{
         display:none;
     }
@@ -542,14 +589,7 @@ iframe {
 .nav-margin-responsive{
     margin-top: 60px;
 }
-.img-responsive-nav {
-    width: 23%;
-    top: 21px;
-    position: fixed;
-    padding-left: 25px;
-    left: 70%;
-    display: block;
-}
+
 .img-responsive{
     width: 5.5%;
     top: 25px;

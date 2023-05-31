@@ -7,8 +7,8 @@
 @section('content')
 
     @include('sections.header-view')
-    <x-header-view-dinamic :titleDinamic="'Portafolio'"  :subtitleDinamic="''" />
-    @include('sections.content-portfolio')
+    <x-header-view-dinamic :titleDinamic="'Portafolio'" :subtitleDinamic="$detailPortfolio->name" />
+    @include('sections.details-portfolio')
 @endsection
 
 @section('scripts')

@@ -17,7 +17,7 @@
                                 @endphp
                             @if (!empty($new))
                                     <li class="nav-item py-5" style="height:50px;" role="presentation">
-                                        <button class="text-center nav-link button-skill-nav badge rounded-pill bg-size-lg text-light px-5 mx-3  py-4" id="{{ $skill->name }}-tab" style="background-color: #323232; font-weight: 400; font-size: 13px;" data-toggle="tab" data-target="#{{ $skill->name }}" type="button" role="tab" aria-controls="{{ $skill->name }}" aria-selected="false">{{ $skill->name }}</button>
+                                        <button class="text-center nav-link button-skill-nav badge rounded-pill bg-size-lg text-light px-5 mx-3  py-4" id="{{ $skill->name }}-tab" style="background-color: #323232; font-weight: 400; font-size: 18px;" data-toggle="tab" data-target="#{{ $skill->name }}" type="button" role="tab" aria-controls="{{ $skill->name }}" aria-selected="false">{{ $skill->name }}</button>
                                     </li>
                             @endif
                         @endforeach
@@ -47,14 +47,14 @@
                                                     @endphp
                                                     <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
-                                                        <a class="link icon-portfolio " href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
+                                                        <a class="link icon-portfolio " href="{{ route('portfolioDetail', $portfolio['id']) }}" >
                                                             <i class="fa fa-link fa-link-portfolio"></i>
                                                         </a>
                                                     </figcaption>
                                                 </figure>
                                             </div>
-                                            <p class="" style="font-size: 18px; color:#045A97; font-family:'Lato'; font-weight:bold;"><b>{{ ucwords(strtolower($portfolio['name'])) }}</b> </p>
-                                            <p>{{ Str::limit($portfolio['description'], 100) }}</p>
+                                            <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:bold;"><b>{{ ucwords(strtolower($portfolio['name'])) }}</b> </p>
+                                            <p style="font-size:18px;">{{ Str::limit($portfolio['description'], 80) }}</p>
 
                                         </div>
                                     @endforeach
@@ -93,14 +93,14 @@
                                                     @endphp
                                                     <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
-                                                        <a class="link icon-portfolio" href="#" data-toggle="modal" data-target="#{{ $portfolio['id'] }}">
+                                                        <a class="link icon-portfolio" href="{{ route('portfolioDetail', $portfolio['id']) }}" >
                                                             <i  class="fa fa-link fa-link-portfolio"></i>
                                                         </a>
                                                     </figcaption>
                                                 </figure>
                                             </div>
-                                            <p class="" style="font-size: 18px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>{{ ucwords(strtolower($portfolio['name'])) }}</b></p>
-                                            <p>{{ Str::limit($portfolio['description'], 100) }}</p>
+                                            <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>{{ ucwords(strtolower($portfolio['name'])) }}</b></p>
+                                            <p style="font-size:18px;">{{ Str::limit($portfolio['description'], 80) }}</p>
                                         </div>
                                     @endforeach
 
@@ -116,7 +116,7 @@
     <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="text-center  margin-section-portfolio" style="">
-            <button id="loadMoreButton" class="btn btn-primary solid blank py-3 px-5" type="submit">SHOW MORE</button>
+            <button id="loadMoreButton" class="btn btn-primary solid blank py-3 px-5 my-5" type="submit" style="font-size:20px">SHOW MORE</button>
         </div>
     </div>
     </div>
@@ -126,7 +126,7 @@
 
 <div class="row justify-content-center button-skill-nav section-links-portfolio">
     <div class="col-12 col-md-5 mx-5 mb-5">
-        <h5 class="text-light margin-portfolio-section" style="font-size: 25px;">Want to learn more about our work and experience?</h5>
+        <p class="text-light margin-portfolio-section" style="font-size: 25px;">Want to learn more about our work and experience?</p>
         <p class="text-light mx-5" style="font-size: 18px;">We invite you to discover our profiles on the freelance work platforms Upwork and LinkedIn. On these profiles, you can find more information about our previous projects, technical skills, recommendations from satisfied clients, and more.</p>
     </div>
     <div class="col-12 col-md-5 " style="">
@@ -139,14 +139,14 @@
                 </div>
                 <div class="">
                     @foreach($settings as $setting)
-                        <div class="text-center img-link-up img-link-up2  mx-5 my-5 " style="background-color:#fff; border-radius: 100px; height: 50px; width: 150px;">
+                        <div class="text-center img-link-up img-link-up2  mx-5 my-5 " style="background-color:#fff; border-radius: 100px; height: 50px; width: 170px;">
                             <a href="{{ $setting->upwork }}">
-                                <img class=""    style=" width: 120px; margin-left:0.8rem; " src="{{asset('assets/img/upwork2.png')}}" alt="">
+                                <img class=""    style=" width: 120px;  " src="{{asset('assets/img/upwork2.png')}}" alt="">
                             </a>
                         </div>
-                        <div class="text-center   mx-5 my-5 img-link-up img-link-up1" style="background-color:#fff; border-radius: 100px; height: 50px; width: 150px;">
+                        <div class="text-center   mx-5 my-5 img-link-up img-link-up1" style="background-color:#fff; border-radius: 100px; height: 50px; width: 170px;">
                             <a href="{{ $setting->date }}">
-                                <img  class="" style="height: 30px; width: 120px; margin-left:0.8rem; margin-top:1rem;" src="{{asset('assets/img/linkIn2.png')}}" alt="">
+                                <img  class="" style="width: 120px; margin-top:1rem;" src="{{asset('assets/img/linkIn2.png')}}" alt="">
                             </a>
                         </div>
                     @endforeach
@@ -155,7 +155,7 @@
 </div>
 <!-- img languages -->
 <div class="container ">
-    <div class="row text-center justify-content-center my-5">
+    <div class="row text-center justify-content-center my-5 py-5">
         <div class="col-3 col-sm-3 col-lg-1 mx-5">
             <img class="img-redirect" src="{{asset('assets/img/theme/laravel.png')}}" alt="" style=" height:100px;">
         </div>
@@ -182,6 +182,8 @@
 <script>
     var portfolioData = {!! json_encode($portfolios) !!};
     var allPortfolio = {{$totalItems}};
+
+     var routePortfolio = "{{ route('PageHome')}}";
     var CountPortfolio = {{ $countShowing }};
     var url = `{{ url('/') }}`;
     var currentIndex = 0; 
@@ -190,7 +192,7 @@
 
     function addPortfolioItems(startIndex, endIndex) {
     var portfolioContainer = document.getElementById('portfolioContainer');
-    const maxLength = 100;
+    const maxLength = 80;
     
     for (var i = startIndex; i < endIndex; i++) {
         if (portfolioData[i+4]) {
@@ -200,20 +202,21 @@
             var limitedDescription = portfolio.description.length > maxLength ? portfolio.description.substring(0, maxLength) + '...' : portfolio.description;
 
             var portfolioItem = document.createElement('div');
+
             portfolioItem.className = 'col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover';
             portfolioItem.innerHTML = `
                 <div class="grid">
                     <figure class="effect-portfolio" style="height:250px;">
                         <img class="" src="${url+'/'+'storage/'+portfolio.image}" alt="" style="height:100%; width:100%;">
                         <figcaption>
-                            <a class="link icon-portfolio" href="#" data-toggle="modal" data-target="#${portfolio.id}">
+                        <a class="link icon-portfolio" href="${routePortfolio + '/detail/' + portfolio.id}">
                                 <i class="fa fa-link fa-link-portfolio"></i>
                             </a>
                         </figcaption>
                     </figure>
                 </div>
-                <p class="" style="font-size: 18px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>${portfolio.name.charAt(0).toUpperCase() + portfolio.name.slice(1).toLowerCase()}</b></p>
-                <p class="">${limitedDescription}</p>
+                <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>${portfolio.name.charAt(0).toUpperCase() + portfolio.name.slice(1).toLowerCase()}</b></p>
+                <p class="" style="font-size:18px;">${limitedDescription}</p>
             `;
 
             portfolioContainer.appendChild(portfolioItem);

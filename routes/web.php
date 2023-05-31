@@ -24,7 +24,7 @@ Route::post('/send', 'App\Http\Controllers\EmailController@send')->name('send');
 Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
 
 
-Route::get('/', [FrontController::class, 'welcome']);
+Route::get('/', [FrontController::class, 'welcome'])->name('PageHome');
 Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 
 
@@ -40,6 +40,8 @@ Route::get('/services', [FrontController::class, 'servicesView'])->name('service
 Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
+
+Route::get('/detail/{id}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
 
 Route::group(['middleware' => 'auth'], function () {

@@ -232,8 +232,8 @@
     <div class="" style="padding: 1em 0;">
         <div class="owl-carousel owl-theme" id="team-carousel">
             @foreach ($teams as $team)
-                <div class="item">
-                    <div class="team">
+                <div class="item" >
+                    <div class="team" >
                         <div class="details">
                             <p class="pt-3 text-center">
                                 <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}" class="pt-5 mx-auto" style="height: 65px;">
@@ -247,7 +247,7 @@
                                 {{ $team->team_category }}
                             </p>
                         </div>
-                        <div class="photo">
+                        <div class="photo"n style="width:100%;">
                             <img src="{{ asset('storage') . '/' . $team->photo }}" alt="" style="cursor: pointer; height:270px; width:100%; position: relative; bottom:60px;" href="#" data-toggle="modal" data-target="#modal_team_{{ $team->id }}">
                         </div>
                     </div>
