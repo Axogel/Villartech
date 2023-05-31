@@ -706,26 +706,33 @@ iframe {
   #ourCompany-aboutUs{
     background-color:#2E2E2E;
     color:white;
-    padding-bottom:117px;
+    padding-bottom:120px;
     position: relative;
     padding-top:13rem;
+    padding-bottom:20rem;
+  }
+
+  .our-company{
+    font-size:25px;
+    font-family:'Lato';
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
   }
   
   .logo-aboutUs{
-    width:16rem;
-    height:16rem;
-    border-radius:50%;
+    top: 1075px;
+    border-radius:1000px;
     background-color:#005397;
     position: relative;
-    margin-bottom:-6rem;
-
+    height:210px; 
+    width:210px;
   }
 
 @media (max-width: 768px) {
   .logo-aboutUs {
-    position: relative;
     margin-top: -40px;
-    margin-right: 100px;
+    margin-right: 155px;
   }
 }
 
@@ -734,10 +741,10 @@ iframe {
   .img-cards{
   border-radius:50%;
   background-color:#005397;
-  padding: 60px;
-  height: 7rem;
-  width: 7rem;
-  margin: 0px 20px 30px 30%;
+  padding: 70px;
+  width: 74px;
+  height: 63px;
+  margin: 40px 20px 30px 33%;;
 }
 
 @media (max-width: 768px) {
@@ -754,7 +761,6 @@ iframe {
     padding-top: 40px;
     background-color:#F9F9F9;
     margin-top:-80px;
-
     margin-bottom:70px;
 
   }
@@ -770,6 +776,13 @@ iframe {
 }
 
 
+
+.card-hover {
+
+  box-shadow: rgba(40, 40, 40, 0.06) 2px 40px 40px 5px;
+  transition: box-shadow 0.3s ease;
+}
+
 .card-hover:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
@@ -778,6 +791,7 @@ iframe {
 .card-body{
   text-align:center;
   margin-top:-3rem;
+  padding:3rem;
 }
 
 
@@ -868,6 +882,7 @@ iframe {
   font-family: 'Lato', sans-serif;
 }
 
+
 .subtitle-contact{
   font-size:17px; 
   font-weight: 1000 !important;
@@ -876,10 +891,18 @@ iframe {
 }
 
 .text-contact{
-  font-weight: 600; 
-  font-size:17px; 
+  font-weight: 400; 
+  font-size:18px; 
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6em;
+}
+
+.text-cards{
+  font-size:20px; 
+  line-height: 1.8em;
   font-family: 'Lato', sans-serif;
 }
+
 </style>
 
 
