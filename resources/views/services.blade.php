@@ -6,7 +6,7 @@
 
 @section('content')
     @include('sections.header-view')
-    <x-header-view-dinamic :titleDinamic="'services'" />
+    <x-header-view-dinamic :titleDinamic="'services'"  :subtitleDinamic="''" />
 
     <div class="container-fluid no-gutters">
         <div class="row pt-5 pb-5">

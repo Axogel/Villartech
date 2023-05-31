@@ -3,7 +3,7 @@
     <div class="parallax-overlay"></div>
     <div class="container">
         <div class="row">
-            <div id="testimonial-carousel" class="owl-carousel owl-theme text-center testimonial-slide">
+            <div id="testimonial-carousel" class="owl-carousel owl-theme text-center testimonial-slide" style="overflow: hidden;">
                 <div class="item">
                     <div class="testimonial-thumb">
                         <h2>Testimonials</h2>

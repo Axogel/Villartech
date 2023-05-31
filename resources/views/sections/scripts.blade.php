@@ -63,6 +63,24 @@
                 ],
             });
         });
+        $(document).ready(function() {
+            $("#portfolio-deatils-carousel").owlCarousel({
+                margin: 20,
+                center: true,
+                autoWidth: true,
+                responsive: true,
+                navigation: false,
+                pagination: false,
+                responsiveRefreshRate: 0,
+                itemsCustom: [
+                    [0, 1],
+                    [375, 1],
+                    [600, 1],
+                    [700, 2],
+                    [1000, 3]
+                ],
+            });
+        });
 
 
         $(document).ready(function() {

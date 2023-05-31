@@ -16,6 +16,7 @@
            
                     <div class=" web-design item mt-5" style="padding: 1em">
                         <div class="grid">
+  
                             <figure class="effect-oscar">
                                 @php
                                     $cad = str_replace('[', '', $portafolio->image);
@@ -25,16 +26,17 @@
                                     $cad = str_replace('22', '', $cad);
                                     $cad = str_replace('"', '', $cad);
                                 @endphp
-                   
-                                <img src="{{ asset('/storage/' . $cad) }}" alt="" style="height:220px;">
-
+       
+                                    <img src="{{ asset('/storage/' . $cad) }}" alt="" style="height:220px;">
+              
                                 <figcaption>
                                     <h5>{{ $portafolio->name }}</h5>
-                                    <a class="link icon-pentagon" href="#" data-toggle="modal" data-target="#{{ $portafolio->id }}">
+                                    <a class="link icon-pentagon" href="{{ route('portfolioDetail', $portafolio->id) }}">
                                         <i class="fa fa-link"></i>
                                     </a>
                                 </figcaption>
                             </figure>
+                            
                         </div>
                     </div>
 

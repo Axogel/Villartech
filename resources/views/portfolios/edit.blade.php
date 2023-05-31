@@ -49,14 +49,15 @@
                         <br>
                         <br>
                         <br>
-
                         <div>
-                        <label style="padding-left:30px;">Image:  <img src="{{ asset('storage') . '/' . $portfolio->image }}" alt=""
-                            style="width: 50px;height: 50px;" style="padding-left:60px;"></label>
-                            <span class="form-control" style="margin-left:15px; width:360px;">  
-                             {!! Form::file('image', null) !!}
-                            </span>
-                        </div>
+                            <label style="padding-left:30px;">Image:</label>
+                                <span class="form-control" style="margin-left:15px;  width:360px;">  
+                                 {!! Form::file('image_file', null) !!}
+                                </span>
+                                <label class="col-lg-4 col-form-label required fw-bold fs-6">or use a video inserting the url</label>
+                            {!! Form::text('image_url', null, ['placeholder' => 'Insert a url to the portfolio',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+                            </div>
 
 
 

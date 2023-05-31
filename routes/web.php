@@ -24,7 +24,7 @@ use App\Models;
 Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
 
 
-Route::get('/', [FrontController::class, 'welcome']);
+Route::get('/', [FrontController::class, 'welcome'])->name('PageHome');
 Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 
 
@@ -39,7 +39,7 @@ Route::get('/services', [FrontController::class, 'servicesView'])->name('service
 Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 
-
+Route::get('/detail/{id}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
