@@ -37,7 +37,7 @@
       <div class="col-11 col-md-3">
 
     <x-card-component
-    :width="'80%'"
+    :width="'90%'"
     :height="'36rem'"
     :img="'quedarse-en-casa.svg'"
     :subtitle="'Address'"
@@ -52,7 +52,7 @@
       <div class="col-11 col-md-3">
 
     <x-card-component
-    :width="'80%'"
+    :width="'90%'"
     :height="'36rem'"
     :img="'telefono (1).svg'"
     :subtitle="'Phone'"
@@ -66,7 +66,7 @@
       <div class="col-11 col-md-3">
 
     <x-card-component
-    :width="'80%'"
+    :width="'90%'"
     :height="'36rem'"
     :img="'correo.svg'"
     :subtitle="'Email'"
