@@ -99,6 +99,8 @@ class FrontController extends Controller
     public function welcome()
     {
 
+        echo 'hola';
+
         $portfolios = Portfolio::select('id','name','image','url','description')
                                ->get();
         
