@@ -5,16 +5,16 @@
 @endsection
 
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
     @include('sections.header-view')
-    <x-header-view-dinamic :titleDinamic="'services'"  :subtitleDinamic="''" />
+    <x-header-view-dinamic :titleDinamic="'services'" :subtitleDinamic="''" />
 
-    <div class="container-fluid no-gutters">
+    <div class="container-fluid no-gutters" id="principal-div">
         <div class="row pt-5 pb-5">
 
-            <div class="col-sm-6" id="left-div">
+            <div class="col-sm-6" id="left-div" style="line-height: 30px;">
 
-                <div class="row">
+                <div class="row" id="ball">
 
 
                     <div class="col" id="text">
@@ -58,7 +58,7 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row" id="ball">
 
 
                     <div class="col" id="text">
@@ -155,7 +155,7 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row" id="ball">
 
 
                     <div class="col" id="text">
@@ -207,10 +207,10 @@
 
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6" style="line-height: 34px;">
                 <div class="float-start">
 
-                    <div class="row">
+                    <div class="row " id="ball">
 
 
 
@@ -261,7 +261,7 @@
 
                     </div>
 
-                    <div class="row">
+                    <div class="row" id="ball">
 
 
 
@@ -319,7 +319,7 @@
 
                     </div>
 
-                    <div class="row">
+                    <div class="row" id="ball">
 
 
 
@@ -407,6 +407,14 @@
                 @endforeach
                 <br><br>
                 <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+
+
             </div>
 
         </div>
@@ -415,11 +423,12 @@
             <input type="hidden" name="_method" value="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-            <div class="col-10 mx-auto" style="background-color: #F9F9F9;" id="contact-form">
+            <div class="col-10 mx-auto " style="background-color: #F9F9F9; width:80%; margin-top:0px;" id="contact-form">
                 <div class="" id="container-contact-us">
-                    <p class="title-contact pt-5" style="font-size: 25px;">CONTACT US</p>
-                    <p class="subtitle-contact" style="font-size: 25px;">Get in Touch for Exceptional Service</p>
-                    <p class="subtitle-contact" style="font-weight: 400; font-size:17px;">Contact Us to Discuss Your
+                    <p class="title-contact pt-3">CONTACT US</p>
+                    <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
+                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub">Contact Us to
+                        Discuss Your
                         Project Requirements and Receive a Customized Solution</p>
                 </div>
 
@@ -487,15 +496,16 @@
         <br>
         <br>
     </div>
-    <div class="circle" id="hola-como-vas2"><svg xmlns="http://www.w3.org/2000/svg" class="svg" width="100%"
-            height="100%" viewBox="0 0 150 130" style="padding-left:21px; padding-right:0px; padding-top:28px;"
-            id="svg-contact">
+    <div class="circle" id="hola-como-vas2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg"id="svg-contact" width="100" height="100"
+            viewBox="0 0 116 120">
             <g id="layer1" transform="translate(-0.529 760.01)">
                 <path id="path1983"
                     d="M20.459-760.01A19.971,19.971,0,0,0,.529-740.119v29.89A20,20,0,0,0,20.459-690.3v14.96a4.982,4.982,0,0,0,3.086,4.566,4.982,4.982,0,0,0,5.405-1.075L47.4-690.3H80.229a19.97,19.97,0,0,0,19.891-19.929v-29.89A19.938,19.938,0,0,0,80.229-760.01Zm0,9.969h59.77a9.807,9.807,0,0,1,9.97,9.922v29.89a9.839,9.839,0,0,1-9.97,9.959H45.349a4.982,4.982,0,0,0-3.5,1.469L30.419-687.363v-7.907a4.98,4.98,0,0,0-4.961-5h-5a9.83,9.83,0,0,1-9.96-9.959v-29.89a9.8,9.8,0,0,1,9.96-9.922Zm84.66,9.922v9.959h14.93a9.839,9.839,0,0,1,9.96,9.969v29.89a9.832,9.832,0,0,1-9.96,9.961h-4.97a4.978,4.978,0,0,0-3.54,1.458,4.979,4.979,0,0,0-1.459,3.541v7.867l-11.39-11.4a4.982,4.982,0,0,0-3.531-1.467H60.309a9.807,9.807,0,0,1-8.618-4.961H49.464l-5.816,5.817a19.93,19.93,0,0,0,16.662,9.1H93.1l18.461,18.452a4.981,4.981,0,0,0,5.419,1.068,4.98,4.98,0,0,0,3.073-4.589V-670.38a19.986,19.986,0,0,0,19.92-19.92v-29.89a20,20,0,0,0-19.92-19.929Z"
                     transform="translate(0 0)" fill="#fff" />
             </g>
-        </svg></div>
+        </svg>
+    </div>
 
     <br>
 
@@ -508,11 +518,19 @@
 
         toggleButtons.forEach(button => {
             button.addEventListener('click', () => {
-                button.classList.toggle('active');
-                const answer = button.querySelector('.question-answer');
-                if (answer.style.maxHeight) {
+                const isActive = button.classList.contains('active');
+
+                // Cerrar todas las respuestas
+                toggleButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    const answer = btn.querySelector('.question-answer');
                     answer.style.maxHeight = null;
-                } else {
+                });
+
+                // Abrir solo la respuesta seleccionada si no estaba activa previamente
+                if (!isActive) {
+                    button.classList.add('active');
+                    const answer = button.querySelector('.question-answer');
                     answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
@@ -520,13 +538,6 @@
     </script>
 
     <style>
-        #contact-form {
-            position: relative;
-            top: -30px;
-        }
-
-
-
         .form-title-contact {
             font-family: 'Lato';
             font-size: 17px;
@@ -534,7 +545,9 @@
         }
 
 
-
+        #sub-sub {
+            font-weight: 700 !important;
+        }
 
 
         .question-answer {
@@ -577,7 +590,7 @@
         #hola-como-vas2 {
             position: relative;
             left: 59%;
-            top: -140px;
+            top: -312px;
         }
 
 
@@ -644,7 +657,26 @@
             margin-right: -20%;
         }
 
-        @media (min-width:760px) and (max-width:1800px) {
+        @media (min-width:768px) and (max-width:1500px) {
+
+            #ball {
+                padding-top: 50px;
+            }
+
+
+            #principal-div {
+                margin-bottom: -300px;
+                padding-right: var(--bs-gutter-x, -0.25rem);
+                padding-left: var(--bs-gutter-x, -0.25rem);
+            }
+
+            #contact-form {
+                position: relative;
+                top: -110px;
+            }
+
+
+
             #text {
                 margin-left: 39%;
             }
@@ -672,12 +704,12 @@
             }
 
             #web-design {
-                padding-left: 145px;
+                padding-left: 136px;
             }
 
 
             #ecommerce {
-                padding-left: 38px;
+                float: right;
             }
 
             #consulation {
@@ -708,18 +740,30 @@
             #hola-como-vas2 {
                 position: relative;
                 left: 70%;
-                top: -140px;
+                top: -370px;
                 width: 211px;
                 height: 211px;
             }
 
 
             #svg-faq {
-                width: 87%;
-                height: 89%;
+                width: 150px;
+                height: 150px;
+                position: relative;
+                top: 15px;
+                left: 16px;
             }
 
+            #svg-contact {
 
+
+                position: relative;
+                top: 20px;
+                width: 190px;
+                height: 150px;
+                padding-left: 0px;
+                padding-top: 35px;
+            }
         }
 
 
@@ -727,23 +771,70 @@
             font-family: 'Lato';
             color: #005397;
             font-weight: 900;
-            font-size: 30px;
-            padding-left: 50px;
+            font-size: 25px;
+            padding-left: 23px;
         }
 
         .subtitle-contact {
             font-family: 'Lato';
             color: black;
             font-weight: 900;
-            font-size: 20px;
-            padding-left: 50px;
+            font-size: 25px;
+            padding-left: 23px;
         }
+
+
+
+        }
+
 
 
 
         .container-fluid {
             padding-right: var(--bs-gutter-x, -0.25rem);
             padding-left: var(--bs-gutter-x, -0.25rem);
+        }
+
+
+
+        @media (max-width:768px) {
+
+
+            #svg-contact {
+
+                position: relative;
+                top: 2px;
+                left: 9px;
+                padding-left: 0px;
+                padding-top: 35px;
+            }
+
+            #principal-div {
+                margin-bottom: -200px;
+            }
+
+            #contact-form {
+                position: relative;
+                top: -110px;
+                width: 100% !important;
+                padding: 2rem !important;
+                margin-top: 0px !important;
+            }
+
+            .title-contact {
+                font-family: 'Lato';
+                color: #005397;
+                font-weight: 900;
+                font-size: 30px;
+            }
+
+            .subtitle-contact {
+                font-family: 'Lato';
+                color: black;
+                font-weight: 900;
+                font-size: 20px;
+            }
+
         }
     </style>
 @endsection
