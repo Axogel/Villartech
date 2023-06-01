@@ -819,7 +819,7 @@ iframe {
 
 .card-hover {
 
-  box-shadow: rgba(40, 40, 40, 0.06) 2px 40px 40px 5px;
+  box-shadow: rgba(40, 40, 40, 0.06) 2px 0px 40px 5px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -920,6 +920,7 @@ iframe {
   font-weight: 1000; 
   font-family: 'Barlow', sans-serif; 
   font-family: 'Lato', sans-serif;
+  margin-top: 2rem;
 }
 
 
@@ -938,9 +939,22 @@ iframe {
 }
 
 .text-cards{
-  font-size:20px; 
+  font-size:18px; 
   line-height: 1.8em;
   font-family: 'Lato', sans-serif;
+  margin-top: 2rem;
+}
+
+::placeholder {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+
+@media (max-width: 768px) {
+  .cards-contactUs {
+    padding-top:20rem;
+  }
 }
 
 </style>
