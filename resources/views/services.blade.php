@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+
+<script src="https://kit.fontawesome.com/91356adb35.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 <link href="https://fonts.cdnfonts.com/css/lato-black" rel="stylesheet">
     @include('sweetalert::alert')
     @include('sections.header-view')
@@ -398,9 +401,10 @@
                 <p class="faq-title pl-5">Frequently Asked Questions (FAQ)</p>
                 @foreach ($faqs as $faq)
                     <p class="question-title pt-5">
-                        <span style="color:white; padding-right:5px;" class="question-title">{{ $faq->id }}.</span>
+                        <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
                         {{ $faq->title }}
                     </p>
+
                     <div class="accordion-toggle">
                         <p class="question-answer">{{ $faq->answer }}</p>
                     </div>
@@ -566,7 +570,7 @@
             content: '';
             position: absolute;
             right: 12px;
-            top: 50%;
+            top: -35%;
             transform: translateY(-50%);
             width: 0;
             height: 0;
