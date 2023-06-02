@@ -3,7 +3,7 @@
         <div class="" role="tablist">
             <ul class="nav nav-tabs d-flex justify-content-center margin-ul-portfolio mb-5 mb-5" id="myTab" role="tablist" style="    border-bottom:0 ;">
                 <li class="nav-item py-5" style="height:50px;" role="presentation">
-                    <button class="nav-link active badge rounded-pill button-skill-nav bg-size-lg text-light px-5 mx-3  py-4" style=" font-weight: 400;font-size: 13px;" id="home-tab" data-toggle="tab" data-target="#homeWelcome" type="button" role="tab" aria-controls="home" aria-selected="true">All</button>
+                    <button class="nav-link active badge rounded-pill button-skill-nav bg-size-lg text-light px-5 mx-3  py-4" style=" font-weight: 400;font-size: 18px;" id="home-tab" data-toggle="tab" data-target="#homeWelcome" type="button" role="tab" aria-controls="home" aria-selected="true">All</button>
                 </li>
                         @php
                             $totalItems = count($portfolios);
@@ -47,7 +47,7 @@
                                                     @endphp
                                                     <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
-                                                        <a class="link icon-portfolio " href="{{ route('portfolioDetail', $portfolio['id']) }}" >
+                                                        <a class="link icon-portfolio " href="{{ route('portfolioDetail', $portfolio['slug']) }}" >
                                                             <i class="fa fa-link fa-link-portfolio"></i>
                                                         </a>
                                                     </figcaption>
@@ -93,7 +93,7 @@
                                                     @endphp
                                                     <img class="" src="{{ asset('/storage/' . $cad) }}" alt="" style="height:100%; width:100%;">
                                                     <figcaption> 
-                                                        <a class="link icon-portfolio" href="{{ route('portfolioDetail', $portfolio['id']) }}" >
+                                                        <a class="link icon-portfolio" href="{{ route('portfolioDetail', $portfolio['slug']) }}" >
                                                             <i  class="fa fa-link fa-link-portfolio"></i>
                                                         </a>
                                                     </figcaption>
@@ -209,7 +209,7 @@
                     <figure class="effect-portfolio" style="height:250px;">
                         <img class="" src="${url+'/'+'storage/'+portfolio.image}" alt="" style="height:100%; width:100%;">
                         <figcaption>
-                        <a class="link icon-portfolio" href="${routePortfolio + '/detail/' + portfolio.id}">
+                        <a class="link icon-portfolio" href="${routePortfolio + '/portfolio/' + portfolio.slug}">
                                 <i class="fa fa-link fa-link-portfolio"></i>
                             </a>
                         </figcaption>

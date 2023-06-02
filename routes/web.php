@@ -41,7 +41,7 @@ Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('p
 Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 
-Route::get('/detail/{id}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
+Route::get('/portfolio/{slug}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
 
 Route::group(['middleware' => 'auth'], function () {

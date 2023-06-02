@@ -21,28 +21,28 @@
           </div> 
         <div class="col-xxl-3 col-xl-2 col-lg-1"></div>
         <div class="col-xxl-6 col-xl-6 col-lg-6">
-            <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 15px;">
-              <li class="nav-item  ps-5 pe-2">
+        <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 15px;">
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page"  href="/">Home</a>
               </li>
-              <li class="nav-item  ps-5 pe-2 ">
-                <a class="nav-link active text-light bold-size " aria-current="page" href="aboutUs "style="width: 90px" >ABOUT US</a>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2 ">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('aboutUs') }}"style="width: 90px" >ABOUT US</a>
               </li>
-              <li class="nav-item  ps-5 pe-2">
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('portfolioView') }}" >PORTFOLIO</a>
               </li>
-              <li class="nav-item px-2">
-                <a class="nav-link active text-light bold-size" aria-current="page" href="/services" >SERVICES</a>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="/services" >SERVICES</a>
               </li>
-              <li class="nav-item  ps-5 pe-2">
-                <a class="nav-link active text-light bold-size " aria-current="page" href="#testimonial">TESTIMONIALS</a>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="/#testimonial">TESTIMONIALS</a>
               </li>
-              <li class="nav-item  ps-5 pe-2">
-                <a class="nav-link active text-light bold-size " aria-current="page" href="#our-team" >Team</a>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="/#our-team" >Team</a>
               </li>
-              <li class="nav-item px-2 w-100">
-                <div id="contact-us-navbar">
-                  <a class="nav-link active text-light bold-size margin-contactUs" aria-current="page" href="{{ route ('contactUs') }}"  style="font-size: 14px; text-align: center; background-color: #045197; border-radius: 8px; width: 150px ">
+              <li class="nav-item  button-navbar-responsive " >
+                <div id="contact-us-navbar" class="div-navbarBlack">
+                  <a class="nav-link active text-light bold-size margin-contactUs button-contactUs" aria-current="page" href="{{ route ('contactUs') }}" style=" ">
                     CONTACT US
                   </a>
                 </div>
@@ -55,4 +55,3 @@
     </div>
   </nav>
 </header>
-

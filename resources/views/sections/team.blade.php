@@ -230,7 +230,7 @@
 
 <div class="">
     <div class="" style="padding: 1em 0;">
-        <div class="owl-carousel owl-theme" id="team-carousel">
+        <div class="owl-carousel owl-theme" id="team-carousel" style="overflow-x:clip;">
             @foreach ($teams as $team)
                 <div class="item" >
                     <div class="team" >

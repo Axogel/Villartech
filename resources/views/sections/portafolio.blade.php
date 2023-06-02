@@ -31,7 +31,7 @@
               
                                 <figcaption>
                                     <h5>{{ $portafolio->name }}</h5>
-                                    <a class="link icon-pentagon" href="{{ route('portfolioDetail', $portafolio->id) }}">
+                                    <a class="link icon-pentagon" href="{{ route('portfolioDetail', $portafolio->slug) }}">
                                         <i class="fa fa-link"></i>
                                     </a>
                                 </figcaption>
