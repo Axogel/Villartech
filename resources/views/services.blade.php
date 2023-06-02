@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<link href="https://fonts.cdnfonts.com/css/lato-black" rel="stylesheet">
     @include('sweetalert::alert')
     @include('sections.header-view')
     <x-header-view-dinamic :titleDinamic="'services'" :subtitleDinamic="''" />
@@ -659,6 +660,11 @@
 
         @media (min-width:768px) and (max-width:1500px) {
 
+
+            .form-control {
+                font-size: 16px;
+            }
+
             #ball {
                 padding-top: 50px;
             }
@@ -768,7 +774,7 @@
 
 
         .title-contact {
-            font-family: 'Lato';
+            font-family: 'Lato Black';
             color: #005397;
             font-weight: 900;
             font-size: 25px;
@@ -822,7 +828,7 @@
             }
 
             .title-contact {
-                font-family: 'Lato';
+                font-family: 'Lato Black';
                 color: #005397;
                 font-weight: 900;
                 font-size: 30px;
