@@ -662,7 +662,7 @@
             margin-right: -20%;
         }
 
-        @media (min-width:768px) and (max-width:1500px) {
+        @media (min-width:768px) and (max-width:3000px) {
 
 
             .form-control {
