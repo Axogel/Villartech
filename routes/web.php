@@ -40,8 +40,8 @@ Route::get('/services', [FrontController::class, 'servicesView'])->name('service
 Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
-
 Route::get('/portfolio/{slug}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
+
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -127,7 +127,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/dashboard', function () {
 
-		Alert::success('Bienvenido al Dashboard de Villartechnologies', 'Logueado exitosamente!');
+		Alert::success('Welcome to Villartechonologies Dashboard', 'Logued in successfully');
 
 		return view('welcome');
 
