@@ -22,7 +22,7 @@
                 margin-left: auto !important;
                 margin-right: auto !important;">
 
-                    <img src="https://staging.villartechnologies.com.ve/images/layer1.svg" alt="" style=" position: relative;
+                    <img src="https://staging.villartechnologies.com.ve/images/layer1.png" alt="" style=" position: relative;
                     top: -2px;
                     width: 167px;
                     height: 151px;
