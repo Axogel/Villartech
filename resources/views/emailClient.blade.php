@@ -22,12 +22,10 @@
                 margin-left: auto !important;
                 margin-right: auto !important;">
 
-                    <img src="https://staging.villartechnologies.com.ve/images/layer1.png" alt="" style=" position: relative;
-                    top: -2px;
-                    width: 140px;
-                    height: 151px;
-                    padding-left: 28px;
-                    padding-top: 39px;
+                    <img src="https://staging.villartechnologies.com.ve/images/layer1.png" alt="" style=" width: 138px;
+                    height: 125px;
+                    padding-left: 36px;
+                    padding-top: 32px;
                 ">
                 </div>
                 <p style="font-size: 25px; color: black; font-weight: 900; text-align: center;  padding-top: 3rem!important; margin-left:auto !important; margin-right:auto !important;">
