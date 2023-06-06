@@ -136,5 +136,12 @@ Route::group(['middleware' => 'auth'], function () {
 	});
 	
 
+	Route::get('/emailtesting', function () {
+
+
+		return view('emailClient');
+
+	});
+
 });
 
