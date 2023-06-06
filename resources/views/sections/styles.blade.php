@@ -957,6 +957,71 @@ iframe {
   }
 }
 
+.form-control {
+    border: 0.5px solid #F1F1F1;
+}
+
+.headerEmail{
+  background-color: #045A97;
+  height:4rem;
+  margin-bottom:25rem;
+}
+
+#hola-como-vas2 {
+  position: relative;
+  left: 44%;
+  top: -220px;
+  width: 12rem;
+  height:12rem;
+}
+
+.circle {
+  width: 130px;
+  height: 130px;
+  background-color: #005397;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/*#img-email {
+  position: relative;
+}
+
+      @media (min-width:760px) and (max-width:1800px) {
+            #img-email {
+              position: relative;
+              left: 70%;
+              top: -140px;
+              width: 211px;
+              height: 211px;
+            }
+          }
+
+        .circle {
+            width: 130px;
+            height: 130px;
+            background-color: #005397;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .svg {
+            padding-left: 15px;
+            padding-top: 35px;
+        }*/
+
+/*.container-black{
+  background-color:#2E2E2E;
+  height:20rem;
+  margin-bottom:4rem;
+}
+
+@media (max-width: 768px) {
+  .cards-contactUs {
+    padding-top:20rem;
+  }
+}*/
+
 </style>
 
 

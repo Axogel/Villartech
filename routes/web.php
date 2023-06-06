@@ -43,6 +43,8 @@ Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 
 Route::get('/detail/{id}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
+Route::get('/email', [FrontController::class, 'emailUs'])->name('emailUs');
+Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
