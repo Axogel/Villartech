@@ -24,7 +24,7 @@
 
                     <img src="https://staging.villartechnologies.com.ve/images/layer1.png" alt="" style=" position: relative;
                     top: -2px;
-                    width: 167px;
+                    width: 140px;
                     height: 151px;
                     padding-left: 28px;
                     padding-top: 39px;
