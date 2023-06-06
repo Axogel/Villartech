@@ -45,7 +45,7 @@
         </div>
 
 </section>
-<!-- slider portfolios -->
+<!-- Show portfolios -->
 <section class="row justify-content-center" style="gap:20px;" >
         @php
             $firstThreePortfolios = array_slice($portfolios, 0, 3);
@@ -67,7 +67,7 @@
                             $cad = str_replace('"', '', $cad);
                         @endphp
 
-                            <img src="{{ asset('/storage/' . $cad) }}" alt="" style="height:220px;">
+                            <img src="{{ asset('/storage/' . $cad) }}" alt="" style="height:273px;">
 
                         <figcaption>
                             <h5>{{ $portafolio['name'] }}</h5>

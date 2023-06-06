@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Portfolio;
 use App\Models\PortfolioSkill;
 use App\Models\Skill;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -55,10 +56,12 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
+        $slug = Str::slug($request->name);
         $portfolio = new Portfolio;
         $portfolio->id = $request->id;
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
+        $portfolio->slug = $slug;
         $portfolio->description = $request->description;
         $skillIds = $request->input('skills');
         $jsonSkillIds = json_encode($skillIds);
@@ -140,6 +143,7 @@ class PortfolioController extends Controller
      */
     public function updateMultiple(Request $request)
     {
+
     $portfolio = $request->input('portfolio_ids', []);
     $updatedData = [
         'name' => $request->input('name', []),
@@ -154,7 +158,7 @@ class PortfolioController extends Controller
     }   
     public function update(Request $request, Portfolio $portfolio)
     {
-
+        $slug = Str::slug($request->name);
         $portfolio->portfolioSkill()->delete();
 
          
@@ -162,6 +166,7 @@ class PortfolioController extends Controller
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
         $portfolio->skills = $request->skills;
+        $portfolio->slug = $slug;
         $skillIds = $request->input('skills');
         $jsonSkillIds = json_encode($skillIds);
         $portfolio->skills = $request->skills;

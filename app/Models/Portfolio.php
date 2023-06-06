@@ -3,6 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Portfolio extends Model
 {
@@ -19,8 +20,14 @@ class Portfolio extends Model
         'image',
         'url',
         'skills',
+        'slug',
         'client',
     ];
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Str::slug($value);
+    }
+    
     public function skills()
     {
         return $this->belongsToMany(Skill::class, 'portfolio_skill');

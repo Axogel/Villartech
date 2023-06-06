@@ -24,6 +24,8 @@ class FrontController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
+        //$this->middleware('auth');
+
     }
 
     /**
@@ -43,12 +45,12 @@ class FrontController extends Controller
     return  $launch;
     
     }
-    public function portfolioDetails($id){
-        $detailPortfolio = Portfolio::find($id);
+    public function portfolioDetails($slug){
+        $detailPortfolio = Portfolio::where('slug', $slug)->firstOrFail();
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
         ->get();
         $skill = Skill::select('id','name')->get();
-        $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills', 'description')
+        $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills','slug', 'description')
         ->get()->toArray();
         foreach ($portfolios as $portafolio) {
             $cad = str_replace('[', '', $portafolio['image']);
@@ -65,10 +67,11 @@ class FrontController extends Controller
         return view('detailPortfolioView')->with(['portfolios' => $portfolios,'skills' => $skill ,'settings' => $setting, 'detailPortfolio' => $detailPortfolio   ]);
     }
     public function portfolioView() {
+
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
         ->get();
         $skill = Skill::select('id','name')->get();
-        $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills', 'description')
+        $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills','slug', 'description')
         ->get()->toArray();
         foreach ($portfolios as $portafolio) {
             $cad = str_replace('[', '', $portafolio['image']);
@@ -99,7 +102,7 @@ class FrontController extends Controller
     public function welcome()
     {
 
-        $portfolios = Portfolio::select('id','name','image','url','description')
+        $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills','slug', 'description')
                                ->get();
         
         $team = TeamUser::select('*')
