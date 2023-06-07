@@ -95,9 +95,9 @@
                     <li >
                       <a title="Facebook" href="" style="filter: invert(1);">
                         <img src="https://staging.villartechnologies.com.ve/images/face.png" style="    color: #045A97;
-                        height: 35px;
+                        height: 31px;
                         filter: invert(1);
-                        padding-top: 4px;">
+                        padding-right: 5px;">
                       </a>
                       <a title="linkedin" href="" style="height: 35px;
                       position: relative;
@@ -106,13 +106,13 @@
                         top: -3px;">
 
                       </a>
-                      <a title="instagram" href="" style="height: 35px;
+                      <a title="instagram" href="" style="height: 28px;
                       position: relative;
                       right: 11px;">
                         <img src="https://staging.villartechnologies.com.ve/images/instaga.png" style="position: relative;
                         right: 11px;
                         top: 4px;
-                        height: 35px; ">
+                        height: 28px; ">
 
                       </a>
                     </li>
