@@ -1022,6 +1022,12 @@ iframe {
   }
 }*/
 
+.card-text{
+  text-align: left;
+  font-size:18px;
+  font-family: 'Lato', sans-serif;
+}
+
 </style>
 
 

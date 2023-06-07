@@ -13,9 +13,12 @@
             <div class="col-12" style="margin-top:10rem;">
 
 
-                <div class="circle" id="hola-como-vas2" style="
-                width: 160px;
-height: 160px;
+                <div class="col-12">
+                <p class="mx-auto thank-you pt-5" style="  text-align: center; font-size: 25px; font-family: 'Lato';color: #045A97; font-weight: 900;">
+                    Thank you for contacting us!
+                </p>
+                <div class="circle" id="hola-como-vas2" style="    width: 203px;
+                height: 176px;
                 background-color: #005397;
                 border-radius: 50%;
                 margin-bottom: 10px;
@@ -24,10 +27,11 @@ height: 160px;
 
                     <img src="https://staging.villartechnologies.com.ve/images/layer1.png" alt="" style=" width: 138px;
                     height: 125px;
-                    padding-left: 26px;
-                    padding-top: 35px;
+                    padding-left: 36px;
+                    padding-top: 32px;
                 ">
                 </div>
+
                 <p style="font-size: 25px; color: black; font-weight: 900; text-align: center;  padding-top: 3rem!important; margin-left:auto !important; margin-right:auto !important;">
                     New Contact Inquiry <br> Received
                 </p>
@@ -39,16 +43,55 @@ height: 160px;
                     <p class="thanks" style="margin-left:auto !important; margin-right:auto !important;   font-size: 17px;
                     font-weight: 500;
                     text-align: center">
-                        A new contact inquiry has been received through the website form. Below are the details provided by the user:
+                        A new contact inquiry has been received through the website form. <br> Below are the details provided by the user:
                     </p>
 
+                    <br>
 
 
-                    <p class="thanks" style="font-weight: 500;  font-size: 17px;
+
+                    <div class="col-12">
+
+
+                  <table style="text-align:left; border-collapse: collapse; border: 2px solid #B3B3B3;  width: 100%; height: 108px; margin-left:auto !important; margin-right:auto !important; ">
+
+
+                    <tr>
+                      <td style="padding:15px; font-size: 17px; color: black; font-weight: 500;">Name:</td>
+                      <td style="padding:15px; font-size: 17px;">[User's name]</td>
+                    </tr>
+                    <tr>
+                      <td style="padding-left:15px; font-size: 17px; color: black; font-weight: 500;">Email:</td>
+                      <td style="padding:15px; font-size: 17px;">[User's name]</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:15px; font-size: 17px; color: black; font-weight: 500;">Phone number:</td>
+                      <td style="padding:15px; font-size: 17px;">[User's phone number]</td>
+                    </tr>
+                    <tr>
+
+
+                  </table>
+
+                  </div>
+
+                  <br>
+
+                    <p class="thanks" style="margin-left:auto !important; margin-right:auto !important;;   font-size: 17px;
                     font-weight: 500;
-                    text-align: center">
-                        Best Regards
+                    text-align: left">
+                        Interested in [User's Interest], with the following message:
                     </p>
+
+
+                    <p class="thanks" style="margin-left:auto !important; margin-right:auto !important; font-size: 17px;
+                    font-weight: 500;
+                    text-align: left">
+                       "Contrary to popular belief, Lorem Ipsum is not simply random text. Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum"
+                    </p>
+
+                    <br>
+                    <br>
 
                         <p class="little-text mx-auto pt-3" style="font-weight: 500;  text-align: center;
                         font-size: 10px;
@@ -81,23 +124,35 @@ height: 160px;
             </div>
         </div>
         <br>
-        <section id="copyright">
+        <br>
+        <section id="copyright" style="height: 100px;">
             <div class="container">
               <div class="row">
                 <div style="text-align: center!important;     flex: 0 0 auto;
                 width: 100%;
-             background-color:#191919;" >
+                background-color:#191919;" >
                   <ul class="footer-social unstyled">
                     <li >
-                      <a title="Facebook" href="" style="padding-right:10px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/facebook.svg" style="color:#045A97; height:35px; filter: invert(1);">
+                      <a title="Facebook" href="" style="filter: invert(1);">
+                        <img src="https://staging.villartechnologies.com.ve/images/face.png" style="    color: #045A97;
+                        height: 31px;
+                        filter: invert(1);
+                        padding-right: 5px;">
                       </a>
-                      <a title="linkedin" href="">
-                        <img src="https://staging.villartechnologies.com.ve/images/linkedin-in.svg" style="color:#045A97; height:35px; filter: invert(1);">
+                      <a title="linkedin" href="" style="height: 35px;
+                      position: relative;
+                      top: -3px;">
+                        <img src="https://staging.villartechnologies.com.ve/images/in.png" style="height: 35px;" style=" position: relative;
+                        top: -3px;">
 
                       </a>
-                      <a title="instagram" href="" style="padding-left:10px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/instagram.svg" style="color:#045A97; height:35px; filter: invert(1);">
+                      <a title="instagram" href="" style="height: 28px;
+                      position: relative;
+                      right: 11px;">
+                        <img src="https://staging.villartechnologies.com.ve/images/instaga.png" style="position: relative;
+                        right: 11px;
+                        top: 4px;
+                        height: 28px; ">
 
                       </a>
                     </li>
