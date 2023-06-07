@@ -943,8 +943,6 @@ iframe {
   line-height: 1.8em;
   font-family: 'Lato', sans-serif;
   margin-top: 2rem;
-<<<<<<< HEAD
-=======
 }
 
 ::placeholder {
@@ -1028,7 +1026,6 @@ iframe {
   text-align: left;
   font-size:18px;
   font-family: 'Lato', sans-serif;
->>>>>>> refs/remotes/origin/develop
 }
 
 ::placeholder {

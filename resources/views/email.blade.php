@@ -52,27 +52,25 @@
 
                     <div class="col-12">
 
-                  @foreach($contacts as $contact)
                   <table style="text-align:left; border-collapse: collapse; border: 2px solid #B3B3B3;  width: 100%; height: 108px; margin-left:auto !important; margin-right:auto !important; ">
 
 
                     <tr>
                       <td style="padding:15px; font-size: 17px; color: black; font-weight: 500;">Name:</td>
-                      <td style="padding:15px; font-size: 17px;">{{ $contact->name }}</td>
+                      <td style="padding:15px; font-size: 17px;">{{ $name }}</td>
                     </tr>
                     <tr>
                       <td style="padding-left:15px; font-size: 17px; color: black; font-weight: 500;">Email:</td>
-                      <td style="padding:15px; font-size: 17px;">{{ $contact->email }}</td>
+                      <td style="padding:15px; font-size: 17px;">{{ $email }}</td>
                     </tr>
                     <tr>
                       <td style="padding:15px; font-size: 17px; color: black; font-weight: 500;">Phone number:</td>
-                      <td style="padding:15px; font-size: 17px;">{{ $contact->number }}</td>
+                      <td style="padding:15px; font-size: 17px;">{{ $number }}</td>
                     </tr>
                     <tr>
 
 
                   </table>
-                  @endforeach
 
                   </div>
 
