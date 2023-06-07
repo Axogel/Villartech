@@ -44,6 +44,7 @@ class EmailController extends Controller
     
             });
 
+<<<<<<< HEAD
             Mail::send('emailClient', $request->all(), function($msg) use ($interest,$to,$email)  {
     
                     $msg->from('infovillartech@gmail.com');
@@ -51,6 +52,16 @@ class EmailController extends Controller
                     $msg->to($email);
             
                     });
+=======
+
+            Mail::send('emailClient', $request->all(), function($msg) use ($interest,$to,$email)  {
+    
+                $msg->from('infovillartech@gmail.com');
+                $msg->subject('Contact Email and Information');
+                $msg->to($email);
+        
+                });
+>>>>>>> 18d31a0 (email test)
     
             $contact = new Contact;
             $contact->name = $request->input('name');
