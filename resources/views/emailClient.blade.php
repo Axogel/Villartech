@@ -69,7 +69,7 @@
                         color: #00000099;
                         font-weight: 300;
                         line-height: 0;">
-                            This message was sent to {{ !! $email !!}} and intended for {{!! $name !!}}.
+                            This message was sent to {{  $email }} and intended for {{ $name }}.
                         </p>
     
                         <p class="little-text mx-auto" style="font-weight: 500;  text-align: center;
