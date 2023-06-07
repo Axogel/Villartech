@@ -31,7 +31,9 @@
                                             {{ $team->name }}
                                         </p>
                                         <p class="text-center fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900; line-height: 1.3em;">
-                                            {{ $team->team_category }}
+                                        @foreach ($team->EmployeeCategories()->get() as $employeeCategory)
+                                               {{ $employeeCategory->name }}
+                                    @endforeach
                                         </p>
                                         <p class="text-center" style="color:#323232; line-height: 1.3em; font-weight:light">
                                             {{ $team->residence }}
@@ -244,7 +246,9 @@
                             </p>
                             <hr style="width:60px; margin:0 auto; color:#FFFFFF; height:1px;">
                             <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">
-                                {{ $team->team_category }}
+                            @foreach ($team->EmployeeCategories()->get() as $employeeCategory)
+                                               {{ $employeeCategory->name }}
+                                    @endforeach
                             </p>
                         </div>
                         <div class="photo"n style="width:100%;">

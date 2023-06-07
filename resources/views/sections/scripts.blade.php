@@ -13,7 +13,66 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Lato:wght@900&display=swap" rel="stylesheet">
 
+<script>
+// Function scroll tabs profile
+function handleScroll() {
+  let allTabsLi = document.querySelectorAll(".tab-profile");
+  let allTabs = document.querySelectorAll(".tab-pane-tabs");
+  let tabLi1 = document.getElementById('tab-li-1');
+  let tabLi2 = document.getElementById('tab-li-2');
+  let tabLi3 = document.getElementById('tab-li-3');
+  let tabLi4 = document.getElementById('tab-li-4');
+  let tabLi5 = document.getElementById('tab-li-5');
+  let tab1 = document.getElementById('tab_a');
+  let tab2 = document.getElementById("tab_b");
+  let tab3 = document.getElementById("tab_c");
+  let tab4 = document.getElementById("tab_d");
+  let tab5 = document.getElementById("tab_e");
+  var documentHeight = document.documentElement.scrollHeight;
+  var visibleHeight = window.innerHeight;
+  var scrollPosition = window.scrollY;
+//  scroll %
+  var scrollPercentage = (scrollPosition / (documentHeight - visibleHeight)) * 100;
 
+  if (scrollPercentage >= 13) {
+    console.log('Has desplazado al menos un 5%');
+    allTabsLi.forEach(tab => tab.classList.remove("active"));
+    allTabs.forEach(tab => tab.classList.remove("active"));
+      tab1.classList.add("active");
+      tabLi1.classList.add("active");
+  }
+  if (scrollPercentage >= 18) {
+    console.log('Has desplazado al menos un 5%');
+    allTabsLi.forEach(tab => tab.classList.remove("active"));
+    allTabs.forEach(tab => tab.classList.remove("active"));
+      tab2.classList.add("active");
+      tabLi2.classList.add("active");
+  }
+
+  if (scrollPercentage >= 21) {
+    allTabsLi.forEach(tab => tab.classList.remove("active"));
+    allTabs.forEach(tab => tab.classList.remove("active"));
+      tab3.classList.add("active");
+      tabLi3.classList.add("active");
+  }
+
+  if (scrollPercentage >= 23) {
+    allTabsLi.forEach(tab => tab.classList.remove("active"));
+    allTabs.forEach(tab => tab.classList.remove("active"));
+      tab4.classList.add("active");
+      tabLi4.classList.add("active");
+  }
+  if (scrollPercentage >= 25) {
+    allTabsLi.forEach(tab => tab.classList.remove("active"));
+    allTabs.forEach(tab => tab.classList.remove("active"));
+      tab5.classList.add("active");
+      tabLi5.classList.add("active");
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+</script>
     <script>
         $('.dial').knob({
             'min': 10,
@@ -63,24 +122,6 @@
                     [600, 1],
                     [700, 1],
                     [1000, 5]
-                ],
-            });
-        });
-        $(document).ready(function() {
-            $("#portfolio-deatils-carousel").owlCarousel({
-                margin: 20,
-                center: true,
-                autoWidth: true,
-                responsive: true,
-                navigation: false,
-                pagination: false,
-                responsiveRefreshRate: 0,
-                itemsCustom: [
-                    [0, 1],
-                    [375, 1],
-                    [600, 1],
-                    [700, 2],
-                    [1000, 3]
                 ],
             });
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\TeamEducation;
 use App\Models\TeamUser;
+use App\Models\EmployeeCategory;
 use App\Models\TeamExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -45,7 +46,8 @@ class TeamUserController extends Controller
      */
     public function create()
     {
-        return view('teams.create');
+        $opcionesCategory = EmployeeCategory::pluck('name', 'id');
+        return view('teams.create')->with('opcionesCategory', $opcionesCategory);
     }
 
     /**
@@ -56,6 +58,7 @@ class TeamUserController extends Controller
      */
     public function store(Request $request)
     {
+        
         $teamUser = new TeamUser;
         $teamUser->name = $request->id_name;
         $teamUser->id_name = $request->id_name;
@@ -69,7 +72,7 @@ class TeamUserController extends Controller
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
         $teamUser->freelance = $request->freelance;
-        $teamUser->team_category = $request->team_category;
+        $teamUser->category_id = $request->category_id;
         $teamUser->work_time = $request->work_time;
         $teamUser->overview = $request->overview;
 

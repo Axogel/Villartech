@@ -18,6 +18,12 @@ class TeamUser extends Model
 		'photo',
 		'skills'
 	];
+	public function EmployeeCategories(){ 
+		return $this->belongsTo(EmployeeCategory::class); 
+	}
+	public function EmployeeSkills(){
+        return $this->hasMany(EmployeeSkill::class, 'employee_id', 'id');
+    }
 
 }
 

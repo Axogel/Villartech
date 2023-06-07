@@ -16,8 +16,8 @@
 
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
-                            {!! Form::text('id_name', null, ['placeholder' => 'Insert a name',
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">insert first and last name</label>
+                            {!! Form::text('id_name', null, ['placeholder' => 'Firts and Lastname',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
                         </div>
@@ -94,13 +94,17 @@
 
                         </div>
 
-
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+                            {!! Form::select('category_id', $opcionesCategory, null, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+
+                        </div>
+                        <!-- <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label fw-bold fs-6">Category</label>
                             {!! Form::text('team_category', null, ['placeholder' => 'Insert a url of a CV',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
-                        </div>
+                        </div> -->
 
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">

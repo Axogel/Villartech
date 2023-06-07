@@ -17,13 +17,13 @@
                     ]) !!}
             
                   <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
+                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Firts and Lastname</label>
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             {!! Form::text('id_name', old('id_name', $teamUser->id_name), [
                                 
                                 'id' => 'id_name',
                                 'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'Name',
+                                'placeholder' => 'Firts and Lastname',
                             ]) !!}
                         </div>
                     </div> 

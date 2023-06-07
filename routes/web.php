@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController,EmployeeCategoryController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	/* EMPLOYEES CRUD*/ 
 	Route::resource('teams', TeamUserController::class);
+	Route::resource('EmployeeCategories', EmployeeCategoryController::class);
 	 
 	// SKILLS CRUD
 

@@ -400,7 +400,7 @@
             <div class="container" id="container-faq">
                 <p class="faq-title pl-5">Frequently Asked Questions (FAQ)</p>
                 @foreach ($faqs as $faq)
-                    <p class="question-title pt-5">
+                    <p class="question-title pt-5" id="">
                         <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
                         {{ $faq->title }}
                     </p>
@@ -519,6 +519,7 @@
 
 
     <script>
+        
         const toggleButtons = document.querySelectorAll('.accordion-toggle');
 
         toggleButtons.forEach(button => {

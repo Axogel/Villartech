@@ -127,10 +127,10 @@
                                     </td>
     
                                     <td>
+                                    @foreach ($teamUser->EmployeeCategories()->get() as $employeeCategory)
+                                                    <span class="mb-0 text-sm">{{ $employeeCategory->name }}</span>
+                                    @endforeach
     
-                                        <span class="badge badge-dot mr-4">
-                                            {{ $teamUser->team_category}}
-                                        </span>
     
                                     </td>
     
