@@ -486,9 +486,9 @@
                                             <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-12" style="padding-left:25px;">
-                                        <button type="submit" class="btn btn-primary" href="/enviar-correo">Just
-                                            Send</button>
+                                    <div class="col-12" style="padding-left:25px; padding-top:20px;">
+                                        <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">JUST SEND</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -795,7 +795,7 @@
 
 
 
-        }
+        
 
 
 
