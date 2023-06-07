@@ -29,7 +29,7 @@
                 ">
                 </div>
                 <p style="font-size: 25px; color: black; font-weight: 900; text-align: center;  padding-top: 3rem!important; margin-left:auto !important; margin-right:auto !important;">
-                    Dear {{ !! $name !! }}
+                    Dear {{  $name  }}
                 </p>
 
                 <hr style="color:black; width:25%; text-align:center; opacity:1;" class="mx-auto">
