@@ -52,26 +52,26 @@
 
                     <div class="col-12">
 
-
                   <table style="text-align:left; border-collapse: collapse; border: 2px solid #B3B3B3;  width: 100%; height: 108px; margin-left:auto !important; margin-right:auto !important; ">
 
 
                     <tr>
                       <td style="padding:15px; font-size: 17px; color: black; font-weight: 500;">Name:</td>
-                      <td style="padding:15px; font-size: 17px;">[User's name]</td>
+                      <td style="padding:15px; font-size: 17px;">{{ $name }}</td>
                     </tr>
                     <tr>
                       <td style="padding-left:15px; font-size: 17px; color: black; font-weight: 500;">Email:</td>
-                      <td style="padding:15px; font-size: 17px;">[User's name]</td>
+                      <td style="padding:15px; font-size: 17px;">{{ $email }}</td>
                     </tr>
                     <tr>
                       <td style="padding:15px; font-size: 17px; color: black; font-weight: 500;">Phone number:</td>
-                      <td style="padding:15px; font-size: 17px;">[User's phone number]</td>
+                      <td style="padding:15px; font-size: 17px;">{{ $number }}</td>
                     </tr>
                     <tr>
 
 
                   </table>
+
 
                   </div>
 
@@ -80,15 +80,15 @@
                     <p class="thanks" style="margin-left:auto !important; margin-right:auto !important;;   font-size: 17px;
                     font-weight: 500;
                     text-align: left">
-                        Interested in [User's Interest], with the following message:
+                        Interested in {{ $interest }}, with the following message:
                     </p>
 
 
                     <p class="thanks" style="margin-left:auto !important; margin-right:auto !important; font-size: 17px;
                     font-weight: 500;
                     text-align: left">
-                       "Contrary to popular belief, Lorem Ipsum is not simply random text. Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum"
-                    </p>
+                       "{{ $message }}"
+                    </p> 
 
                     <br>
                     <br>
