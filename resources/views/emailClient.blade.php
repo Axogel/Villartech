@@ -102,14 +102,14 @@
                       <a title="linkedin" href="" style="height: 35px;
                       position: relative;
                       top: -3px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/ig.png" style="height: 35px;" style=" position: relative;
+                        <img src="https://staging.villartechnologies.com.ve/images/in.png" style="height: 35px;" style=" position: relative;
                         top: -3px;">
 
                       </a>
                       <a title="instagram" href="" style="height: 35px;
                       position: relative;
                       right: 11px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/white-instagram-icon-png.png" style="position: relative;
+                        <img src="https://staging.villartechnologies.com.ve/images/ig.png" style="position: relative;
                         right: 11px;
                         top: 4px;
                         height: 35px; ">
