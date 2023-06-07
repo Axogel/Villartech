@@ -103,10 +103,6 @@ class FrontController extends Controller
     {
 
         $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills','slug', 'description')
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/develop
                                ->get();
         
         $team = TeamUser::select('*')
