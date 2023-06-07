@@ -93,17 +93,22 @@
              background-color:#191919;" >
                   <ul class="footer-social unstyled">
                     <li >
-                      <a title="Facebook" href=""">
+                      <a title="Facebook" href="" style="filter: invert(1);">
                         <img src="https://staging.villartechnologies.com.ve/images/facebook-png.png" style="    color: #045A97;
                         height: 35px;
                         filter: invert(1);
                         padding-top: 4px;">
                       </a>
-                      <a title="linkedin" href="">
-                        <img src="https://staging.villartechnologies.com.ve/images/in.png" style="height: 35px;">
+                      <a title="linkedin" href="" style="height: 35px;
+                      position: relative;
+                      top: -3px;">
+                        <img src="https://staging.villartechnologies.com.ve/images/in.png" style="height: 35px;" style=" position: relative;
+                        top: -3px;">
 
                       </a>
-                      <a title="instagram" href="">
+                      <a title="instagram" href="" style="height: 35px;
+                      position: relative;
+                      right: 11px;">
                         <img src="https://staging.villartechnologies.com.ve/images/white-instagram-icon-png.png" style="position: relative;
                         right: 11px;
                         top: 4px;
