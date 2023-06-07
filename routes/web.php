@@ -130,6 +130,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 		Alert::success('Welcome to Villartechonologies Dashboard', 'Logued in successfully');
 
+
 		return view('welcome');
 
 
