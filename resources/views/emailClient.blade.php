@@ -94,7 +94,7 @@
                   <ul class="footer-social unstyled">
                     <li >
                       <a title="Facebook" href="" style="filter: invert(1);">
-                        <img src="https://staging.villartechnologies.com.ve/images/facebook-png.png" style="    color: #045A97;
+                        <img src="https://staging.villartechnologies.com.ve/images/face.png" style="    color: #045A97;
                         height: 35px;
                         filter: invert(1);
                         padding-top: 4px;">
@@ -102,7 +102,7 @@
                       <a title="linkedin" href="" style="height: 35px;
                       position: relative;
                       top: -3px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/in.png" style="height: 35px;" style=" position: relative;
+                        <img src="https://staging.villartechnologies.com.ve/images/ig.png" style="height: 35px;" style=" position: relative;
                         top: -3px;">
 
                       </a>
