@@ -102,12 +102,8 @@ class FrontController extends Controller
     public function welcome()
     {
 
-<<<<<<< HEAD
-
-        $portfolios = Portfolio::select('id','name','image','url','description')
-=======
         $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills','slug', 'description')
->>>>>>> f062ec8 (details portfolios slug and header views)
+
                                ->get();
         
         $team = TeamUser::select('*')
