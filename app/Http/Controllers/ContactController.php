@@ -33,7 +33,7 @@ class ContactController extends Controller
             }
     
             else {
-                Mail::send('email', $request->all(), function($msg) use ($interest,$to,$email)  {
+                Mail::send('emailClient', $request->all(), function($msg) use ($interest,$to,$email)  {
     
                 $msg->from($email);
                 $msg->subject($interest);
@@ -43,7 +43,7 @@ class ContactController extends Controller
 
 
 
-                Mail::send('emailClient', $request->all(), function($msg) use ($interest,$to,$email)  {
+                Mail::send('email', $request->all(), function($msg) use ($interest,$to,$email)  {
     
                     $msg->from('infovillartech@gmail.com');
                     $msg->subject('Contact Email and Information');
