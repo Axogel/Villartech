@@ -29,7 +29,7 @@
                 ">
                 </div>
                 <p style="font-size: 25px; color: black; font-weight: 900; text-align: center;  padding-top: 3rem!important; margin-left:auto !important; margin-right:auto !important;">
-                    Dear {{!! $name !! }}
+                    Dear {{ !! $name !! }}
                 </p>
 
                 <hr style="color:black; width:25%; text-align:center; opacity:1;" class="mx-auto">
@@ -69,7 +69,7 @@
                         color: #00000099;
                         font-weight: 300;
                         line-height: 0;">
-                            This message was sent to {{!! $email !!}} and intended for {{!! $name !!}}.
+                            This message was sent to {{ !! $email !!}} and intended for {{!! $name !!}}.
                         </p>
     
                         <p class="little-text mx-auto" style="font-weight: 500;  text-align: center;
