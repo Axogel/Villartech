@@ -51,28 +51,13 @@
 
       <div class="cards-contactUs col-11 col-md-3" style="margin-top: -270px;">
 
-    <x-card-component
-    :width="'90%'"
-    :height="'400px'"
-    :img="'telefono (1).svg'"
-    :subtitle="'Phone'" 
-    :description="'+1(555) 123-456'"
-    :title="null"
-/>
 
 
         </div>
 
       <div class="cards-contactUs col-11 col-md-3" style="margin-top: -270px;">
 
-    <x-card-component
-    :width="'90%'"
-    :height="'400px'"
-    :img="'correo.svg'"
-    :subtitle="'Email'"
-    :description="'info@example.com'"
-    :title="null"
-/>
+  
 
 
         </div>
