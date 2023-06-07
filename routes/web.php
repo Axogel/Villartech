@@ -43,7 +43,6 @@ Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/portfolio/{slug}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
-Route::get('/email', [FrontController::class, 'emailUs'])->name('emailUs');
 Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -138,12 +137,6 @@ Route::group(['middleware' => 'auth'], function () {
 	});
 	
 
-	Route::get('/emailtesting', function () {
-
-
-		return view('emailClient');
-
-	});
 
 });
 

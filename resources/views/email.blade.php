@@ -72,6 +72,7 @@
 
                   </table>
 
+
                   </div>
 
                   <br>
@@ -79,15 +80,15 @@
                     <p class="thanks" style="margin-left:auto !important; margin-right:auto !important;;   font-size: 17px;
                     font-weight: 500;
                     text-align: left">
-                        Interested in [User's Interest], with the following message:
+                        Interested in {{ $interest }}, with the following message:
                     </p>
 
 
                     <p class="thanks" style="margin-left:auto !important; margin-right:auto !important; font-size: 17px;
                     font-weight: 500;
                     text-align: left">
-                       "Contrary to popular belief, Lorem Ipsum is not simply random text. Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum"
-                    </p>
+                       "{{ $message }}"
+                    </p> 
 
                     <br>
                     <br>
