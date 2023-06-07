@@ -85,7 +85,7 @@
             </div>
         </div>
         <br>
-        <section id="copyright">
+        <section id="copyright" style="height: 100px;">
             <div class="container">
               <div class="row">
                 <div style="text-align: center!important;     flex: 0 0 auto;
@@ -93,15 +93,15 @@
              background-color:#191919;" >
                   <ul class="footer-social unstyled">
                     <li >
-                      <a title="Facebook" href="" style="padding-right:10px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/facebook.svg" style="color:#045A97; height:35px; filter: invert(1);">
+                      <a title="Facebook" href=""">
+                        <img src="http://villartechnologies-website.test/images/facebook-png.png" style="color:#045A97; height:35px; filter: invert(1); padding-top:4px;">
                       </a>
                       <a title="linkedin" href="">
-                        <img src="https://staging.villartechnologies.com.ve/images/linkedin-in.svg" style="color:#045A97; height:35px; filter: invert(1);">
+                        <img src="http://villartechnologies-website.test/images/in.png" style="color:#045A97; height:35px;">
 
                       </a>
-                      <a title="instagram" href="" style="padding-left:10px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/instagram.svg" style="color:#045A97; height:35px; filter: invert(1);">
+                      <a title="instagram" href="">
+                        <img src="http://villartechnologies-website.test/images/white-instagram-icon-png.png" style=" position: relative;  right: 11px; top: 4px; height:35px; ">
 
                       </a>
                     </li>
