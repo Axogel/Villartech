@@ -109,7 +109,7 @@
                       <a title="instagram" href="" style="height: 35px;
                       position: relative;
                       right: 11px;">
-                        <img src="https://staging.villartechnologies.com.ve/images/inta.png" style="position: relative;
+                        <img src="https://staging.villartechnologies.com.ve/images/instaga.png" style="position: relative;
                         right: 11px;
                         top: 4px;
                         height: 35px; ">
