@@ -24,6 +24,8 @@ class FrontController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
+        //$this->middleware('auth');
+
     }
 
     /**
@@ -177,19 +179,37 @@ class FrontController extends Controller
         return view('portfolio')->with(['details' => $porta_details, 'technologies' => $technologies]);
     }
 
-    public function AboutUs(){
+        public function AboutUs(){
 
-        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
-        ->get();
-        return view('/aboutUs')->with('settings', $setting);
+          $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
+          ->get();
+          return view('/aboutUs')->with('settings', $setting);
 
     }
 
         public function ContactUs(){
 
-        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address','upwork')
-        ->get();
-        return view('/contactUs')->with('settings', $setting);
+          $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+          ->get();
+          return view('/contactUs')->with('settings', $setting);
 
     }
+
+        public function EmailUs(){
+
+          $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+          ->get();
+          return view('/email')->with('settings', $setting);
+
+    }
+
+        public function Blog(){
+
+          $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+          ->get();
+          return view('/blog')->with('settings', $setting);
+
+    }
+
+
 }

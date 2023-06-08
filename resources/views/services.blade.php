@@ -400,6 +400,17 @@
             <div class="container" id="container-faq">
                 <p class="faq-title pl-5">Frequently Asked Questions (FAQ)</p>
                 @foreach ($faqs as $faq)
+                    <div class="accordion-toggle">
+                        <p class="question-title pt-5" id="">
+                            <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
+                            {{ $faq->title }}
+                        </p>
+                        <div>
+                            <p class="question-answer">{{ $faq->answer }}</p>
+                        </div>
+                    </div>
+                    <hr style="color:white; height:0.5px; opacity:1.25;">
+          
     <div class="accordion-toggle">
         <p class="question-title pt-5" id="">
             <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
@@ -433,7 +444,7 @@
                 <div class="" id="container-contact-us">
                     <p class="title-contact pt-3">CONTACT US</p>
                     <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
-                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub">Contact Us to
+                    <p class="subtitle-contact" style="font-size:17px; font-weight:400;" id="sub-sub">Contact Us to
                         Discuss Your
                         Project Requirements and Receive a Customized Solution</p>
                 </div>
@@ -487,9 +498,9 @@
                                             <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-12" style="padding-left:25px;">
-                                        <button type="submit" class="btn btn-primary" href="/enviar-correo">Just
-                                            Send</button>
+                                    <div class="col-12" style="padding-left:25px; padding-top:20px;">
+                                        <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">JUST SEND</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -552,7 +563,7 @@
 
 
         #sub-sub {
-            font-weight: 700 !important;
+            font-weight: 400 !important;
         }
 
 
@@ -663,7 +674,7 @@
             margin-right: -20%;
         }
 
-        @media (min-width:768px) and (max-width:1500px) {
+        @media (min-width:768px) and (max-width:3000px) {
 
 
             .form-control {
@@ -796,7 +807,7 @@
 
 
 
-        }
+        
 
 
 

@@ -7,9 +7,8 @@
 @section('content')
 @include('sweetalert::alert')
     @include('sections.header-view')
-    <x-header-view-dinamic :titleDinamic="'Contact Us'" :subtitleDinamic="''" />
-
-     @include('sections.content-contactUs')
+    <x-header-view-dinamic :titleDinamic="'BLOG'" :subtitleDinamic="''" />
+     @include('sections.content-blog')
 @endsection
 
 @section('scripts')
