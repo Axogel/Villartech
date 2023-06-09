@@ -99,6 +99,15 @@ class FrontController extends Controller
     }
 
 
+    public function blogArticle() {
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+        
+
+        return view('blog-article')->with(['settings' => $setting]);
+    }
+
+
     public function welcome()
     {
 
