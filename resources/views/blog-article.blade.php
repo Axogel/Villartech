@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-                <div class="col-11" style="background-color: #2E2E2E;">
+                <div class="col-12" style="background-color: #2E2E2E;">
 
                 </div>
 
