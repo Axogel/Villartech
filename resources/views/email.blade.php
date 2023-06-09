@@ -87,7 +87,7 @@
                     <p class="thanks" style="margin-left:auto !important; margin-right:auto !important; font-size: 17px;
                     font-weight: 500;
                     text-align: left">
-                       "{{ $message }}"
+                       "{{ $mensaje }}"
                     </p> 
 
                     <br>
