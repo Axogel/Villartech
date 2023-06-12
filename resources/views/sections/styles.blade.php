@@ -983,50 +983,6 @@ iframe {
   margin-bottom: 10px;
 }
 
-/*#img-email {
-  position: relative;
-}
-
-      @media (min-width:760px) and (max-width:1800px) {
-            #img-email {
-              position: relative;
-              left: 70%;
-              top: -140px;
-              width: 211px;
-              height: 211px;
-            }
-          }
-
-        .circle {
-            width: 130px;
-            height: 130px;
-            background-color: #005397;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .svg {
-            padding-left: 15px;
-            padding-top: 35px;
-        }*/
-
-/*.container-black{
-  background-color:#2E2E2E;
-  height:20rem;
-  margin-bottom:4rem;
-}
-
-@media (max-width: 768px) {
-  .cards-contactUs {
-    padding-top:20rem;
-  }
-}*/
-
-.card-text{
-  text-align: left;
-  font-size:18px;
-  font-family: 'Lato', sans-serif;
-}
 
 ::placeholder {
   font-size: 16px;
@@ -1034,76 +990,48 @@ iframe {
 }
 
 
-@media (max-width: 768px) {
-  .cards-contactUs {
-    padding-top:20rem;
-  }
+
+.card-text{
+  text-align: left;
+  font-size:18px;
+  font-family: 'Lato', sans-serif;
 }
 
 .form-control {
     border: 0.5px solid #F1F1F1;
 }
 
-.headerEmail{
-  background-color: #045A97;
-  height:4rem;
-  margin-bottom:25rem;
+.card{
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}*/
+
+.bebe{
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-#hola-como-vas2 {
-  position: relative;
-  left: 44%;
-  top: -220px;
-  width: 12rem;
-  height:12rem;
-}
-
-.circle {
-  width: 130px;
-  height: 130px;
-  background-color: #005397;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-/*#img-email {
-  position: relative;
-}
-
-      @media (min-width:760px) and (max-width:1800px) {
-            #img-email {
-              position: relative;
-              left: 70%;
-              top: -140px;
-              width: 211px;
-              height: 211px;
-            }
-          }
-
-        .circle {
-            width: 130px;
-            height: 130px;
-            background-color: #005397;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .svg {
-            padding-left: 15px;
-            padding-top: 35px;
-        }*/
-
-/*.container-black{
+.container-black{
   background-color:#2E2E2E;
-  height:20rem;
-  margin-bottom:4rem;
+  height:30rem;
+  margin-bottom:30rem;
 }
+
+
+@media (max-width: 767px) { /* Tamaño de pantalla donde se aplica el cambio */
+  .card {
+    height:80rem;
+  }
+}
+
 
 @media (max-width: 768px) {
-  .cards-contactUs {
-    padding-top:20rem;
+  .imgs-blog {
+    margin-top:5rem;
   }
-}*/
+}
+
+.card-imgs{
+ margin-bottom:0 !important;
+}
 
 </style>
 

@@ -183,7 +183,7 @@
     var portfolioData = {!! json_encode($portfolios) !!};
     var allPortfolio = {{$totalItems}};
 
-     var routePortfolio = "{{ route('PageHome')}}";
+    var routePortfolio = "{{ route('PageHome')}}";
     var CountPortfolio = {{ $countShowing }};
     var url = `{{ url('/') }}`;
     var currentIndex = 0; 
@@ -198,7 +198,7 @@
         if (portfolioData[i+4]) {
             var portfolio = portfolioData[i+4];
             CountPortfolio++;
-            console.log(CountPortfolio);
+  
             var limitedDescription = portfolio.description.length > maxLength ? portfolio.description.substring(0, maxLength) + '...' : portfolio.description;
 
             var portfolioItem = document.createElement('div');
