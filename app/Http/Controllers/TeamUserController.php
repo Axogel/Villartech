@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 use App\Models\TeamEducation;
 use App\Models\TeamUser;
+use App\Models\EmployeeSkill;
 use App\Models\EmployeeCategory;
+
 use App\Models\TeamExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use App\Models\TeamSkill;
+use App\Models\Skill;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -46,8 +49,9 @@ class TeamUserController extends Controller
      */
     public function create()
     {
+        $skills = Skill::pluck('name','id');
         $opcionesCategory = EmployeeCategory::pluck('name', 'id');
-        return view('teams.create')->with('opcionesCategory', $opcionesCategory);
+        return view('teams.create',compact('skills'))->with('opcionesCategory', $opcionesCategory);
     }
 
     /**
@@ -64,7 +68,9 @@ class TeamUserController extends Controller
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
         $teamUser->photo = $request->photo;
-        $teamUser->skills = $request->skills;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $teamUser->skills = $jsonSkillIds;
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
@@ -96,9 +102,10 @@ class TeamUserController extends Controller
 
          $url = $request->photo->store('uploads/images/teams', 'public');
          $teamUser->photo = $url ?? null;     
+         $itemIdsToKeep = $request->input('skills');
          $teamUser->save();
 
-         
+         $teamUser->EmployeeSkills()->attach($request->input('skills'));
          return redirect()->route('teams.index')->withSuccessMessage('Employee have been created', 'Employee have been created');
     }
 
@@ -122,9 +129,11 @@ class TeamUserController extends Controller
      */
     public function edit($id)
     {
+
         $teamUser = TeamUser::find($id);
-        // dd($teamUser);
-        return view('teams.edit',compact('teamUser'));
+        $skills = Skill::pluck('name','id');
+        $opcionesCategory = EmployeeCategory::pluck('name', 'id');
+        return view('teams.edit',compact('teamUser','skills'))->with('opcionesCategory', $opcionesCategory);
     }
 
     /**
@@ -141,7 +150,9 @@ class TeamUserController extends Controller
         $teamUser->name = $request->id_name;
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
-        $teamUser->skills = $request->skills;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $teamUser->skills = $jsonSkillIds;
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
@@ -149,7 +160,7 @@ class TeamUserController extends Controller
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
         $teamUser->freelance = $request->freelance;
-        $teamUser->team_category = $request->team_category;
+        $teamUser->category_id = $request->category_id;
         $teamUser->work_time = $request->work_time;
         $teamUser->overview = $request->overview;
 
@@ -176,7 +187,10 @@ class TeamUserController extends Controller
             'team_presentation.regex' => 'The video URL must be a valid YouTube link.'
         ]);
 
+        $itemIdsToKeep = $request->input('skills');
         $teamUser->save();
+
+        $teamUser->EmployeeSkills()->attach($request->input('skills'));
 
         return redirect()->route('teams.index')->withSuccessMessage('Employee have been updated', 'Employee have been updated successfully');
     }

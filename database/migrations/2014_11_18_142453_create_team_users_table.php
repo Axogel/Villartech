@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('team_presentation');
             $table->string('cv_link');
             $table->string('residence');
-            $table->string('freelance');
+            $table->boolean('freelance')->default(false)->change();
             $table->foreignId('category_id')->references('id')->on('employee_categories');
             $table->string('work_time');
             $table->string('overview');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class EmployeeSkill extends Model
 {
     use HasFactory;
-    protected $table = 'employee_skill';
+    protected $table = 'employee_skills';
     protected $primaryKey = 'id';
 
     protected $fillable = [
@@ -16,9 +16,9 @@ class EmployeeSkill extends Model
         'skill_id',
     ];
 
-    public function portfolio()
+    public function TeamUser()
     {
-        return $this->belongsTo(Portfolio::class, 'employee_id','id');
+        return $this->belongsTo(TeamUser::class, 'employee_id','id');
     }
 
     public function skill()

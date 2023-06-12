@@ -19,11 +19,13 @@ class TeamUser extends Model
 		'skills'
 	];
 	public function EmployeeCategories(){ 
-		return $this->belongsTo(EmployeeCategory::class); 
+		return $this->belongsTo(EmployeeCategory::class, 'category_id'); 
 	}
-	public function EmployeeSkills(){
-        return $this->hasMany(EmployeeSkill::class, 'employee_id', 'id');
-    }
+	public function EmployeeSkills()
+	{
+		return $this->belongsToMany(Skill::class, 'employee_skills', 'employee_id', 'skill_id');
+	}
+	
 
 }
 

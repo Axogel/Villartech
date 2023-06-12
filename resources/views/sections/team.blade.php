@@ -31,9 +31,8 @@
                                             {{ $team->name }}
                                         </p>
                                         <p class="text-center fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900; line-height: 1.3em;">
-                                        @foreach ($team->EmployeeCategories()->get() as $employeeCategory)
-                                               {{ $employeeCategory->name }}
-                                    @endforeach
+                                        <span class="mb-0 text-sm">{{ $team->employeeCategories->name }}</span>
+
                                         </p>
                                         <p class="text-center" style="color:#323232; line-height: 1.3em; font-weight:light">
                                             {{ $team->residence }}
@@ -92,7 +91,12 @@
                                                 <div class="col-lg-4 col-6 pe-3" style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
                                                     <p class="py-1" style="line-height: 1.3em; ">{{ $team->age }}</p>
                                                     <p class="py-1" style="line-height: 1.3em; ">{{ $team->residence }}</p>
-                                                    <p class="py-1" style="line-height: 1.3em; ">{{ $team->freelance }}</p>
+                                                            @if($team->freelance == 1)
+                                                            <p class="py-1" style="line-height: 1.3em; ">Habilitado</p>
+                                                            @else
+                                                            <p class="py-1" style="line-height: 1.3em; ">Desactivado</p>
+                                                            @endif
+
                                                     <p class="py-1" style="line-height: 1.3em; ">{{ $team->address }}</p>
                                                 </div>
                                             </div>
@@ -107,9 +111,10 @@
 
                                             <p>2-5 years</p>
 
-                                            @foreach (explode(',', $team->skills) as $skill)
+
+                                    @foreach ($team->EmployeeSkills()->get() as $skill)
                                                 <h2 style="display: inline-block; font-family: 'Lato';">
-                                                    <span class="badge rounded-pill bg-size-lg" style="background-color: #323232; font-weight:300;">{{ $skill }}</span>
+                                                    <span class="badge rounded-pill bg-size-lg" style="background-color: #323232; font-weight:300;">{{ $skill->name }}</span>
                                                 </h2>
                                             @endforeach
 

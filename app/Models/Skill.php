@@ -32,7 +32,7 @@ class Skill extends Model
 
     }
     public function teamSkills(){
-        return $this->hasMany(TeamUser::class, 'skill_id', 'id');
+        return $this->belongsToMany(TeamUser::class, 'employee_skills', 'skill_id', 'employee_id');
     }
 
 }

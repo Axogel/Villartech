@@ -28,7 +28,7 @@ class TeamUserFactory extends Factory
             'team_presentation' => $this->faker->text(),
             'cv_link' => $this->faker->text(),
             'residence' => $this->faker->name(), 
-            'freelance' => $this->faker->name(), 
+            'freelance' => $this->faker->boolean, 
             'category_id' => '1',
             'work_time' => rand(10,40),
             'overview' => $this->faker->text(),

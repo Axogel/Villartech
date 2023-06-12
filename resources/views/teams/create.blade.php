@@ -31,10 +31,11 @@
                         </div>
 
 
+
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
-                            {!! Form::text('skills', null, ['placeholder' => 'Skills',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+                            {!! Form::select('skills[]', $skills, null, ['class' => 'form-control js-example-basic-multiple ', 'multiple' => 'multiple']) !!}
+
 
                         </div>
 
@@ -86,25 +87,24 @@
 
                         </div>
 
-
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Freelance</label>
-                            {!! Form::text('freelance', null, ['placeholder' => '',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Freelance</label>
+                            <div class="form-check form-switch">
+                                {!! Form::checkbox('freelance', 1, null, ['class' => 'form-check-input', 'id' => 'freelanceSwitch', 'style' => 'display:none;']) !!}
+                                <label class="form-check-label" for="freelanceSwitch">
+                                    <span class="switch-slider rounded-circle"></span>
+                                </label>
+                            </div>
                         </div>
+
+
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
                             {!! Form::select('category_id', $opcionesCategory, null, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
 
                         </div>
-                        <!-- <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label fw-bold fs-6">Category</label>
-                            {!! Form::text('team_category', null, ['placeholder' => 'Insert a url of a CV',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                        </div> -->
+     
 
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
@@ -159,7 +159,38 @@
 
 
     </div>
-   
+   <style>
+    .form-check.form-switch label {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.form-check.form-switch label:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-check.form-switch .form-check-input:checked + label {
+    background-color: #4CAF50;
+}
+
+.form-check.form-switch .form-check-input:checked + label:before {
+    left: 26px;
+}
+
+   </style>
 
 
     
@@ -173,7 +204,15 @@
 @endpush
 
 @section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<script>
+    $(document).ready(function() {
+$('.js-example-basic-multiple').select2();
+});
+</script>
 
 
 

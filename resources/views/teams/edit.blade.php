@@ -54,14 +54,9 @@
             
                     
                      <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            {!! Form::text('skills', old('skills', $teamUser->skills), [
-                                
-                                'id' => 'skills',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'skills',
-                            ]) !!}
+                     <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
+                            {!! Form::select('skills[]', $skills,  json_decode($teamUser->skills), ['class' => 'form-control js-example-basic-multiple', 'multiple' => 'multiple']) !!}
                         </div>
                     </div> 
             
@@ -157,15 +152,12 @@
             
             
                     <div class=" row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            {!! Form::text('team_category', old('team_category', $teamUser->team_category), [
-                                
-                                'id' => 'team_category',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'Insert Category',
-                            ]) !!}
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+                            {!! Form::select('category_id', $opcionesCategory, null, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+
                         </div>
+     
                     </div> 
             
             
