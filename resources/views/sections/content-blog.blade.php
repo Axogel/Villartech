@@ -9,10 +9,7 @@
         <div class="col-md-6">
           <img src="{{asset('assets/img/business-team-present-professional-investor-working-new-startup-project-finance-meeting.png')}}" class="img-fluid rounded-start" alt="...">
         </div>
-        @php
-            $firstThreePortfolios = array_slice($portfolios, 0, 3);
-            $countShowMore=count($portfolios);
-        @endphp
+
         <div class="col-md-6">
          <div class="card-body">
          <h5 class="card-title">Card title</h5>
