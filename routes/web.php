@@ -29,6 +29,10 @@ Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 
 
 
+Route::get('/newview', [FrontController::class, 'blogArticle'])->name('blogArticle');
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
