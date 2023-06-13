@@ -216,6 +216,7 @@
                 font-weight: 900;
                 position: relative;
                 left: 100px;
+                top:15px;
             }
 
             .author {

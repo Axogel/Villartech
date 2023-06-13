@@ -14,8 +14,7 @@ use App\Models\TeamExperience;
 use App\Models\TeamSkill;
 use App\Models\Skill;
 use App\Models\Faq;
-
-
+use App\Models\Blog;
 
 
 use App\Http\Controllers\FlickerController;
@@ -99,12 +98,12 @@ class FrontController extends Controller
     }
 
 
-    public function blogArticle() {
+    public function blogArticle($slug) {
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
         ->get();
+        $detailBlog = Blog::where('slug', $slug)->firstOrFail();
         
-
-        return view('blog-article')->with(['settings' => $setting]);
+        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog]);
     }
 
 
@@ -186,7 +185,7 @@ class FrontController extends Controller
           }
 
         return view('portfolio')->with(['details' => $porta_details, 'technologies' => $technologies]);
-    }
+    }   
 
         public function AboutUs(){
 
@@ -212,11 +211,13 @@ class FrontController extends Controller
 
     }
 
-        public function Blog(){
+        public function blog(){
 
           $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
           ->get();
-          return view('/blog')->with('settings', $setting);
+          $blog = Blog::select('id', 'title', 'description', 'author', 'image', 'slug')
+          ->get();
+          return view('blog')->with(['settings' => $setting, 'blogs' => $blog]);
 
     }
 

@@ -123,6 +123,7 @@
                             
                         @endforeach
                     </table>
+                    
                     <nav aria-label="Page navigation example">
                         {{ $blogs->links('pagination::bootstrap-4') }}
                       </nav>                    

@@ -4,66 +4,34 @@
   <div class="container d-flex justify-content-center">
     <div class="cards-notices mx-auto">
 
+
+      @foreach ($blogs as $blog)
+          
     <div class="card mb-3" style="max-width: 1047px; max-height:800px; padding:40px 20px 30px 20px;">
       <div class="row g-0">
         <div class="col-md-6">
+
           <img src="{{asset('assets/img/business-team-present-professional-investor-working-new-startup-project-finance-meeting.png')}}" class="img-fluid rounded-start" alt="...">
         </div>
 
         <div class="col-md-6">
          <div class="card-body">
-         <h5 class="card-title">Card title</h5>
+         <h5 class="card-title">{{ $blog->title }}</h5>
           <p class="card-text">Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management</p>
           <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
             <div class="py-2 text-left">
-              <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">READ MORE
-              </button>
+              <a type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;" href="{{ route('blogArticle', $blog->slug) }}">READ MORE
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+    @endforeach
     
-    <div class="card mb-3 my-5" style="max-width: 1047px; max-height:800px; padding:40px 20px 30px 20px;">
-      <div class="row g-0">        
-        <div class="col-md-6">
-          <img src="{{asset('assets/img/professional-team-programmer-working-project-software-development-computer-it-company.png')}}" class="img-fluid rounded-start" alt="...">
-        </div>
-        
-        <div class="col-md-6">
-         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-            <div class="py-2 text-left">
-              <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">READ MORE
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
-    <div class="card mb-3 my-5" style="max-width: 1047px; max-height:800px; padding:40px 20px 30px 20px;">
-      <div class="row g-0">
-        <div class="col-md-6">
-          <img src="{{asset('assets/img/engineer-holding-hard-hat-construction-worker-professional-safety-work-industry-building-person-manager-service.png')}}" class="img-fluid rounded-start" alt="...">
-        </div>
-
-        <div class="col-md-6">
-         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management Helping to a great team over a big project of sport management</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-            <div class="py-2 text-left">
-              <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">READ MORE
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
     </div>
   </div>
 </div>
