@@ -40,6 +40,9 @@
               <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="/#our-team" >Team</a>
               </li>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('blog') }}" >Blog</a>
+              </li>
               <li class="nav-item  button-navbar-responsive " >
                 <div id="contact-us-navbar" class="div-navbarBlack">
                   <a class="nav-link active text-light bold-size margin-contactUs button-contactUs" aria-current="page" href="{{ route ('contactUs') }}" style=" ">
