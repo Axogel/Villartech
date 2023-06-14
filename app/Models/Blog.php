@@ -44,4 +44,9 @@ class Blog extends Model
     {
         return $this->hasMany(BlogTag::class, 'blog_id', 'id');
     }
+
+    public function categoryBlog()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }
