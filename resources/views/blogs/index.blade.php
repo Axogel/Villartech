@@ -20,6 +20,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
                             <th scope="col">Author</th>
+                            <th scope="col">Date</th>
                             <th scope="col">Category ID</th>
                             <th scope="col">Tags</th>
                             <th scope="col">Slug</th>
@@ -54,7 +55,14 @@
                                             </div>
                                         </div>
                                     </th>
-    
+
+                                    <th scope="row">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <span class="mb-0 text-sm">{{ $blog->date }}</span>
+                                            </div>
+                                        </div>
+                                    </th>
     
     
                                     <th scope="row">

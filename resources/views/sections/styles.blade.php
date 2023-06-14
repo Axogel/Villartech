@@ -1033,6 +1033,64 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
  margin-bottom:0 !important;
 }
 
+.title-blog{
+  color:#005397;
+  font-size:25px; 
+  font-weight: 1000; 
+  font-family: 'Barlow', sans-serif; 
+  font-family: 'Lato', sans-serif;
+}
+
+.title-notices{
+  font-size:25px; 
+  font-weight: 700; 
+  font-family: 'Barlow', sans-serif; 
+  font-family: 'Lato', sans-serif;
+  margin-top: 2rem;
+}
+.logo{
+    border-radius:1000px;
+    background-color:#005397;
+    height:210px; 
+    width:210px;
+    position: relative;
+    top: 230rem;
+    right: 45rem;
+  }
+
+  .container-cards{
+    margin-bottom:77rem;
+  }
+
+
+@media (max-width: 768px) {
+  .container-cards {
+    margin-bottom:0rem;
+  }
+}
+
+.circle {
+                width: 211px;
+                height: 211px;
+                background-color: #005397;
+                border-radius: 50%;
+                position: relative;
+                left: 1068px;
+                margin-bottom: 10px;
+                top: 85px;
+            }
+
+.circle {
+                width: 211px;
+                height: 211px;
+                background-color: #005397;
+                border-radius: 50%;
+                position: relative;
+                left: 1068px;
+                margin-bottom: 10px;
+                top: 85px;
+            }
+
 </style>
 
 

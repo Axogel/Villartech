@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Tag;
 
 
+
 class Blog extends Model
 {
     use HasFactory;
@@ -21,6 +22,7 @@ class Blog extends Model
         'description',
         'image',
         'author',
+        'date',
         'category_id',
         'tags',
         'slug',

@@ -17,6 +17,7 @@ use App\Models\Faq;
 use App\Models\Blog;
 
 
+
 use App\Http\Controllers\FlickerController;
 class FrontController extends Controller
 {
@@ -215,9 +216,9 @@ class FrontController extends Controller
 
           $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
           ->get();
-          $blog = Blog::select('id', 'title', 'description', 'author', 'image', 'slug')
-          ->get();
-          return view('blog')->with(['settings' => $setting, 'blogs' => $blog]);
+          $blogs = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug')
+          ->get()->toArray();
+          return view('blog')->with(['settings' => $setting, 'blogs' => $blogs]);
 
     }
 

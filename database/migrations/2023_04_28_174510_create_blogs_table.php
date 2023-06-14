@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description', 1000);
             $table->string('author');
+            $table->string('date')->nullable();
             $table->string('image');
             $table->integer('category_id');
             $table->json('tags')->nullable();
