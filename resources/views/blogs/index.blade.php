@@ -60,7 +60,10 @@
                                     <th scope="row">
                                         <div class="media align-items-center">
                                             <div class="media-body">
-                                                <span class="mb-0 text-sm">{{ $blog->category_id }}</span>
+                                                @foreach ($blog->categoryBlog()->get() as $category )
+                                                    
+                                                <span class="mb-0 text-sm">{{ $category->name }}</span>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </th>
@@ -123,7 +126,6 @@
                             
                         @endforeach
                     </table>
-                    
                     <nav aria-label="Page navigation example">
                         {{ $blogs->links('pagination::bootstrap-4') }}
                       </nav>                    

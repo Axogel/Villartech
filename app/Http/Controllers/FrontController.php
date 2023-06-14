@@ -15,6 +15,10 @@ use App\Models\TeamSkill;
 use App\Models\Skill;
 use App\Models\Faq;
 use App\Models\Blog;
+use App\Models\Tag;
+use App\Models\Category;
+
+
 
 
 use App\Http\Controllers\FlickerController;
@@ -101,9 +105,17 @@ class FrontController extends Controller
     public function blogArticle($slug) {
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
         ->get();
+
+       $blog = Blog::with('categoryBlog')->get();
+
         $detailBlog = Blog::where('slug', $slug)->firstOrFail();
+
+        $tag = Tag::select('id', 'name')
+        ->get();
+
         
-        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog]);
+
+        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag]);
     }
 
 
