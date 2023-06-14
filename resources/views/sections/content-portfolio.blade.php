@@ -11,8 +11,8 @@
 
                         @foreach ($skills as $skill)
                                 @php 
-                                    $new = array_filter($portfolios, function ($var) use ($skill) {
-                                        return (in_array($skill->id, json_decode($var['skills'])));
+                                    $new = array_filter($portfolios, function ($let) use ($skill) {
+                                        return (in_array($skill->id, json_decode($let['skills'])));
                                     });
                                 @endphp
                             @if (!empty($new))
@@ -66,8 +66,8 @@
                 @foreach ($skills as $skill)
                     <div class="tab-pane fade" id="{{ $skill->name }}" role="tabpanel" aria-labelledby="{{ $skill->id }}-tab">
                         @php 
-                            $new = array_filter($portfolios, function ($var) use ($skill) {
-                                return (in_array($skill->id, json_decode($var['skills'])));
+                            $new = array_filter($portfolios, function ($let) use ($skill) {
+                                return (in_array($skill->id, json_decode($let['skills'])));
                             });
                         @endphp
                         @php
@@ -180,28 +180,28 @@
     </div>
 </div>
 <script>
-    var portfolioData = {!! json_encode($portfolios) !!};
-    var allPortfolio = {{$totalItems}};
+    let portfolioData = {!! json_encode($portfolios) !!};
+    let allPortfolio = {{$totalItems}};
 
-    var routePortfolio = "{{ route('PageHome')}}";
-    var CountPortfolio = {{ $countShowing }};
-    var url = `{{ url('/') }}`;
-    var currentIndex = 0; 
-    var batchSize = 4; 
+    let routePortfolio = "{{ route('PageHome')}}";
+    let CountPortfolio = {{ $countShowing }};
+    let url = `{{ url('/') }}`;
+    let currentIndex = 0; 
+    let batchSize = 4; 
 
 
     function addPortfolioItems(startIndex, endIndex) {
-    var portfolioContainer = document.getElementById('portfolioContainer');
+    let portfolioContainer = document.getElementById('portfolioContainer');
     const maxLength = 80;
     
-    for (var i = startIndex; i < endIndex; i++) {
+    for (let i = startIndex; i < endIndex; i++) {
         if (portfolioData[i+4]) {
-            var portfolio = portfolioData[i+4];
+            let portfolio = portfolioData[i+4];
             CountPortfolio++;
   
-            var limitedDescription = portfolio.description.length > maxLength ? portfolio.description.substring(0, maxLength) + '...' : portfolio.description;
+            let limitedDescription = portfolio.description.length > maxLength ? portfolio.description.substring(0, maxLength) + '...' : portfolio.description;
 
-            var portfolioItem = document.createElement('div');
+            let portfolioItem = document.createElement('div');
 
             portfolioItem.className = 'col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover';
             portfolioItem.innerHTML = `
@@ -228,7 +228,7 @@
 
     // Load more
     function loadMoreItems() {
-        var nextIndex = currentIndex + batchSize;
+        let nextIndex = currentIndex + batchSize;
         addPortfolioItems(currentIndex, nextIndex);
         currentIndex = nextIndex;
         if (currentIndex >= portfolioData.length) {

@@ -1,9 +1,3 @@
-<meta charset="utf-8">
-    <title>Villartechnologies</title>
-    <meta name="description" content="">  
-    <meta name="author" content="">
-    <link rel="icon" href="assets/img/villarblueg.png">
-
 <!-- notices cards -->
 
 <div class="blog" style="margin-top:4rem; margin-bottom:14rem;">
@@ -12,18 +6,20 @@
                       @php 
                             $totalItemsBlogs = count($blogs);
                                       
-                                    $countSearch = 3;
+                            
                             $firstThreeBlogs = array_slice($blogs, 0, 3);
                       @endphp
                     @foreach ($firstThreeBlogs as $blog)
-
+                        @php
+                          $countSearch = count($firstThreeBlogs);
+                      @endphp
           
 
     <div class="card mb-3" style="max-width: 1047px; max-height:800px; padding:40px 20px 30px 20px;">
       <div class="row g-0">
         <div class="col-md-6">
 
-          <img src="{{ asset('storage') . '/' . $blog['image'] }}}}" class="img-fluid rounded-start" alt="...">
+          <img src="{{ asset('/storage/' . $blog['image']) }}" class="img-fluid rounded-start" alt="...">
         </div>
 
         <div class="col-md-6">
@@ -43,13 +39,14 @@
       </div>
     </div>
     @endforeach
-                            <p class="text-right padding-dinamic-show "><b class="" style=""> showing {{$countSearch}} results of {{$totalItemsBlogs}}</b></p>
+                            
     
     
 
     
     </div>
   </div>
+  <p class="text-right padding-dinamic-show " id="ShowResults"><b class="" style="padding-right: 50rem;"> showing {{$countSearch}} results of {{$totalItemsBlogs}}</b></p>
 </div>
 
 
@@ -202,29 +199,31 @@
   </div>
 </div>
 <script>
-    var BlogData = {!! json_encode($blogs) !!};
-    var allBlog = {{$totalItemsBlogs}};
+    let BlogData = {!! json_encode($blogs) !!};
+    let allBlog = {{$totalItemsBlogs}};
 
-    var routeBlog = "{{ route('PageHome')}}";
-    var CountBlog = {{ $countSearch }};
-    var url = `{{ url('/') }}`;
-    var currentIndex = 0;
-    var batchSize = 3;
+    let routeBlog = "{{ route('PageHome')}}";
+    let CountBlog = {{ $countSearch }};
+
+    let url = `{{ url('/') }}`;
+    let currentIndex = 0;
+    let batchSize = 3;
 
     function addBlogItems(startIndex, endIndex) {
-        var blogContainer = document.getElementById('container-blog');
+        let blogContainer = document.getElementById('container-blog');
 
-        for (var i = startIndex; i < endIndex; i++) {
-            if (BlogData[i + 3]) {
-                var blog = BlogData[i + 3];
-                var blogItem = document.createElement('div');
+        for (let i = startIndex; i < endIndex; i++) {
+            if (BlogData[i + 3] && CountBlog <= allBlog) {
+                let blog = BlogData[i + 3];
+                CountBlog++;
+                let blogItem = document.createElement('div');
 
                 blogItem.className = 'cards-notices mx-auto';
                 blogItem.innerHTML = `
                     <div class="card mb-3" style="max-width: 1047px; max-height:800px; padding:40px 20px 30px 20px;">
                         <div class="row g-0">
                             <div class="col-md-6">
-                                <img src="${url+'/'+'assets/'+blog.image}" class="img-fluid rounded-start" alt="...">
+                                <img src="${url+'/'+'storage/'+blog.image}" class="img-fluid rounded-start" alt="...">
                             </div>
                             <div class="col-md-6">
                                 <div class="card-body">
@@ -242,19 +241,24 @@
                         </div>
                     </div>
                 `;
+                  
 
                 blogContainer.appendChild(blogItem);
-                CountBlog++;
+                       
             }
         }
         document.getElementById("ShowResults").textContent = 'Showing ' + CountBlog + ' results of ' + allBlog;
+        
     }
 
     // Load more
     function loadMoreItems() {
-        var nextIndex = currentIndex + batchSize;
+        let nextIndex = currentIndex + batchSize;
         addBlogItems(currentIndex, nextIndex);
+   
         currentIndex = nextIndex;
+        
+       
         if (currentIndex >= BlogData.length) {
             document.getElementById('loadMoreButtonBlog').style.display = 'none';
         }
