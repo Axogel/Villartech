@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('developer_id');
             $table->string('education_title');
             $table->string('education_date');
-            $table->string('education_description',255);
+            $table->string('education_description',999);
             $table->string('education_country');
             $table->timestamps();
         });
