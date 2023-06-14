@@ -1,3 +1,9 @@
+<meta charset="utf-8">
+    <title>Villartechnologies</title>
+    <meta name="description" content="">  
+    <meta name="author" content="">
+    <link rel="icon" href="assets/img/villarblueg.png">
+
 <!-- notices cards -->
 
 <div class="blog" style="margin-top:4rem; margin-bottom:14rem;">

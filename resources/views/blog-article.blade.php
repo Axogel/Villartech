@@ -7,16 +7,18 @@
 
 @section('content')
     @include('sections.header-view')
-    <x-header-view-dinamic :titleDinamic="'Notices'" :subtitleDinamic="''" />
-
+    <x-header-view-dinamic :titleDinamic="'Blog'" :subtitleDinamic="''" />
+    
+        
     <div class="container">
         <div class="row pt-5 pb-5">
-            <div class="col-10 mx-auto pt-5 text-center carta" style="background-color: white;">
-                <img src="{{ asset('assets/img/business.png') }}" alt="" class="mx-auto img-fluid">
+            <div class="col-10 mx-auto pt-5 carta" style="background-color: white; text-align:center;">
+                <img src="{{ asset('storage') . '/' . $detailBlog->image }}" alt="" class="mx-auto img-fluid">
 
                <div class="row">
                 <div class="col-8 text-left pt-4" id="container-resp">
-                    <p class="technology">TECHNOLOGY</p>
+                    <p class="technology">{{ $detailBlog->categoryBlog->name }}</p>
+
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <p class="author">Author | Date</p>
@@ -29,50 +31,34 @@
                 </div>
 
                 <div class="col-10 pt-5" id="title-10">
-                    <p class="title-10" >Diez desventajas de programacion y cómo puedes solucionarlas.</p>
 
-                    <p class="message">Helping to a great team over a big project of sport management Helping to a great
-                        team over a big project of sport management Helping to a great team over a big project of sport
-                        management Helping to a great team over a big project of sport management Helping to a great team
-                        over a big project of sport managementHelping to a great team over a big project of sport management
-                        Helping to a great team over a big project of sport management Helping to a great team over a big
-                        project of sport management Helping to a great team over a big project of sport management Helping
-                        to a great team over a big project of sport management</p>
+                    <div class="col-12" id="container-title">
+                    <p class="title-10">{{ $detailBlog->title }}</p>
 
-                    <p class="message">Helping to a great team over a big project of sport management Helping to a great
-                        team over a big project of sport management Helping to a great team over a big project of sport
-                        management Helping to a great team over a big project of sport management Helping to a great team
-                        over a big project of sport managementHelping to a great team over a big project of sport management
-                        Helping to a great team over a big project of sport management Helping to a great team over a big
-                        project of sport management Helping to a great team over a big project of sport management Helping
-                        to a great team over a big project of sport management</p>
-
-                    <p class="message">Helping to a great team over a big project of sport management Helping to a great
-                        team over a big project of sport management Helping to a great team over a big project of sport
-                        management Helping to a great team over a big project of sport management Helping to a great team
-                        over a big project of sport managementHelping to a great team over a big project of sport management
-                        Helping to a great team over a big project of sport management Helping to a great team over a big
-                        project of sport management Helping to a great team over a big project of sport management Helping
-                        to a great team over a big project of sport management</p>
+                    </div>
+                    <p class="message"> {{ $detailBlog->description }}</p>
 
                 </div>
+             
+
                 <div class="col-10 text-left pt-4" style="display: inline-flex;">
+                    @foreach ($tags as $tag)
+                    @if (in_array($tag->id, json_decode($detailBlog->tags)))
                     <li class="nav-item " style="height:50px;" role="presentation">
                         <button class="text-center nav-link button-skill-nav badge rounded-pill bg-size-lg text-light"
-                            id="-tab" style="background-color: #323232; font-weight: 100; font-size: 18px;"
+                            id="-tab" style="background-color: #323232; font-weight: 100; font-size: 18px; margin-left:10px;"
                             data-toggle="tab" data-target="" type="button" role="tab" aria-controls=""
-                            aria-selected="false">Laravel</button>
+                            aria-selected="false">{{ $tag->name  }}</button>
                     </li>
-                    <li class="nav-item " style="height:50px; padding-left:15px;" role="presentation">
-                        <button class="text-center nav-link button-skill-nav badge rounded-pill bg-size-lg text-light"
-                            id="-tab" style="background-color: #323232; font-weight: 100; font-size: 18px;"
-                            data-toggle="tab" data-target="" type="button" role="tab" aria-controls=""
-                            aria-selected="false">HTML</button>
-                    </li>
+                    @endif
+                    @endforeach
                 </div>
+                
+                
+                
             </div>
 
-            < </div>
+             </div>
 
 
         </div>
@@ -201,7 +187,7 @@
                 </div>
             </div>
         </div>
-
+        
 
         <style>
             body {
@@ -236,6 +222,7 @@
                 font-family: 'Lato';
                 font-weight: 900;
                 font-size: 25px;
+                text-align: left !important;
 
             }
 
@@ -304,6 +291,13 @@
                 fill: white;
 
             }
+
+
+            #container-title {
+                position: relative;
+                left: 96px;
+            }
+
              }
 
              @media (max-width:1024px ) {
@@ -312,6 +306,7 @@
                 font-family: 'Lato';
                 color: #005397;
                 font-weight: 900;
+                text-align: center;
                
             }
             #container-resp {
