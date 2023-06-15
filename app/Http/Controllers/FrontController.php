@@ -11,6 +11,7 @@ use App\Models\Declaration;
 use App\Http\Controllers\AdminSettingController;
 use App\Models\TeamEducation;
 use App\Models\TeamExperience;
+use App\Models\EmployeeCategory;
 use App\Models\TeamSkill;
 use App\Models\Skill;
 use App\Models\Faq;
@@ -157,7 +158,8 @@ class FrontController extends Controller
 
         $flicker = Flicker::select('id','name','image')
                           ->get();
-
+        $teamCategory =  EmployeeCategory::select('id', 'description')
+        ->get();
         $declaration = Declaration::select('id', 'client', 'client_image', 'testimony')
                                   ->get();
 
@@ -176,24 +178,29 @@ class FrontController extends Controller
          $faq = Faq::select('id', 'title', 'answer')->get();                     
 
 
-        /*$i=0; 
-         foreach ($portfolio as $portafolio) {
-            $agregar2 = $this->multiexplode(array("[","]",",",'"'), $portafolio->image);
-            foreach ($agregar2 as $imagen){
-                if($imagen != '')
-                    array_push($agregar, $imagen);
-            }
-            //array_push($agregar);
-            $portafolio->image = $agregar;
-            $i++;
-            $agregar = array();
-          }*/
-        //  dd($portfolios);
 
-        return view('landing')->with(['portfolios' => $portfolios, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill, 'faqs' => $faq]);
+
+        return view('landing')->with(['portfolios' => $portfolios,'employeeCategories'=>$teamCategory, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill, 'faqs' => $faq]);
 
     }
+    public function teamDetails($slug){
+        $detailTeam = TeamUser::where('slug', $slug)->firstOrFail();
 
+        $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_title','education_date','education_description')
+        ->leftJoin('team_users', 'team_users.id', 'team_educations.developer_id')
+        ->get();
+        
+        $teamExperience = TeamExperience::select('*')
+          ->leftJoin('team_users', 'team_users.id', 'team_experience.developer_id')
+          ->get();  
+        $teamSkill = TeamSkill::select('skill_id', 'skill_name','skill_percentage','developer_id')
+            ->leftJoin('team_users', 'team_users.id', 'team_skills.developer_id')
+            ->get();   
+    
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+        return view('detailTeam')->with(['settings' => $setting,'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill, 'detailTeam'=> $detailTeam]);
+    }
     public function portfolio_details($id)
     {
 

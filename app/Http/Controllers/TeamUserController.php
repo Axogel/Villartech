@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 use App\Models\TeamEducation;
 use App\Models\TeamUser;
+use App\Models\EmployeeSkill;
+use App\Models\EmployeeCategory;
+use App\Models\Language;
+use App\Models\LanguageTeam;
+
 use App\Models\TeamExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use App\Models\TeamSkill;
+use App\Models\Skill;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -45,7 +51,10 @@ class TeamUserController extends Controller
      */
     public function create()
     {
-        return view('teams.create');
+        $languages = Language::pluck('name', 'id');
+        $skills = Skill::pluck('name','id');
+        $opcionesCategory = EmployeeCategory::pluck('name', 'id');
+        return view('teams.create',compact('skills', 'languages'))->with('opcionesCategory', $opcionesCategory);
     }
 
     /**
@@ -56,12 +65,23 @@ class TeamUserController extends Controller
      */
     public function store(Request $request)
     {
+        
         $teamUser = new TeamUser;
         $teamUser->name = $request->id_name;
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
         $teamUser->photo = $request->photo;
-        $teamUser->skills = $request->skills;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $teamUser->skills = $jsonSkillIds;
+        $LanguageIds = $request->input('languages', []);
+        $jsonLanguageIds = json_encode($LanguageIds);
+        $teamUser->languages = $jsonLanguageIds;
+
+        $languageLevels = $request->input('language_levels', []);
+
+
+
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
@@ -69,33 +89,45 @@ class TeamUserController extends Controller
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
         $teamUser->freelance = $request->freelance;
-        $teamUser->team_category = $request->team_category;
+        $slug = Str::slug($request->id_name);
+        $teamUser->slug = $slug;
+        $teamUser->category_id = $request->category_id;
         $teamUser->work_time = $request->work_time;
         $teamUser->overview = $request->overview;
 
         $teamUser->status = 1;
-
+            
         $request->validate([
-            'email' => 'required|email|unique:team_users,email',
-            'photo' => 'required|mimes:jpeg,png,jpg,gif,svg',
-            'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/']
-
-        ],$message=[
-            'email.required' => 'Please provide an email address',
+            'email' => 'required|email',
+            'photo' => 'mimes:jpeg,png,jpg,gif,svg',
+            'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
+            'language_levels.*' => 'nullable|integer|min:0|max:100'
+        ], $message = [
             'email.email' => 'Please provide a valid email address',
             'email.unique' => 'This email address is already taken',
             'photo.required' => 'Please provide an image',
             'photo.mimes' => 'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
             'team_presentation.required' => 'The video field is required.',
             'team_presentation.url' => 'The video field must be a valid URL.',
-            'team_presentation.regex' => 'The video URL must be a valid YouTube link.'
+            'team_presentation.regex' => 'The video URL must be a valid YouTube link.',
+            'language_levels.*.integer' => 'The language level must be an integer.',
+            'language_levels.*.min' => 'The language level must be at least 0.',
+            'language_levels.*.max' => 'The language level must be at most 100.'
         ]);
+        
 
          $url = $request->photo->store('uploads/images/teams', 'public');
          $teamUser->photo = $url ?? null;     
+         $itemIdsToKeep = $request->input('skills');
          $teamUser->save();
+    
+        foreach ($LanguageIds as $key => $languageId) {
+            $languageLevel = isset($languageLevels[$key]) ? $languageLevels[$key] : null;
+            $teamUser->languages()->attach($languageId, ['language_level' => $languageLevel]);
+        }
 
-         
+         $teamUser->EmployeeSkills()->attach($request->input('skills'));
+     
          return redirect()->route('teams.index')->withSuccessMessage('Employee have been created', 'Employee have been created');
     }
 
@@ -119,9 +151,12 @@ class TeamUserController extends Controller
      */
     public function edit($id)
     {
+
+        $languages = Language::pluck('name', 'id');
         $teamUser = TeamUser::find($id);
-        // dd($teamUser);
-        return view('teams.edit',compact('teamUser'));
+        $skills = Skill::pluck('name','id');
+        $opcionesCategory = EmployeeCategory::pluck('name', 'id');
+        return view('teams.edit',compact('teamUser','skills','languages'))->with('opcionesCategory', $opcionesCategory);
     }
 
     /**
@@ -133,12 +168,23 @@ class TeamUserController extends Controller
      */
     public function update(Request $request, TeamUser $teamUser, $id)
     {
+       
         $teamUser = TeamUser::find($id);
-
+        $teamUser->EmployeeSkill()->delete();
+        $teamUser->LanguageTeam()->delete();
         $teamUser->name = $request->id_name;
         $teamUser->id_name = $request->id_name;
         $teamUser->email = $request->email;
-        $teamUser->skills = $request->skills;
+        $skillIds = $request->input('skills');
+        $jsonSkillIds = json_encode($skillIds);
+        $teamUser->skills = $jsonSkillIds;
+        $LanguageIds = $request->input('Languages', []);
+    
+        $jsonLanguageIds = json_encode($LanguageIds);
+        $teamUser->languages = $jsonLanguageIds;
+
+        $languageLevels = $request->input('language_levels', []);
+
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
@@ -146,7 +192,7 @@ class TeamUserController extends Controller
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
         $teamUser->freelance = $request->freelance;
-        $teamUser->team_category = $request->team_category;
+        $teamUser->category_id = $request->category_id;
         $teamUser->work_time = $request->work_time;
         $teamUser->overview = $request->overview;
 
@@ -162,18 +208,32 @@ class TeamUserController extends Controller
         $request->validate([
             'email' => 'required|email',
             'photo' => 'mimes:jpeg,png,jpg,gif,svg',
-            'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/']
-        ],$message=[
+            'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
+            'language_levels.*' => 'nullable|integer|min:0|max:100'
+        ], $message = [
             'email.email' => 'Please provide a valid email address',
             'email.unique' => 'This email address is already taken',
             'photo.required' => 'Please provide an image',
             'photo.mimes' => 'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
             'team_presentation.required' => 'The video field is required.',
             'team_presentation.url' => 'The video field must be a valid URL.',
-            'team_presentation.regex' => 'The video URL must be a valid YouTube link.'
+            'team_presentation.regex' => 'The video URL must be a valid YouTube link.',
+            'language_levels.*.integer' => 'The language level must be an integer.',
+            'language_levels.*.min' => 'The language level must be at least 0.',
+            'language_levels.*.max' => 'The language level must be at most 100.'
         ]);
+        
 
+        $itemIdsToKeep = $request->input('skills');
         $teamUser->save();
+
+        $teamUser->EmployeeSkills()->attach($request->input('skills'));
+
+        foreach ($LanguageIds as $key => $languageId) {
+            $languageLevel = isset($languageLevels[$key]) ? $languageLevels[$key] : null;
+            $teamUser->languages()->attach($languageId, ['language_level' => $languageLevel]);
+        }
+        
 
         return redirect()->route('teams.index')->withSuccessMessage('Employee have been updated', 'Employee have been updated successfully');
     }

@@ -12,7 +12,7 @@
         <div class="row">
             <div class="landing-tab clearfix">
                 <ul class="nav nav-tabs nav-stacked nav flex-column col-md-3 col-sm-5">
-                    <li class="active">
+                    <li  id="tab-li-1"  class="active tab-profile">
                         <a class="animated fadeIn" href="#tab_a" data-toggle="tab">
                             <span class="tab-icon" style="padding-left: 8px;"><i class="fa fa-info"></i></span>
                             <div class="tab-info">
@@ -20,7 +20,7 @@
                             </div>
                         </a>
                     </li>
-                    <li>
+                    <li  id="tab-li-2" class="tab-profile">
                         <a class="animated fadeIn" href="#tab_b" data-toggle="tab">
                             <span class="tab-icon"><i class="fa fa-briefcase"></i></span>
                             <div class="tab-info">
@@ -28,7 +28,7 @@
                             </div>
                         </a>
                     </li>
-                    <li>
+                    <li id="tab-li-3"  class="tab-profile">
                         <a class="animated fadeIn" href="#tab_c" data-toggle="tab">
                             <span class="tab-icon"><i class="fa fa-android"></i></span>
                             <div class="tab-info">
@@ -36,7 +36,7 @@
                             </div>
                         </a>
                     </li>
-                    <li>
+                    <li id="tab-li-4"  class="tab-profile">
                         <a class="animated fadeIn" href="#tab_d" data-toggle="tab">
                             <span class="tab-icon"><i class="fa fa-pagelines"></i></span>
                             <div class="tab-info">
@@ -44,7 +44,7 @@
                             </div>
                         </a>
                     </li>
-                    <li>
+                    <li  id="tab-li-5" class="tab-profile">
                         <a class="animated fadeIn" href="#tab_e" data-toggle="tab">
                             <span class="tab-icon"><i class="fa fa-support"></i></span>
                             <div class="tab-info">
@@ -54,7 +54,7 @@
                     </li>
                 </ul>
                 <div class="tab-content col-md-9 col-sm-7">
-                    <div class="tab-pane active animated fadeInRight" id="tab_a">
+                    <div class="tab-pane tab-pane-tabs active animated fadeInRight" id="tab_a">
                         <i class="fa fa-trophy big"></i>
                         <h3 style="font-family: 'Lato'">We Are Awarded Winning Company</h3>
                         <p>We are Villar Technologies, one of the most reliable companies that you will find in the
@@ -65,7 +65,7 @@
                                 technological platform.
                         </p>
                     </div>
-                    <div class="tab-pane animated fadeInLeft" id="tab_b">
+                    <div class="tab-pane tab-pane-tabs animated fadeInLeft" id="tab_b">
                         <i class="fa fa-briefcase big"></i>
                         <h3 style="font-family: 'Lato'">We Have Worldwide Business</h3>
                         <p>Us, VillarTechnologies as the company that we are today, we started working and providing our
@@ -77,7 +77,7 @@
                                 and Jobs that are constantly been assigned.
                         </p>
                     </div>
-                    <div class="tab-pane animated fadeIn" id="tab_c">
+                    <div class="tab-pane tab-pane-tabs animated fadeIn" id="tab_c">
                         <i class="fa fa-android big"></i>
                         <h3 style="font-family: 'Lato'">We Build Readymade Applications</h3>
                         <p>VillarTechnologies provides a whole world of programmation and development services with the
@@ -89,7 +89,7 @@
                                 that a freelancer does but backed by the trust that only a company can give you.
                         </p>
                     </div>
-                    <div class="tab-pane animated fadeIn" id="tab_d">
+                    <div class="tab-pane tab-pane-tabs animated fadeIn" id="tab_d">
                         <i class="fa fa-pagelines big"></i>
                         <h3 style="font-family: 'Lato'">Clean and Modern Design</h3>
                         <p>VillarTechnologies offers an excellent strategic program to keep the execution of each job as
@@ -98,7 +98,7 @@
                                 créate, improve or manage.
                         </p>
                     </div>
-                    <div class="tab-pane animated fadeIn" id="tab_e">
+                    <div class="tab-pane tab-pane-tabs animated fadeIn" id="tab_e">
                         <i class="fa fa-support big"></i>
                         <h3 style="font-family: 'Lato'">24/7 Dedicated Support</h3>
                         <p>In VillarTechnologies we make sure that our team is available 24/7 or during the work

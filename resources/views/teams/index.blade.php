@@ -61,10 +61,9 @@
     
                                     </td>
                                     <td>
-    
-                                        <span class="badge badge-dot mr-4">
-                                            {{ $teamUser->skills }}
-                                        </span>
+                                    @foreach ($teamUser->EmployeeSkills()->get() as $skill)
+                                                    <span class="mb-0 text-sm">{{ $skill->name }}</span>
+                                    @endforeach
     
                                     </td>
     
@@ -127,10 +126,11 @@
                                     </td>
     
                                     <td>
+                                    <span class="mb-0 text-sm">{{ $teamUser->employeeCategories->name }}</span>
+
+
+
     
-                                        <span class="badge badge-dot mr-4">
-                                            {{ $teamUser->team_category}}
-                                        </span>
     
                                     </td>
     

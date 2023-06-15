@@ -177,7 +177,23 @@ $setting = DB::select('select * from admin_settings');
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('category-types.index') }}">
-                        <p style="font-weight: 900; font-size:15px; color:white;"> <i  class="fa-solid fa-layer-group" style="color: #ffffff;"></i>Category Types</p>
+                        <p style="font-weight: 900; font-size:15px; color:white;"> <i  class="fa-solid fa-layer-group pr-1" style="color: #ffffff;"></i>Category Types</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-sm flex-column img-zoom ">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('languages.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"> <i  class="fa-solid fa-layer-group pr-1" style="color: #ffffff;"></i>Languages</p>
+                    </a>
+                </li>
+                </ul>
+            <ul class="nav nav-sm flex-column img-zoom ">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('EmployeeCategories.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"> <i  class="fa-solid fa-layer-group pr-1" style="color: #ffffff;"></i> Employee Category</p>
                     </a>
                 </li>
             </ul>
@@ -207,7 +223,7 @@ $setting = DB::select('select * from admin_settings');
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contacts.index') }}">
-                        <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>Emails</p>
+                        <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-envelope pr-1" style="color: #ffffff;"></i>Emails</p>
                     </a>
                 </li>
             </ul>

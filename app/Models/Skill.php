@@ -25,4 +25,14 @@ class Skill extends Model
             return $this->belongsToMany(Portfolio::class, 'portfolio_skill', 'portfolio_id', 'skill_id');
 
     }
+    public function employeeSkills()
+    {
+
+            return $this->belongsToMany(Portfolio::class, 'portfolio_skill', 'portfolio_id', 'skill_id');
+
+    }
+    public function teamSkills(){
+        return $this->belongsToMany(TeamUser::class, 'employee_skills', 'skill_id', 'employee_id');
+    }
+
 }

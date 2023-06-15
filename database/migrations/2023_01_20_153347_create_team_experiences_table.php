@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('developer_id');
             $table->string('experience_category');
             $table->string('experience_description', 999);
-            $table->string('experience_date');
+            $table->string('experience_date', 99);
             $table->string('experience_company');
             $table->timestamps();
         });

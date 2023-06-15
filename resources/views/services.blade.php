@@ -400,16 +400,28 @@
             <div class="container" id="container-faq">
                 <p class="faq-title pl-5">Frequently Asked Questions (FAQ)</p>
                 @foreach ($faqs as $faq)
-                    <p class="question-title pt-5">
-                        <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
-                        {{ $faq->title }}
-                    </p>
-
                     <div class="accordion-toggle">
-                        <p class="question-answer">{{ $faq->answer }}</p>
+                        <p class="question-title pt-5" id="">
+                            <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
+                            {{ $faq->title }}
+                        </p>
+                        <div>
+                            <p class="question-answer">{{ $faq->answer }}</p>
+                        </div>
                     </div>
                     <hr style="color:white; height:0.5px; opacity:1.25;">
-                @endforeach
+          
+    <div class="accordion-toggle">
+        <p class="question-title pt-5" id="">
+            <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
+            {{ $faq->title }}
+        </p>
+        <div>
+            <p class="question-answer">{{ $faq->answer }}</p>
+        </div>
+    </div>
+    <hr style="color:white; height:0.5px; opacity:1.25;">
+@endforeach
                 <br><br>
                 <br><br>
                 <br><br>
@@ -519,28 +531,28 @@
 
 
     <script>
-        const toggleButtons = document.querySelectorAll('.accordion-toggle');
+    const toggleButtons = document.querySelectorAll('.accordion-toggle');
 
-        toggleButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const isActive = button.classList.contains('active');
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const isActive = button.classList.contains('active');
 
-                // Cerrar todas las respuestas
-                toggleButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    const answer = btn.querySelector('.question-answer');
-                    answer.style.maxHeight = null;
-                });
-
-                // Abrir solo la respuesta seleccionada si no estaba activa previamente
-                if (!isActive) {
-                    button.classList.add('active');
-                    const answer = button.querySelector('.question-answer');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
+            // Cerrar todas las respuestas
+            toggleButtons.forEach(btn => {
+                btn.classList.remove('active');
+                const answer = btn.querySelector('.question-answer');
+                answer.style.maxHeight = null;
             });
+
+            // Abrir solo la respuesta seleccionada si no estaba activa previamente
+            if (!isActive) {
+                button.classList.add('active');
+                const answer = button.querySelector('.question-answer');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
         });
-    </script>
+    });
+</script>
 
     <style>
         .form-title-contact {
@@ -570,7 +582,7 @@
             content: '';
             position: absolute;
             right: 12px;
-            top: -35%;
+            top: 50%;
             transform: translateY(-50%);
             width: 0;
             height: 0;

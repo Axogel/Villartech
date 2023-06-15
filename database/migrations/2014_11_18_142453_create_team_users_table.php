@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('team_users', function (Blueprint $table) {
             $table->id();
             $table->string('id_name');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->string('photo');
             $table->string('skills');
             $table->integer('status')->default('1');
+            $table->string('slug')->unique();
             $table->string('age');
             $table->string('address');
             $table->string('description');
@@ -28,9 +30,11 @@ return new class extends Migration
             $table->string('cv_link');
             $table->string('residence');
             $table->string('freelance');
-            $table->string('team_category');
+            $table->foreignId('category_id')->references('id')->on('employee_categories');
             $table->string('work_time');
             $table->string('overview');
+            $table->string('languages');
+
 
             $table->timestamps();
         });
@@ -43,6 +47,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::dropIfExists('team_users');
     }
 };

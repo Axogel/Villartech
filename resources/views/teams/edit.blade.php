@@ -17,13 +17,13 @@
                     ]) !!}
             
                   <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
+                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Firts and Lastname</label>
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             {!! Form::text('id_name', old('id_name', $teamUser->id_name), [
                                 
                                 'id' => 'id_name',
                                 'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'Name',
+                                'placeholder' => 'Firts and Lastname',
                             ]) !!}
                         </div>
                     </div> 
@@ -54,14 +54,9 @@
             
                     
                      <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            {!! Form::text('skills', old('skills', $teamUser->skills), [
-                                
-                                'id' => 'skills',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'skills',
-                            ]) !!}
+                     <div class="col-lg-4 fv-row fv-plugins-icon-container">
+                            <label class=" col-form-label required fw-bold fs-6">Skills</label>
+                            {!! Form::select('skills[]', $skills,  json_decode($teamUser->skills), ['class' => 'form-control js-example-basic-multiple', 'multiple' => 'multiple']) !!}
                         </div>
                     </div> 
             
@@ -157,15 +152,13 @@
             
             
                     <div class=" row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            {!! Form::text('team_category', old('team_category', $teamUser->team_category), [
-                                
-                                'id' => 'team_category',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'Insert Category',
-                            ]) !!}
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+              
+                            {!! Form::select('category_id', $opcionesCategory, null, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+
                         </div>
+     
                     </div> 
             
             
@@ -181,8 +174,22 @@
                             ]) !!}
                         </div>
                     </div> 
-            
-            
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Languages</label>
+
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+    {!! Form::select('Languages[]', $languages, json_decode($teamUser->languages), ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+</div>
+<label class="col-lg-4 col-form-label required fw-bold fs-6">Level</label>
+<div class="col-lg-8 fv-row fv-plugins-icon-container">
+    {!! Form::text('language_levels[]', isset($language_levels) ? $language_levels : '', ['placeholder' => 'Insert your level', 'class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+</div>
+<div class="col-lg-8 fv-row fv-plugins-icon-container">
+    <div id="language-forms-container"></div>
+</div>
+
+   
+
+<button type="button" id="add-language-btn" class="btn btn-primary col-lg-8 fv-row my-2">Agregar nuevo idioma</button>
                     <div class="row mb-6">
                         <label class="col-lg-4 col-form-label required fw-bold fs-6">Work Time</label>
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
@@ -223,6 +230,38 @@
     </div>
     
    
+    <style>
+    .form-check.form-switch label {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.form-check.form-switch label:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-check.form-switch .form-check-input:checked + label {
+    background-color: #4CAF50;
+}
+
+.form-check.form-switch .form-check-input:checked + label:before {
+    left: 26px;
+}
+
+   </style>
 
 @endsection
 
@@ -232,6 +271,40 @@
 @endpush
 
 @section('scripts')
+
+<script>
+   $(document).ready(function() {
+        var formCounter = 1;
+        var languageFormsContainer = $('#language-forms-container');
+
+        $('#add-language-btn').on('click', function() {
+            var formId = 'language-form-' + formCounter;
+
+            var languageForm = $('<div>').attr('id', formId).addClass('language-form');
+
+            var selectField = $('<div>').addClass('fv-row fv-plugins-icon-container')
+                .append($('<label>').addClass('col-lg-4 col-form-label required fw-bold fs-6').text('Languages'))
+                .append(` {!! Form::select('Languages[]', $languages, json_decode($teamUser->languages), ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}`);
+
+            var levelField = $('<div>').addClass('fv-row fv-plugins-icon-container')
+                .append($('<label>').addClass('col-lg-4 col-form-label required fw-bold fs-6').text('Level'))
+                .append(` {!! Form::text('language_levels[]', isset($language_levels) ? $language_levels : '', ['placeholder' => 'Insert your level', 'class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}`);
+
+            languageForm.append(selectField);
+            languageForm.append(levelField);
+
+            languageFormsContainer.append(languageForm);
+
+            formCounter++;
+        });
+    });
+</script>
+ 
+<script>
+        $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
