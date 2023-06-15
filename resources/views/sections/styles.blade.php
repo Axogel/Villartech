@@ -967,21 +967,8 @@ iframe {
   margin-bottom:25rem;
 }
 
-#hola-como-vas2 {
-  position: relative;
-  left: 44%;
-  top: -220px;
-  width: 12rem;
-  height:12rem;
-}
 
-.circle {
-  width: 130px;
-  height: 130px;
-  background-color: #005397;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
+
 
 
 ::placeholder {
@@ -1069,27 +1056,7 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
   }
 }
 
-.circle {
-                width: 211px;
-                height: 211px;
-                background-color: #005397;
-                border-radius: 50%;
-                position: relative;
-                left: 1068px;
-                margin-bottom: 10px;
-                top: 85px;
-            }
 
-.circle {
-                width: 211px;
-                height: 211px;
-                background-color: #005397;
-                border-radius: 50%;
-                position: relative;
-                left: 1068px;
-                margin-bottom: 10px;
-                top: 85px;
-            }
 
 .padding-dinamic-show {
     padding-right: 51rem;

@@ -115,8 +115,29 @@ class FrontController extends Controller
         ->get();
 
         
+        // Obtener el blog actual basado en el slug
+    $blogActual = Blog::where('slug', $slug)->firstOrFail();
+    
+    // Obtener el category_id del blog actual
+    $category_id = $blogActual->category_id;
 
-        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag]);
+    /// Obtener los primeros 3 blogs relacionados con el mismo category_id
+    $relatedPostsFirst = Blog::where('category_id', $category_id)
+    ->where('id', '!=', $blogActual->id) // Excluir el blog actual
+    ->take(3)
+    ->get();
+
+    // Obtener los últimos 3 blogs relacionados con el mismo category_id
+    $relatedPostsLast = Blog::where('category_id', $category_id)
+    ->where('id', '!=', $blogActual->id) // Excluir el blog actual
+    ->latest('id')
+    ->take(3)
+    ->get();
+
+        
+        
+
+        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag , 'relatedPostsFirsts' => $relatedPostsFirst, 'relatedPostsLasts' => $relatedPostsLast]);
     }
 
 

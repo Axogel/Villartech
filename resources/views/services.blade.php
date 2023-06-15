@@ -400,7 +400,7 @@
             <div class="container" id="container-faq">
                 <p class="faq-title pl-5">Frequently Asked Questions (FAQ)</p>
                 @foreach ($faqs as $faq)
-                    <p class="question-title pt-3">
+                    <p class="question-title pt-5">
                         <span style="color:white; padding-right:5px;" class="question-title ">{{ $faq->id }}.</span>
                         {{ $faq->title }}
                     </p>
@@ -432,7 +432,7 @@
                 <div class="" id="container-contact-us">
                     <p class="title-contact pt-3">CONTACT US</p>
                     <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
-                    <p class="subtitle-contact" style="font-size:17px; font-weight:400;" id="sub-sub">Contact Us to
+                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub">Contact Us to
                         Discuss Your
                         Project Requirements and Receive a Customized Solution</p>
                 </div>
@@ -551,7 +551,7 @@
 
 
         #sub-sub {
-            font-weight: 400 !important;
+            font-weight: 700 !important;
         }
 
 

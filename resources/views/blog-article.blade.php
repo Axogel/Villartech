@@ -21,7 +21,7 @@
 
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <p class="author">Author | Date</p>
+                    <p class="author"> {{$detailBlog->author }} | {{$detailBlog->date }} </p>
 
                 </div>
 
@@ -77,114 +77,65 @@
 
                 </div>
 
-
+                    
                 <div class="col-10 mx-auto pt-5 container-cards">
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
+                                    @foreach ($relatedPostsFirsts as $item)
+                                    
                                     <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
+                                        <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
                                     </div>
 
+                                    <div class="col-7 mt-5 text-left">
+                                        <p class="card-title">
+                                            {{ $item->categoryBlog->name }}
+                                        </p>
+                                        <p class="card-subtitle">
+                                            {{ $item->title }}
+                                        </p>
+                                    </div>
+                                    
                                     <hr class="mt-4" style="opacity: 1;">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
-
-                                    <hr class="mt-4" style="opacity: 1;">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
+                                    @endforeach
 
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
+                                    @foreach ($relatedPostsLasts as $item)
+
                                     <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
+                                        <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
                                     </div>
 
+                                    <div class="col-7 mt-5 text-left">
+                                        <p class="card-title">
+                                            {{ $item->categoryBlog->name }}
+                                        </p>
+                                        <p class="card-subtitle">
+                                            {{ $item->title }}
+                                        </p>
+                                    </div>
+                                    
                                     <hr class="mt-4" style="opacity: 1;">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
-
-                                    <hr class="mt-4" style="opacity: 1;">
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
+                                    @endforeach
 
                                 </div>
+
                             </div>
                         </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
         
@@ -195,6 +146,11 @@
             }
 
             @media (min-width: 768px) {
+
+                .blog-image {
+                width: 100%; /* Establece un ancho fijo para las imágenes */
+                height: 113px; /* Permite que la altura se ajuste proporcionalmente */
+                }
 
                 #container-of-cards {
                     height: 750px;
