@@ -57,6 +57,17 @@
                         </div>
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
+                            {!! Form::text('date', old('date', $blog->date), [
+                                'id' => 'date',
+                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                                'placeholder' => 'date',
+                            ]) !!}
+
+                        </div>
+                        
+
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Category Type</label>
                             {!! Form::select('category_id', $opciones, $blog->category_id, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
 

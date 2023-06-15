@@ -68,6 +68,7 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->description = $request->description;
         $blog->author = $request->author;
+        $blog->date = $request->date;
         $tagIds = $request->input('tags');
         $jsonTagIds = json_encode($tagIds);
         $blog->tags = $jsonTagIds;
@@ -132,6 +133,7 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->description = $request->description;
         $blog->author = $request->author;
+        $blog->date = $request->date;
         $tagIds = $request->input('tags');
         $jsonTagIds = json_encode($tagIds);
         $blog->tags = $jsonTagIds;

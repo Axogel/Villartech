@@ -15,6 +15,10 @@ use App\Models\EmployeeCategory;
 use App\Models\TeamSkill;
 use App\Models\Skill;
 use App\Models\Faq;
+use App\Models\Blog;
+use App\Models\Tag;
+use App\Models\Category;
+
 
 
 
@@ -100,12 +104,41 @@ class FrontController extends Controller
     }
 
 
-    public function blogArticle() {
+    public function blogArticle($slug) {
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
         ->get();
+
+       $blog = Blog::with('categoryBlog')->get();
+
+        $detailBlog = Blog::where('slug', $slug)->firstOrFail();
+
+        $tag = Tag::select('id', 'name')
+        ->get();
+
+        
+        // Obtener el blog actual basado en el slug
+    $blogActual = Blog::where('slug', $slug)->firstOrFail();
+    
+    // Obtener el category_id del blog actual
+    $category_id = $blogActual->category_id;
+
+    /// Obtener los primeros 3 blogs relacionados con el mismo category_id
+    $relatedPostsFirst = Blog::where('category_id', $category_id)
+    ->where('id', '!=', $blogActual->id) // Excluir el blog actual
+    ->take(3)
+    ->get();
+
+    // Obtener los últimos 3 blogs relacionados con el mismo category_id
+    $relatedPostsLast = Blog::where('category_id', $category_id)
+    ->where('id', '!=', $blogActual->id) // Excluir el blog actual
+    ->latest('id')
+    ->take(3)
+    ->get();
+
+        
         
 
-        return view('blog-article')->with(['settings' => $setting]);
+        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag , 'relatedPostsFirsts' => $relatedPostsFirst, 'relatedPostsLasts' => $relatedPostsLast]);
     }
 
 
@@ -193,7 +226,7 @@ class FrontController extends Controller
           }
 
         return view('portfolio')->with(['details' => $porta_details, 'technologies' => $technologies]);
-    }
+    }   
 
         public function AboutUs(){
 
@@ -219,11 +252,13 @@ class FrontController extends Controller
 
     }
 
-        public function Blog(){
+        public function blog(){
 
           $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
           ->get();
-          return view('/blog')->with('settings', $setting);
+          $blogs = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug')
+          ->get()->toArray();
+          return view('blog')->with(['settings' => $setting, 'blogs' => $blogs]);
 
     }
 

@@ -444,7 +444,7 @@
                 <div class="" id="container-contact-us">
                     <p class="title-contact pt-3">CONTACT US</p>
                     <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
-                    <p class="subtitle-contact" style="font-size:17px; font-weight:400;" id="sub-sub">Contact Us to
+                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub">Contact Us to
                         Discuss Your
                         Project Requirements and Receive a Customized Solution</p>
                 </div>
@@ -563,7 +563,7 @@
 
 
         #sub-sub {
-            font-weight: 400 !important;
+            font-weight: 700 !important;
         }
 
 

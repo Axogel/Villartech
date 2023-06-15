@@ -29,7 +29,12 @@ Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 
 
 
-Route::get('/newview', [FrontController::class, 'blogArticle'])->name('blogArticle');
+ /* Blog Section */
+
+Route::get('/blog/{slug}', [FrontController::class, 'blogArticle'])->name('blogArticle');
+Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
+
+ /* END */
 
 
 
@@ -41,13 +46,11 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/services', [FrontController::class, 'servicesView'])->name('servicesView');
 
-Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/portfolio/{slug}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 Route::get('/employee/{slug}', [FrontController::class, 'teamDetails'])->name('teamDetail');
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
-Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);

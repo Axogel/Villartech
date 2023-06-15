@@ -23,7 +23,6 @@
 
                         </div>
 
-
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
                             {!! Form::textarea('description', null, ['class' => 'form-control summernote' , 'id' => 'description']) !!}
@@ -38,7 +37,12 @@
 
                         </div>
 
-                        
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
+                            {!! Form::text('date', null, ['placeholder' => 'Date',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                        </div>
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Category Type</label>

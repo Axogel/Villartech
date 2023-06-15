@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Tag;
 
 
+
 class Blog extends Model
 {
     use HasFactory;
@@ -21,6 +22,7 @@ class Blog extends Model
         'description',
         'image',
         'author',
+        'date',
         'category_id',
         'tags',
         'slug',
@@ -43,5 +45,10 @@ class Blog extends Model
     public function blogTag()
     {
         return $this->hasMany(BlogTag::class, 'blog_id', 'id');
+    }
+
+    public function categoryBlog()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }
