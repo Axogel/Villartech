@@ -90,7 +90,8 @@
                                     @foreach ($relatedPostsFirsts as $item)
                                     
                                     <div class="col-5 mt-5">
-                                        
+                                        <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
+
                                             <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
                                         </a>
                                         
@@ -122,7 +123,7 @@
                                     @foreach ($relatedPostsLasts as $item)
 
                                     <div class="col-5 mt-5">
-                                        <a href="http://villartechnologies-website.test/blog/{{ $item['slug'] }}">
+                                        <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
                                         <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
                                         </a>
                                     </div>
