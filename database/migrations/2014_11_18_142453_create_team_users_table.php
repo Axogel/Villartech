@@ -22,16 +22,19 @@ return new class extends Migration
             $table->string('photo');
             $table->string('skills');
             $table->integer('status')->default('1');
+            $table->string('slug')->unique();
             $table->string('age');
             $table->string('address');
             $table->string('description');
             $table->string('team_presentation');
             $table->string('cv_link');
             $table->string('residence');
-            $table->boolean('freelance')->default(false)->change();
+            $table->string('freelance');
             $table->foreignId('category_id')->references('id')->on('employee_categories');
             $table->string('work_time');
             $table->string('overview');
+            $table->string('languages');
+
 
             $table->timestamps();
         });

@@ -184,6 +184,14 @@ $setting = DB::select('select * from admin_settings');
             <ul class="nav nav-sm flex-column img-zoom ">
 
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('languages.index') }}">
+                        <p style="font-weight: 900; font-size:15px; color:white;"> <i  class="fa-solid fa-layer-group pr-1" style="color: #ffffff;"></i>Languages</p>
+                    </a>
+                </li>
+                </ul>
+            <ul class="nav nav-sm flex-column img-zoom ">
+
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('EmployeeCategories.index') }}">
                         <p style="font-weight: 900; font-size:15px; color:white;"> <i  class="fa-solid fa-layer-group pr-1" style="color: #ffffff;"></i> Employee Category</p>
                     </a>

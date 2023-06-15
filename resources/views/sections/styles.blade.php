@@ -24,6 +24,8 @@
     bottom:50px;
 
 }
+
+
 .effect-portfolio figcaption {
         position: absolute;
         top: 0;
@@ -146,6 +148,9 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .div-detail-team-gray{
+    margin-top:200px;
+}
     .margin-section-deatil-responsive{
         margin-top:100px;
     }
@@ -225,6 +230,15 @@
   }
 
 @media (min-width:300px) and (max-width:768px) {
+    .height-gray-div-responsive{
+        height:570px !important;
+    }
+    .corrections-postition-responsive-team{
+        margin-top:200px !important;
+    }
+    .div-detail-team-gray{
+    margin-top:100px;
+}
     #team-carousel{
         overflow-x: hidden;
     }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController,EmployeeCategoryController, PortfolioController, DeclarationController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController,EmployeeCategoryController, PortfolioController, DeclarationController,LanguageController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -45,7 +45,7 @@ Route::get('/portfolioView', [FrontController::class, 'portfolioView'])->name('p
 Route::get('/portfolio', [FrontController::class, 'portfolioView'])->name('portfolioView');
 Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/portfolio/{slug}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
-
+Route::get('/employee/{slug}', [FrontController::class, 'teamDetails'])->name('teamDetail');
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
 Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
 
@@ -69,7 +69,7 @@ Route::group(['middleware' => 'auth'], function () {
 	/* EMPLOYEES CRUD*/ 
 	Route::resource('teams', TeamUserController::class);
 	Route::resource('EmployeeCategories', EmployeeCategoryController::class);
-	 
+	Route::resource('languages', LanguageController::class);
 	// SKILLS CRUD
 
 	Route::resource('skills', SkillController::class);

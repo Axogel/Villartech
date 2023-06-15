@@ -119,7 +119,25 @@
                             {!! Form::text('overview', null, ['placeholder' => 'Insert a overview',
                             'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
+                       </div>
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Languages</label>
+                            {!! Form::select('languages[]', $languages, null, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+
+
                         </div>
+                        
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Level</label>
+                        {!! Form::text('language_levels[]', null, ['placeholder' => 'Insert your level', 'class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+                    </div>
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <div id="language-forms-container"></div>
+                        </div>
+   
+
+<button type="button" id="add-language-btn" class="btn btn-primary col-lg-8 fv-row my-2">Agregar nuevo idioma</button>
+
 
 
                     
@@ -204,6 +222,7 @@
 @endpush
 
 @section('scripts')
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
 integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -214,6 +233,34 @@ $('.js-example-basic-multiple').select2();
 });
 </script>
 
+<script>
+    $(document).ready(function() {
+        var formCounter = 1;
+        var languageFormsContainer = $('#language-forms-container');
+
+        $('#add-language-btn').on('click', function() {
+            var formId = 'language-form-' + formCounter;
+
+            var languageForm = $('<div>').attr('id', formId).addClass('language-form');
+
+            var selectField = $('<div>').addClass(' fv-row fv-plugins-icon-container')
+                .append($('<label>').addClass('col-lg-4 col-form-label required fw-bold fs-6').text('Languages'))
+                .append('{!! Form::select("languages[]", $languages, null, ["class" => "form-control form-control-solid mb-3 mb-lg-0"]) !!}');
+
+            var levelField = $('<div>').addClass(' fv-row fv-plugins-icon-container')
+                .append($('<label>').addClass('col-lg-4 col-form-label required fw-bold fs-6').text('Level'))
+                .append(`{!! Form::text("language_levels[]", null, ["placeholder" => "Insert your level", "class" => "form-control form-control-solid mb-3 mb-lg-0"]) !!}`);
+
+            languageForm.append(selectField);
+            languageForm.append(levelField);
+
+            languageFormsContainer.append(languageForm);
+
+            formCounter++;
+        });
+    });
+</script>
+ 
 
 
 @stop

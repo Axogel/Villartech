@@ -31,7 +31,7 @@
                                             {{ $team->name }}
                                         </p>
                                         <p class="text-center fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900; line-height: 1.3em;">
-                                        <span class="mb-0 text-sm">{{ $team->employeeCategories->name }}</span>
+                                        <span class="mb-0 text-sm">{{ $team->EmployeeCategories->name }}</span>
 
                                         </p>
                                         <p class="text-center" style="color:#323232; line-height: 1.3em; font-weight:light">
@@ -92,9 +92,9 @@
                                                     <p class="py-1" style="line-height: 1.3em; ">{{ $team->age }}</p>
                                                     <p class="py-1" style="line-height: 1.3em; ">{{ $team->residence }}</p>
                                                             @if($team->freelance == 1)
-                                                            <p class="py-1" style="line-height: 1.3em; ">Habilitado</p>
+                                                            <p class="py-1" style="line-height: 1.3em; ">available</p>
                                                             @else
-                                                            <p class="py-1" style="line-height: 1.3em; ">Desactivado</p>
+                                                            <p class="py-1" style="line-height: 1.3em; ">Occupied</p>
                                                             @endif
 
                                                     <p class="py-1" style="line-height: 1.3em; ">{{ $team->address }}</p>
