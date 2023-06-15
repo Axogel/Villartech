@@ -13,8 +13,10 @@
     <div class="container">
         <div class="row pt-5 pb-5">
             <div class="col-10 mx-auto pt-5 carta" style="background-color: white; text-align:center;">
-                <img src="{{ asset('storage') . '/' . $detailBlog->image }}" alt="" class="mx-auto img-fluid">
 
+               
+                <img src="{{ asset('storage') . '/' . $detailBlog->image }}" alt="" class="mx-auto img-fluid">
+            
                <div class="row">
                 <div class="col-8 text-left pt-4" id="container-resp">
                     <p class="technology">{{ $detailBlog->categoryBlog->name }}</p>
@@ -37,6 +39,8 @@
 
                     </div>
                     <p class="message"> {{ $detailBlog->description }}</p>
+
+                   
 
                 </div>
              
@@ -86,7 +90,10 @@
                                     @foreach ($relatedPostsFirsts as $item)
                                     
                                     <div class="col-5 mt-5">
-                                        <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
+                                        
+                                            <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
+                                        </a>
+                                        
                                     </div>
 
                                     <div class="col-7 mt-5 text-left">
@@ -96,6 +103,8 @@
                                         <p class="card-subtitle">
                                             {{ $item->title }}
                                         </p>
+
+                                        
                                     </div>
                                     
                                     <hr class="mt-4" style="opacity: 1;">
@@ -113,7 +122,9 @@
                                     @foreach ($relatedPostsLasts as $item)
 
                                     <div class="col-5 mt-5">
+                                        <a href="http://villartechnologies-website.test/blog/{{ $item['slug'] }}">
                                         <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
+                                        </a>
                                     </div>
 
                                     <div class="col-7 mt-5 text-left">

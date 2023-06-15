@@ -103,7 +103,7 @@ class FrontController extends Controller
     }
 
 
-    public function blogArticle($slug) {
+    public function blogArticle($slug,  Request $request ) {
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
         ->get();
 
@@ -134,10 +134,11 @@ class FrontController extends Controller
     ->take(3)
     ->get();
 
+        $domain = $request->root();
         
         
 
-        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag , 'relatedPostsFirsts' => $relatedPostsFirst, 'relatedPostsLasts' => $relatedPostsLast]);
+        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag , 'relatedPostsFirsts' => $relatedPostsFirst, 'relatedPostsLasts' => $relatedPostsLast, $domain]);
     }
 
 

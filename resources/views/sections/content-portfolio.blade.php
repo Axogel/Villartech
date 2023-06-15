@@ -72,13 +72,13 @@
                         @endphp
                         @php
                                     $AllSearch = count($new);
-                                    $countSearch = 0;
+                                    $countShowing = 0;
                         @endphp
                         <div class="container">
                             <div class="row justify-content-center">
                                     @foreach ($new as $portfolio)
                                     @php 
-                                        $countSearch++;
+                                        $countShowing++;
                                     @endphp
                                         <div class="col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover">
                                             <div class="grid">
@@ -106,7 +106,7 @@
 
                             </div>
                         </div>
-                        <p class="text-right padding-dinamic-show "><b class="" style=""> showing {{$countSearch}} results of {{$AllSearch}}</b></p>
+                        <p class="text-right padding-dinamic-show "><b class="" style=""> showing {{$countShowing}} results of {{$AllSearch}}</b></p>
                     </div>
                 @endforeach
             </div>
