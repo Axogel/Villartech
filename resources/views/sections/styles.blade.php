@@ -830,6 +830,20 @@ iframe {
 }
 
 
+.card-title {
+                font-family: 'Lato';
+                font-weight: 900;
+                font-size: 25px;
+                color:#005397;
+            } 
+
+            .card-subtitle {
+                font-family: 'Lato';
+                font-weight: 900;
+                font-size: 25px;
+                color:black;
+            }
+
 
 .card-hover {
 
@@ -1082,6 +1096,12 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
   .padding-dinamic-show {
     padding-right:12rem;
   }
+}
+
+
+.blog-image {
+    max-width: 100%;
+    max-height: 87px;
 }
 
 </style>

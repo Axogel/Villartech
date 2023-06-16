@@ -135,6 +135,7 @@ class FrontController extends Controller
     ->take(3)
     ->get();
 
+
         $domain = $request->root();
         
         
@@ -259,7 +260,21 @@ class FrontController extends Controller
           ->get();
           $blogs = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug')
           ->get()->toArray();
-          return view('blog')->with(['settings' => $setting, 'blogs' => $blogs]);
+
+        $blog1 = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug', 'category_id')
+        ->take(3)
+        ->get();
+
+        $blog2 = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug', 'category_id')
+        ->latest('id')
+        ->take(3)
+        ->get();
+
+
+          
+          return view('blog')->with(['settings' => $setting, 'blogs' => $blogs, 'blogs1' => $blog1, 'blogs2' => $blog2]);
+
+          
 
     }
 

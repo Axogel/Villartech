@@ -85,112 +85,73 @@
 <!--Section imgs-->
 
 <div class="col-10 mx-auto pt-5 container-cards">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    @foreach ($blogs1 as $item)
+                    
+                    <div class="col-5 mt-5">
+                        <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
 
-                                    <hr class="mt-4">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
-
-                                    <hr class="mt-4">
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                            <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
+                        </a>
+                        
                     </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
 
-                                    <hr class="mt-4">
-                                </div>
+                    <div class="col-7 mt-5 text-left">
+                        <p class="card-title">
+                            {{ $item->categoryBlog->name }}
 
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
+                        </p>
+                        <p class="card-subtitle">
+                            {{ $item->title }}
+                        </p>
 
-                                    <hr class="mt-4">
-                                </div>
+                        
+                    </div>
+                    
+                    <hr class="mt-4" style="opacity: 1;">
+                    @endforeach
 
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                <div class="row">
-                                    <div class="col-5 mt-5">
-                                        <img src="{{ asset('assets/img/business.png') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            NEWS
-                                        </p>
-                                        <p class="card-subtitle">
-                                            ¿Por qué mi programacion es mejor que el tuyo?
-                                        </p>
-                                    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    @foreach ($blogs2 as $item)
 
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-5 mt-5">
+                        <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
+                        <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
+                        </a>
+                    </div>
 
+                    <div class="col-7 mt-5 text-left">
+                        <p class="card-title">
+                            {{ $item['title'] }}
 
+                        </p>
+                        <p class="card-subtitle">
+                            {{ $item['title'] }}
+
+                        </p>
+                    </div>
+                    
+                    <hr class="mt-4" style="opacity: 1;">
+                    @endforeach
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
 
   </div>
 </div>
