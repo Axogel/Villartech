@@ -7,7 +7,7 @@
             <input type="hidden" name="_method" value="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-            <div class="col-10 mx-auto " style="background-color: #F9F9F9; width:80%; margin-top:0px;" id="contact-form">
+            <div class="col-10 mx-auto " style="background-color: #F9F9F9; width:100%; margin-top:0px;" id="contact-form">
                 <div class="" id="container-contact-us">
                     <p class="title-contact pt-3">CONTACT US</p>
                     <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
