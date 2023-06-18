@@ -79,8 +79,8 @@ class BlogController extends Controller
         
            
        
-            $url = $request->image->store('uploads/images/blogs', 'public');
-            $blog->image = $url ?? null;
+        $url = $request->image->store('uploads/images/blogs', 'public');
+        $blog->image = $url ?? null;
         
          $blog->category_id = $request->category_id;
          
@@ -99,9 +99,11 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+
+    public function show($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('blogs.show', compact('blog') );
     }
 
     /**
@@ -137,18 +139,21 @@ class BlogController extends Controller
         $tagIds = $request->input('tags');
         $jsonTagIds = json_encode($tagIds);
         $blog->tags = $jsonTagIds;
+
         if ($request->image) {
 
-            if(File::exists(storage_path('app/public/'.$blog->image))){
+        if(File::exists(storage_path('app/public/'.$blog->image))){
                 unlink(storage_path('app/public/'.$blog->image));
-            }
+         }
        
-            $url = $request->image->store('uploads/images/blogs', 'public');
-            $blog->image = $url ?? null;
+        $url = $request->image->store('uploads/images/blogs', 'public');
+        $blog->image = $url ?? null;
         }
+
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
          ]);
+
          $blog->category_id = $request->category_id;
          
          $blog->slug = $blog->title;
@@ -170,8 +175,8 @@ class BlogController extends Controller
             unlink(storage_path('app/public/'.$blog->image));
         }
    
-            $blog->delete();
-            return redirect()->route('blogs.index')->withSuccessMessage('Blog  have been deleted', 'Blog have been deleted');
+        $blog->delete();
+        return redirect()->route('blogs.index')->withSuccessMessage('Blog  have been deleted', 'Blog have been deleted');
     }
     
 }

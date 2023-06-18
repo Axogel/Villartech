@@ -36,6 +36,7 @@ Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
 
  /* END */
 
+ Route::get('/privacy', [FrontController::class, 'privacy'])->name('privacy');
 
 
 Auth::routes();
@@ -90,7 +91,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('blogs', BlogController::class);
 
 	/* EMPLOYEES EDUCATION CRUD*/ 
-	Route::get('/getEmployee/{team}', 'App\Http\Controllers\TeamUserController@getEmployee')->name('employee');
+	Route::get('/getEmployee/{teamUser}', 'App\Http\Controllers\TeamUserController@getEmployee')->name('employee');
 	Route::get('/createEmployeeEducation/{team}', 'App\Http\Controllers\TeamUserController@createEducation')->name('teams-skills.create');
 	Route::post('/storeEmployeeEducation/', 'App\Http\Controllers\TeamUserController@storeEducation')->name('teams-skills.store');
 	Route::get('/editEmployeeEducation/{education}/', 'App\Http\Controllers\TeamUserController@editEducation')->name('teams-skills.edit');

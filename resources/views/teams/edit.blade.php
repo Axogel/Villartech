@@ -4,7 +4,6 @@
 
 
 @section('content')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-8 mb-5 mb-xl-0">
@@ -45,21 +44,22 @@
                     
                     <div class=" row mb-6">
                         <label class="col-lg-4 col-form-label required fw-bold fs-6" >Image:</label>
-                            <span class="form-control" style="width:300px;">  
+                            <span class="form-control" style="width:300px; margin-left:15px;">  
                              {!! Form::file('photo', null) !!}
                             </span>
                             
                         </div>
-            
-            
-                    
-                     <div class="row mb-6">
-                     <div class="col-lg-4 fv-row fv-plugins-icon-container">
-                            <label class=" col-form-label required fw-bold fs-6">Skills</label>
-                            {!! Form::select('skills[]', $skills,  json_decode($teamUser->skills), ['class' => 'form-control js-example-basic-multiple', 'multiple' => 'multiple']) !!}
+
+
+                        <div class=" row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
+                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                                {!! Form::select('skills[]', $skills,  json_decode($teamUser->skills), ['class' => 'form-control js-example-basic-multiple', 'multiple' => 'multiple']) !!}
+                            </div>
                         </div>
-                    </div> 
             
+
+
             
                     <div class="row mb-6">
                         <label class="col-lg-4 col-form-label required fw-bold fs-6">Age</label>
@@ -90,7 +90,7 @@
                     <div class=" row mb-6">
                         <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            {!! Form::text('description', old('description', $teamUser->description), [
+                            {!! Form::textarea('description', old('description', $teamUser->description), [
                                 
                                 'id' => 'description',
                                 'class' => 'form-control form-control-solid mb-3 mb-lg-0',
@@ -191,7 +191,7 @@
 
 <button type="button" id="add-language-btn" class="btn btn-primary col-lg-8 fv-row my-2">Agregar nuevo idioma</button>
                     <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Work Time</label>
+                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Overview</label>
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             {!! Form::text('overview', old('overview', $teamUser->overview), [
                                
@@ -305,8 +305,5 @@
     $('.js-example-basic-multiple').select2();
 });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    
 @stop

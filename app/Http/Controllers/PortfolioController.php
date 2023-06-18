@@ -115,9 +115,10 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function show(Portfolio $portfolio)
+    public function show($id)
     {
-        return view('portfolios.show', compact('portfolio'));
+        $portfolio = Portfolio::find($id);
+        return view('portfolios.show', compact('portfolio') );
     }
 
     /**

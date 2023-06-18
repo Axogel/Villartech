@@ -13,7 +13,7 @@
                 <p class="pt-5" style="font-size:25px; color:#045A97; font-weight:900;">Employees <span> <a href="{{ route('teams.create') }}" class="btn btn-success" style="float:right;">Create
                     Employee</a></span></p>
                
-                <div class="table-responsive" style="width: 100%;">
+                <div class="table-responsive" style="width: 100%; height:100%;">
                     <table class="table align-items-center table-light" id="myTable">
                         <thead  class = "text-light" style="background-color: #045A97;">
                             <tr>
@@ -23,7 +23,6 @@
                                 <th scope="col">Skills</th>
                                 <th scope="col">Age</th>
                                 <th scope="col">Address</th>
-                                <th scope="col">Description</th>
                                 <th scope="col">Youtube Video</th>
                                 <th scope="col">CV LINK</th>
                                 <th scope="col">RESIDENCE</th>
@@ -31,7 +30,6 @@
                                 <th scope="col">CATEGORY</th>
                                 <th scope="col">WORK TIME</th>
     
-                                <th scope="col">OVERVIEW</th>
     
     
                                 <th scope="col"></th>
@@ -84,13 +82,7 @@
     
                                     </td>
     
-                                    <td>
-    
-                                        <span class="badge badge-dot mr-4">
-                                            {{ $teamUser->description }}
-                                        </span>
-    
-                                    </td>
+                                   
     
     
                                     <td>
@@ -143,14 +135,6 @@
                                     </td>
     
     
-                                    <td>
-    
-                                        <span class="badge badge-dot mr-4">
-                                            {{ $teamUser->overview}}
-                                        </span>
-    
-                                    </td>
-    
     
                                     <td class="text-right">
                                         <div class="dropdown">
@@ -164,9 +148,12 @@
     
                                                   
                                                 <a href="{{ route('teams.destroy', $teamUser->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>
-        
+
                                                 <a class="dropdown-item" style="padding-top: 0px;"
-                                                href="{{ route('employee', ['team' => $teamUser->id]) }}">Education</a>
+                                                href="{{ route('teams.show', ['team' => $teamUser->id]) }}">Show</a>
+
+                                                <a class="dropdown-item" style="padding-top: 0px;"
+                                                href="{{ route('employee', ['teamUser' => $teamUser->id]) }}">Education</a>
     
                                                 <a class="dropdown-item"
                                                 href="{{ route('employeeExperience', ['team' => $teamUser->id]) }}">Experience</a>

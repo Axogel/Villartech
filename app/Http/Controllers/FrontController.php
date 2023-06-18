@@ -279,4 +279,14 @@ class FrontController extends Controller
     }
 
 
+    public function privacy(){
+
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+      
+        return view('privacy')->with(['settings' => $setting]); 
+
+  }
+
+
 }

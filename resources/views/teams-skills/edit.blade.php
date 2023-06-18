@@ -72,7 +72,7 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('education_date', old('education_date', $teamEducation->date), [
+                {!! Form::text('education_date', old('education_date', $teamEducation->education_date), [
                     'required',
                     'id' => 'education_date',
                     'class' => 'form-control form-control-solid mb-3 mb-lg-0',
