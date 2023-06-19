@@ -3,45 +3,45 @@
     <div class="row justify-content-center align-items-center">
   
       <div class="cn col-md-6" >
-        <img class="img-contactUs w-100" src="{{asset('assets/img/bussiness2.png')}}" alt="img-contactUs" style="height:35rem;">
+        <img class="img-contactUs w-100" src="{{asset('assets/img/strength-people-hands-success-meeting.png')}}" alt="img-contactUs" style="height:40rem;">
       </div>
   
           <div class="col-md-1"></div>
   
       <div class="col-md-3">
         <div class="text-contactUs text-left my-5">
-          <b class="title-contact">Get in Touch for Exceptional Service</b>
+          <b class="title-contact">Interested in Working With Us?</b>
           <br>
           <br>
-          <p class="text-contact">We would love to hear from you! If you have any questions, inquiries, or project ideas, please reach out to us using the contact information below or by filling out the contact form. Our dedicated team is ready to assist you.</p>
+          <p class="text-contact">At VILLARTECHNOLOGIES, a leading company in the field of software development, we are always on the lookout for talented individuals who are passionate about technology and software engineering. If you're enthusiastic, skilled, and eager to contribute to innovative projects, we'd love to hear from you!</p>
         </div>
       </div>
   
     </div>
   </div>
   </section>
+
+    <section class="black row align-items-center">
   
-  <section class="black row align-items-center">
-  
-    <div class="container-contactInfo">
-      <b class="centered">Contact Information</b>
+    <div class="container-workInfo">
+      <b class="centered">Why choose us?</b>
     </div>
   
   </section>
   
   
-  <section class="cards-aboutUs" style="padding-bottom:0;">
+  <section class="cards-aboutUs" style="padding-bottom:0; padding-top:100px;">
     <div class="container-cards">
-      <div class=" row justify-content-center " style="padding-left:6rem;" >
+      <div class=" row justify-content-center " style="gap:-8rem; padding-left:3rem;">
   
-        <div class="cards-contactUs col-11 col-md-3" style="margin-top: -270px;">
+        <div class="cards-contactUs col-11 col-md-3" style="margin-top: -250px;">
   
       <x-card-component
       :width="'90%'"
-      :height="'400px'"
-      :img="'quedarse-en-casa.svg'"
-      :subtitle="'Address'"
-      :description="'123. Main Street, City, State, ZIP.'"
+      :height="'650px;'"
+      :img="'programacion.svg'"
+      :subtitle="'Exciting Opportunities'"
+      :description="'Join a dynamic team that takes on challenging and cutting-edge software development projects. We offer a stimulating work environment where you can grow both professionally and personally.'"
       :title="null"
   />
   
@@ -49,28 +49,28 @@
           </div>
   
   
-        <div class="cards-contactUs col-11 col-md-3" style="margin-top: -270px;">
+        <div class="cards-contactUs col-11 col-md-3" style="margin-top: -250px;">
   
       <x-card-component
       :width="'90%'"
-      :height="'400px'"
-      :img="'telefono (1).svg'"
-      :subtitle="'Phone'" 
-      :description="'+1(555) 123-456'"
+      :height="'650px'"
+      :img="'e-aprendizaje.svg'"
+      :subtitle="'Continuous Learning'" 
+      :description="'We believe in investing in our employees growth. You all have access to learning resources, professional development opportunities, and the chance to enhance your skills in the latest technologies and industry trends.'"
       :title="null"
   />
   
   
           </div>
   
-        <div class="cards-contactUs col-11 col-md-3" style="margin-top: -270px;">
+        <div class="cards-contactUs col-11 col-md-3" style="margin-top: -250px;">
   
       <x-card-component
       :width="'90%'"
-      :height="'400px'"
-      :img="'correo.svg'"
-      :subtitle="'Email'"
-      :description="'info@example.com'"
+      :height="'650px'"
+      :img="'equilibrio.svg'"
+      :subtitle="'Work-Life Balance'"
+      :description="'We understand the importance of maintaining a healthy work-life balance. Our flexible work arrangements and supportive policies promote your overall well-being and allow you to thrive in and out of the workplace.'"
       :title="null"
   />
   
@@ -80,11 +80,8 @@
       </div>
     </div>
   </section>
-  
-  
-  
-  
-  <section class="section-form-contactUs" style="background-color:#FFFFF; margin-top:-60rem;">
+
+    <section class="section-form-contactUs" style="background-color:#FFFFF; margin-top:-60rem;">
   
             
                      
@@ -104,21 +101,21 @@
                         <div class="col-lg-12">
                           <div class="contact-form-container">
                             <div class="row">
-                              <div class="col-lg-4 col-md-12">
+                              <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                   <label for="name" class="subtitle-contact">Your Name</label>
                                   <input type="text" class="form-control " id="name"  name="name" placeholder="Enter your name">
                                 </div>
                               </div>
                               <br>
-                              <div class="col-lg-4 col-md-12 ">
+                              <div class="col-lg-4 col-md-4 ">
                                 <div class="form-group">
                                   <label for="email" class="subtitle-contact" >Your Email</label>
                                   <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
                                 </div>
                               </div>
                               <br>
-                              <div class="col-lg-4 col-md-12">
+                              <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
                                   <label for="number" class="subtitle-contact">Your Number</label>
                                   <input type="text" class="form-control" id="number" placeholder="Enter your number" name="number"> 
@@ -151,4 +148,3 @@
                     </div>
                   </form>
   </section>
-  

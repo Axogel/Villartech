@@ -234,5 +234,14 @@ class FrontController extends Controller
 
     }
 
+    public function workUs(){
+
+          $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+          ->get();
+          
+          return view('/workUs')->with('settings' , $setting);
+
+    }
+
 
 }

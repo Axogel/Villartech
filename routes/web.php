@@ -51,6 +51,7 @@ Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/portfolio/{slug}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
+Route::get('/workUs', [FrontController::class, 'workUs'])->name('workUs');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
