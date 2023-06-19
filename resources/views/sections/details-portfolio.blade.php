@@ -85,7 +85,7 @@
     @if($countShowMore>3)
                     <div class="text-center" style="position:relative; bottom:70px;"><br>
                         <a  href="{{ route ('portfolioView') }}">
-                            <button class="btn btn-primary solid blank mt-5" style="font-size:20px;">SHOW MORE</button>
+                            <button class="btn btn-primary solid blank mt-5" style="font-size:20px;">{{__("ShowMore")}}</button>
                         </a>
                     </div>
     @endif

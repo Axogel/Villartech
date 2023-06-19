@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md-12 heading text-center">
                 <span class="icon-pentagon wow bounceIn"><i class="fa fa-suitcase"></i></span>
-                <h2 class="title2" style="font-family: 'Lato'" id="portfolio">Project Completed
-                    <span class="title-desc">A Quality Professional Team with 4 years experience</span>
+                <h2 class="title2" style="font-family: 'Lato'" id="portfolio">{{__("HomePortfolioTtitle")}}
+                    <span class="title-desc">{{__("HomePortfolioSubTitle")}}</span>
                 </h2>
             </div>
         </div> 
@@ -46,7 +46,7 @@
           </div>
                     <div class="text-center" style="position:relative; bottom:70px;"><br>
                         <a  href="{{ route ('portfolioView') }}">
-                            <button class="btn btn-primary solid blank">View All</button>
+                            <button class="btn btn-primary solid blank">{{__("ViewAllButton")}}</button>
                         </a>
                     </div>
         </div>

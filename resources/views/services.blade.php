@@ -22,9 +22,8 @@
 
 
                     <div class="col" id="text">
-                        <p class="title" id="web-design">Web design</p>
-                        <p class="subtitle">We adapt and create your web site to any type of screen, through the developing
-                            and usage of the latest trends.</p>
+                        <p class="title" id="web-design">{{__("ServicesCard")}}</p>
+                        <p class="subtitle">{{__("ServicesCardDescription")}}.</p>
 
                     </div>
 
@@ -66,9 +65,8 @@
 
 
                     <div class="col" id="text">
-                        <p class="title" id="ecommerce">Ecommerce websites</p>
-                        <p class="subtitle">Creation of websites dedicated to the ecommerce service of selling and buying
-                            process of different products and services.</p>
+                        <p class="title" id="ecommerce">{{__("ServicesCard3")}}</p>
+                        <p class="subtitle">{{__("ServicesCard3Description")}}</p>
 
                     </div>
 
@@ -163,9 +161,8 @@
 
 
                     <div class="col" id="text">
-                        <p class="title" id="consulation">Consultation</p>
-                        <p class="subtitle">As per the projects on develop, we provide uninterrupted user and customer
-                            support to assure the accurate and the effective assistance of the job.</p>
+                        <p class="title" id="consulation">{{__("ServicesCard5")}}</p>
+                        <p class="subtitle">{{__("ServicesCard5Description")}}</p>
 
                     </div>
 
@@ -254,9 +251,8 @@
                         </div>
 
                         <div class="col" id="text-right">
-                            <p class="title" id="app-dev">Apps development</p>
-                            <p class="subtitle">We are your solution and your best option for the design and development of
-                                apps in the android and ios platform.</p>
+                            <p class="title" id="app-dev">{{__("ServicesCard2")}}</p>
+                            <p class="subtitle">{{__("ServicesCard2Description")}}</p>
 
                         </div>
 
@@ -312,8 +308,9 @@
                         </div>
 
                         <div class="col" id="text-right">
-                            <p class="title" id="seo">SEO service</p>
-                            <p class="subtitle">Guarantee of seo positioning websites through a search engine optimization.
+                            <p class="title" id="seo">{{__("ServicesCard4")}}</p>
+                            <p class="subtitle">
+                                {{__("ServicesCard4Description")}}
                             </p>
 
                         </div>
@@ -362,9 +359,8 @@
                         </div>
 
                         <div class="col" id="text-right">
-                            <p class="title" id="designfor">Design for startups</p>
-                            <p class="subtitle">We design beautiful modern engaging websites that always latest responsive
-                                technologies.</p>
+                            <p class="title" id="designfor">{{__("ServicesCard6")}}</p>
+                            <p class="subtitle">{{__("ServicesCard6Description")}}</p>
 
                         </div>
 
@@ -398,7 +394,7 @@
 
         <div class="col-12 no-gutters" style="background-color: #2E2E2E;">
             <div class="container" id="container-faq">
-                <p class="faq-title pl-5">Frequently Asked Questions (FAQ)</p>
+                <p class="faq-title pl-5">{{__("ServicesFrequently")}}</p>
                 @foreach ($faqs as $faq)
                     <div class="accordion-toggle">
                         <p class="question-title pt-5" id="">
@@ -442,11 +438,9 @@
 
             <div class="col-10 mx-auto " style="background-color: #F9F9F9; width:80%; margin-top:0px;" id="contact-form">
                 <div class="" id="container-contact-us">
-                    <p class="title-contact pt-3">CONTACT US</p>
-                    <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
-                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub">Contact Us to
-                        Discuss Your
-                        Project Requirements and Receive a Customized Solution</p>
+                    <p class="title-contact pt-3">{{__("ContactTitle")}}</p>
+                    <p class="subtitle-contact">{{__("ServicesContactSubTitle")}}</p>
+                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub"> {{__("ServicesContactDescription")}}</p>
                 </div>
 
                 <div class="container">
@@ -458,48 +452,48 @@
                           margin-left: calc(var(--bs-gutter-x) * 0.5);">
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
-                                            <label for="name" class="form-title-contact">Your Name</label>
+                                            <label for="name" class="form-title-contact"> {{__("FormYour")}}  {{__("FormName")}} </label>
                                             <input type="text" class="form-control" id="name" name="name"
-                                                placeholder="Enter your name">
+                                                placeholder=" {{__('FormPlaceholder')}}  name">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
-                                            <label for="email" class="form-title-contact">Your Email</label>
+                                            <label for="email" class="form-title-contact"> {{__("FormYour")}}  {{__("FormEmail")}} </label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                placeholder="Enter your email">
+                                                placeholder=" {{__('FormPlaceholder')}}  email">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
-                                            <label for="number" class="form-title-contact">Your Number</label>
+                                            <label for="number" class="form-title-contact"> {{__("FormYour")}} {{__("FormNumber")}}</label>
                                             <input type="text" class="form-control" id="number"
-                                                placeholder="Enter your number" name="number">
+                                                placeholder=" {{__('FormPlaceholder')}}  number" name="number">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-                                            <label for="interest" class="form-title-contact">What you are interested
+                                            <label for="interest" class="form-title-contact">{{__("FormInteresed")}}
                                                 in</label>
                                             <input type="text" class="form-control" id="interest"
-                                                placeholder="Enter your interest" name="interest">
+                                                placeholder=" {{__('FormPlaceholder')}}  {{__('interest')}}" name="interest">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-                                            <label for="budget" class="form-title-contact">Project Budget</label>
+                                            <label for="budget" class="form-title-contact">{{__("FormProject")}}</label>
                                             <input type="text" class="form-control" id="budget"
-                                                placeholder="Enter project budget" name="budget">
+                                                placeholder=" {{__('FormPlaceholder')}} {{__('FormProject')}}" name="budget">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="message" class="form-title-contact">Message</label>
-                                            <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
+                                            <label for="message" class="form-title-contact">{{__("FormMessage")}}</label>
+                                            <textarea class="form-control" id="mensaje" rows="5" placeholder=" {{__('FormPlaceholder')}}  {{__('FormMessage')}}" name="mensaje"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12" style="padding-left:25px; padding-top:20px;">
-                                        <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">JUST SEND</button>
+                                        <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">{{__("FormJustSend")}}</button>
 
                                     </div>
                                 </div>

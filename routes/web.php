@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController,EmployeeCategoryController, PortfolioController, DeclarationController,LanguageController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Redirect;
 
 
 
@@ -23,7 +24,12 @@ use App\Models;
 Route::post('/send', 'App\Http\Controllers\EmailController@send')->name('send');
 Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
 
+Route::get('/locale/{locale}', function ($locale) {
+	
+	session()->put('locale', $locale);
 
+	return Redirect::back();
+});
 Route::get('/', [FrontController::class, 'welcome'])->name('PageHome');
 Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 

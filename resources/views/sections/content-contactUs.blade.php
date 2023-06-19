@@ -10,10 +10,10 @@
   
       <div class="col-md-3">
         <div class="text-contactUs text-left my-5">
-          <b class="title-contact">Get in Touch for Exceptional Service</b>
+          <b class="title-contact">{{__("ViewContactTitle")}} </b>
           <br>
           <br>
-          <p class="text-contact">We would love to hear from you! If you have any questions, inquiries, or project ideas, please reach out to us using the contact information below or by filling out the contact form. Our dedicated team is ready to assist you.</p>
+          <p class="text-contact">{{__("ViewContacSubtTitle")}} </p>
         </div>
       </div>
   
@@ -24,7 +24,7 @@
   <section class="black row align-items-center">
   
     <div class="container-contactInfo">
-      <b class="centered">Contact Information</b>
+      <b class="centered">{{__("ViewContacTInformation")}}</b>
     </div>
   
   </section>
@@ -36,14 +36,15 @@
   
         <div class="cards-contactUs col-11 col-md-3" style="margin-top: -270px;">
   
-      <x-card-component
-      :width="'90%'"
-      :height="'400px'"
-      :img="'quedarse-en-casa.svg'"
-      :subtitle="'Address'"
-      :description="'123. Main Street, City, State, ZIP.'"
-      :title="null"
-  />
+ <x-card-component
+  :width="'90%'"
+  :height="'400px'"
+  :img="'quedarse-en-casa.svg'"
+  :subtitle="__('FormAddress')"
+  :description="'123. Main Street, City, State, ZIP.'"
+  :title="null"
+/>
+
   
   
           </div>
@@ -55,7 +56,7 @@
       :width="'90%'"
       :height="'400px'"
       :img="'telefono (1).svg'"
-      :subtitle="'Phone'" 
+      :subtitle="__('FormPhone')"
       :description="'+1(555) 123-456'"
       :title="null"
   />
@@ -69,7 +70,7 @@
       :width="'90%'"
       :height="'400px'"
       :img="'correo.svg'"
-      :subtitle="'Email'"
+      :subtitle="__('FormEmail')"
       :description="'info@example.com'"
       :title="null"
   />
@@ -94,8 +95,8 @@
   
             <div class="col-8 mx-auto " style="background-color: #FFFFF;" id="contact-form">
               <div class="" id="container-contact-us">
-                  <p class="title-contact">Contact Form</p>
-                  <p class="text-contact">Please fill out the form below, and we will get back to you as soon as possible:</p>
+                  <p class="title-contact">{{__("FormContactForm")}}</p>
+                  <p class="text-contact">{{__("FormContactDescription")}}</p>
               </div>
                   <br>
                   <br>
@@ -106,43 +107,43 @@
                             <div class="row">
                               <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                  <label for="name" class="subtitle-contact">Your Name</label>
-                                  <input type="text" class="form-control " id="name"  name="name" placeholder="Enter your name">
+                                  <label for="name" class="subtitle-contact">{{__("FormYour")}} {{__("FormName")}}</label>
+                                  <input type="text" class="form-control " id="name"  name="name" placeholder="{{__('FormPlaceholder')}} {{__('FormName')}}">
                                 </div>
                               </div>
                               <br>
                               <div class="col-lg-4 col-md-4 ">
                                 <div class="form-group">
-                                  <label for="email" class="subtitle-contact" >Your Email</label>
-                                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                                  <label for="email" class="subtitle-contact" >{{__("FormYour")}} {{__("FormEmail")}}</label>
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="{{__('FormPlaceholder')}} {{__('FormEmail')}}">
                                 </div>
                               </div>
                               <br>
                               <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                  <label for="number" class="subtitle-contact">Your Number</label>
-                                  <input type="text" class="form-control" id="number" placeholder="Enter your number" name="number"> 
+                                  <label for="number" class="subtitle-contact">{{__("FormYour")}} {{__("FormNumber")}}</label>
+                                  <input type="text" class="form-control" id="number" placeholder="{{__('FormPlaceholder')}} {{__('FormNumber')}}" name="number"> 
                                 </div>
                               </div>
                               <div class="col-12">
                                 <div class="form-group">
                                   <br>
                                   <br>
-                                  <label for="interest" class="subtitle-contact">What you are interested in</label>
-                                  <input type="text" class="form-control" id="interest" placeholder="Enter your interest" name="interest">
+                                  <label for="interest" class="subtitle-contact">{{__("FormInteresed")}}</label>
+                                  <input type="text" class="form-control" id="interest" placeholder="{{__('FormPlaceholder')}} {{__('FormInteresed')}}" name="interest">
                                 </div>
                               </div>
                               <div class="col-12 col-md-12">
                                 <div class="form-group">
                                   <br>
                                   <br>
-                                  <label for="message" class="subtitle-contact">Message</label>
-                                  <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
+                                  <label for="message" class="subtitle-contact">{{__("FormMessage")}}</label>
+                                  <textarea class="form-control" id="mensaje" rows="5" placeholder="{{__('FormPlaceholder')}} {{__('FormMessage')}}" name="mensaje"></textarea>
                                 </div>
                               </div>
   
                           <div class="col-12 py-4">
-                            <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">JUST SEND</button>
+                            <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">{{__("FormJustSend")}}</button>
                           </div>
                             </div>
                           </div>

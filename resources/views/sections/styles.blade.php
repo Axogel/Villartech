@@ -148,6 +148,14 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .lang-button-responsive{
+        position: relative;
+        bottom: 45px;
+        left: 300px;
+    }
+    .lang-button{
+       display:none;
+    }
     .div-detail-team-gray{
     margin-top:200px;
 }
@@ -230,6 +238,17 @@
   }
 
 @media (min-width:300px) and (max-width:768px) {
+    .lang-button-responsive{
+        position: relative;
+        bottom: 45px;
+        left: 300px;
+    }
+    .lang-button{
+        display:none;
+    }
+    .portfolio-view-item{
+        height:540px;
+    }
     .height-gray-div-responsive{
         height:570px !important;
     }
@@ -411,6 +430,13 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .lang-button-responsive{
+        display:none;
+    }
+    .lang-button{
+        margin-left:0.4rem;
+        margin-top:1.7rem;
+    }
     .position-details{
         position: relative;
         top: -296px;
@@ -456,7 +482,7 @@ ul.navbar-nav > li > a {
         height: 25%;
     }
 .margin-contactUs{
-    margin-left: 50px;
+    margin-left: 20%;
 }
 .img-responsive{
     width: 90px;
@@ -504,6 +530,13 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .lang-button-responsive{
+        display:none;
+    }
+    .lang-button{
+        margin-left:0.4rem;
+        margin-top:1.8rem;
+    }
     .position-details{
         position: relative;
         top: -296px;

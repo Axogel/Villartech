@@ -12,11 +12,11 @@
                                     </div>
                                     <div class="modal-custom-content">
                                         <div class="modal-custom-description">
-                                            <strong class="modal-custom-title">Description:</strong>
+                                            <strong class="modal-custom-title">{{__("Description")}}:</strong>
                                             <p>{{ $portafolio->description }}</p>
                                         </div>
                                         <div class="modal-custom-skills">
-                                            <strong class="modal-custom-title">Skills:</strong>
+                                            <strong class="modal-custom-title">{{__("Skills")}}:</strong>
                                             @foreach (explode(',', $portafolio->skills) as $portfolioskill)
                                                 <span class="badge badge-secondary">{{ $portfolioskill }}</span>
                                             @endforeach
@@ -26,9 +26,9 @@
                                     
                                 <div class="modal-footer">
                                     <a href="{{ $portafolio->url }}" target="_blank" class="btn btn-info">
-                                        Ir al Sitio
+                                       {{__("GoToSite")}} 
                                     </a>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{__("Close")}}</button>
                                 </div>
 
                             </div>

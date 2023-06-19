@@ -6,9 +6,9 @@
     </div>
     <div class="col-md-5">
       <div class="text-aboutUs text-left my-5">
-                        <p class="title-contact pt-5">Villar Technologies as the company that we are today</p>
+                        <p class="title-contact pt-5">{{__("ViewAboutTitle")}}</p>
         <br>
-        <p class="text-contact">We started working and providing our services on February 2017. Since that date, we became a formal bussiness company whose initiative was to incorporate a new platform that would be able to work on the latest skills and technologies related to the development and programmation world that updates on daily basis. Our team is composed by the owner of the company and working beside him, we have a number of professional trained coworkers that are responsable to accomplish all of the tasks and Jobs that are constantly been assigned.</p>
+        <p class="text-contact">{{__("ViewAboutSubTitle")}}</p>
       </div>
     </div>
   </div>
@@ -23,10 +23,10 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-9">
 
-        <p class="our-company"  style="margin-top:5rem;">Our company</p>
+        <p class="our-company"  style="margin-top:5rem;">{{__("ViewAboutCompany")}}</p>
         <br>
         <br>
-        <p class="text-contact" >We are Villar Technologies, a trusted and award-winning company in the global development and programming market. With a client base spanning multiple countries, we take pride in our track record of delivering responsible and reliable services to businesses of all sizes. Our team of highly skilled professionals is committed to providing you with the highest quality service and support, backed by cutting-edge technology and an unwavering dedication to excellence. Whether you're looking for customized development solutions or programming services, we have the expertise and resources to help you succeed.
+        <p class="text-contact" >{{__("ViewAboutCompanyDescription")}}
         </p>
           <div class="logo-aboutUs d-flex align-items-center" style="z-index: 1; position: absolute; top: -17.5rem; right: -14rem;">
             <img class="img-fluid" src="{{asset('assets/img/logo.villar.sl.png')}}" style="padding: 20px; " alt="logo">
@@ -54,9 +54,10 @@
           :width="'90%'"
           :height="'1300px'"
           :img="'codificacion.svg'"
-          :title="'WHAT WE DO'"
-          :subtitle="'We build readymade Aplications'"
-          :description="'Provides a whole world of programmation and development services with the primacy base of software as a service. Therefore, our team is always preparing themselves in the latest skills and technologies so they are continuosly getting up to date with the global growth of the systems world. We have the professionals to SEO, Web Design, SaaS, programmation, Lead Generation, Translations, Marketing, IT Help and any type of task that a freelancer does but backed by the trust that only a company can give you.'"/>
+          :title="__('CardAbout1T')"
+          :subtitle="__('CardAbout1S')"
+          :description="__('CardAbout1D')"
+          />
           
         </div>
         
@@ -67,9 +68,10 @@
           :width="'90%'"
           :height="'1300px'"
           :img="'diseno-grafico.svg'"
-          :title="'MODERN DESIGN'"
-          :subtitle="'Clean and modern esign'"
-          :description="'VillarTechnologies offers an excellent strategic program to keep the execution of each job as modern and effective as posible and as it is required and requested by the client. We quickly adapt to any type of campaign or project inbound and outbound that you want to outsource, créate, improve or manage.'"/>
+          :title="__('CardAbout2T')"
+          :subtitle="__('CardAbout2S')"
+          :description="__('CardAbout2D')"
+        />
           
         </div>
         
@@ -79,9 +81,10 @@
           :width="'90%'"
           :height="'1300px'"
           :img="'servicio.svg'"
-          :title="'DEDICATED SUPPORT'"
-          :subtitle="'Always available 24/7'"
-          :description="'In VillarTechnologies we make sure that our team is available 24/7 or during the work schedule needed by the client. We have an excellent customer service team under the leadership of the company owner, totally trained to keep constant and direct contact with each client and accomplish all of the work timing related to the Project in develop.'"/>
+          :title="__('CardAbout3T')"
+          :subtitle="__('CardAbout3S')"
+          :description="__('CardAbout3D')"
+         />
         
       </div>
 
