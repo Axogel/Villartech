@@ -52,10 +52,8 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item"
-                                                href="{{ route('teams-skills.edit', ['education' => $teamSkill->skill_id]) }}">Edit</a>
-
-                                            <form action="{{ route('teams-skills.destroy', $teamSkill->skill_id) }}" method="Post">
+                                        
+                                            <form action="{{ route('teams-language.destroy', $teamSkill->skill_id) }}" method="Post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item">

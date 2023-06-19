@@ -98,11 +98,13 @@ class TeamUserController extends Controller
         $teamUser->status = 1;
             
         $request->validate([
+            'id_name' => 'required|string',
             'email' => 'required|email',
             'photo' => 'mimes:jpeg,png,jpg,gif,svg',
             'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
             'language_levels.*' => 'nullable|integer|min:0|max:100'
         ], $message = [
+            'id_name.string' => 'Please provide a name',	
             'email.email' => 'Please provide a valid email address',
             'email.unique' => 'This email address is already taken',
             'photo.required' => 'Please provide an image',
@@ -137,8 +139,11 @@ class TeamUserController extends Controller
      * @param  \App\Models\TeamUser  $teamUser
      * @return \Illuminate\Http\Response
      */
+
+
     public function show(TeamUser $teamUser)
-    {
+    {   $teamUsers = TeamUser::select('*')
+        ->get();
         return view('teams.show',compact('teamUser'));
     }
     
@@ -149,6 +154,8 @@ class TeamUserController extends Controller
      * @param  \App\Models\TeamUser  $teamUser
      * @return \Illuminate\Http\Response
      */
+
+
     public function edit($id)
     {
 
@@ -259,7 +266,7 @@ class TeamUserController extends Controller
 
 
 
-        public function getEmployee (TeamUser $teamUser, TeamEducation $teamEducation, $id) {
+        public function getEmployee (TeamEducation $teamEducation, $id) {
             $teamUser = TeamUser::find($id);
             
             $teamEducation = TeamEducation::select('education_id', 'developer_id', 'education_title', 'education_country', 'education_description', 'education_date')
@@ -294,19 +301,22 @@ class TeamUserController extends Controller
 
         }
 
-        public function storeEducation (Request $request) {
+        public function storeEducation (Request $request, TeamUser $teamUser) {
 
 
             $teamEducation = New TeamEducation;
             $teamEducation->developer_id = $request->developer_id;
+            $team = $request->developer_id;
+
             $teamEducation->education_title = $request->education_title;
             $teamEducation->education_country = $request->education_country;
             $teamEducation->education_date = $request->education_date;
             $teamEducation->education_description = $request->education_description;
+
+
             $teamEducation->save();
 
-            return redirect()->route('teams.index')->withSuccessMessage('Education have been created', 'Employee have been created');
-
+            return redirect()->route('employee', ['teamUser' => $team]);
         }
 
         public function editEducation($id)
@@ -325,8 +335,8 @@ class TeamUserController extends Controller
         public function updateEducation(Request $request, TeamEducation $teamEducation, $id)
         {
             $teamEducation = TeamEducation::find($id);
-
             $teamEducation->developer_id = $request->developer_id;
+            $team = $request->developer_id;
             $teamEducation->education_title = $request->education_title;
             $teamEducation->education_country = $request->education_country;
             $teamEducation->education_date = $request->education_date;
@@ -334,8 +344,7 @@ class TeamUserController extends Controller
            
             $teamEducation->save();
 
-            return redirect()->route('teams.index')->withSuccessMessage('Employee have been updated', 'Employee have been updated successfully');
-
+            return redirect()->route('employee', ['teamUser' => $team]);
         }
     
         /**
@@ -391,6 +400,7 @@ class TeamUserController extends Controller
                 
                 $teamExperience = New TeamExperience;
                 $teamExperience->developer_id = $request->developer_id;
+                $team = $request->developer_id;
                 $teamExperience->experience_company = $request->experience_company;
                 $teamExperience->experience_description = $request->experience_description;
                 $teamExperience->experience_category = $request->experience_category;
@@ -399,7 +409,7 @@ class TeamUserController extends Controller
 
                 $teamExperience->save();
     
-                return redirect()->route('teams.index')->withSuccessMessage('Experience have been created', 'Employee have been created');
+                return redirect()->route('employeeExperience', ['team' => $team]);
     
             }
     
@@ -422,6 +432,7 @@ class TeamUserController extends Controller
                 $teamExperience = TeamExperience::find($id);
     
                 $teamExperience->developer_id = $request->developer_id;
+                $team = $request->developer_id;
                 $teamExperience->experience_company = $request->experience_company;
                 $teamExperience->experience_description = $request->experience_description;
                 $teamExperience->experience_category = $request->experience_category;
@@ -430,7 +441,7 @@ class TeamUserController extends Controller
 
                 $teamExperience->save();
     
-                return redirect()->route('teams.index')->withSuccessMessage('Employee experience have been updated', 'Employee have been updated successfully');
+                return redirect()->route('employeeExperience', ['team' => $team]);
     
             }
         
@@ -490,11 +501,10 @@ class TeamUserController extends Controller
                     $teamSkill->skill_name = $request->skill_name;
                     $teamSkill->skill_percentage = $request->skill_percentage;
                     $teamSkill->developer_id = $request->developer_id;
-    
-    
+                    $team = $request->developer_id;
                     $teamSkill->save();
         
-                    return redirect()->route('teams.index')->withSuccessMessage('Employee Skill have been created', 'Employee have been created');
+                    return redirect()->route('employeeSkill', ['team' => $team]);
         
                 }
         
@@ -519,11 +529,10 @@ class TeamUserController extends Controller
                     $teamSkill->developer_id = $request->developer_id;
                     $teamSkill->skill_name = $request->skill_name;
                     $teamSkill->skill_percentage = $request->skill_percentage;
-    
-    
+                    $team = $request->developer_id;
                     $teamExperience->save();
         
-                    return redirect()->route('teams.index')->withSuccessMessage('Employee Skill have been updated', 'Employee have been updated successfully');
+                    return redirect()->route('employeeSkill', ['team' => $team]);
         
                 }
             

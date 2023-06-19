@@ -17,6 +17,7 @@
     "HeaderTestimonials": "Testimonials",
     "HeaderTeam": "Team",
     "HeaderBlog": "Blog",
+    "HeaderTerms": "Terms",
     "HeaderServices": "Services",
     "HeaderContact": "Contact",
     "Description": "Description",
@@ -33,6 +34,8 @@
     "HomePortfolioSubTitle": "A Quality Professional Team with 4 years experience",
 
     "ContactTitle": "Contact Us",
+    "ContactSubTitle": "Get in Touch for Exceptional Service",
+    "ContactDiscuss": "Contact Us to Discuss Your Project Requirements and Receive a Customized Solution",
     "FormName": "Name",
     "FormEmail": "Email",
     "FormSubjet":"Subject",

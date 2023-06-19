@@ -26,12 +26,14 @@
             <div class="tab-pane fade show active in" id="homeWelcome" role="tabpanel" aria-labelledby="home-tab">
                 <div class="container">
                     <div id="portfolioContainer" class="row justify-content-center mt-5">
+
                      @php
                             $firstFourPortfolios = array_slice($portfolios, 0, 4);
                       @endphp
                     @foreach ($firstFourPortfolios as $portfolio)
                                 @php
                                     $countShowing = count($firstFourPortfolios);
+                                   
                                 @endphp
 
                                         <div class="col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover">
@@ -57,23 +59,29 @@
                                             <p style="font-size:18px;">{{ Str::limit($portfolio['description'], 80) }}</p>
 
                                         </div>
+                    
+                    
                                     @endforeach
+   
                                     
                     </div>
                     <p class="text-right padding-dinamic-show" style="font-weight: bold" id="ShowResults"></p>
                 </div>
             </div>
                 @foreach ($skills as $skill)
+                
                     <div class="tab-pane fade" id="{{ $skill->name }}" role="tabpanel" aria-labelledby="{{ $skill->id }}-tab">
                         @php 
                             $new = array_filter($portfolios, function ($let) use ($skill) {
                                 return (in_array($skill->id, json_decode($let['skills'])));
                             });
                         @endphp
+                        
                         @php
                                     $AllSearch = count($new);
                                     $countSearch = 0;
                         @endphp
+                        
                         <div class="container">
                             <div class="row justify-content-center">
                                     @foreach ($new as $portfolio)
@@ -106,6 +114,7 @@
 
                             </div>
                         </div>
+      
                         <p class="text-right padding-dinamic-show "><b class="" style=""> {{__("Showing")}} {{$countSearch}} {{__("ResultsOff")}} {{$AllSearch}}</b></p>
                     </div>
                 @endforeach

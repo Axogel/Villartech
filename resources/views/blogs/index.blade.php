@@ -18,7 +18,6 @@
                         <thead  class = "text-light" style="background-color: #045A97;">
                             <tr>
                             <th scope="col">Title</th>
-                            <th scope="col">Description</th>
                             <th scope="col">Author</th>
                             <th scope="col">Date</th>
                             <th scope="col">Category ID</th>
@@ -39,13 +38,7 @@
                                         </div>
                                     </th>
     
-                                    <th scope="row">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <span class="mb-0 text-sm">{{ $blog->description }}</span>
-                                            </div>
-                                        </div>
-                                    </th>
+                                
     
     
                                     <th scope="row">
@@ -116,8 +109,12 @@
                                                 <i class="fas fa-ellipsis-v" style="color: #045A97;"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
                                                 <a class="dropdown-item"
                                                     href="{{ route('blogs.edit', ['blog' => $blog->id]) }}">Edit</a>
+
+                                                    <a class="dropdown-item"
+                                                    href="{{ route('blogs.show', ['blog' => $blog->id]) }}">Show</a>
     
                                                   
                                                     <a href="{{ route('blogs.destroy', $blog->id) }}" class="dropdown-item" data-confirm-delete="true">Delete</a>

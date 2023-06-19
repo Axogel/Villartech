@@ -104,7 +104,7 @@ class FrontController extends Controller
     }
 
 
-    public function blogArticle($slug) {
+    public function blogArticle($slug,  Request $request ) {
         $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
         ->get();
 
@@ -135,10 +135,12 @@ class FrontController extends Controller
     ->take(3)
     ->get();
 
+
+        $domain = $request->root();
         
         
 
-        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag , 'relatedPostsFirsts' => $relatedPostsFirst, 'relatedPostsLasts' => $relatedPostsLast]);
+        return view('blog-article')->with(['settings' => $setting, 'detailBlog' => $detailBlog, 'blogs' => $blog, 'tags' => $tag , 'relatedPostsFirsts' => $relatedPostsFirst, 'relatedPostsLasts' => $relatedPostsLast, $domain]);
     }
 
 
@@ -258,9 +260,33 @@ class FrontController extends Controller
           ->get();
           $blogs = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug')
           ->get()->toArray();
-          return view('blog')->with(['settings' => $setting, 'blogs' => $blogs]);
+
+        $blog1 = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug', 'category_id')
+        ->take(3)
+        ->get();
+
+        $blog2 = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug', 'category_id')
+        ->latest('id')
+        ->take(3)
+        ->get();
+
+
+          
+          return view('blog')->with(['settings' => $setting, 'blogs' => $blogs, 'blogs1' => $blog1, 'blogs2' => $blog2]);
+
+          
 
     }
+
+
+    public function privacy(){
+
+        $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+        ->get();
+      
+        return view('privacy')->with(['settings' => $setting]); 
+
+  }
 
 
 }
