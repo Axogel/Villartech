@@ -173,7 +173,7 @@
 }
     .position-details{
         position: relative;
-        left: 40%;
+        left: 40%;s
         top: -367px;
     }
 
@@ -862,6 +862,9 @@ iframe {
   }
 }
 
+.card-hover {
+ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
 .card-title {
                 font-family: 'Lato';
@@ -878,11 +881,7 @@ iframe {
             }
 
 
-.card-hover {
 
-  box-shadow: rgba(40, 40, 40, 0.06) 2px 0px 40px 5px;
-  transition: box-shadow 0.3s ease;
-}
 
 .card-hover:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -921,7 +920,6 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 400vh; /* Esto es opcional, ajusta la altura según tus necesidades */
   margin-top: -4.5rem; /* Ajusta el valor según tus necesidades */
   font-size:2rem;
 }
@@ -976,6 +974,14 @@ iframe {
   padding:4rem;
 }
 
+@media (max-width: 768px) {
+  #contact-form {
+    padding:0rem;
+    margin-top:65rem;
+  }
+}
+
+
 .title-contact{
   font-size:25px; 
   font-weight: 1000; 
@@ -1018,9 +1024,6 @@ iframe {
   }
 }
 
-.form-control {
-    border: 0.5px solid #F1F1F1;
-}
 
 .headerEmail{
   background-color: #045A97;
@@ -1051,7 +1054,7 @@ iframe {
 
 .card{
 box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-}*/
+}
 
 .bebe{
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
@@ -1129,12 +1132,6 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
   .padding-dinamic-show {
     padding-right:12rem;
   }
-}
-
-
-.blog-image {
-    max-width: 100%;
-    max-height: 87px;
 }
 
 </style>

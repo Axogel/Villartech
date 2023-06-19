@@ -30,9 +30,9 @@
   </section>
   
   
-  <section class="cards-aboutUs" style="padding-bottom:0; padding-top:100px;">
+  <section class="cards-aboutUs" style="padding-bottom:0;">
     <div class="container-cards">
-      <div class=" row justify-content-center " style=" background-color: #FAFAFA;  padding-left:6rem;" >
+      <div class=" row justify-content-center " style="padding-left:6rem;" >
   
         <div class="cards-contactUs col-11 col-md-3" style="margin-top: -270px;">
   
@@ -85,7 +85,7 @@
   
   
   
-  <section class="section-form-contactUs" style="background-color:#FFFFF">
+  <section class="section-form-contactUs" style="background-color:#FFFFF; margin-top:-60rem;">
   
             
                      
@@ -105,21 +105,21 @@
                         <div class="col-lg-12">
                           <div class="contact-form-container">
                             <div class="row">
-                              <div class="col-lg-4 col-md-4">
+                              <div class="col-lg-4 col-md-12">
                                 <div class="form-group">
                                   <label for="name" class="subtitle-contact">{{__("FormYour")}} {{__("FormName")}}</label>
                                   <input type="text" class="form-control " id="name"  name="name" placeholder="{{__('FormPlaceholder')}} {{__('FormName')}}">
                                 </div>
                               </div>
                               <br>
-                              <div class="col-lg-4 col-md-4 ">
+                              <div class="col-lg-4 col-md-12 ">
                                 <div class="form-group">
                                   <label for="email" class="subtitle-contact" >{{__("FormYour")}} {{__("FormEmail")}}</label>
                                   <input type="email" class="form-control" id="email" name="email" placeholder="{{__('FormPlaceholder')}} {{__('FormEmail')}}">
                                 </div>
                               </div>
                               <br>
-                              <div class="col-lg-4 col-md-4">
+                              <div class="col-lg-4 col-md-12">
                                 <div class="form-group">
                                   <label for="number" class="subtitle-contact">{{__("FormYour")}} {{__("FormNumber")}}</label>
                                   <input type="text" class="form-control" id="number" placeholder="{{__('FormPlaceholder')}} {{__('FormNumber')}}" name="number"> 

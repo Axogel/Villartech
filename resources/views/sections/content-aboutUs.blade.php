@@ -94,7 +94,7 @@
 
 
 
-  <div class="container-redirect" stye="margin-top:-10rem;">
+  <div class="container-redirect" style="margin-top:-10rem;">
     <div class="imgs-redirect row justify-content-center align-items-center">
 
     @foreach($settings as $setting)
