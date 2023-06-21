@@ -85,14 +85,14 @@
   
             
                      
-            <form id="contact-form" action="{{route('send')}}" method="post" role="form" style="  background: linear-gradient(#F9F9F9, white)">
+            <form id="contact-form" action="{{ route('job') }}" method="post" role="form" style="background: linear-gradient(#F9F9F9, white)" enctype="multipart/form-data">
               <input type="hidden" name="_method" value="POST">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
   
             <div class="col-8 mx-auto " style="background-color: #FFFFF;" id="contact-form">
               <div class="" id="container-contact-us">
-                  <p class="title-contact">Contact Form</p>
-                  <p class="text-contact">Please fill out the form below, and we will get back to you as soon as possible:</p>
+                  <p class="title-contact">Application Form</p>
+                  <p class="text-contact">Interested in joining our team? Please fill out the application form below, and we will review your submission:</p>
               </div>
                   <br>
                   <br>
@@ -120,21 +120,41 @@
                                   <label for="number" class="subtitle-contact">Your Number</label>
                                   <input type="text" class="form-control" id="number" placeholder="Enter your number" name="number"> 
                                 </div>
+                                <br>
+                                <br>
                               </div>
+
+
+                              <div class="col-lg-8 col-md-4">
+                                <div class="form-group">
+                                  <label for="linkedin" class="subtitle-contact">Linkkedln / Website</label>
+                                  <input type="text" class="form-control" id="linkedin" placeholder="name" name="linkedin"> 
+                                </div>
+                              </div>
+
+                              <br>
+                              <div class="col-lg-4 col-md-4">
+                                <div class="form-group">
+                                  <label for="attachment" class="subtitle-contact">Curriculum Vitae</label>
+                                  <input type="file" class="form-control" id="attachment" name="attachment">
+                                </div>
+                              </div>
+
+                              
                               <div class="col-12">
                                 <div class="form-group">
                                   <br>
                                   <br>
                                   <label for="interest" class="subtitle-contact">What you are interested in</label>
-                                  <input type="text" class="form-control" id="interest" placeholder="Enter your interest" name="interest">
+                                  <input type="text" class="form-control" id="interest" placeholder="Area of Interest" name="interest">
                                 </div>
                               </div>
-                              <div class="col-12 col-md-12">
+                              <div class="col-12">
                                 <div class="form-group">
                                   <br>
                                   <br>
-                                  <label for="message" class="subtitle-contact">Message</label>
-                                  <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
+                                  <label for="about_us" class="subtitle-contact">How did you hear about us?</label>
+                                  <input type="text" class="form-control" id="about_us" placeholder="Google" name="about_us">
                                 </div>
                               </div>
   

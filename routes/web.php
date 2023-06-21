@@ -21,8 +21,10 @@ use App\Models;
 |
 */
 
+
 Route::post('/send', 'App\Http\Controllers\EmailController@send')->name('send');
 Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
+Route::post('/job', 'App\Http\Controllers\JobController@job')->name('job');
 
 Route::get('/locale/{locale}', function ($locale) {
 	

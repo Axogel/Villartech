@@ -931,12 +931,14 @@ iframe {
 }
 
 .centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size:25px; 
-  font-weight: 1000; 
-  font-family: 'Barlow', sans-serif; 
-  font-family: 'Lato', sans-serif;
-  
+  font-size: 25px;
+  font-weight: 1000;
+  font-family: 'Barlow', sans-serif;
+  margin-top: -11.5rem;
 }
 
 

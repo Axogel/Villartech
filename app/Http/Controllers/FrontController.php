@@ -297,5 +297,12 @@ class FrontController extends Controller
 
   }
 
+  public function job(){
+
+          $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
+          ->get();
+          return view('/email')->with('settings', $setting);
+
+    }
 
 }
