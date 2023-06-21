@@ -40,7 +40,7 @@ public function job(Request $request)
     $attachmentName = uniqid() . '_' . $attachment->getClientOriginalName();
 
     // Mover el archivo a la carpeta deseada
-    $attachment->move(public_path('public/images/job'), $attachmentName);
+    $attachment->move(public_path('storage/app/public/job'), $attachmentName);
 
     $contact = new Contact;
     $contact->name = $request->input('name');
