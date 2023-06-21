@@ -11,7 +11,7 @@
 <link href="https://fonts.cdnfonts.com/css/lato-black" rel="stylesheet">
     @include('sweetalert::alert')
     @include('sections.header-view')
-    <x-header-view-dinamic :titleDinamic="'services'" :subtitleDinamic="''" />
+    <x-header-view-dinamic :titleDinamic="'HeaderServices'" :subtitleDinamic="''" />
 
     <div class="container-fluid no-gutters" id="principal-div">
         <div class="row pt-5 pb-5">

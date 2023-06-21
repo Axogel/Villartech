@@ -10,7 +10,7 @@
 
               </a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="overflow:hidden; padding-left:0;  position: relative;
-     max-height: 500px; ">
+     max-height: 570px; ">
       <div class="navbar-nav row" style="width: 100%;">
         <div class="col-xl-1 col-lg-0 ps-lg-5 col-xxl-1"></div>
           <div href="/" class="col-1 ps-lg-5">
@@ -50,6 +50,7 @@
                   $locale = session('locale');
                   $targetLocale = ($locale == 'es') ? 'en' : 'es'; 
               @endphp
+              
 
 <a href="{{ url('locale/'.$targetLocale) }}">
     <img class="nav-link lang-button" src="{{ asset('assets/img/lang.jpg') }}" style="width:40px; border-radius:10px;" alt="">

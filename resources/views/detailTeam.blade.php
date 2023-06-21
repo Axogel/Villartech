@@ -7,7 +7,7 @@
 @section('content')
 
     @include('sections.header-view')
-    <x-header-view-dinamic :titleDinamic="'TEAM'" :subtitleDinamic="''" />
+    <x-header-view-dinamic :titleDinamic="'HeaderTeam'" :subtitleDinamic="''" />
     @include('sections.details-Team')
 @endsection
 

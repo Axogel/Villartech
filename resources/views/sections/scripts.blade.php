@@ -35,14 +35,14 @@ function handleScroll() {
   var scrollPercentage = (scrollPosition / (documentHeight - visibleHeight)) * 100;
 
   if (scrollPercentage >= 13) {
-    console.log('Has desplazado al menos un 5%');
+
     allTabsLi.forEach(tab => tab.classList.remove("active"));
     allTabs.forEach(tab => tab.classList.remove("active"));
       tab1.classList.add("active");
       tabLi1.classList.add("active");
   }
   if (scrollPercentage >= 18) {
-    console.log('Has desplazado al menos un 5%');
+
     allTabsLi.forEach(tab => tab.classList.remove("active"));
     allTabs.forEach(tab => tab.classList.remove("active"));
       tab2.classList.add("active");

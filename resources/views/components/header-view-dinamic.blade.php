@@ -10,7 +10,7 @@
           <div class="flex-caption slider-content">
             <div class="col-md-12 text-center">
               <h2 class="animated7">
-                {{ $titleDinamic }}
+                {{ __("$titleDinamic") }}
               </h2>   
               <p class="animated7" style="    position: relative;
     bottom: 57px; font-size:30px;">

@@ -42,7 +42,7 @@
             </div>
 
 
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+            <div class="col-lg-8 fv-row fv-plugins-icon-container mb-5">
                 <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
                 <div class="form-control">
                     @foreach ($portfolio->skills()->get() as $skill)

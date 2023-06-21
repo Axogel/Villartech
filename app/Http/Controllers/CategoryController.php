@@ -59,6 +59,12 @@ class CategoryController extends Controller
         $category = new Category;
         $category->name = $request->name;
         $category->category_type_id = $request->category_type_id;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
+
 
         $category->save();
         return redirect()->route('categories.index')->withSuccessMessage('Category have been created', 'Category have been created');
@@ -101,7 +107,11 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->name = $request->name;
         $category->category_type_id = $request->category_type_id;
+        $request->validate([
+            '*' => 'required',
 
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $category->save();
         return redirect()->route('categories.index')->withSuccessMessage('Category have been updated', 'Category have been updated');
     }
