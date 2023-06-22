@@ -89,9 +89,10 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    @foreach ($blogs1 as $item)
                     
                     <div class="col-5 mt-5">
+                    @foreach ($blogs1 as $item)
+
                         <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
 
                             <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
@@ -123,9 +124,10 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    @foreach ($blogs2 as $item)
 
                     <div class="col-5 mt-5">
+                    @foreach ($blogs2 as $item)
+
                         <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
                         <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
                         </a>
