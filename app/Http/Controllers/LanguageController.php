@@ -51,6 +51,11 @@ class LanguageController extends Controller
     {
         $language = new Language;
         $language->name = $request->name;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $language->save();
         return redirect()->route('languages.index')->withSuccessMessage('Language have been created', 'Language have been created');
     }
@@ -89,6 +94,11 @@ class LanguageController extends Controller
     {
         $language = Language::find($id);
         $language->name = $request->name;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $language->save();
         return redirect()->route('languages.index')->withSuccessMessage('Language have been updated', 'Language have been updated');
     }

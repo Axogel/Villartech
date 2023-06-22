@@ -41,10 +41,13 @@ class FlickerController extends Controller
         
         $flicker = new Flicker;
         $flicker->name = $request->name;
-
         $request->validate([
+            '*' => 'required',
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
-         ]);
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
+
 
          $url = $request->image->store('images', 'public');
          $flicker->image = $url ?? null;      

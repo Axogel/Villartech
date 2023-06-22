@@ -98,12 +98,14 @@ class TeamUserController extends Controller
         $teamUser->status = 1;
             
         $request->validate([
+            '*' => 'required',
             'id_name' => 'required|string',
             'email' => 'required|email',
             'photo' => 'mimes:jpeg,png,jpg,gif,svg',
             'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
             'language_levels.*' => 'nullable|integer|min:0|max:100'
         ], $message = [
+            'required' => 'All fields are required.',
             'id_name.string' => 'Please provide a name',	
             'email.email' => 'Please provide a valid email address',
             'email.unique' => 'This email address is already taken',
@@ -141,9 +143,9 @@ class TeamUserController extends Controller
      */
 
 
-    public function show(TeamUser $teamUser)
-    {   $teamUsers = TeamUser::select('*')
-        ->get();
+    public function show($id)
+    {   
+        $teamUser = TeamUser::find($id);
         return view('teams.show',compact('teamUser'));
     }
     
@@ -213,11 +215,13 @@ class TeamUserController extends Controller
             $teamUser->photo = $url ?? null;
         }
         $request->validate([
+            '*' => 'required',
             'email' => 'required|email',
             'photo' => 'mimes:jpeg,png,jpg,gif,svg',
             'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
             'language_levels.*' => 'nullable|integer|min:0|max:100'
         ], $message = [
+            'required' => 'All fields are required.',
             'email.email' => 'Please provide a valid email address',
             'email.unique' => 'This email address is already taken',
             'photo.required' => 'Please provide an image',

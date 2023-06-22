@@ -74,8 +74,10 @@ class BlogController extends Controller
         $blog->tags = $jsonTagIds;
 
         $request->validate([
+            '*' => 'required',
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
-         ]);
+         ], $message = [
+            'required' => 'All fields are required.',]);
         
            
        
@@ -151,8 +153,10 @@ class BlogController extends Controller
         }
 
         $request->validate([
+            '*' => 'required',
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg',
-         ]);
+         ], $message = [
+            'required' => 'All fields are required.',]);
 
          $blog->category_id = $request->category_id;
          

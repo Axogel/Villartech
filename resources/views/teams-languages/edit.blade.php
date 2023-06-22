@@ -73,6 +73,15 @@
         <div class="row mb-6">
 
             </div> 
+            @if ($errors->any())
+                              <div class="alert alert-danger mx-2 my-2">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                          <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                               </div>
+                            @endif
             <div style="margin-left:450px; margin-top:50px;">
                 <a href="{{ route('teams.index') }}" class="btn btn-light me-2">Regresar</a>
                 <button type="submit" class="btn btn-info">

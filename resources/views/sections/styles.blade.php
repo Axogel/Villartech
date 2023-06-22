@@ -9,6 +9,7 @@
     .section-links-portfolio{
         height:320px;
     }
+
     .margin-ul-portfolio{
         margin-right: 13rem!important;
         margin-left: 13rem!important;
@@ -430,6 +431,9 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .dropdownResponsive{
+        display:none;
+    }
     .lang-button-responsive{
         display:none;
     }
@@ -530,6 +534,9 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .dropdownResponsive{
+        display:none;
+    }
     .lang-button-responsive{
         display:none;
     }
