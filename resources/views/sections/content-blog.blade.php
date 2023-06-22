@@ -46,7 +46,7 @@
     
     </div>
   </div>
-  <p class="text-right padding-dinamic-show " id="ShowResults"><b class="" style="padding-right: 50rem;"> showing {{$countSearch}} results of {{$totalItemsBlogs}}</b></p>
+  <p class="text-right padding-dinamic-show " id="ShowResults"><b class="" style="padding-right: 50rem;"> showing {{ $countSearch }} results of {{$totalItemsBlogs}}</b></p>
 </div>
 
 

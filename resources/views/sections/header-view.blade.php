@@ -48,6 +48,9 @@
               <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('privacy') }}" >{{__("HeaderTerms")}}</a>
               </li>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('workUs') }}" >Work with Us</a>
+              </li>
               @php
                 $locale = session('locale');
                 $targetLocale = ($locale == 'es') ? 'en' : 'es'; 
