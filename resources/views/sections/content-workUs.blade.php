@@ -135,8 +135,10 @@
                               <br>
                               <div class="col-lg-4 col-md-4">
                                 <div class="form-group">
-                                  <label for="attachment" class="subtitle-contact">Curriculum Vitae</label>
-                                  <input type="file" class="form-control" id="attachment" name="attachment">
+      
+
+                                  <input type="file" class="custom-file-input btn btn-primary solid blank" aria-describedby="attachment" id="attachment" name="attachment" style="display:none;">
+                                  <label class="custom-file-label btn btn-primary" id="customFileLabel" for="attachment">Seleccionar archivo</label>
                                 </div>
                               </div>
 
