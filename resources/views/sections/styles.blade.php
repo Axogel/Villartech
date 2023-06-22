@@ -9,6 +9,7 @@
     .section-links-portfolio{
         height:320px;
     }
+
     .margin-ul-portfolio{
         margin-right: 13rem!important;
         margin-left: 13rem!important;
@@ -148,6 +149,14 @@
     }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .lang-button-responsive{
+        position: relative;
+        bottom: 45px;
+        left: 300px;
+    }
+    .lang-button{
+       display:none;
+    }
     .div-detail-team-gray{
     margin-top:200px;
 }
@@ -165,7 +174,7 @@
 }
     .position-details{
         position: relative;
-        left: 40%;
+        left: 40%;s
         top: -367px;
     }
 
@@ -230,6 +239,17 @@
   }
 
 @media (min-width:300px) and (max-width:768px) {
+    .lang-button-responsive{
+        position: relative;
+        bottom: 45px;
+        left: 300px;
+    }
+    .lang-button{
+        display:none;
+    }
+    .portfolio-view-item{
+        height:540px;
+    }
     .height-gray-div-responsive{
         height:570px !important;
     }
@@ -411,6 +431,16 @@ ul.navbar-nav > li > a {
 
 
 @media (min-width:1400px) {
+    .dropdownResponsive{
+        display:none;
+    }
+    .lang-button-responsive{
+        display:none;
+    }
+    .lang-button{
+        margin-left:0.4rem;
+        margin-top:1.7rem;
+    }
     .position-details{
         position: relative;
         top: -296px;
@@ -456,7 +486,7 @@ ul.navbar-nav > li > a {
         height: 25%;
     }
 .margin-contactUs{
-    margin-left: 50px;
+    margin-left: 20%;
 }
 .img-responsive{
     width: 90px;
@@ -504,6 +534,16 @@ iframe {
 }
 
 @media (min-width:992px) and (max-width:1399px) {
+    .dropdownResponsive{
+        display:none;
+    }
+    .lang-button-responsive{
+        display:none;
+    }
+    .lang-button{
+        margin-left:0.4rem;
+        margin-top:1.8rem;
+    }
     .position-details{
         position: relative;
         top: -296px;
@@ -548,7 +588,7 @@ iframe {
         height: 25%;
     }
 .margin-contactUs{
-    margin-left: 50px;
+    margin-left: 10px;
 }
 .img-responsive{
     width: 90px;
@@ -829,6 +869,9 @@ iframe {
   }
 }
 
+.card-hover {
+ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
 .card-title {
                 font-family: 'Lato';
@@ -845,11 +888,7 @@ iframe {
             }
 
 
-.card-hover {
 
-  box-shadow: rgba(40, 40, 40, 0.06) 2px 0px 40px 5px;
-  transition: box-shadow 0.3s ease;
-}
 
 .card-hover:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -888,7 +927,6 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 400vh; /* Esto es opcional, ajusta la altura según tus necesidades */
   margin-top: -4.5rem; /* Ajusta el valor según tus necesidades */
   font-size:2rem;
 }
@@ -900,12 +938,14 @@ iframe {
 }
 
 .centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size:25px; 
-  font-weight: 1000; 
-  font-family: 'Barlow', sans-serif; 
-  font-family: 'Lato', sans-serif;
-  
+  font-size: 25px;
+  font-weight: 1000;
+  font-family: 'Barlow', sans-serif;
+  margin-top: -11.5rem;
 }
 
 
@@ -942,6 +982,14 @@ iframe {
   background-color:white;
   padding:4rem;
 }
+
+@media (max-width: 768px) {
+  #contact-form {
+    padding:0rem;
+    margin-top:65rem;
+  }
+}
+
 
 .title-contact{
   font-size:25px; 
@@ -985,9 +1033,6 @@ iframe {
   }
 }
 
-.form-control {
-    border: 0.5px solid #F1F1F1;
-}
 
 .headerEmail{
   background-color: #045A97;
@@ -1018,7 +1063,7 @@ iframe {
 
 .card{
 box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-}*/
+}
 
 .bebe{
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
@@ -1096,12 +1141,6 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
   .padding-dinamic-show {
     padding-right:12rem;
   }
-}
-
-
-.blog-image {
-    max-width: 100%;
-    max-height: 87px;
 }
 
 </style>

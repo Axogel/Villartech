@@ -1,0 +1,33 @@
+Para crear un endpoint en Laravel que nos ayude a filtrar datos y reciba parámetros tipo query que sean opcionales, podemos seguir los siguientes pasos:
+
+Crear una ruta en el archivo routes/web.php o routes/api.php que apunte al controlador que manejará la petición.
+Route::get('/datos', 'DatosController@index');
+Crear un controlador que maneje la petición y retorne los datos filtrados.
+class DatosController extends Controller
+{
+    public function index(Request $request)
+    {
+        $query = DB::table('datos');
+
+        if ($request->has('parametro1')) {
+            $query->where('parametro1', $request->input('parametro1'));
+        }
+
+        if ($request->has('parametro2')) {
+            $query->where('parametro2', $request->input('parametro2'));
+        }
+
+        // ...
+
+        $datos = $query->get();
+
+        return response()->json($datos);
+    }
+}
+En este ejemplo, se utiliza el método get() para obtener los datos filtrados y se retorna una respuesta JSON.
+
+Enviar una petición GET a la ruta creada con los parámetros opcionales.
+http://localhost/datos?parametro1=valor1&parametro2=valor2
+En este ejemplo, se envía una petición GET a la ruta /datos con los parámetros opcionales parametro1 y parametro2.
+
+Espero que esto te ayude.

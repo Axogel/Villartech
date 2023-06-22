@@ -25,25 +25,45 @@
 
                     <div class="row mb-6">
 
+                            <div class="" style="overflow:hidden; height:550px;">
+                                        <div id="DivEn" class="">
+                                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Title</label>
+                                                {!! Form::text('title', null, ['placeholder' => 'Insert a Title',
+                                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
-                            {!! Form::text('title', old('title', $blog->title), [
-                                'id' => 'title',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'Name',
-                            ]) !!}
+                                            </div>
 
+                                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
+                                                {!! Form::textarea('description', null, ['class' => 'form-control summernote' , 'id' => 'description']) !!}
+
+                                            </div>
+                                        </div>
+                                            <div class="Espanish-div" id="DivEs" style="position:relative; bottom:510px;">
+                                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Title Spanish</label>
+                                                {!! Form::text('titleES', null, ['placeholder' => 'Insert a Title',
+                                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+
+                                            </div>
+
+                                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+      <label class="col-lg-4 col-form-label required fw-bold fs-6">Description Spanish</label>
+      {!! Form::textarea('descriptionES', null, ['class' => 'form-control summernote', 'id' => 'descriptionES']) !!}
+    </div>
+                                        </div>
+                            </div>
+                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <div class="dropdown ">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Language
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <a class="dropdown-item"  href="#" onclick="LanguageEn()" data-lang="en">English</a>
+                                <a class="dropdown-item"  href="#"  onclick="LanguageEs()" data-lang="es">Spanish</a>
+                            </div>
                         </div>
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                            {!! Form::textarea('description', old('description', $blog->description), [
-                                'id' => 'description',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'description',
-                            ]) !!}
-
                         </div>
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
@@ -120,11 +140,27 @@
 
 
     </div>
-    
+    <style>
+    .Espanish-div{
+        position:relative;
+        left:1000px;
+    }
+</style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script>
+ let EsDiv = document.getElementById('DivEs');
+  let EnDiv = document.getElementById('DivEn');
+ function LanguageEs(){
+    EnDiv.classList.add("Espanish-div");
+    EsDiv.classList.remove("Espanish-div");
+ }
+ function LanguageEn(){
+    EsDiv.classList.add("Espanish-div");
+    EnDiv.classList.remove("Espanish-div");
+}
+</script>
     <script>
         $(document).ready(function() {
     $('.js-example-basic-multiple').select2();
@@ -136,5 +172,7 @@
     <script>
         CKEDITOR.replace('description');
     </script>
-
+    <script>
+        CKEDITOR.replace('descriptionES');
+    </script>
 @endsection

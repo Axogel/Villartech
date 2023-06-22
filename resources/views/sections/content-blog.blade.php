@@ -46,7 +46,7 @@
     
     </div>
   </div>
-  <p class="text-right padding-dinamic-show " id="ShowResults"><b class="" style="padding-right: 50rem;"> showing {{$countSearch}} results of {{$totalItemsBlogs}}</b></p>
+  <p class="text-right padding-dinamic-show " id="ShowResults"><b class="" style="padding-right: 50rem;"> showing {{ $countSearch }} results of {{$totalItemsBlogs}}</b></p>
 </div>
 
 
@@ -92,6 +92,7 @@
                     @foreach ($blogs1 as $item)
                     
                     <div class="col-5 mt-5">
+
                         <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
 
                             <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
@@ -126,6 +127,7 @@
                     @foreach ($blogs2 as $item)
 
                     <div class="col-5 mt-5">
+
                         <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
                         <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
                         </a>
@@ -155,6 +157,14 @@
 
   </div>
 </div>
+
+<style>
+   .blog-image {
+                width: 100%; /* Establece un ancho fijo para las imágenes */
+                height: 113px; /* Permite que la altura se ajuste proporcionalmente */
+                }
+</style>
+
 <script>
     let BlogData = {!! json_encode($blogs) !!};
     let allBlog = {{$totalItemsBlogs}};

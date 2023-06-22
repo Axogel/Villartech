@@ -50,7 +50,12 @@ class SkillController extends Controller
     public function store(Request $request)
     {
         $skill = new Skill;
-        $skill->name = $request->name;
+        $skill->name = $request->name;   
+             $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $skill->save();
         return redirect()->route('skills.index')->withSuccessMessage('Skill have been created', 'Skill have been created');
     }
@@ -89,6 +94,11 @@ class SkillController extends Controller
     {
         $skill = Skill::find($id);
         $skill->name = $request->name;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $skill->save();
         return redirect()->route('skills.index')->withSuccessMessage('Skill have been updated', 'Skill have been updated');
     }

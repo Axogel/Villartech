@@ -50,6 +50,11 @@ class TagController extends Controller
     {
         $tag = new Tag;
         $tag->name = $request->name;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $tag->save();
         return redirect()->route('tags.index')->withSuccessMessage('Tag have been created', 'Tag have been created');
         
@@ -90,6 +95,11 @@ class TagController extends Controller
     {
      $tag = Tag::find($id);
         $tag->name = $request->name;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $tag->save();
         return redirect()->route('tags.index')->withSuccessMessage('Tag have been updated', 'Tag have been updated');
     }

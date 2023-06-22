@@ -19,7 +19,9 @@ class BlogFactory extends Factory
         $name = $this->faker->name();
         return [
             'title' => $name,
+            'titleEs' => $name,
             'description' => $this->faker->paragraph(),
+            'descriptionEs'=> $this->faker->paragraph(),
             'image' => 'uploads/images/portfolios/'.$this->faker->file(public_path('images/portfolios'), storage_path('app/public/uploads/images/portfolios/'), false),
             'author' => $this->faker->name(),
             'tags' => '["1"]',

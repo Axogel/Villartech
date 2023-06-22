@@ -1,6 +1,6 @@
 <div class="container my-5">
     <p style="font-size:25px">
-        <span style="color:#045A97;">About </span>me
+        <span style="color:#045A97;">{{__("TeamAbout")}}  </span>{{__("TeamAboutNull")}}
     </p>
     <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
 
@@ -13,13 +13,13 @@
             <div class="col-1"></div>
             <div style="height: 5%; width:41%; background-color:#045A97; border-radius:20px;">
                 <p style="text-align: center; padding-top:10px; color:white; font-family: 'Lato'; width:100%;">
-                    <a href="{{ $detailTeam->cv_link }}" style="color:white;">DOWNLOAD CV</a>
+                    <a href="{{ $detailTeam->cv_link }}" style="color:white;">{{__("ViewTeamCV")}}</a>
                 </p>
             </div>
             <div class="col-1"></div>
             <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
                 <p style="text-align: center; padding-top:10px; color:white; font-family: 'Lato';">
-                    <a href="#" style="color:white;">CONTACT ME</a>
+                    <a href="#" style="color:white;">{{__("ViewTeamContactMe")}}</a>
                 </p>
             </div>
         </div>
@@ -38,18 +38,18 @@
                 <img src="{{ asset('storage') . '/' . $detailTeam->photo }}" style="width:188px;" alt="">
             </div>
             <div class="col-lg-1 col-5 pe-2 my-5" style="color:#FFFFFF;line-height:2px; padding-top:7px; ">
-                <p class="py-1" style="line-height: 1.3em; ">Age</p>
-                <p class="py-1" style="line-height: 1.3em; ">Residence</p>
-                <p class="py-1" style="line-height: 1.3em; ">Freelance</p>
-                <p class="py-1" style="line-height: 1.3em; ">Address</p>
+                <p class="py-1" style="line-height: 1.3em; ">{{__("FormAge")}}</p>
+                <p class="py-1" style="line-height: 1.3em; ">{{__("FormResidence")}}</p>
+                <p class="py-1" style="line-height: 1.3em; ">{{__("FormFreelance")}}</p>
+                <p class="py-1" style="line-height: 1.3em; ">{{__("FormAddress")}}</p>
             </div>
                 <div class="col-lg-2 col-5 pe-3 my-5" style="font-size: 15px; line-height:2px; padding-top:7px; color:#FFFFFF; ">
                     <p class="py-1" style="line-height: 1.3em; ">{{ $detailTeam->age }}</p>
                     <p class="py-1" style="line-height: 1.3em; ">{{ $detailTeam->residence }}</p>
                             @if($detailTeam->freelance == 1)
-                            <p class="py-1" style="line-height: 1.3em; ">available</p>
+                            <p class="py-1" style="line-height: 1.3em; ">{{__("Available")}}</p>
                             @else
-                            <p class="py-1" style="line-height: 1.3em; ">Occupied</p>
+                            <p class="py-1" style="line-height: 1.3em; ">{{__("Occupied")}}</p>
                             @endif
 
                     <p class="py-1" style="line-height: 1.3em; ">{{ $detailTeam->address }}</p>
@@ -65,7 +65,7 @@
 
 <div class="container my-5">
     <p class="text-left" style="color:#045A97; font-size:33px; font-weight:600;">
-        Skills
+       {{__("Skills")}}
     </p>
     <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
     <p>2-5 years</p>
@@ -75,7 +75,7 @@
     </h2>
     @endforeach
 
-    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">Overview
+    <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">{{__("TeamOverview")}}
     
     </p>
     <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block">
@@ -88,7 +88,7 @@
     <div>
 
         <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">
-            Languages
+            {{__("ViewTeamLanguages")}}
         </p>
         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
 <div class="row my-5">
@@ -124,7 +124,7 @@
     </div>
 
     <div>
-        <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">Coding</p>
+        <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">{{__("ViewTeamCoding")}}</p>
         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
         <div>
             @foreach ($teamSkills as $teamSkill)
@@ -144,7 +144,8 @@
 
     <div>
         <p style="font-family: 'Lato'; color:#045A97; font-weight:700;" class="fs-1 pt-4">
-            Experience
+        {{__("TeamExperience")}}
+         
             <img src="{{ asset('assets/img/modal-teams/work_FILL1_wght400_GRAD0_opsz48@2x.png') }}" style="height: 40px; float:right;">
         </p>
         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">

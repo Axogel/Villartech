@@ -121,8 +121,8 @@
 
                        </div>
 
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container" style="margin-left:-15px;" >
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6" style="margin-left:-15px;" >Languages</label>
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container"  >
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6" >Languages</label>
                             {!! Form::select('languages[]', $languages, null, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
 
 

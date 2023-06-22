@@ -1,7 +1,7 @@
 <section id="contact" class="contact-section" style="padding:50px 0 20px 0;">
     <div class="container">
         <div class="col-12 pt-5 heading">
-            <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; ">Contact Us</h2>
+            <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900; ">{{__("ContactTitle")}}</h2>
         </div>
         <form form id="contact-form" action="{{ route('enviar') }}" method="post" role="form">
             <input type="hidden" name="_method" value="POST">
@@ -9,11 +9,11 @@
 
             <div class="col-10 mx-auto " style="background-color: #F9F9F9; width:100%; margin-top:0px;" id="contact-form">
                 <div class="" id="container-contact-us">
-                    <p class="title-contact pt-3">CONTACT US</p>
-                    <p class="subtitle-contact">Get in Touch for Exceptional Service</p>
-                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub">Contact Us to
-                        Discuss Your
-                        Project Requirements and Receive a Customized Solution</p>
+                    <p class="title-contact pt-3">{{__("ContactTitle")}}</p>
+                    <p class="subtitle-contact">{{__("ContactSubTitle")}}</p>
+                    <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub">
+                    {{__("ContactDiscuss")}}
+                    </p>
                 </div>
 
                 <div class="container">
@@ -25,48 +25,50 @@
                           margin-left: calc(var(--bs-gutter-x) * 0.5);">
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
-                                            <label for="name" class="form-title-contact">Your Name</label>
+                                            <label for="name" class="form-title-contact">{{__("FormYour")}} {{__("FormName")}}</label>
                                             <input type="text" class="form-control" id="name" name="name"
-                                                placeholder="Enter your name">
+                                                placeholder="{{__('FormPlaceholder')}}  {{__('FormName')}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
-                                            <label for="email" class="form-title-contact">Your Email</label>
+                                            <label for="email" class="form-title-contact">{{__("FormYour")}} {{__("FormEmail")}}</label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                placeholder="Enter your email">
+                                                placeholder="{{__('FormPlaceholder')}}  {{__('FormEmail')}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
-                                            <label for="number" class="form-title-contact">Your Number</label>
+                                            <label for="number" class="form-title-contact">{{__("FormYour")}} {{__("FormNumber")}}</label>
                                             <input type="text" class="form-control" id="number"
-                                                placeholder="Enter your number" name="number">
+                                                placeholder="{{__('FormPlaceholder')}}  {{__('FormNumber')}}" name="number">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-                                            <label for="interest" class="form-title-contact">What you are interested
-                                                in</label>
+                                            <label for="interest" class="form-title-contact">
+                                                {{__("FormInteresed")}}
+
+                                            </label>
                                             <input type="text" class="form-control" id="interest"
-                                                placeholder="Enter your interest" name="interest">
+                                                placeholder="{{__('FormPlaceholder')}}  {{__('interest')}}" name="interest">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-                                            <label for="budget" class="form-title-contact">Project Budget</label>
+                                            <label for="budget" class="form-title-contact">{{__("FormProject")}}</label>
                                             <input type="text" class="form-control" id="budget"
-                                                placeholder="Enter project budget" name="budget">
+                                                placeholder="{{__('FormPlaceholder')}}  {{__('FormProject')}}" name="budget">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="message" class="form-title-contact">Message</label>
-                                            <textarea class="form-control" id="mensaje" rows="5" placeholder="Enter your message" name="mensaje"></textarea>
+                                            <label for="message" class="form-title-contact">{{__("FormMessage")}}</label>
+                                            <textarea class="form-control" id="mensaje" rows="5" placeholder="{{__('FormPlaceholder')}} {{__('FormMessage')}}" name="mensaje"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12" style="padding-left:25px; padding-top:20px;">
-                                        <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">JUST SEND</button>
+                                        <button type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;">{{__("FormJustSend")}}</button>
 
                                     </div>
                                 </div>
@@ -77,4 +79,3 @@
         </form>
     </div>
 </section>
-

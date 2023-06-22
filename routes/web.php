@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController,EmployeeCategoryController, PortfolioController, DeclarationController,LanguageController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Redirect;
 
 
 
@@ -20,10 +21,17 @@ use App\Models;
 |
 */
 
+
 Route::post('/send', 'App\Http\Controllers\EmailController@send')->name('send');
 Route::post('/enviar', 'App\Http\Controllers\ContactController@sendEmail')->name('enviar');
+Route::post('/job', 'App\Http\Controllers\JobController@job')->name('job');
 
+Route::get('/locale/{locale}', function ($locale) {
+	
+	session()->put('locale', $locale);
 
+	return Redirect::back();
+});
 Route::get('/', [FrontController::class, 'welcome'])->name('PageHome');
 Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 
@@ -52,6 +60,7 @@ Route::get('/aboutUs', [FrontController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/portfolio/{slug}', [FrontController::class, 'portfolioDetails'])->name('portfolioDetail');
 Route::get('/employee/{slug}', [FrontController::class, 'teamDetails'])->name('teamDetail');
 Route::get('/contactUs', [FrontController::class, 'contactUs'])->name('contactUs');
+Route::get('/workUs', [FrontController::class, 'workUs'])->name('workUs');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);

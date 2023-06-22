@@ -54,6 +54,11 @@ class FaqController extends Controller
         $faq = New Faq;
         $faq->title = $request->title;
         $faq->answer = $request->answer;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $faq->save();
 
         return redirect()->route('faqs.index')->withSuccessMessage('FAQ have been created', 'FAQ have been created');
@@ -95,6 +100,11 @@ class FaqController extends Controller
     {
         $faq->title = $request->title;
         $faq->answer = $request->answer;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $faq->save();
 
         return redirect()->route('faqs.index')->withSuccessMessage('FAQ have been updated', 'updated');

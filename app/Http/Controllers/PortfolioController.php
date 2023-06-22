@@ -66,7 +66,9 @@ class PortfolioController extends Controller
         $skillIds = $request->input('skills');
         $jsonSkillIds = json_encode($skillIds);
         $portfolio->skills = $jsonSkillIds;
+
         $request->validate([
+            '*' => 'required',
             'image' => ['nullable', function ($attribute, $value, $fail) use ($request) {
                 if (!$request->hasFile('image_file') && empty($request->image_url) && empty($value)) {
                     $fail('The image field is required.');
@@ -80,6 +82,7 @@ class PortfolioController extends Controller
             }],
             'url' => 'required|url',
         ], $message = [
+            'required' => 'All fields are required.',
             'image.required' => 'The image field is required.',
             'image_file' => 'The image field is required.',
             'image_file.image' => 'The image does not have a valid format',
@@ -181,9 +184,11 @@ class PortfolioController extends Controller
             $portfolio->image = $url ?? null;
         }
         $request->validate([
+            '*' => 'required',
             'image' => 'mimes:jpeg,png,jpg,gif,svg',
             'url' => 'required|url',
         ],$message=[
+            'required' => 'All fields are required.',
             'image.mimes' =>'Please provide a valid image format (jpeg,png,jpg,gif,svg)',
             'url'=>'The URL is not valid'
         ]);

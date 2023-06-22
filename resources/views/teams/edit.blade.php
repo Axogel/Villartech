@@ -174,18 +174,24 @@
                             ]) !!}
                         </div>
                     </div> 
-                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Languages</label>
+                    <div class="row mb-6"> 
+                          <label class="col-lg-4 col-form-label required fw-bold fs-6">Languages</label>
+                          <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                            {!! Form::select('Languages[]', $languages, json_decode($teamUser->languages), ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+                        </div>
+                    </div> 
+                    <div class="row mb-6"> 
+                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Level</label>
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                             {!! Form::text('language_levels[]', isset($language_levels) ? $language_levels : '', ['placeholder' => 'Insert your level', 'class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
+                        </div>
+                    </div> 
 
+   
+                   
                     <div class="col-lg-8 fv-row fv-plugins-icon-container">
-    {!! Form::select('Languages[]', $languages, json_decode($teamUser->languages), ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
-</div>
-<label class="col-lg-4 col-form-label required fw-bold fs-6">Level</label>
-<div class="col-lg-8 fv-row fv-plugins-icon-container">
-    {!! Form::text('language_levels[]', isset($language_levels) ? $language_levels : '', ['placeholder' => 'Insert your level', 'class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
-</div>
-<div class="col-lg-8 fv-row fv-plugins-icon-container">
-    <div id="language-forms-container"></div>
-</div>
+                        <div id="language-forms-container"></div>
+                    </div>
 
    
 
@@ -282,11 +288,11 @@
 
             var languageForm = $('<div>').attr('id', formId).addClass('language-form');
 
-            var selectField = $('<div>').addClass('fv-row fv-plugins-icon-container')
+            var selectField = $('<div>').addClass('row mb-6')
                 .append($('<label>').addClass('col-lg-4 col-form-label required fw-bold fs-6').text('Languages'))
                 .append(` {!! Form::select('Languages[]', $languages, json_decode($teamUser->languages), ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}`);
 
-            var levelField = $('<div>').addClass('fv-row fv-plugins-icon-container')
+            var levelField = $('<div>').addClass('row mb-6')
                 .append($('<label>').addClass('col-lg-4 col-form-label required fw-bold fs-6').text('Level'))
                 .append(` {!! Form::text('language_levels[]', isset($language_levels) ? $language_levels : '', ['placeholder' => 'Insert your level', 'class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}`);
 

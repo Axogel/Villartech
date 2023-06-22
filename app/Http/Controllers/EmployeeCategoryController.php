@@ -50,6 +50,11 @@ class EmployeeCategoryController extends Controller
         $employeeCategory  = new EmployeeCategory;
         $employeeCategory ->name = $request->name;
         $employeeCategory->description = $request->description;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $employeeCategory ->save();
         return redirect()->route('EmployeeCategories.index')->withSuccessMessage('Employee category have been created', 'Employee category have been created');
     }
@@ -89,6 +94,11 @@ class EmployeeCategoryController extends Controller
         $employeeCategory= EmployeeCategory::find($id);
         $employeeCategory ->name = $request->name;
         $employeeCategory ->description;
+        $request->validate([
+            '*' => 'required',
+
+         ], $message = [
+            'required' => 'All fields are required.',]);
         $employeeCategory ->save();
         return redirect()->route('EmployeeCategories.index')->withSuccessMessage('Employee category have been updated', 'Employee category have been updated');
     }

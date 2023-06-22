@@ -3,7 +3,7 @@
         <div class="" role="tablist">
             <ul class="nav nav-tabs d-flex justify-content-center margin-ul-portfolio mb-5 mb-5" id="myTab" role="tablist" style="    border-bottom:0 ;">
                 <li class="nav-item py-5" style="height:50px;" role="presentation">
-                    <button class="nav-link active badge rounded-pill button-skill-nav bg-size-lg text-light px-5 mx-3  py-4" style=" font-weight: 400;font-size: 18px;" id="home-tab" data-toggle="tab" data-target="#homeWelcome" type="button" role="tab" aria-controls="home" aria-selected="true">All</button>
+                    <button class="nav-link active badge rounded-pill button-skill-nav bg-size-lg text-light px-5 mx-3  py-4" style=" font-weight: 400;font-size: 18px;" id="home-tab" data-toggle="tab" data-target="#homeWelcome" type="button" role="tab" aria-controls="home" aria-selected="true">{{__("All")}}</button>
                 </li>
                         @php
                             $totalItems = count($portfolios);
@@ -26,12 +26,14 @@
             <div class="tab-pane fade show active in" id="homeWelcome" role="tabpanel" aria-labelledby="home-tab">
                 <div class="container">
                     <div id="portfolioContainer" class="row justify-content-center mt-5">
+
                      @php
                             $firstFourPortfolios = array_slice($portfolios, 0, 4);
                       @endphp
                     @foreach ($firstFourPortfolios as $portfolio)
                                 @php
                                     $countShowing = count($firstFourPortfolios);
+                                   
                                 @endphp
 
                                         <div class="col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover">
@@ -57,28 +59,34 @@
                                             <p style="font-size:18px;">{{ Str::limit($portfolio['description'], 80) }}</p>
 
                                         </div>
+                    
+                    
                                     @endforeach
+   
                                     
                     </div>
                     <p class="text-right padding-dinamic-show" style="font-weight: bold" id="ShowResults"></p>
                 </div>
             </div>
                 @foreach ($skills as $skill)
+                
                     <div class="tab-pane fade" id="{{ $skill->name }}" role="tabpanel" aria-labelledby="{{ $skill->id }}-tab">
                         @php 
                             $new = array_filter($portfolios, function ($let) use ($skill) {
                                 return (in_array($skill->id, json_decode($let['skills'])));
                             });
                         @endphp
+                        
                         @php
                                     $AllSearch = count($new);
-                                    $countShowing = 0;
+                                    $countSearch = 0;
                         @endphp
+                        
                         <div class="container">
                             <div class="row justify-content-center">
                                     @foreach ($new as $portfolio)
                                     @php 
-                                        $countShowing++;
+                                        $countSearch++;
                                     @endphp
                                         <div class="col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover">
                                             <div class="grid">
@@ -106,7 +114,8 @@
 
                             </div>
                         </div>
-                        <p class="text-right padding-dinamic-show "><b class="" style=""> showing {{$countShowing}} results of {{$AllSearch}}</b></p>
+      
+                        <p class="text-right padding-dinamic-show "><b class="" style=""> {{__("Showing")}} {{$countSearch}} {{__("ResultsOff")}} {{$AllSearch}}</b></p>
                     </div>
                 @endforeach
             </div>
@@ -116,7 +125,7 @@
     <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="text-center  margin-section-portfolio" style="">
-            <button id="loadMoreButton" class="btn btn-primary solid blank py-3 px-5 my-5" type="submit" style="font-size:20px">SHOW MORE</button>
+            <button id="loadMoreButton" class="btn btn-primary solid blank py-3 px-5 my-5" type="submit" style="font-size:20px">{{__("ShowMore")}}</button>
         </div>
     </div>
     </div>
@@ -126,8 +135,8 @@
 
 <div class="row justify-content-center button-skill-nav section-links-portfolio">
     <div class="col-12 col-md-5 mx-5 mb-5">
-        <p class="text-light margin-portfolio-section" style="font-size: 25px;">Want to learn more about our work and experience?</p>
-        <p class="text-light mx-5" style="font-size: 18px;">We invite you to discover our profiles on the freelance work platforms Upwork and LinkedIn. On these profiles, you can find more information about our previous projects, technical skills, recommendations from satisfied clients, and more.</p>
+        <p class="text-light margin-portfolio-section" style="font-size: 25px;">{{__("ViewPortfolioCard")}}</p>
+        <p class="text-light mx-5" style="font-size: 18px;">{{__("ViewPortfolioCardDescription")}}</p>
     </div>
     <div class="col-12 col-md-5 " style="">
                 <div class="row justify-content-center">
@@ -222,7 +231,7 @@
             portfolioContainer.appendChild(portfolioItem);
         }
     }
-    document.getElementById("ShowResults").textContent = 'Showing ' + CountPortfolio + ' results of ' + allPortfolio;
+    document.getElementById("ShowResults").textContent = '{{__("Showing")}}  ' + CountPortfolio +' '+ '{{__("ResultsOff")}}  ' + allPortfolio;
 }
 
 

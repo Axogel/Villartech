@@ -15,7 +15,7 @@
                                                 style="font-family: 'Lato'; font-weight: 300; color:white;"
                                                 href="#tab_about_{{ $teamId }}" data-toggle="tab"
                                                 data-svg="svg1" >
-                                                ABOUT
+                                               {{__("TeamAbout")}}
                                             </a>
                                         </div>
                                       </li>
@@ -28,7 +28,7 @@
                                             </svg>
                                         </a>
                                         <a class="fs-6 text-center " data-svg="svg2" style="font-family: 'Lato'; font-weight: 300; color:white;" href="#tab_experience_{{  $teamId }}" data-toggle="tab">
-                                            EXPERIENCE
+                                           {{__("TeamExperience")}} 
                                         </a>
                                     </div>
                                       </li>
@@ -41,7 +41,7 @@
                                             </svg>
                                         </a>
                                         <a class="fs-6 text-center" data-svg="svg3" style="font-family: 'Lato'; font-weight: 300; color:white;" href="#tab_education_{{  $teamId }}" data-toggle="tab">
-                                            EDUCATION
+                                          {{__("TeamEducation")}}  
                                         </a>
                                     </div>
                                       </li>
@@ -54,7 +54,7 @@
                                             </svg>
                                         </a>
                                         <a class="fs-6 text-center" data-svg="svg4" style="font-family: 'Lato'; font-weight: 300; color:white;" href="#tab_overview_{{ $teamId }}" data-toggle="tab">
-                                            OVERVIEW
+                                          {{__("TeamOverview")}} 
                                         </a>
                                     </div>
                                       </li>
