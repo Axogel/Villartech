@@ -157,6 +157,14 @@
 
   </div>
 </div>
+
+<style>
+   .blog-image {
+                width: 100%; /* Establece un ancho fijo para las imágenes */
+                height: 113px; /* Permite que la altura se ajuste proporcionalmente */
+                }
+</style>
+
 <script>
     let BlogData = {!! json_encode($blogs) !!};
     let allBlog = {{$totalItemsBlogs}};
