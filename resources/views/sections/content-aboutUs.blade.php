@@ -34,7 +34,8 @@
           <br>
           <br>
           <div class="butttom">
-            <button class="btn btn-primary solid blank" type="submit" style="padding; width: 181px; height: 50px; font-size: 20px; border-radius: 50px;opacity: 1; font-family:'lato' regular;">CONTACT ME</button>
+          <a href="{{ route ('contactUs') }}"><button class="btn btn-primary solid blank" type="submit" style="padding; width: 181px; height: 50px; font-size: 20px; border-radius: 50px;opacity: 1; font-family:'lato' regular;">CONTACT ME</button>
+            </a>
           </div>
 
         </div> 
@@ -94,7 +95,7 @@
 
 
 
-  <div class="container-redirect" style="margin-top:-10rem;">
+  <div class="container-redirect" style="">
     <div class="imgs-redirect row justify-content-center align-items-center">
 
     @foreach($settings as $setting)
