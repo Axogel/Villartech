@@ -1,5 +1,5 @@
 <header id="header" class="navbar-fixed-top header2 nav-responsive-fixed" role="banner">
-  <nav class="navbar navbar-expand-lg navbar-light nav-bar-responsive-show " style="justify-content: flex-start;  ">
+  <nav class="navbar navbar-expand-lg navbar-light  " style="justify-content: flex-start;  ">
     <button class="navbar-toggler ms-3 " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style=" padding: 1.25rem 1.75rem; margin-bottom: 10px; color: #045A97; ">
         <span style = "color: #fff">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
@@ -19,9 +19,8 @@
 
               </a>
           </div> 
-        <div class="col-xxl-2 col-xl-1 col-lg-1"></div>
-        <div class="col-xxl-6 col-xl-6 col-lg-6">
-        <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 15px;">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 ">
+        <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 45px;">
               <li class="nav-item  ps-5 ps-lg-2 pe-2">
 
       
@@ -45,8 +44,8 @@
               <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('blog') }}" >{{ __('HeaderBlog') }}</a>
               </li>
-              <li class="nav-item  ps-5 ps-lg-2 pe-2">
-                <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('privacy') }}" >{{__("HeaderTerms")}}</a>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2 col-lg-4">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('workUs') }}" >{{ __('HeaderWork') }}</a>
               </li>
               @php
                 $locale = session('locale');
@@ -99,7 +98,6 @@
     color:#000 !important;
   }
 </style>
-
 
 
 

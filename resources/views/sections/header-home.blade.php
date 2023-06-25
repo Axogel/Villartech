@@ -19,9 +19,8 @@
 
               </a>
           </div> 
-        <div class="col-xxl-2 col-xl-1 col-lg-1"></div>
-        <div class="col-xxl-6 col-xl-6 col-lg-6">
-        <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar" style="padding-left: 15px;">
+        <div class="col-xxl-6 col-xl-6 col-lg-6" style="padding-left: 40px;">
+        <ul class="navbar-nav mb-2 mb-lg-0 w-100"  id="navbar-villar">
               <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page"  href="/">{{ __('HeaderHome') }}</a>
               </li>
@@ -42,9 +41,9 @@
               </li>
               <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('blog') }}" >{{ __('HeaderBlog') }}</a>
-              </li> 
-              <li class="nav-item  ps-5 ps-lg-2 pe-2">
-                <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('privacy') }}" >{{__("HeaderTerms")}}</a>
+              </li>
+              <li class="nav-item  ps-5 ps-lg-2 pe-2 col-lg-4">
+                <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('workUs') }}" >{{ __('HeaderWork') }}</a>
               </li>
               @php
                 $locale = session('locale');
