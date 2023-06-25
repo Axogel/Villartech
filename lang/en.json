@@ -11,6 +11,8 @@
     "ShowMore": "SHOW MORE",
     "HeaderToggle navigation": "Alternar navegación",
     "HeaderHome": "Home",
+    "HeaderWork": "Work With Us",
+
     "HeaderAbout": "About Us",
  
     "ServicesOur": "Our Services",
@@ -114,7 +116,7 @@
     "ProfileCard5Description": "In VillarTechnologies we make sure that our team is available 24/7 or during the work schedule needed by the client. We have an excellent customer service team under the  leadership of the company owner, totally trained to keep constant and direct contact with each client and accomplish all of the work timing related to the Project in develop.",
 
     "ServicesCard": "Web Design",
-    "ServicesCardDescription": "We adapt and create your web site to any type of screen, through the developing and usage of the latest trends, in order to always improve the user's experience.",
+    "ServicesCardDescription": "We adapt and create your web site to any type of screen, through the developing and usage of the latest trends.",
     "ServicesCard2": "Apps Development",
     "ServicesCard2Description": " We are your solution and your best option for the design and development of apps in the  Android and IOS platform.",
     "ServicesCard3": " eCommerce Websites",

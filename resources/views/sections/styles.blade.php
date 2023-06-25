@@ -1143,6 +1143,18 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
   }
 }
 
+.container-redirect{
+  margin-top:-70rem;
+}
+
+@media (max-width: 768px) {
+  .container-redirect {
+    margin-top:-5rem;
+  }
+}
+
+
+
 </style>
 
 

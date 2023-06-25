@@ -23,17 +23,16 @@ public function job(Request $request)
     $validator = Validator::make($request->all(), [
             'number' => ['required', 'regex:/^[0-9A-Za-z\W]+$/'],
             'budget' => ['nullable', 'regex:/^[0-9\W]+$/'],
-            'attachment' => ['required', 'file'],
+            'attachment' => ['file'],
         ]);
 
         if ($validator->fails()) {
-            return redirect::back()
-                ->withErrors($validator)
-                ->withInput();
+           Alert::error('Error', 'Check the data and try again.');
+                return redirect('/workUs');
         }
 
-
-    // Obtener el archivo adjunto del request
+        else {
+           // Obtener el archivo adjunto del request
     $attachment = $request->file('attachment');
 
     // Generar un nombre único para el archivo
@@ -47,6 +46,9 @@ public function job(Request $request)
     $contact->email = $request->input('email');
     $contact->number = $request->input('number');
     $contact->interest = $request->input('interest');
+    $contact->budget = 0;
+    $contact->message = 0;
+
     $contact->linkedin = $request->input('linkedin');
     $contact->attachment = 'images/job/' . $attachmentName; // Ruta relativa del archivo adjunto
     $contact->about_us = $request->input('about_us');
@@ -66,6 +68,10 @@ public function job(Request $request)
 
     Alert::success('Success', 'Email sent successfully!');
     return redirect('/workUs');
+        }
+
+
+   
 }
 
    
