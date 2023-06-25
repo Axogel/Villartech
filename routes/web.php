@@ -31,7 +31,7 @@ Route::get('/locale/{locale}', function ($locale) {
 	session()->put('locale', $locale);
 
 	return Redirect::back();
-});
+})->middleware('web')->name('locale');
 Route::get('/', [FrontController::class, 'welcome'])->name('PageHome');
 Route::post('/sendemail', [SendGmailController::class, 'sendgmail']);
 

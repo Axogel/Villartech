@@ -54,16 +54,16 @@
     </div>
                                         </div>
                             </div>
+
                             <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                        <div class="dropdown ">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Select Language
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                                <a class="dropdown-item"  href="#" onclick="LanguageEn()" data-lang="en">English</a>
-                                <a class="dropdown-item"  href="#"  onclick="LanguageEs()" data-lang="es">Spanish</a>
-                            </div>
-                        </div>
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" style="cursor:pointer;" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="LanguageEn()" data-lang="en">English</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" style="cursor:pointer;" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="LanguageEs()" data-lang="es">Spanish</a>
+                                </li>
+                            </ul>
                         </div>
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
