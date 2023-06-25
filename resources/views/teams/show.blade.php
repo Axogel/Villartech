@@ -123,6 +123,9 @@
 
 
         </div>
+        <div style="margin-top:50px;" class="row mb-6">
+                        <a href="{{ route('teams.index') }}" class="btn btn-light me-2">Regresar</a>
+                    </div>
     </div>
 @endsection
 

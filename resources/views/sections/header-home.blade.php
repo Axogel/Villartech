@@ -43,31 +43,38 @@
               <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('blog') }}" >{{ __('HeaderBlog') }}</a>
               </li> 
-               <li class="nav-item  ps-5 ps-lg-2 pe-2">
+              <li class="nav-item  ps-5 ps-lg-2 pe-2">
                 <a class="nav-link active text-light bold-size " aria-current="page" href="{{ route ('privacy') }}" >{{__("HeaderTerms")}}</a>
               </li>
               @php
-                  $locale = session('locale');
-                  $targetLocale = ($locale == 'es') ? 'en' : 'es'; 
-              @endphp
-              
+                $locale = session('locale');
+                $targetLocale = ($locale == 'es') ? 'en' : 'es'; 
+            @endphp
 
-<a href="{{ url('locale/'.$targetLocale) }}">
-    <img class="nav-link lang-button" src="{{ asset('assets/img/lang.jpg') }}" style="width:40px; border-radius:10px;" alt="">
-</a>
 
+
+            <div class="dropdown" >
+              <a class="btn btn-secondary dropdown-toggle lang-button"  href="#" role="button" data-toggle="dropdown" aria-expanded="false"  style="background:none;">
+              {{ strtoupper($locale) }}
+              </a>
+
+              <div class="dropdown-menu">
+              <a class="dropdown-item text-light {{ $locale == 'es' ? 'activeLang' : '' }}" id="langEs" href="{{ url('locale/es') }}">ES</a>
+                <a class="dropdown-item text-light {{ $locale == 'en' ? 'activeLang' : '' }}" id="langEn" href="{{ url('locale/en') }}">EN</a>
+              </div>
+            </div>
 
               <li class="nav-item  button-navbar-responsive " >
                 <div id="contact-us-navbar" class="div-navbarBlack">
                   <a class="nav-link active text-light bold-size margin-contactUs button-contactUs" aria-current="page" href="{{ route ('contactUs') }}" style=" ">
                   {{ __('HeaderContact') }}
-                  
-                  <a href="{{ url('locale/'.$targetLocale) }}">
-                      <img class="nav-link lang-button-responsive" src="{{ asset('assets/img/lang.jpg') }}" style="width:40px; border-radius:10px;" alt="">
-                  </a>
                   </a>
                 </div>
               </li>
+              <div class="lang-button-responsive">
+                      <a class="dropdown-item text-light {{ $locale == 'es' ? 'activeLang' : '' }}" id="langEs" href="{{ url('locale/es') }}">ES</a>
+                        <a class="dropdown-item text-light {{ $locale == 'en' ? 'activeLang' : '' }}" id="langEn" href="{{ url('locale/en') }}">EN</a>
+                      </div>
           </ul>
 
         </div>
@@ -130,3 +137,11 @@
     </div>
   </div>     
 </section>
+<style>
+  .activeLang {
+    background-color: #444;
+  }
+  .text-light:hover {
+    color:#000 !important;
+  }
+</style>

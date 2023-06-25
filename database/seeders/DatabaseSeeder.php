@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             TeamEducationTableSeeder::class,
             TeamExperienceTableSeeder::class,
+            TestimonyTableSeeder::class,
             TeamSkillTableSeeder::class,
         ]);
     }

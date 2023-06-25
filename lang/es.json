@@ -10,10 +10,11 @@
         "HeaderBlog": "Blogs",
         "HeaderPrivacy": "Politica de Privacidad",
         "HeaderTerms": "Términos",
+        "footerTerms": "Terminos y Condiciones",
         "HeaderServices": "Servicios",
         "ServicesOur": "Nuestros Servicios",
         "HeaderContact": "Contacto",
-        "OurTeam": "Nuestro Equipo",
+        "OurTeam": "Nuestro Equipo ",
         "Description": "Descripcion",
         "Skills": "Habilidades",
         "GoToSite": "Ir al Sitio",
@@ -25,9 +26,9 @@
         "HeaderTitle5": "Nos enfocamos en tus necesidades específicas para ofrecer",
         "HeaderTitle6": "Soluciones personalizadas y eficientes.",
 
-
+        "DeatilPosts": "Publicaciones relacionadas",
         "HomePortfolioTtitle": "Proyectos completados",
-        "HomePortfolioSubTitle": "Un Equipo Profesional de Calidad con 4 años de experiencia",
+        "HomePortfolioSubTitle": "Un Equipo Profesional de Calidad con 6 años de experiencia",
 
         "ContactTitle": "Contactanos",
         "ContactSubTitle": "Ponte en contacto para un servicio excepcional",

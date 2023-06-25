@@ -88,7 +88,8 @@ class TeamUserController extends Controller
         $teamUser->team_presentation = $request->team_presentation;
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
-        $teamUser->freelance = $request->freelance;
+        $active = $request->input('freelance') ? 1 : 0;
+        $teamUser->freelance =  $active;
         $slug = Str::slug($request->id_name);
         $teamUser->slug = $slug;
         $teamUser->category_id = $request->category_id;
@@ -103,7 +104,7 @@ class TeamUserController extends Controller
             'email' => 'required|email',
             'photo' => 'mimes:jpeg,png,jpg,gif,svg',
             'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
-            'language_levels.*' => 'nullable|integer|min:0|max:100'
+            'language_levels.*' => 'required|nullable|integer|min:0|max:100'
         ], $message = [
             'required' => 'All fields are required.',
             'id_name.string' => 'Please provide a name',	
@@ -114,6 +115,7 @@ class TeamUserController extends Controller
             'team_presentation.required' => 'The video field is required.',
             'team_presentation.url' => 'The video field must be a valid URL.',
             'team_presentation.regex' => 'The video URL must be a valid YouTube link.',
+            'language_levels.*.required' => 'The language level is required',
             'language_levels.*.integer' => 'The language level must be an integer.',
             'language_levels.*.min' => 'The language level must be at least 0.',
             'language_levels.*.max' => 'The language level must be at most 100.'
@@ -200,7 +202,8 @@ class TeamUserController extends Controller
         $teamUser->team_presentation = $request->team_presentation;
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
-        $teamUser->freelance = $request->freelance;
+        $active = $request->input('freelance') ? 1 : 0;
+        $teamUser->freelance =  $active;
         $teamUser->category_id = $request->category_id;
         $teamUser->work_time = $request->work_time;
         $teamUser->overview = $request->overview;
@@ -219,7 +222,7 @@ class TeamUserController extends Controller
             'email' => 'required|email',
             'photo' => 'mimes:jpeg,png,jpg,gif,svg',
             'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
-            'language_levels.*' => 'nullable|integer|min:0|max:100'
+            'language_levels.*' => 'required|nullable|integer|min:0|max:100'
         ], $message = [
             'required' => 'All fields are required.',
             'email.email' => 'Please provide a valid email address',
@@ -229,6 +232,7 @@ class TeamUserController extends Controller
             'team_presentation.required' => 'The video field is required.',
             'team_presentation.url' => 'The video field must be a valid URL.',
             'team_presentation.regex' => 'The video URL must be a valid YouTube link.',
+            'language_levels.*.required' => 'The language level is required',
             'language_levels.*.integer' => 'The language level must be an integer.',
             'language_levels.*.min' => 'The language level must be at least 0.',
             'language_levels.*.max' => 'The language level must be at most 100.'

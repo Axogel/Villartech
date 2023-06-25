@@ -42,9 +42,13 @@
     </div>
     @endforeach
     <div class="row">
+
       <div class="col-md-12 text-center">
+        
         <div class="copyright-info">
-          &copy; Copyright 2022 Villartechnologies.
+        <a class="text-light" href="{{ route ('privacy') }}">{{__('footerTerms')}}</a> 
+
+         <p>&copy; Copyright 2023 Villartechnologies.</p> 
           </div>
       </div>
     </div>

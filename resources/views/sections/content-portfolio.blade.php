@@ -55,7 +55,7 @@
                                                     </figcaption>
                                                 </figure>
                                             </div>
-                                            <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:bold;"><b>{{ ucwords(strtolower($portfolio['name'])) }}</b> </p>
+                                            <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:bold;"><b>{{ Str::limit(ucwords(strtolower($portfolio['name'])), 55) }}</b> </p>
                                             <p style="font-size:18px;">{{ Str::limit($portfolio['description'], 80) }}</p>
 
                                         </div>
@@ -107,7 +107,7 @@
                                                     </figcaption>
                                                 </figure>
                                             </div>
-                                            <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>{{ ucwords(strtolower($portfolio['name'])) }}</b></p>
+                                            <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>{{ Str::limit(ucwords(strtolower($portfolio['name'])), 55)  }}</b></p>
                                             <p style="font-size:18px;">{{ Str::limit($portfolio['description'], 80) }}</p>
                                         </div>
                                     @endforeach
@@ -202,6 +202,7 @@
     function addPortfolioItems(startIndex, endIndex) {
     let portfolioContainer = document.getElementById('portfolioContainer');
     const maxLength = 80;
+    const maxlengthTitle = 55;
     
     for (let i = startIndex; i < endIndex; i++) {
         if (portfolioData[i+4]) {
@@ -209,7 +210,7 @@
             CountPortfolio++;
   
             let limitedDescription = portfolio.description.length > maxLength ? portfolio.description.substring(0, maxLength) + '...' : portfolio.description;
-
+            let limitedDescriptionTitle = portfolio.name.length > maxlengthTitle ? portfolio.name.substring(0, maxlengthTitle) + '...' : portfolio.name;
             let portfolioItem = document.createElement('div');
 
             portfolioItem.className = 'col-5 col-sm-4 my-4 mx-6 web-design isotope-item portfolio-view-item py-5 px-5 card-hover';
@@ -224,7 +225,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>${portfolio.name.charAt(0).toUpperCase() + portfolio.name.slice(1).toLowerCase()}</b></p>
+                <p class="" style="font-size: 25px; color:#045A97; font-family:'Lato'; font-weight:900;"><b>${limitedDescriptionTitle.charAt(0).toUpperCase() + limitedDescriptionTitle.slice(1).toLowerCase()}</b></p>
                 <p class="" style="font-size:18px;">${limitedDescription}</p>
             `;
 

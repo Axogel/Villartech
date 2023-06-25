@@ -13,7 +13,7 @@
 
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                <div class="form-control" style="height: 230px;">
+                <div class="form-control" style="height: auto">
                     {{ $blog->description }}
                 </div>
             </div>
@@ -71,5 +71,8 @@
 
         </div>
         <br>
+        <div style="margin-left:450px; margin-top:50px;" class="row mb-6">
+                        <a href="{{ route('blogs.index') }}" class="btn btn-light me-2">Regresar</a>
+                    </div>
     </div>
 @endsection

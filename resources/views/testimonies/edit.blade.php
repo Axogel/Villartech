@@ -18,39 +18,28 @@
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="col mt-5" style="display:grid; padding-top:80px; width:80%;">
                     {!! Form::open([
-                        'route' => ['blogs.update', ['blog' => $blog->id]],
+                        'route' => ['testimonies.update', ['testimony' => $testimony->id]],
                         'method' => 'PUT',
                         'files' => true,
                     ]) !!}
 
                     <div class="row mb-6">
 
-                            <div class="" style="overflow:hidden; height:550px;">
+                            <div class="" style="overflow:hidden; height:330px;">
                                         <div id="DivEn" class="">
-                                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Title</label>
-                                                {!! Form::text('title', null, ['placeholder' => 'Insert a Title',
-                                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
-                                            </div>
 
                                             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                                                 <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                                                {!! Form::textarea('description', null, ['class' => 'form-control summernote' , 'id' => 'description']) !!}
+                                                {!! Form::textarea('description',old('description', $testimony->description), ['class' => 'form-control summernote' , 'id' => 'description']) !!}
 
                                             </div>
                                         </div>
-                                            <div class="Espanish-div" id="DivEs" style="position:relative; bottom:510px;">
-                                            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Title Spanish</label>
-                                                {!! Form::text('titleEs', null, ['placeholder' => 'Insert a Title',
-                                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                                            </div>
+                                            <div class="Espanish-div" id="DivEs" style="position:relative; bottom:270px;">
 
                                             <div class="col-lg-8 fv-row fv-plugins-icon-container">
       <label class="col-lg-4 col-form-label required fw-bold fs-6">Description Spanish</label>
-      {!! Form::textarea('descriptionEs', null, ['class' => 'form-control summernote', 'id' => 'descriptionEs']) !!}
+      {!! Form::textarea('descriptionEs', old('descriptionEs', $testimony->descriptionEs),['class' => 'form-control summernote', 'id' => 'descriptionEs']) !!}
     </div>
                                         </div>
                             </div>
@@ -68,7 +57,7 @@
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Author</label>
-                            {!! Form::text('author', old('author', $blog->author), [
+                            {!! Form::text('author', old('author', $testimony->author), [
                                 'id' => 'author',
                                 'class' => 'form-control form-control-solid mb-3 mb-lg-0',
                                 'placeholder' => 'description',
@@ -77,40 +66,26 @@
                         </div>
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
-                            {!! Form::text('date', old('date', $blog->date), [
-                                'id' => 'date',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'date',
-                            ]) !!}
-
-                        </div>
-                        
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category Type</label>
-                            {!! Form::select('category_id', $opciones, $blog->category_id, ['class' => 'form-control form-control-solid mb-3 mb-lg-0']) !!}
-
-                        </div>
-
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Tags</label>
-                            {!! Form::select('tags[]', $tags, json_decode($blog->tags), ['class' => 'form-control js-example-basic-multiple',  'multiple' => 'multiple']) !!}
-
-                        </div>
-                       
-                      
-                      
-                            <div style="margin-top:20px;">
-
-                               <label style="padding-left:30px;">Image:  <img src="{{ asset('storage') . '/' . $blog->image }}" alt=""
-                            style="width: 50px;height: 50px;" style="padding-left:60px;"></label>
-                            <span class="form-control" style="margin-left:15px; width:360px;">  
-                             {!! Form::file('image', null) !!}
-                            </span>
-
+                        <label class="col-lg-4 col-form-label fw-bold fs-6">Active</label>
+                            <div class="form-check form-switch">
+                                {!! Form::checkbox('active', 1, old('active', $testimony->active), ['class' => 'form-check-input', 'id' => 'activeSwitch', 'style' => 'display:none;']) !!}
+                                <label class="form-check-label" for="activeSwitch">
+                                    <span class="switch-slider rounded-circle"></span>
+                                </label>
                             </div>
+
+                        </div>
+                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <label style="padding-left:30px;">Image: <img src="{{ asset('storage') . '/' . $testimony->image }}" alt=""style="width: 50px;height: 50px;" style="padding-left:60px;"></label>
+                                <span class="form-control" style="margin-left:15px; width:360px;">  
+                                    {!! Form::file('image', null) !!}
+                                </span>
+
+                        </div>
+
+
+
+
                        
 
                     </div>
@@ -119,11 +94,19 @@
                 </div>
 
 
-
+                @if ($errors->any())
+                              <div class="alert alert-danger mx-2 my-2">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                          <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                               </div>
+                            @endif
                 
 
                 <div style="text-align:center; margin-top:50px; margin-left:1px;" class="row mb-6">
-                    <a href="{{ route('blogs.index') }}" class="btn btn-light me-2">Back</a>
+                    <a href="{{ route('testimonies.index') }}" class="btn btn-light me-2">Back</a>
                     <button type="submit" class="btn btn-info" style="width:106px;">
                         <span class="indicator-label">Update</span>
                     </button>
@@ -145,6 +128,35 @@
         position:relative;
         left:1000px;
     }
+    .form-check.form-switch label {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.form-check.form-switch label:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-check.form-switch .form-check-input:checked + label {
+    background-color: #4CAF50;
+}
+
+.form-check.form-switch .form-check-input:checked + label:before {
+    left: 26px;
+}
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
@@ -169,10 +181,5 @@
 
 
     <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('description');
-    </script>
-    <script>
-        CKEDITOR.replace('descriptionEs');
-    </script>
+
 @endsection

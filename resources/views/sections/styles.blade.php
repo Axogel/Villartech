@@ -1127,7 +1127,7 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
 
 
 .padding-dinamic-show {
-    padding-right: 51rem;
+    padding-right: 31rem;
     padding-top:2rem;
     font-weight: 1000; 
 }

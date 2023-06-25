@@ -7,6 +7,7 @@ use App\Models\Portfolio;
 use App\Models\TeamUser;
 use App\Models\AdminSetting;
 use App\Models\Flicker;
+use App\Models\Testimony;
 use App\Models\Declaration;
 use App\Http\Controllers\AdminSettingController;
 use App\Models\TeamEducation;
@@ -149,7 +150,10 @@ class FrontController extends Controller
 
         $portfolios = Portfolio::select('id', 'name', 'image', 'url', 'skills','slug', 'description')
                                ->get();
-        
+
+        $testimonials = Testimony::select('id', 'author', 'description', 'descriptionEs','image', 'active')
+        ->get();
+
         $team = TeamUser::select('*')
                         ->where('status',1)
                         ->get();                    
@@ -181,7 +185,7 @@ class FrontController extends Controller
 
 
 
-        return view('landing')->with(['portfolios' => $portfolios,'employeeCategories'=>$teamCategory, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill, 'faqs' => $faq]);
+        return view('landing')->with(['portfolios' => $portfolios,'testimonials'=>$testimonials ,'employeeCategories'=>$teamCategory, 'teams' => $team, 'settings' => $setting, 'flickers' => $flicker , 'declarations' => $declaration, 'teamEducations' => $teamEducation, 'teamExperiences' => $teamExperience, 'teamSkills' => $teamSkill, 'faqs' => $faq]);
 
     }
     public function teamDetails($slug){
@@ -258,7 +262,7 @@ class FrontController extends Controller
 
           $setting = AdminSetting::select('id','email','phone','date','facebook','instagram','address')
           ->get();
-          $blogs = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug')
+          $blogs = Blog::select('id', 'title','titleEs',  'description','descriptionEs', 'author', 'date', 'image', 'slug')
           ->get()->toArray();
 
         $blog1 = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug', 'category_id')
