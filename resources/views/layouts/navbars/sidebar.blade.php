@@ -181,6 +181,14 @@ $setting = DB::select('select * from admin_settings');
                     </a>
                 </li>
             </ul>
+                <ul class="nav nav-sm flex-column img-zoom">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('testimonies.index') }}">
+                            <p style="font-weight: 900; font-size:15px; color:white;"><i class="fa-solid fa-pencil" style="color: #ffffff;"></i> Testimonials</p>
+                        </a>
+                    </li>
+                </ul>
             <ul class="nav nav-sm flex-column img-zoom ">
 
                 <li class="nav-item">

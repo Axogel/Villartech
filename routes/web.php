@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController, PortfolioTechnologiesController, FlickerController, TeamUserController,EmployeeCategoryController, PortfolioController, DeclarationController,LanguageController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
+use App\Http\Controllers\{FrontController, HomeController, SendGmailController, AdminSettingController,TestimonyController, PortfolioTechnologiesController, FlickerController, TeamUserController,EmployeeCategoryController, PortfolioController, DeclarationController,LanguageController, TagController, SkillController, CategoryController, CategoryTypeController, BlogController, FaqController, ContactController, EmailController};
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Redirect;
@@ -83,6 +83,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('teams', TeamUserController::class);
 	Route::resource('EmployeeCategories', EmployeeCategoryController::class);
 	Route::resource('languages', LanguageController::class);
+
+	//TESTIMONIALS CRUD
+	Route::resource('testimonies', TestimonyController::class);
 	// SKILLS CRUD
 
 	Route::resource('skills', SkillController::class);

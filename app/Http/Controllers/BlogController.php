@@ -67,6 +67,8 @@ class BlogController extends Controller
         $blog = new Blog;
         $blog->title = $request->title;
         $blog->description = $request->description;
+        $blog->titleEs = $request->titleEs;
+        $blog->descriptionEs = $request->descriptionEs;
         $blog->author = $request->author;
         $blog->date = $request->date;
         $tagIds = $request->input('tags');
@@ -136,6 +138,8 @@ class BlogController extends Controller
 
         $blog->title = $request->title;
         $blog->description = $request->description;
+        $blog->titleEs = $request->titleEs;
+        $blog->descriptionEs = $request->descriptionEs;
         $blog->author = $request->author;
         $blog->date = $request->date;
         $tagIds = $request->input('tags');
@@ -173,8 +177,9 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy( $id)
     {
+        $blog = Blog::find($id);
         if(File::exists(storage_path('app/public/'.$blog->image))){
             unlink(storage_path('app/public/'.$blog->image));
         }

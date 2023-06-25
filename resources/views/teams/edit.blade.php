@@ -43,7 +43,7 @@
              
                     
                     <div class=" row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6" >Image:</label>
+                        <label class="col-lg-4 col-form-label required fw-bold fs-6" >Image:  <img src="{{ asset('storage') . '/' . $teamUser->photo }}" alt=""style="width: 50px;height: 50px;" style="padding-left:60px;"></label>
                             <span class="form-control" style="width:300px; margin-left:15px;">  
                              {!! Form::file('photo', null) !!}
                             </span>
@@ -139,16 +139,15 @@
             
             
                     <div class=" row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Freelance</label>
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            {!! Form::text('freelance', old('freelance', $teamUser->freelance), [
-                              
-                                'id' => 'freelance',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => '',
-                            ]) !!}
-                        </div>
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">Freelance</label>
+                            <div class="form-check form-switch">
+                                {!! Form::checkbox('freelance', 1,old('freelance',$teamUser->freelance), ['class' => 'form-check-input', 'id' => 'freelanceSwitch', 'style' => 'display:none;']) !!}
+                                <label class="form-check-label" for="freelanceSwitch">
+                                    <span class="switch-slider rounded-circle"></span>
+                                </label>
+                            </div>
                     </div> 
+                    
             
             
                     <div class=" row mb-6">

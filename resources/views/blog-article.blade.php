@@ -33,12 +33,25 @@
                 </div>
 
                 <div class="col-10 pt-5" id="title-10">
+                @php 
+                $locale = session('locale');
+                    if($locale == 'es'){
 
+                    $blogTitle = $detailBlog->titleEs;
+                    $blogDescription =  $detailBlog->descriptionEs ;
+                    }
+                    else {
+                    $blogTitle =$detailBlog->title;
+                    $blogDescription =  $detailBlog->description;
+
+                    }
+
+                @endphp
                     <div class="col-12" id="container-title">
-                    <p class="title-10">{{ $detailBlog->title }}</p>
+                    <p class="title-10">{{ $blogTitle }}</p>
 
                     </div>
-                    <p class="message"> {{ $detailBlog->description }}</p>
+                    <p class="message"> {{ $blogDescription }}</p>
 
                    
 
@@ -73,7 +86,7 @@
                 
                 <div class="col-12 card-content" style="background-color: #2E2E2E;">
                     <div class="col-9 mx-auto pt-5">
-                        <p class="related">Related post</p>
+                        <p class="related">{{__('DeatilPosts')}}</p>
 
                     </div>
 

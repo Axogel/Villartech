@@ -13,7 +13,10 @@
                         @php
                           $countSearch = count($firstThreeBlogs);
                       @endphp
-          
+                      @php
+                $locale = session('locale');
+                $targetLocale = ($locale == 'es') ? 'en' : 'es'; 
+            @endphp
 
     <div class="card mb-3" style="max-width: 1047px; max-height:800px; padding:40px 20px 30px 20px;">
       <div class="row g-0">
@@ -25,11 +28,27 @@
         <div class="col-md-6">
          <div class="card-body ">
          <h5 style="overflow: hidden;">
-        <span class="title-blog" style="float: left;">{{ $blog['title'] }}</span>
+         @php 
+
+          if($locale == 'es'){
+
+            $blogTitle = $blog['titleEs'];
+            $blogDescription =  $blog['descriptionEs'] ;
+          }
+          else {
+            $blogTitle =$blog['title'];
+            $blogDescription =  $blog['description'] ;
+
+          }
+        
+         @endphp
+        <span class="title-blog" style="float: left;">{{ $blogTitle }}</span>
+
         <span class="text-muted font-family: 'Lato', sans-serif;" style="float: right;">{{$blog['author']}} | {{$blog['date']}}</span>
         </h5>
          <hr>
-          <p class="card-text">{{ $blog['description'] }}</p>
+          <p class="card-text">{{ $blogDescription }}</p>
+
             <div class="py-2 text-left">
               <a type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;" href="{{ route('blogArticle', $blog['slug']) }}">READ MORE
               </a>
@@ -158,6 +177,9 @@
 <script>
     let BlogData = {!! json_encode($blogs) !!};
     let allBlog = {{$totalItemsBlogs}};
+    let localSession = "{{ $locale }}";
+
+
 
     let routeBlog = "{{ route('PageHome')}}";
     let CountBlog = {{ $countSearch }};
@@ -172,6 +194,17 @@
         for (let i = startIndex; i < endIndex; i++) {
             if (BlogData[i + 3] && CountBlog <= allBlog) {
                 let blog = BlogData[i + 3];
+                let blogTitle;
+            let blogDescription;
+                if(localSession == "es"){
+                   blogTitle = blog.titleEs;
+                   blogDescription =  blog.descriptionEs ;
+                  }
+                  else {
+                  blogTitle =blog.title;
+                   blogDescription =  blog.description ;
+                }
+
                 CountBlog++;
                 let blogItem = document.createElement('div');
 
@@ -185,11 +218,11 @@
                             <div class="col-md-6">
                                 <div class="card-body">
                                     <h5 style="overflow: hidden;">
-                                        <span class="title-blog" style="float: left;">${blog.title}</span>
+                                        <span class="title-blog" style="float: left;">${blogTitle}</span>
                                         <span class="text-muted" style="float: right;">${blog.author} | ${blog.date}</span>
                                     </h5>
                                     <hr>
-                                    <p class="card-text">${blog.description}</p>
+                                    <p class="card-text">${blogDescription}</p>
                                     <div class="py-2 text-left">
                                         <a type="submit" class="btn btn-primary solid blank" style="padding:5px 8px 10px 8px; width:170px; height:45px; font-size:20px;" href="${routeBlog + '/blog/' + blog.slug}">READ MORE</a>
                                     </div>

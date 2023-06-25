@@ -14,7 +14,7 @@
 
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
                 <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                <div class="form-control" style="height: 230px;">
+                <div class="form-control" style="height: auto">
                     {{ $portfolio->description }}
                 </div>
             </div>
@@ -53,5 +53,9 @@
 
 
         </div>
+        <div class="mb-5" style="margin-left:450px; margin-top:50px;">
+                            <a href="{{ route('portfolios.index') }}" class="btn btn-light me-2" style="width:106px;">Back</a>
+
+                        </div>
     </div>
 @endsection

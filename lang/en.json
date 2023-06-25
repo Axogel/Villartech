@@ -23,6 +23,7 @@
     "HeaderServices": "Services",
     "HeaderContact": "Contact",
     "Description": "Description",
+    "footerTerms": "terms and Conditions",
     "Skills": "Skills",
     "GoToSite": "Go To Site",
     "Close": "CLose",
@@ -33,7 +34,7 @@
     "HeaderTitle5": "We focus on your specific needs to offer",
     "HeaderTitle6": "Personalized and efficient solutions.",
     "HomePortfolioTtitle": "Project Completed ",
-    "HomePortfolioSubTitle": "A Quality Professional Team with 4 years experience",
+    "HomePortfolioSubTitle": "A Quality Professional Team with 6 years experience",
 
     "ContactTitle": "Contact Us",
     "ContactSubTitle": "Get in Touch for Exceptional Service",
@@ -59,7 +60,7 @@
 
     "ContactDetails":"Contact Details",
     "ContactUbication": "19 de Abril Avenue, San Cristobal, Venezuela",
-
+    "DeatilPosts": "Related post",
     "PrivacyTitle": " The purpose of this Privacy Notice is to inform you about the treatment that will be given to the personal data collected, used, stored and/or transferred by",
     "PrivacyTitle2do": " in accordance with the terms and conditions described below:",
     "Privacy2title": "Information that is collected",
