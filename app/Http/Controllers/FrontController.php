@@ -168,7 +168,7 @@ class FrontController extends Controller
         $declaration = Declaration::select('id', 'client', 'client_image', 'testimony')
                                   ->get();
 
-        $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_title','education_date','education_description')
+        $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_title','education_titleEs','education_date','education_description','education_descriptionEs')
                                       ->leftJoin('team_users', 'team_users.id', 'team_educations.developer_id')
                                       ->get();                    
 
@@ -191,7 +191,7 @@ class FrontController extends Controller
     public function teamDetails($slug){
         $detailTeam = TeamUser::where('slug', $slug)->firstOrFail();
 
-        $teamEducation = TeamEducation::select('education_id', 'education_country','developer_id','education_title','education_date','education_description')
+        $teamEducation = TeamEducation::select('*')
         ->leftJoin('team_users', 'team_users.id', 'team_educations.developer_id')
         ->get();
         

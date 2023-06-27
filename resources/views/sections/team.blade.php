@@ -2,8 +2,22 @@
 <div class="col-12 heading container our-team" >
     <h2  class="title classic" style="font-size: 45px; color:#045A97; font-family:'Lato'; font-weight:900;">{{__("TeamOur")}}</h2>
 </div>
-
+@php
+$locale = session('locale');
+$targetLocale = ($locale == 'es') ? 'en' : 'es'; 
+@endphp
 @foreach ($teams as $team)
+                @php
+                        if($locale == 'es'){
+                            $teamDescription =  $team['descriptionEs'];
+                            $teamOverview = $team['overviewEs'];
+                        }
+                        else {
+                            $teamDescription =  $team['description'];
+                            $teamOverview = $team['overview'];
+                        }
+                @endphp
+
     <div class="modal fade" id="modal_team_{{ $team->id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document" style="width: 90%;">
             <div class="modal-content">
@@ -72,7 +86,7 @@
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block  w-100">
                                         <div class="scrollable-container">
                                              <p style="font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
-                                                 {{ $team->description }}
+                                                 {{  $teamDescription }}
                                              </p>
                                         </div>
 
@@ -131,7 +145,17 @@
                                         <div class="scrollable-container-area">
                                         @foreach ($teamExperiences as $teamExperience)
                                             @if ($team->id == $teamExperience->developer_id)
-                                         
+                                            @php
+                                                if($locale == 'es'){
+                                                        $teamTitleExp = $teamExperience['experience_categoryEs'];
+                                                        $teamDescriptionExp =  $teamExperience['experience_descriptionEs'] ;
+                                                    }
+                                                    else {
+                                                        $teamTitleExp = $teamExperience['experience_category'];
+                                                        $teamDescriptionExp =  $teamExperience['experience_description'] ;
+                                                    }   
+                                            @endphp
+
                                             <div class="col-12 lh-1">
                                           
                                                 <div style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
@@ -140,14 +164,14 @@
                                                     </p>
                                                 </div>
                                                 <p class="text-left fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900;">
-                                                    {{ $teamExperience->experience_category }}
+                                                    {{ $teamTitleExp }}
                                                 </p>
                                                 <p>
                                                     {{ $teamExperience->experience_company }}
                                                 </p>
                                              
                                                 <p style="font-size:15px; color:#323232;">
-                                                    {{ $teamExperience->experience_description }}
+                                                    {{ $teamDescriptionExp }}
                                                 </p>
                                               
                                             </div>
@@ -166,6 +190,16 @@
                                         <div class="scrollable-container-area">
                                         @foreach ($teamEducations as $teamEducation)
                                             @if ($team->id == $teamEducation->developer_id)
+                                            @php
+                                            if($locale == 'es'){
+                                                    $teamTitleEdu = $teamEducation['education_titleEs'];
+                                                    $teamDescriptionEdu =  $teamEducation['education_descriptionEs'] ;
+                                                }
+                                                else {
+                                                    $teamTitleEdu = $teamEducation['education_title'];
+                                                    $teamDescriptionEdu =  $teamEducation['education_description'] ;
+                                                }   
+                                        @endphp
                                                 <div class="col-12 lh-1">
                                                     <div style=" width:22%; background-color:#045A97; border-radius:20px; float: right; height:30px; ">
                                                         <p style="text-align: center;  color:white; margin-top:4px;">
@@ -173,13 +207,13 @@
                                                         </p>
                                                     </div>
                                                     <p class="text-left fs-3" style="color:#045A97; font-family:'Lato'; font-weight:900;">
-                                                    {{ $teamEducation->education_title}}
+                                                    {{ $teamTitleEdu}}
                                                 </p>
                                                     <p>
                                                         {{ $teamEducation->education_country }}
                                                     </p>
                                                     <p style="font-size:15px; color:#323232;">
-                                                        {{ $teamEducation->education_description }}
+                                                        {{ $teamDescriptionEdu }}
                                                     </p>
                                                 </div>
                                             @endif
@@ -196,7 +230,7 @@
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0); " class="mx-auto d-block">
                                         <div class=" scrollable-container">
                                              <p style=" font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
-                                                    {{ $team->overview }}
+                                                    {{ $teamOverview }}
                                               </p>
                                         </div>
 

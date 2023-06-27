@@ -29,24 +29,54 @@
                         </div>
 
 
-                      
+                    
 
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
-                            {!! Form::text('experience_category', null, ['placeholder' => 'Category',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                        </div>
-
-
+                        <div class="col-lg-8" style="overflow:hidden; height:290px;">
+                            <div id="DivEn" class="">
+                                <div class=" fv-row fv-plugins-icon-container">
+                                    <label class="col-lg-4 col-form-label  fw-bold fs-6">Category</label>
+                                    {!! Form::text('experience_category', null, [
+                           
+                                    'id' => 'overview',
+                                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                                    'placeholder' => 'Insert a overview',
+                                ]) !!}
+                               </div>
+                               <div class=" fv-row fv-plugins-icon-container">
+                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
+                                {!! Form::text('experience_description', null, ['placeholder' => 'Description',
+                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+    
+                            </div>
+                            </div>
+                                <div class="Espanish-div " id="DivEs" style="position:relative; bottom:170px;">
+                                    <div class=" fv-row fv-plugins-icon-container">
+                                        <label class="col-lg-4 col-form-label  fw-bold fs-6">Category spanish</label>
+                                        {!! Form::text('experience_categoryEs', null, [
+                                        'id' => 'overview',
+                                        'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                                        'placeholder' => 'Insert a overview',
+                                    ]) !!}
+                                   </div>
+                                   <div class=" fv-row fv-plugins-icon-container">
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Description spanish</label>
+                                    {!! Form::text('experience_descriptionEs', null, ['placeholder' => 'Description',
+                                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+        
+                                </div>
+                            </div>
+                </div>
+                <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" style="cursor:pointer;" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="LanguageEn()" data-lang="en">English</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" style="cursor:pointer;" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="LanguageEs()" data-lang="es">Spanish</a>
+                    </li>
+                </ul>
+            </div>
                      
-
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                            {!! Form::text('experience_description', null, ['placeholder' => 'Description',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
-
-                        </div>
 
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
@@ -105,7 +135,12 @@
     <br><br><br><br><br><br>
 
     <br>
-
+    <style>
+        .Espanish-div{
+        position:relative;
+        left:1000px;
+    }
+</style>
 @endsection
 
 @push('js')
@@ -118,7 +153,18 @@
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-
+    <script>
+        let EsDiv = document.getElementById('DivEs');
+         let EnDiv = document.getElementById('DivEn');
+        function LanguageEs(){
+           EnDiv.classList.add("Espanish-div");
+           EsDiv.classList.remove("Espanish-div");
+        }
+        function LanguageEn(){
+           EsDiv.classList.add("Espanish-div");
+           EnDiv.classList.remove("Espanish-div");
+       }
+       </script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable();

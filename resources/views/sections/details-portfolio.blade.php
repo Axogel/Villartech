@@ -32,7 +32,7 @@
     <div class="col-0 col-md-2"></div>
         <div class="col-11 col-md-8">
             <h5 class="text-light" style="font-size:25px;">About The Project</h5>
-            <p class="text-light" style="font-size:18;"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta blanditiis officiis ab corrupti sunt nemo quis ad exercitationem sint pariatur officia placeat consequuntur molestiae, facere cupiditate eum sapiente, ullam debitis.</p>
+            <p class="text-light" style="font-size:18;"> {{$detailPortfolio->descriptionLong}}</p>
             <div class=" div-light-bulb position-details" style="">
                     <svg style="margin-left:4rem; margin-top:3.5rem;" xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 124 124">
                             <g id="chat_1_" data-name="chat (1)" transform="translate(-1 -1)">

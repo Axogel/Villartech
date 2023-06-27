@@ -22,6 +22,7 @@ class PortfolioFactory extends Factory
         return [
             'name' => $name,
             'description' => $this->faker->paragraph(),
+            'descriptionLong' => $this->faker->paragraph(),
             'image' => 'storage/uploads/images/portfolios/'.$this->faker->file(public_path('images/portfolios'), storage_path('app/public/storage/uploads/images/portfolios/'), false),
             'url' => $this->faker->url(),
             'skills' => json_encode([strval(rand(1,14)),strval(rand(1,14))]),

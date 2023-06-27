@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('age');
             $table->string('address');
             $table->string('description');
+            $table->string('descriptionEs');
             $table->string('team_presentation');
             $table->string('cv_link');
             $table->string('residence');
@@ -33,6 +34,7 @@ return new class extends Migration
             $table->foreignId('category_id')->references('id')->on('employee_categories');
             $table->string('work_time');
             $table->string('overview');
+            $table->string('overviewEs');
             $table->string('languages');
 
 

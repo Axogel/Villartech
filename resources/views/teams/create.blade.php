@@ -56,13 +56,50 @@
 
                         </div>
 
+                        <div class="col-lg-8" style="overflow:hidden; height:420px;">
+                            <div id="DivEn" class="">
+                                <div class=" fv-row fv-plugins-icon-container">
+                                    <label class="col-lg-4 col-form-label  fw-bold fs-6">Overview</label>
+                                    {!! Form::text('overview', null, ['placeholder' => 'Insert a overview',
+                                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+        
+                               </div>
 
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-                            {!! Form::textarea('description', null, ['placeholder' => 'Description',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+                               <div class=" fv-row fv-plugins-icon-container">
+                                <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
+                                {!! Form::textarea('description', null, ['placeholder' => 'Description',
+                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+    
+                            </div>
+                            </div>
+                                <div class="Espanish-div " id="DivEs" style="position:relative; bottom:370px;">
+                                    <div class=" fv-row fv-plugins-icon-container">
+                                        <label class="col-lg-4 col-form-label  fw-bold fs-6">Overview Spanish</label>
+                                        {!! Form::text('overviewEs', null, ['placeholder' => 'Insert a overview',
+                                        'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+            
+                                   </div>
+   
+                                <div class=" fv-row fv-plugins-icon-container">
+                                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Description Spanish</label>
+                                    {!! Form::textarea('descriptionEs', null, ['placeholder' => 'Description',
+                                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
+        
+                                </div>
 
-                        </div>
+                            </div>
+                </div>
+                <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" style="cursor:pointer;" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="LanguageEn()" data-lang="en">English</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" style="cursor:pointer;" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="LanguageEs()" data-lang="es">Spanish</a>
+                    </li>
+                </ul>
+            </div>
+
 
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container">
@@ -114,12 +151,7 @@
 
                         </div>
 
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Overview</label>
-                            {!! Form::text('overview', null, ['placeholder' => 'Insert a overview',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
 
-                       </div>
 
                         <div class="col-lg-8 fv-row fv-plugins-icon-container"  >
                             <label class="col-lg-4 col-form-label required fw-bold fs-6" >Languages</label>
@@ -178,7 +210,12 @@
 
 
     </div>
+
    <style>
+    .Espanish-div{
+        position:relative;
+        left:1000px;
+    }
     .form-check.form-switch label {
     position: relative;
     display: inline-block;
@@ -233,7 +270,18 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 $('.js-example-basic-multiple').select2();
 });
 </script>
-
+<script>
+    let EsDiv = document.getElementById('DivEs');
+     let EnDiv = document.getElementById('DivEn');
+    function LanguageEs(){
+       EnDiv.classList.add("Espanish-div");
+       EsDiv.classList.remove("Espanish-div");
+    }
+    function LanguageEn(){
+       EsDiv.classList.add("Espanish-div");
+       EnDiv.classList.remove("Espanish-div");
+   }
+   </script>
 <script>
     $(document).ready(function() {
         var formCounter = 1;

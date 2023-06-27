@@ -17,8 +17,10 @@ return new class extends Migration
             $table->bigIncrements('education_id');
             $table->integer('developer_id');
             $table->string('education_title');
+            $table->string('education_titleEs');
             $table->string('education_date' , 999);
             $table->string('education_description',999);
+            $table->string('education_descriptionEs',999);
             $table->string('education_country');
             $table->timestamps();
         });

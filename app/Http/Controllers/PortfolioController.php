@@ -63,6 +63,7 @@ class PortfolioController extends Controller
         $portfolio->url = $request->url;
         $portfolio->slug = $slug;
         $portfolio->description = $request->description;
+        $portfolio->descriptionLong = $request->descriptionLong;
         $skillIds = $request->input('skills');
         $jsonSkillIds = json_encode($skillIds);
         $portfolio->skills = $jsonSkillIds;
@@ -169,6 +170,7 @@ class PortfolioController extends Controller
         $portfolio->name = $request->name;
         $portfolio->url = $request->url;
         $portfolio->description = $request->description;
+        $portfolio->descriptionLong = $request->descriptionLong;
         $portfolio->skills = $request->skills;
         $portfolio->slug = $slug;
         $skillIds = $request->input('skills');

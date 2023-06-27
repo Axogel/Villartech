@@ -59,9 +59,9 @@
               {{ strtoupper($locale) }}
               </a>
 
-              <div class="dropdown-menu">
-              <a class="dropdown-item text-light {{ $locale == 'es' ? 'activeLang' : '' }}" id="langEs" href="{{ url('locale/es') }}">ES</a>
-                <a class="dropdown-item text-light {{ $locale == 'en' ? 'activeLang' : '' }}" id="langEn" href="{{ url('locale/en') }}">EN</a>
+              <div class="dropdown-menu" style="top:45px;">
+              <a class="dropdown-item text-light text-lang {{ $locale == 'es' ? 'activeLang' : '' }}" id="langEs" href="{{ url('locale/es') }}">ES</a>
+                <a class="dropdown-item text-light  text-lang {{ $locale == 'en' ? 'activeLang' : '' }}" id="langEn" href="{{ url('locale/en') }}">EN</a>
               </div>
             </div>
 
@@ -92,10 +92,14 @@
 </header>
 <style>
   .activeLang {
-    background-color: #444;
+    background-color: #444  !important;
   }
-  .text-light:hover {
+  .text-lang:hover {
     color:#000 !important;
+    background-color: #0976dd  !important;
+  }
+  .text-lang {
+    background-color: #005597  ;
   }
 </style>
 

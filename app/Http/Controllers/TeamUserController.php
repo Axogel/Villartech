@@ -85,6 +85,7 @@ class TeamUserController extends Controller
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
+        $teamUser->descriptionEs = $request->descriptionEs;
         $teamUser->team_presentation = $request->team_presentation;
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
@@ -95,6 +96,7 @@ class TeamUserController extends Controller
         $teamUser->category_id = $request->category_id;
         $teamUser->work_time = $request->work_time;
         $teamUser->overview = $request->overview;
+        $teamUser->overviewEs = $request->overviewEs;
 
         $teamUser->status = 1;
             
@@ -199,6 +201,7 @@ class TeamUserController extends Controller
         $teamUser->age = $request->age;
         $teamUser->address = $request->address;
         $teamUser->description = $request->description;
+        $teamUser->descriptionEs = $request->descriptionEs;
         $teamUser->team_presentation = $request->team_presentation;
         $teamUser->cv_link = $request->cv_link;
         $teamUser->residence = $request->residence;
@@ -207,6 +210,7 @@ class TeamUserController extends Controller
         $teamUser->category_id = $request->category_id;
         $teamUser->work_time = $request->work_time;
         $teamUser->overview = $request->overview;
+        $teamUser->overviewEs = $request->overviewEs;
 
         $teamUser->status = 1;
         if ($request->photo) {
@@ -317,11 +321,16 @@ class TeamUserController extends Controller
             $team = $request->developer_id;
 
             $teamEducation->education_title = $request->education_title;
+            $teamEducation->education_titleEs = $request->education_titleEs;
             $teamEducation->education_country = $request->education_country;
             $teamEducation->education_date = $request->education_date;
             $teamEducation->education_description = $request->education_description;
+            $teamEducation->education_descriptionEs = $request->education_descriptionEs;
 
-
+            $request->validate([
+                '*' => 'required',
+             ], $message = [
+                'required' => 'All fields are required.',]);
             $teamEducation->save();
 
             return redirect()->route('employee', ['teamUser' => $team]);
@@ -346,10 +355,14 @@ class TeamUserController extends Controller
             $teamEducation->developer_id = $request->developer_id;
             $team = $request->developer_id;
             $teamEducation->education_title = $request->education_title;
+            $teamEducation->education_titleEs = $request->education_titleEs;
             $teamEducation->education_country = $request->education_country;
             $teamEducation->education_date = $request->education_date;
             $teamEducation->education_description = $request->education_description;
-           
+            $request->validate([
+                '*' => 'required',
+             ], $message = [
+                'required' => 'All fields are required.',]);
             $teamEducation->save();
 
             return redirect()->route('employee', ['teamUser' => $team]);
@@ -411,10 +424,15 @@ class TeamUserController extends Controller
                 $team = $request->developer_id;
                 $teamExperience->experience_company = $request->experience_company;
                 $teamExperience->experience_description = $request->experience_description;
+                $teamExperience->experience_descriptionEs = $request->experience_descriptionEs;
                 $teamExperience->experience_category = $request->experience_category;
+                $teamExperience->experience_categoryEs = $request->experience_categoryEs;
                 $teamExperience->experience_date = $request->experience_date;
 
-
+                $request->validate([
+                    '*' => 'required',
+                 ], $message = [
+                    'required' => 'All fields are required.',]);
                 $teamExperience->save();
     
                 return redirect()->route('employeeExperience', ['team' => $team]);
@@ -443,10 +461,15 @@ class TeamUserController extends Controller
                 $team = $request->developer_id;
                 $teamExperience->experience_company = $request->experience_company;
                 $teamExperience->experience_description = $request->experience_description;
+                $teamExperience->experience_descriptionEs = $request->experience_descriptionEs;
                 $teamExperience->experience_category = $request->experience_category;
+                $teamExperience->experience_categoryEs = $request->experience_categoryEs;
                 $teamExperience->experience_date = $request->experience_date;
 
-
+                $request->validate([
+                    '*' => 'required',
+                 ], $message = [
+                    'required' => 'All fields are required.',]);
                 $teamExperience->save();
     
                 return redirect()->route('employeeExperience', ['team' => $team]);

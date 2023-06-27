@@ -25,8 +25,10 @@ class TeamEducationFactory extends Factory
         return [
             'developer_id' => self::$increment++,
             'education_title' => $this->faker->sentence(),
+            'education_titleEs' => $this->faker->sentence(),
             'education_date' => $this->faker->paragraph(),
             'education_description' => $this->faker->paragraph(1, true, 200),
+            'education_descriptionEs' => $this->faker->paragraph(1, true, 200),
             'education_country' => $this->faker->sentence(),
             'created_at' => $this->faker->date(),
             'updated_at' => $this->faker->date()

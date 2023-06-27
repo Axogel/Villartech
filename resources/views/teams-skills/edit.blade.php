@@ -23,7 +23,8 @@
 
 
        
- 
+ <div class="" style="overflow:hidden; height:240px;">
+    <div id="DivEn" class="">
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Title</label>
             <div class="col-lg-8 fv-row fv-plugins-icon-container">
@@ -35,26 +36,6 @@
                 ]) !!}
             </div>
         </div>
- 
-        
-       
-
-
-        
-         <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Country</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('education_country', old('education_country', $teamEducation->education_country), [
-                    'required',
-                    'id' => 'education_country',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Country',
-                ]) !!}
-            </div>
-        </div> 
-
-
-       
 
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
@@ -67,7 +48,54 @@
                 ]) !!}
             </div>
         </div> 
+    </div>
+        <div class="Espanish-div " id="DivEs" style="position:relative; bottom:235px;">
+            <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">Title Spanish</label>
+                <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                    {!! Form::text('education_titleEs', old('education_titleEs', $teamEducation->education_titleEs), [
+                        'required',
+                        'id' => 'education_title',
+                        'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                        'placeholder' => 'Title',
+                    ]) !!}
+                </div>
+            </div>
+            <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">Description Spanish</label>
+                <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                    {!! Form::text('education_descriptionEs', old('education_descriptionEs', $teamEducation->education_descriptionEs), [
+                        'required',
+                        'id' => 'education_description',
+                        'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                        'placeholder' => 'description',
+                    ]) !!}
+                </div>
+            </div> 
+</div>
+</div>
+<div class="col-lg-8 fv-row fv-plugins-icon-container">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<li class="nav-item" role="presentation">
+<a class="nav-link active" style="cursor:pointer;" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="LanguageEn()" data-lang="en">English</a>
+</li>
+<li class="nav-item" role="presentation">
+<a class="nav-link" style="cursor:pointer;" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="LanguageEs()" data-lang="es">Spanish</a>
+</li>
+</ul>
+</div>
 
+         <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">Country</label>
+            <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                {!! Form::text('education_country', old('education_country', $teamEducation->education_country), [
+                    'required',
+                    'id' => 'education_country',
+                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                    'placeholder' => 'Country',
+                ]) !!}
+            </div>
+        </div> 
 
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
@@ -123,7 +151,12 @@
     <br><br><br><br><br><br>
 
     <br>
-
+    <style>
+        .Espanish-div{
+        position:relative;
+        left:1000px;
+    }
+</style>
 @endsection
 
 @push('js')
@@ -136,7 +169,18 @@
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-
+    <script>
+        let EsDiv = document.getElementById('DivEs');
+         let EnDiv = document.getElementById('DivEn');
+        function LanguageEs(){
+           EnDiv.classList.add("Espanish-div");
+           EsDiv.classList.remove("Espanish-div");
+        }
+        function LanguageEn(){
+           EsDiv.classList.add("Espanish-div");
+           EnDiv.classList.remove("Espanish-div");
+       }
+       </script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable();

@@ -22,7 +22,9 @@ class TeamExperienceFactory extends Factory
         return [
             'developer_id' => self::$increment++,
             'experience_category' => $this->faker->sentence(),
+            'experience_categoryEs' => $this->faker->sentence(),
             'experience_description' => $this->faker->paragraph(1, true, 200),
+            'experience_descriptionEs' => $this->faker->paragraph(1, true, 200),
             'experience_date' => $this->faker->date(),
             'experience_company' => $this->faker->sentence(),
             'created_at' => $this->faker->date(),

@@ -41,32 +41,72 @@
 
 
         
-         <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('experience_category', old('experience_category', $teamExperience->experience_category), [
-                    'required',
-                    'id' => 'experience_category',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'Category',
-                ]) !!}
-            </div>
-        </div> 
 
 
        
+        <div class="" style="overflow:hidden; height:400px;">
+            <div id="DivEn" class="">
+                <div class=" row mb-6">
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        {!! Form::text('experience_category', old('experience_category', $teamExperience->experience_category), [
+                           
+                            'id' => 'overview',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                            'placeholder' => 'Insert a overview',
+                        ]) !!}
+                    </div>
+                </div>
 
-        <div class="row mb-6">
-            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
-            <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                {!! Form::text('experience_description', old('experience_description', $teamExperience->experience_description), [
-                    'required',
-                    'id' => 'experience_description',
-                    'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                    'placeholder' => 'description',
-                ]) !!}
+                <div class=" row mb-6">
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        {!! Form::textarea('experience_description', old('experience_description', $teamExperience->experience_description), [
+                            
+                            'id' => 'description',
+                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                            'placeholder' => 'description',
+                        ]) !!}
+                    </div>
+                </div>
             </div>
-        </div> 
+                <div class="Espanish-div " id="DivEs" style="position:relative; bottom:422px;">
+                    <div class=" row mb-6">
+                   <label class="col-lg-4 col-form-label required fw-bold fs-6">category Spanish</label>
+                   <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                       {!! Form::text('experience_categoryEs', old('experience_categoryEs', $teamExperience->experience_categoryEs), [
+                          
+                           'id' => 'overview',
+                           'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                           'placeholder' => 'Insert a overview',
+                       ]) !!}
+                   </div>
+                </div>
+            <div class=" row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">Description Spanish</label>
+                <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                    {!! Form::textarea('experience_descriptionEs', old('experience_descriptionEs', $teamExperience->experience_descriptionEs), [
+                        
+                        'id' => 'description',
+                        'class' => 'form-control form-control-solid mb-3 mb-lg-0',
+                        'placeholder' => 'description',
+                    ]) !!}
+                </div>
+            </div>
+        </div>
+</div>
+<div class="col-lg-8 fv-row fv-plugins-icon-container">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" style="cursor:pointer;" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="LanguageEn()" data-lang="en">English</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" style="cursor:pointer;" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="LanguageEs()" data-lang="es">Spanish</a>
+    </li>
+</ul>
+</div>
+
+
 
 
         <div class="row mb-6">
@@ -122,7 +162,12 @@
     <br><br><br><br><br><br>
 
     <br>
-
+<style>
+        .Espanish-div{
+        position:relative;
+        left:1000px;
+    }
+</style>
 @endsection
 
 @push('js')
@@ -135,7 +180,18 @@
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-
+    <script>
+        let EsDiv = document.getElementById('DivEs');
+         let EnDiv = document.getElementById('DivEn');
+        function LanguageEs(){
+           EnDiv.classList.add("Espanish-div");
+           EsDiv.classList.remove("Espanish-div");
+        }
+        function LanguageEn(){
+           EsDiv.classList.add("Espanish-div");
+           EnDiv.classList.remove("Espanish-div");
+       }
+       </script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable();
