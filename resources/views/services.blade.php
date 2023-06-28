@@ -439,7 +439,6 @@
             <div class="col-10 mx-auto " style="background-color: #F9F9F9; width:80%; margin-top:0px;" id="contact-form">
                 <div class="" id="container-contact-us">
                     <p class="title-contact pt-3">{{__("ContactTitle")}}</p>
-                    <p class="subtitle-contact">{{__("ServicesContactSubTitle")}}</p>
                     <p class="subtitle-contact" style="font-size:17px; font-weight:700;" id="sub-sub"> {{__("ServicesContactDescription")}}</p>
                 </div>
 
