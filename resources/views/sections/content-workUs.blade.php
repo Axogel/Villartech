@@ -38,7 +38,7 @@
   
       <x-card-component
       :width="'90%'"
-      :height="'650px;'"
+      :height="'700px;'"
       :img="'programacion.svg'"
       :subtitle="'Exciting Opportunities'"
       :description="'Join a dynamic team that takes on challenging and cutting-edge software development projects. We offer a stimulating work environment where you can grow both professionally and personally.'"
@@ -53,7 +53,7 @@
   
       <x-card-component
       :width="'90%'"
-      :height="'650px'"
+      :height="'700px'"
       :img="'e-aprendizaje.svg'"
       :subtitle="'Continuous Learning'" 
       :description="'We believe in investing in our employees growth. You all have access to learning resources, professional development opportunities, and the chance to enhance your skills in the latest technologies and industry trends.'"
@@ -67,7 +67,7 @@
   
       <x-card-component
       :width="'90%'"
-      :height="'650px'"
+      :height="'700px'"
       :img="'equilibrio.svg'"
       :subtitle="'Work-Life Balance'"
       :description="'We understand the importance of maintaining a healthy work-life balance. Our flexible work arrangements and supportive policies promote your overall well-being and allow you to thrive in and out of the workplace.'"

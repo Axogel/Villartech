@@ -90,7 +90,9 @@
                         </tbody>
                     @endforeach
                 </table>
-
+                <nav aria-label="Page navigation example">
+                    {{ $teamEducation->links('pagination::bootstrap-4') }}
+                  </nav>     
 
             </div>
 

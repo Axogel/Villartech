@@ -24,21 +24,21 @@
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    @foreach ($teamSkill as $teamSkill)
+                    @foreach ($teamSkill as $item)
                         <tbody>
                             <tr>
                                 
 
                                 <td>
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->skill_name }}
+                                        {{ $item->skill_name }}
                                     </span>
                                 </td>
                                
                                 <td>
 
                                     <span class="badge badge-dot mr-4">
-                                        {{ $teamSkill->skill_percentage }}
+                                        {{ $item->skill_percentage }}
                                     </span>
 
                                 </td>
@@ -53,7 +53,7 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         
-                                            <form action="{{ route('teams-language.destroy', $teamSkill->skill_id) }}" method="Post">
+                                            <form action="{{ route('teams-language.destroy', $item->skill_id) }}" method="Post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item">
@@ -71,7 +71,9 @@
                         </tbody>
                     @endforeach
                 </table>
-
+                <nav aria-label="Page navigation example">
+                    {{ $teamSkill->links('pagination::bootstrap-4') }}
+                  </nav>  
             </div>
 
         </div>

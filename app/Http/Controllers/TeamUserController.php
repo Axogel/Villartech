@@ -295,7 +295,7 @@ class TeamUserController extends Controller
 
         public function indexEmployeeSkill()
         {
-            $teamEducation = TeamEducation::orderBy('developer_id','desc')->paginate(10);
+            $teamEducation = TeamEducation::latest()->paginate(5);
             return view ('teams-skills.index', $teamEducation)->with('teamEducations', $teamEducation);
         }
 
@@ -305,7 +305,7 @@ class TeamUserController extends Controller
 
 
             $teamUser = TeamUser::find($id);
-            $teamEducation = TeamEducation::select('education_id', 'developer_id', 'education_title', 'education_country', 'education_description')
+            $teamEducation = TeamEducation::select('education_id', 'developer_id', 'education_title','education_titleEs', 'education_country', 'education_description','education_descriptionEs')
             ->where('education_id', $id)
             ->get();
 
@@ -333,7 +333,7 @@ class TeamUserController extends Controller
                 'required' => 'All fields are required.',]);
             $teamEducation->save();
 
-            return redirect()->route('employee', ['teamUser' => $team]);
+            return redirect()->route('employee', ['teamUser' => $team])->withSuccessMessage('Employee have been created', 'Employee have been created successfully');
         }
 
         public function editEducation($id)

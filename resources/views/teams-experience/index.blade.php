@@ -85,6 +85,9 @@
                             
                         @endforeach 
                 </table>
+                <nav aria-label="Page navigation example">
+                    {{ $teamExperience->links('pagination::bootstrap-4') }}
+                  </nav>     
 
             </div>
 
