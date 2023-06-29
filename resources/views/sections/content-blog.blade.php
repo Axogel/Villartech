@@ -110,14 +110,14 @@
                 <div class="row">
                     @foreach ($blogs1 as $item)
                     @php 
-                    $locale =session('locale');
+
                     if($locale == 'es'){
-                      $blogTitle = $blog['titleEs'];
+                      $blogTitle = $item['titleEs'];
                     }
                     else {
-                      $blogTitle =$blog['title'];
+                      $blogTitle =$item['title'];
+
                     }
-                 
                   
                    @endphp
                     <div class="col-5 mt-5">
@@ -135,7 +135,7 @@
 
                         </p>
                         <p class="card-subtitle">
-                            {{$blogTitle }}
+                            {{ $blogTitle }}
                         </p>
 
                         
@@ -155,15 +155,17 @@
                 <div class="row">
                     @foreach ($blogs2 as $item)
                     @php 
-      $locale =session('locale');
+
                     if($locale == 'es'){
-                      $blogTitle = $blog['titleEs'];
+                      $blogTitle = $item['titleEs'];
                     }
                     else {
-                      $blogTitle =$blog['title'];
+                      $blogTitle =$item['title'];
+
                     }
                   
                    @endphp
+
                     <div class="col-5 mt-5">
 
                         <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
