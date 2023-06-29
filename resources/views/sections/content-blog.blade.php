@@ -154,8 +154,7 @@
 
                     <div class="col-7 mt-5 text-left">
                         <p class="card-title">
-                            {{ $item['title'] }}
-
+                          {{ $item->categoryBlog->name }}
                         </p>
                         <p class="card-subtitle">
                             {{ $item['title'] }}
