@@ -113,6 +113,7 @@
 
                     if($locale == 'es'){
                       $blogTitle = $item['titleEs'];
+      
                     }
                     else {
                       $blogTitle =$item['title'];

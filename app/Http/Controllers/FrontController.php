@@ -265,11 +265,11 @@ class FrontController extends Controller
           $blogs = Blog::select('id', 'title','titleEs',  'description','descriptionEs', 'author', 'date', 'image', 'slug')
           ->get()->toArray();
 
-        $blog1 = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug', 'category_id')
+        $blog1 = Blog::select('id', 'title', 'titleEs', 'description', 'author', 'date', 'image', 'slug', 'category_id')
         ->take(3)
         ->get();
 
-        $blog2 = Blog::select('id', 'title', 'description', 'author', 'date', 'image', 'slug', 'category_id')
+        $blog2 = Blog::select('id', 'title','titleEs', 'description', 'author', 'date', 'image', 'slug', 'category_id')
         ->latest('id')
         ->take(3)
         ->get();
