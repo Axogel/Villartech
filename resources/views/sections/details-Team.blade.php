@@ -17,7 +17,7 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
         $teamOverview = $detailTeam['overview'];
     }   
 @endphp
-<div class="container text-center my-5">
+<div class="container text-center my-5" style="margin-bottom:50px;">
     <div class="col-12 col-lg-5">
         <iframe style="width:95%;" class="mx-4" src="{{ $detailTeam->team_presentation }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div class="row my-5">
@@ -34,7 +34,7 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
     </div>
 </div>
                                                 <!-- sections gray -->
-<div class="row justify-content-center height-gray-div-responsive" style="background: #2E2E2E 0% 0% no-repeat padding-box; height: auto;">
+<div class="  row justify-content-center height-gray-div-responsive" style="background: #2E2E2E 0% 0% no-repeat padding-box; height: auto; margin-top:10%;">
             <div class="col-12 col-md-2 mx-5 mb-5 my-5 text-center corrections-postition-responsive-team">
                 <img src="{{ asset('storage') . '/' . $detailTeam->photo }}" style="width:188px;" alt="">
             </div>
