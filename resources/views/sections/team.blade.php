@@ -62,7 +62,7 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
                                     <div class="col-1"></div>
                                     <div style="height: 5%; width:41%; background-color:#045A97; border-radius:20px;">
                                         <p style="text-align: center; padding-top:10px; color:white; font-family: 'Lato'; width:100%;">
-                                            <a href="{{ $team->cv_link }}" style="color:white;">
+                                            <a href="{{ route('teamDetail', $team->slug) }}" style="color:white;">
                                             {{__("ViewTeamCV")}} 
                                             </a>
                                         </p>
@@ -70,7 +70,7 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
                                     <div class="col-1"></div>
                                     <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
                                         <p style="text-align: center; padding-top:10px; color:white; font-family: 'Lato';">
-                                            <a href="#" style="color:white;">  {{__("ViewTeamContactMe")}}</a>
+                                            <a href="{{ route ('contactUs') }}" style="color:white;">  {{__("ViewTeamContactMe")}}</a>
                                         </p>
                                     </div>
                                 </div>

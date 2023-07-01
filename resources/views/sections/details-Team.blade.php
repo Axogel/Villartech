@@ -22,17 +22,7 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
         <iframe style="width:95%;" class="mx-4" src="{{ $detailTeam->team_presentation }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div class="row my-5">
             <div class="col-1"></div>
-            <div style="height: 5%; width:41%; background-color:#045A97; border-radius:20px;">
-                <p style="text-align: center; padding-top:10px; color:white; font-family: 'Lato'; width:100%;">
-                    <a href="{{ $detailTeam->cv_link }}" style="color:white;">{{__("ViewTeamCV")}}</a>
-                </p>
-            </div>
-            <div class="col-1"></div>
-            <div style="height: 5%; width:35%; background-color:#045A97; border-radius:20px;">
-                <p style="text-align: center; padding-top:10px; color:white; font-family: 'Lato';">
-                    <a href="#" style="color:white;">{{__("ViewTeamContactMe")}}</a>
-                </p>
-            </div>
+
         </div>
     </div>
     <div class="col-10 col-lg-5 ms-5">
@@ -200,7 +190,7 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
             <img src="{{ asset('assets/img/modal-teams/educationblue.png') }}" style="height: 40px; float:right;">
         </p>
         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block w-100">
-        <div class="scrollable-container-area">
+        <div class="">
         @foreach ($teamEducations as $teamEducation)
             @if ($detailTeam->id == $teamEducation->developer_id)
             @php

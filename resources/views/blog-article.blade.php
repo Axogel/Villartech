@@ -96,39 +96,35 @@
 
                     
                 <div class="col-10 mx-auto pt-5 container-cards">
+
+                    @if (count($relatedPostsFirsts) > 0 )
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
                                     @foreach ($relatedPostsFirsts as $item)
-                                    
-                                    <div class="col-5 mt-5">
-                                        <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
-
-                                            <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
-                                        </a>
-                                        
-                                    </div>
-
-                                    <div class="col-7 mt-5 text-left">
-                                        <p class="card-title">
-                                            {{ $item->categoryBlog->name }}
-                                        </p>
-                                        <p class="card-subtitle">
-                                            {{ $item->title }}
-                                        </p>
-
-                                        
-                                    </div>
-                                    
-                                    <hr class="mt-4" style="opacity: 1;">
+                                        <div class="col-5 mt-5">
+                                            <a href="https://staging.villartechnologies.com.ve/blog/{{ $item['slug'] }}">
+                                                <img src="{{ asset('/storage/' . $item['image']) }}" alt="" class="blog-image">
+                                            </a>
+                                        </div>
+                                        <div class="col-7 mt-5 text-left">
+                                            <p class="card-title">
+                                                {{ $item->categoryBlog->name }}
+                                            </p>
+                                            <p class="card-subtitle">
+                                                {{ $item->title }}
+                                            </p>
+                                        </div>
+                                        <hr class="mt-4" style="opacity: 1;">
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                @endif
+                
+                @if (count($relatedPostsLasts) > 0 )
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
@@ -158,6 +154,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                 </div>
 
