@@ -8,7 +8,8 @@
     <title>Villartechnologies</title>
     <meta name="description" content="">  
     <meta name="author" content="">
-    <link rel="icon" href="assets/img/villarblueg.png">
+    
+    <link rel="icon" href="assets/img/logo.villar.sl.png">
 
     <!-- Mobile Specific Metas
     ================================================== -->
