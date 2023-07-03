@@ -136,7 +136,7 @@
 
                         </p>
                         <p class="card-subtitle">
-                            {{ $blogTitle }}
+                          {{ Str::limit($blogTitle, 20) }}
                         </p>
 
                         
@@ -179,7 +179,7 @@
                           {{ $item->categoryBlog->name }}
                         </p>
                         <p class="card-subtitle">
-                            {{ $blogTitle }}
+                           {{ Str::limit($blogTitle, 20) }}
 
                         </p>
                     </div>

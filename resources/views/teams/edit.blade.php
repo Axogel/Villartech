@@ -245,17 +245,6 @@
    
 
 <button type="button" id="add-language-btn" class="btn btn-primary col-lg-8 fv-row my-2">Agregar nuevo idioma</button>
-                    <div class="row mb-6">
-                        <label class="col-lg-4 col-form-label required fw-bold fs-6">Overview</label>
-                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
-                            {!! Form::text('overview', old('overview', $teamUser->overview), [
-                               
-                                'id' => 'overview',
-                                'class' => 'form-control form-control-solid mb-3 mb-lg-0',
-                                'placeholder' => 'Insert a overview',
-                            ]) !!}
-                        </div>
-                    </div> 
                     @if ($errors->any())
                               <div class="alert alert-danger mx-2 my-2">
                                 <ul>
