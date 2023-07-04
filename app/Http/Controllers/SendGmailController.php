@@ -15,7 +15,7 @@ class SendGmailController extends Controller
         //$data = array('name'=>"Hardik Parsania", "body" => "Gmail from Laravel");
     
     
-        //   $emailf = 'infovillartech@gmail.com';
+        //   $emailf = 'info@villartechnologies.com.ve';
 		   $r = request();
 		   $from_name = $r->name;
 		   $from_email = $r->email;
@@ -26,9 +26,9 @@ class SendGmailController extends Controller
         Mail::send("gmailview", ['text' => $from_text, 'name' => 
 		   $from_name, 'email' => $from_email, 'subject' => $from_subject], function
 		   ($message) use ($from_name, $from_email, $from_subject) {
-		   $message->to("infovillartech@gmail.com", "VillarTech")
+		   $message->to("info@villartechnologies.com.ve", "VillarTech")
 		     ->subject($from_subject);
-		      $message->from("infovillartech@gmail.com", $from_name);
+		      $message->from("info@villartechnologies.com.ve", $from_name);
 		   });
 
          if (Mail::failures()) {

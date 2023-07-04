@@ -17,7 +17,7 @@ class ContactController extends Controller
 
             $email = $request->input('email');
             $interest = $request->input('interest');
-            $to = 'infovillartech@gmail.com';
+            $to = 'info@villartechnologies.com.ve';
     
     
     
@@ -45,7 +45,7 @@ class ContactController extends Controller
 
                 Mail::send('emailClient', $request->all(), function($msg) use ($interest,$to,$email)  {
     
-                    $msg->from('infovillartech@gmail.com');
+                    $msg->from('info@villartechnologies.com.ve');
                     $msg->subject('Contact Email and Information');
                     $msg->to($email);
             

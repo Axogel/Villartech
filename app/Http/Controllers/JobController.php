@@ -18,7 +18,7 @@ public function job(Request $request)
 {
     $email = $request->input('email');
     $interest = $request->input('interest');
-    $to = 'infovillartech@gmail.com';
+    $to = 'info@villartechnologies.com.ve';
 
     $validator = Validator::make($request->all(), [
             'number' => ['required', 'regex:/^[0-9A-Za-z\W]+$/'],
@@ -61,7 +61,7 @@ public function job(Request $request)
     });
 
     Mail::send('emailClient', $request->all(), function($msg) use ($interest, $to, $email) {
-        $msg->from('infovillartech@gmail.com');
+        $msg->from('info@villartechnologies.com.ve');
         $msg->subject('Contact Email and Information');
         $msg->to($email);
     });

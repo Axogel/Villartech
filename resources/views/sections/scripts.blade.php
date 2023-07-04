@@ -18,6 +18,7 @@
 function handleScroll() {
   let allTabsLi = document.querySelectorAll(".tab-profile");
   let allTabs = document.querySelectorAll(".tab-pane-tabs");
+  let buttonContact = document.getElementById('buttonContactUs');
   let tabLi1 = document.getElementById('tab-li-1');
   let tabLi2 = document.getElementById('tab-li-2');
   let tabLi3 = document.getElementById('tab-li-3');
@@ -33,12 +34,19 @@ function handleScroll() {
   var scrollPosition = window.scrollY;
 //  scroll %
   var scrollPercentage = (scrollPosition / (documentHeight - visibleHeight)) * 100;
-
+  if(scrollPercentage < 7){
+    buttonContact.style.backgroundColor = "#045A97";
+  }
+  if(scrollPercentage >= 7){
+    buttonContact.style.backgroundColor = "black";
+  }
   if (scrollPercentage >= 13) {
 
     allTabsLi.forEach(tab => tab.classList.remove("active"));
     allTabs.forEach(tab => tab.classList.remove("active"));
       tab1.classList.add("active");
+  
+
       tabLi1.classList.add("active");
   }
   if (scrollPercentage >= 18) {
