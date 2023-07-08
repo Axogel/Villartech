@@ -224,7 +224,7 @@ class TeamUserController extends Controller
         $request->validate([
             '*' => 'required',
             'email' => 'required|email',
-            'photo' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'photo' => 'mimes:jpeg,png,jpg,gif,svg',
             'team_presentation' => ['required', 'url', 'regex:/(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/'],
             'language_levels.*' => 'required|nullable|integer|min:0|max:100'
         ], $message = [

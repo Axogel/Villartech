@@ -84,7 +84,7 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
                                             <img src="{{ asset('assets/img/modal-teams/user-1.png') }}" style="height: 51px; float:right;">
                                         </p>
                                         <hr style="height:2px;border:none;color:white;background-color:rgb(0, 0, 0);" class="mx-auto d-block  w-100">
-                                        <div class="scrollable-container">
+                                        <div class="scrollable-container my-4">
                                              <p style="font-size: 18px; color: #323232; font-family: 'Lato'; font-weight: 300;">
                                                  {{  $teamDescription }}
                                              </p>

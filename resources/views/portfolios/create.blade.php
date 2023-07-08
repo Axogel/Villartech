@@ -62,9 +62,6 @@
                                 <span class="form-control" style="margin-left:15px;  width:360px;">  
                                  {!! Form::file('image_file', null) !!}
                                 </span>
-                                <label class="col-lg-4 col-form-label required fw-bold fs-6">or use a video inserting the url</label>
-                            {!! Form::text('image_url', null, ['placeholder' => 'Insert a url to the portfolio',
-                            'class' => 'form-control form-control-solid mb-3 mb-lg-0',]) !!}
                             </div>
                             @if ($errors->any())
                               <div class="alert alert-danger mx-2 my-2">
