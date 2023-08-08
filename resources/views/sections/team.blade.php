@@ -273,28 +273,31 @@ $targetLocale = ($locale == 'es') ? 'en' : 'es';
     <div class="" style="padding: 1em 0;">
         <div class="owl-carousel owl-theme" id="team-carousel" style="overflow-x:clip;">
             @foreach ($teams as $team)
-                <div class="item" >
-                    <div class="team" >
-                        <div class="details">
-                            <p class="pt-3 text-center">
-                                <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}" class="pt-5 mx-auto" style="height: 65px;">
-                            </p>
+                    @if ($team->freelance == 1)
+                    <div class="item" >
+                        <div class="team" >
+                            <div class="details">
+                                <p class="pt-3 text-center">
+                                    <img src="{{ asset('assets/img/modal-teams/Grupo 5.png') }}" class="pt-5 mx-auto" style="height: 65px;">
+                                </p>
 
-                            <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3 text-center">
-                                {{ $team->name }}
-                            </p>
-                            <hr style="width:60px; margin:0 auto; color:#FFFFFF; height:1px;">
-                            <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">
-                            @foreach ($team->EmployeeCategories()->get() as $employeeCategory)
-                                               {{ $employeeCategory->name }}
-                                    @endforeach
-                            </p>
-                        </div>
-                        <div class="photo"n style="width:100%;">
-                            <img src="{{ asset('storage') . '/' . $team->photo }}" alt="" style="cursor: pointer;  width:100%; position: relative; bottom:60px;" href="#" data-toggle="modal" data-target="#modal_team_{{ $team->id }}">
+                                <p style="font-family: 'Lato'; color:white; font-size:30px;" class="pt-3 text-center">
+                                    {{ $team->name }}
+                                </p>
+                                <hr style="width:60px; margin:0 auto; color:#FFFFFF; height:1px;">
+                                <p style="font-family: 'Lato'; color:white; font-size:20px;" class="pt-3 text-center">
+                                @foreach ($team->EmployeeCategories()->get() as $employeeCategory)
+                                                {{ $employeeCategory->name }}
+                                        @endforeach
+                                </p>
+                            </div>
+                            <div class="photo"n style="width:100%;">
+                                <img src="{{ asset('storage') . '/' . $team->photo }}" alt="" style="cursor: pointer;  width:100%; position: relative; bottom:60px;" href="#" data-toggle="modal" data-target="#modal_team_{{ $team->id }}">
+                            </div>
                         </div>
                     </div>
-                </div>
+                    @endif
+
             @endforeach
         </div>
 
